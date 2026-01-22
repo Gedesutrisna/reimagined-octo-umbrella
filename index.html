@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Basic Meta -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- SEO Meta -->
+    <title>Samartha – AI Business Automation Platform for Faster Growth</title>
+    <meta
+      name="description"
+      content="Samartha adalah platform AI-powered business automation untuk mengotomatisasi workflow, meningkatkan produktivitas hingga 10x, dan menghubungkan ratusan tools bisnis tanpa coding."
+    />
+    <meta
+      name="keywords"
+      content="Business Automation, AI Automation Platform, Workflow Automation, No-Code Automation, Productivity Tools, Samartha"
+    />
+    <meta name="author" content="Samartha" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph (Facebook, LinkedIn, WhatsApp) -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Samartha – AI-Powered Business Automation Platform"
+    />
+    <meta
+      property="og:description"
+      content="Otomatisasi proses bisnis, hilangkan pekerjaan repetitif, dan skalakan bisnis Anda dengan solusi AI dari Samartha."
+    />
+    <meta property="og:url" content="https://samartha.ai/" />
+    <meta property="og:image" content="001_Bahan/assets/logo.png" />
+    <meta property="og:site_name" content="Samartha" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Samartha – AI Business Automation Platform"
+    />
+    <meta
+      name="twitter:description"
+      content="Bangun workflow otomatis cerdas dan tingkatkan efisiensi bisnis dengan Samartha."
+    />
+    <meta name="twitter:image" content="001_Bahan/assets/logo.png" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="001_Bahan/assets/logo.png" type="image/png" />
+
+    <!-- Preconnect Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="001_Website/css/style.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-container">
+        <div class="logo">
+          <img src="001_Bahan/assets/logo.png" alt="logo" class="logo-img" />
+          Samartha
+        </div>
+        <div class="nav-menu" id="navMenu">
+          <a href="#features">Features</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#testimonials">Testimonials</a>
+          <a href="#faq">FAQ</a>
+          <button class="btn btn-primary">Get Started</button>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="shape-deco shape-1">
+        <div class="starburst spinner"></div>
+      </div>
+      <div class="shape-deco shape-2">
+        <div class="flower spinner"></div>
+      </div>
+
+      <div class="hero-container">
+        <div class="hero-content">
+          <div class="badge">✨ AI-Powered Automation Platform</div>
+          <h1>Transform Your Business with Intelligent Automation</h1>
+          <p class="hero-subtitle">
+            Streamline workflows, eliminate repetitive tasks, and boost
+            productivity by up to 10x with our cutting-edge AI automation
+            solutions.
+          </p>
+          <div class="hero-buttons">
+            <button class="btn btn-primary">Start Free Trial</button>
+            <button class="btn btn-outline">Watch Demo</button>
+          </div>
+        </div>
+
+        <div class="automation-visual">
+          <div class="workflow-node trigger-node">
+            <div class="node-status">✓ Completed</div>
+            <div class="node-header">
+              <div class="node-icon">⚡</div>
+              <span class="node-label">Trigger</span>
+            </div>
+            <div class="node-title">Deal Updated</div>
+            <div class="node-desc">When stage changes</div>
+          </div>
+
+          <div class="workflow-node delay-node">
+            <div class="node-status">✓ Completed</div>
+            <div class="node-header">
+              <div class="node-icon">⏱️</div>
+              <span class="node-label">Delay</span>
+            </div>
+            <div class="node-title">Wait 5 Seconds</div>
+            <div class="node-desc">Smart delay</div>
+          </div>
+
+          <div class="workflow-node action-node">
+            <div class="node-status running-status">⟳ Running</div>
+            <div class="node-header">
+              <div class="node-icon">▶</div>
+              <span class="node-label">Action</span>
+            </div>
+            <div class="node-title">Enroll Sequence</div>
+            <div class="node-desc">Add to upsell flow</div>
+          </div>
+
+          <!-- SVG Arrows Desktop -->
+          <svg
+            class="desktop-view workflow-arrows"
+            style="
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              top: 45px;
+              left: 0;
+              pointer-events: none;
+            "
+          >
+            <defs>
+              <marker
+                id="arrowhead"
+                markerWidth="10"
+                markerHeight="10"
+                refX="9"
+                refY="3"
+                orient="auto"
+              >
+                <polygon
+                  points="0 0, 10 3, 0 6"
+                  fill="rgba(67, 66, 255, 0.3)"
+                />
+              </marker>
+            </defs>
+            <path
+              d="M 120 95 L 120 160"
+              stroke="rgba(67, 66, 255, 0.3)"
+              stroke-width="2"
+              fill="none"
+              marker-end="url(#arrowhead)"
+              stroke-dasharray="5,5"
+            >
+              <animate
+                attributeName="stroke-dashoffset"
+                from="0"
+                to="-10"
+                dur="1s"
+                repeatCount="indefinite"
+              />
+            </path>
+            <path
+              d="M 210 75 Q 300 75, 360 130"
+              stroke="rgba(67, 66, 255, 0.3)"
+              stroke-width="2"
+              fill="none"
+              marker-end="url(#arrowhead)"
+              stroke-dasharray="5,5"
+            >
+              <animate
+                attributeName="stroke-dashoffset"
+                from="0"
+                to="-10"
+                dur="1s"
+                repeatCount="indefinite"
+              />
+            </path>
+          </svg>
+
+          <!-- SVG Arrows Mobile -->
+          <svg
+            class="mobile-view workflow-arrows"
+            style="
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              top: 20px;
+              left: -60px;
+              pointer-events: none;
+            "
+          >
+            <defs>
+              <marker
+                id="arrowhead-mobile"
+                markerWidth="10"
+                markerHeight="10"
+                refX="9"
+                refY="3"
+                orient="auto"
+              >
+                <polygon
+                  points="0 0, 10 3, 0 6"
+                  fill="rgba(67, 66, 255, 0.3)"
+                />
+              </marker>
+            </defs>
+            <path
+              d="M 120 100 L 120 260"
+              stroke="rgba(67, 66, 255, 0.3)"
+              stroke-width="2"
+              fill="none"
+              marker-end="url(#arrowhead-mobile)"
+              stroke-dasharray="5,5"
+            >
+              <animate
+                attributeName="stroke-dashoffset"
+                from="0"
+                to="-10"
+                dur="1s"
+                repeatCount="indefinite"
+              />
+            </path>
+            <path
+              d="M 280 50 Q 300 50, 320 100"
+              stroke="rgba(67, 66, 255, 0.3)"
+              stroke-width="2"
+              fill="none"
+              marker-end="url(#arrowhead-mobile)"
+              stroke-dasharray="5,5"
+            >
+              <animate
+                attributeName="stroke-dashoffset"
+                from="0"
+                to="-10"
+                dur="1s"
+                repeatCount="indefinite"
+              />
+            </path>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+      <div class="stats-container">
+        <div class="stat-item" data-delay="0">
+          <div class="stat-number" data-target="98">0</div>
+          <div class="stat-label">Task Accuracy</div>
+        </div>
+        <div class="stat-item" data-delay="100">
+          <div class="stat-number" data-target="10">0</div>
+          <div class="stat-label">Faster Processing</div>
+        </div>
+        <div class="stat-item" data-delay="200">
+          <div class="stat-number">24/7</div>
+          <div class="stat-label">Active Monitoring</div>
+        </div>
+        <div class="stat-item" data-delay="300">
+          <div class="stat-number" data-target="5000">0</div>
+          <div class="stat-label">Happy Clients</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+      <div class="feature-shape fs-1">
+        <div class="circle bouncing"></div>
+      </div>
+      <div class="feature-shape fs-2">
+        <div class="starburst spinner"></div>
+      </div>
+
+      <div class="section-header">
+        <div class="section-subtitle">Our Features</div>
+        <h2>Powerful Automation Capabilities</h2>
+        <p>
+          Everything you need to automate, optimize, and scale your business
+          operations efficiently.
+        </p>
+      </div>
+
+      <div class="features-bento">
+        <div class="feature-card large" data-delay="0">
+          <div class="feature-icon">🤖</div>
+          <h3>AI-Powered Workflows</h3>
+          <p>
+            Create intelligent automation workflows that learn and adapt to your
+            business processes automatically. Our AI engine analyzes patterns
+            and optimizes your workflows for maximum efficiency.
+          </p>
+        </div>
+
+        <div class="feature-card medium" data-delay="100">
+          <div class="feature-icon">⚡</div>
+          <h3>Real-Time Processing</h3>
+          <p>
+            Execute tasks instantly with our lightning-fast processing engine
+            and get results in milliseconds.
+          </p>
+        </div>
+
+        <div class="feature-card small" data-delay="200">
+          <div class="feature-icon">🔗</div>
+          <h3>Seamless Integration</h3>
+          <p>
+            Connect with 500+ popular tools and platforms. No coding required
+            for most integrations.
+          </p>
+        </div>
+
+        <div class="feature-card small" data-delay="300">
+          <div class="feature-icon">📊</div>
+          <h3>Advanced Analytics</h3>
+          <p>
+            Get deep insights into your automation performance with
+            comprehensive dashboards and reports.
+          </p>
+        </div>
+
+        <div class="feature-card medium" data-delay="400">
+          <div class="feature-icon">🔒</div>
+          <h3>Enterprise Security</h3>
+          <p>
+            Bank-level encryption and compliance with GDPR, SOC 2, and ISO 27001
+            standards.
+          </p>
+        </div>
+
+        <div class="feature-card large" data-delay="500">
+          <div class="feature-icon">🎯</div>
+          <h3>Smart Triggers & Conditions</h3>
+          <p>
+            Set up conditional logic and triggers to automate complex business
+            scenarios effortlessly. Create sophisticated workflows with if-then
+            logic, time-based triggers, and multi-step automations.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Platform Preview -->
+    <section class="platform-preview">
+      <div class="preview-container">
+        <div class="preview-content">
+          <div class="section-subtitle">See It In Action</div>
+          <h2>Visual Workflow Builder</h2>
+          <p>
+            Build complex automations with our intuitive drag-and-drop
+            interface. No coding required.
+          </p>
+
+          <div class="preview-features">
+            <div class="preview-feature-item">
+              <span class="preview-check">✓</span>
+              <span>Drag & drop workflow builder</span>
+            </div>
+            <div class="preview-feature-item">
+              <span class="preview-check">✓</span>
+              <span>Real-time testing & debugging</span>
+            </div>
+            <div class="preview-feature-item">
+              <span class="preview-check">✓</span>
+              <span>Version control & rollback</span>
+            </div>
+            <div class="preview-feature-item">
+              <span class="preview-check">✓</span>
+              <span>Collaborative team workspace</span>
+            </div>
+          </div>
+
+          <button class="btn btn-primary">Try Interactive Demo</button>
+        </div>
+
+        <video
+          class="preview-screen"
+          src="001_Bahan/assets/screen.mp4"
+          autoplay
+          loop
+          muted
+          type="video/mp4"
+        ></video>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works" id="how-it-works">
+      <div class="section-header">
+        <div class="section-subtitle">How It Works</div>
+        <h2>Get Started in 3 Simple Steps</h2>
+        <p>
+          Launch your first automation in minutes, not hours. No technical
+          expertise required.
+        </p>
+      </div>
+
+      <div class="steps-container">
+        <div class="step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>Choose Your Workflow</h3>
+            <p>
+              Select from our library of pre-built templates or create custom
+              workflows tailored to your specific needs. Our intuitive
+              drag-and-drop interface makes it easy to design complex
+              automations.
+            </p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>Connect Your Tools</h3>
+            <p>
+              Integrate with your favorite apps and services in just a few
+              clicks. Our platform supports hundreds of integrations, from CRM
+              and email to accounting and project management tools.
+            </p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>Activate & Optimize</h3>
+            <p>
+              Launch your automation and watch it work. Our AI continuously
+              monitors performance and provides optimization recommendations to
+              maximize efficiency and ROI.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing" id="pricing">
+      <div class="section-header">
+        <div class="section-subtitle">Pricing Plans</div>
+        <h2>Choose Your Perfect Plan</h2>
+        <p>Flexible pricing that grows with your business. No hidden fees.</p>
+
+        <div class="pricing-toggle">
+          <span class="toggle-label" id="monthlyLabel">Monthly</span>
+          <label class="toggle-switch">
+            <input type="checkbox" id="pricingToggle" />
+            <span class="toggle-slider"></span>
+          </label>
+          <span class="toggle-label active" id="annuallyLabel"
+            >Annually <span class="save-badge">Save 20%</span></span
+          >
+        </div>
+      </div>
+
+      <div class="pricing-grid">
+        <div class="pricing-card" data-delay="0">
+          <div class="pricing-name">Free</div>
+          <div class="pricing-price">
+            <span class="price-amount">$0</span>
+            <span class="price-period">/month</span>
+          </div>
+          <p class="pricing-desc">Perfect for individuals getting started</p>
+          <div class="pricing-features">
+            <div class="pricing-feature">
+              <span class="check-icon">✓</span>
+              <span>Up to 100 tasks/month</span>
+            </div>
+            <div class="pricing-feature">
+              <span class="check-icon">✓</span>
+              <span>3 active workflows</span>
+            </div>
+            <div class="pricing-feature">
+              <span class="check-icon">✓</span>
+              <span>Basic integrations</span>
+            </div>
+            <div class="pricing-feature">
+              <span class="check-icon">✓</span>
+              <span>Community support</span>
+            </div>
+          </div>
+          <div style="margin-top: auto">
+            <button class="btn btn-outline" style="width: 100%">
+              Start Free
+            </button>
+          </div>
+        </div>
+
+        <div class="pricing-card" data-delay="100">
+          <div class="pricing-name">Starter</div>
+          <div class="pricing-price">
+            <span class="price-amount" data-monthly="29" data-annual="23"
+              >$29</span
+            >
+            <span class="price-period">/month</span>
+          </div>
+          <p class="pricing-desc">For small teams getting started</p>
+          <div class="pricing-features">
+            <div class="pricing-feature">
+              <span class="check-icon">✓</span>
+              <span>Up to 1,000 tasks/month</span>
+            </div>
+            <div class="pricing-feature">
+              <span class="check-icon">✓</span>
+              <span>10 active workflows</span>
+            </div>
+            <div class="pricing-feature">
+              <span class="check-icon">✓</span>
+              <span>All integrations</span>
+            </div>
+            <div class="pricing-feature">
+              <span class="check-icon">✓</span>
+              <span>Email support</span>
+            </div>
+          </div>
+          <div style="margin-top: auto">
+            <button class="btn btn-outline" style="width: 100%">
+              Get Started
+            </button>
+          </div>
+        </div>
+
+        <div class="pricing-card featured" data-delay="200">
+          <div class="pricing-badge">Most Popular</div>
+          <div class="pricing-name">Professional</div>
+          <div class="pricing-price">
+            <span class="price-amount" data-monthly="99" data-annual="79"
+              >$99</span
+            >
+            <span class="price-period">/month</span>
+          </div>
+          <p class="pricing-desc">For growing businesses that need more</p>
+          <div class="pricing-features">
+            <div class="pricing-feature">
+              <span class="check-icon">✓</span>
+              <span>Up to 10,000 tasks/month</span>
+            </div>
+            <div class="pricing-feature">
+              <span class="check-icon">✓</span>
+              <span>Unlimited workflows</span>
+            </div>
+            <div class="pricing-feature">
+              <span class="check-icon">✓</span>
+              <span>Premium integrations</span>
+            </div>
+            <div class="pricing-feature">
+              <span class="check-icon">✓</span>
+              <span>Priority support</span>
+            </div>
+            <div class="pricing-feature">
+              <span class="check-icon">✓</span>
+              <span>Advanced analytics</span>
+            </div>
+          </div>
+          <div style="margin-top: auto">
+            <button class="btn btn-primary" style="width: 100%">
+              Get Started
+            </button>
+          </div>
+        </div>
+
+        <div class="pricing-card" data-delay="300">
+          <div class="pricing-name">Enterprise</div>
+          <div class="pricing-price">
+            <span class="price-amount">Custom</span>
+          </div>
+          <p class="pricing-desc">For large organizations with custom needs</p>
+          <div class="pricing-features">
+            <div class="pricing-feature">
+              <span class="check-icon">✓</span>
+              <span>Unlimited tasks</span>
+            </div>
+            <div class="pricing-feature">
+              <span class="check-icon">✓</span>
+              <span>Unlimited workflows</span>
+            </div>
+            <div class="pricing-feature">
+              <span class="check-icon">✓</span>
+              <span>Custom integrations</span>
+            </div>
+            <div class="pricing-feature">
+              <span class="check-icon">✓</span>
+              <span>24/7 dedicated support</span>
+            </div>
+            <div class="pricing-feature">
+              <span class="check-icon">✓</span>
+              <span>Custom SLA</span>
+            </div>
+          </div>
+          <div style="margin-top: auto">
+            <button class="btn btn-outline" style="width: 100%">
+              Contact Sales
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+      <div class="testi-shape ts-1">
+        <div class="flower spinner"></div>
+      </div>
+      <div class="testi-shape ts-2">
+        <div class="circle bouncing"></div>
+      </div>
+
+      <div class="section-header">
+        <div class="section-subtitle">Testimonials</div>
+        <h2>What Our Clients Say</h2>
+        <p>
+          Join thousands of satisfied customers who transformed their business
+          with Samartha.
+        </p>
+      </div>
+
+      <div class="testimonials-wrapper">
+        <div class="testimonials-track">
+          <div class="testimonial-card">
+            <div class="testimonial-rating">★★★★★</div>
+            <p class="testimonial-text">
+              "Samartha has completely transformed our workflow. We've automated
+              80% of our repetitive tasks and our team can now focus on what
+              really matters. The ROI was visible within the first month!"
+            </p>
+            <div class="testimonial-author">
+              <img
+                src="001_Bahan/assets/profile-3.png"
+                class="author-avatar"
+                alt="profile"
+              />
+              <div class="author-info">
+                <h4>Sarah Mitchell</h4>
+                <p>CEO, TechStart Inc</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-rating">★★★★★</div>
+            <p class="testimonial-text">
+              "The integration capabilities are outstanding. We connected all
+              our tools in less than a day. Customer support is incredibly
+              responsive and helpful. Highly recommended for any growing
+              business!"
+            </p>
+            <div class="testimonial-author">
+              <img
+                src="001_Bahan/assets/profile-1.png"
+                class="author-avatar"
+                alt="profile"
+              />
+              <div class="author-info">
+                <h4>James Davidson</h4>
+                <p>Operations Manager, Global Solutions</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-rating">★★★★★</div>
+            <p class="testimonial-text">
+              "We tried several automation tools before finding Samartha. The
+              AI-powered workflows are a game-changer. It's intuitive, powerful,
+              and has saved us countless hours every week."
+            </p>
+            <div class="testimonial-author">
+              <img
+                src="001_Bahan/assets/profile-2.png"
+                class="author-avatar"
+                alt="profile"
+              />
+              <div class="author-info">
+                <h4>Emily Porter</h4>
+                <p>Director of Marketing, Creative Agency</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+      <div class="section-header">
+        <div class="section-subtitle">FAQ</div>
+        <h2>Frequently Asked Questions</h2>
+        <p>Everything you need to know about Samartha and our services.</p>
+      </div>
+
+      <div class="faq-container">
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How does Samartha automation work?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-content">
+              Samartha uses advanced artificial intelligence to analyze your
+              business processes and create intelligent workflows. Simply
+              connect your tools, set up triggers and actions, and let our AI
+              handle the rest. No coding required.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Can I integrate Samartha with my existing tools?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-content">
+              Yes! We support integration with over 500 popular business tools
+              including Slack, Gmail, Salesforce, HubSpot, Shopify, and many
+              more. If you need a custom integration, our Enterprise plan
+              includes custom integration development.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Is my data secure with Samartha?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-content">
+              Absolutely. We use bank-level encryption and are compliant with
+              GDPR, SOC 2, and ISO 27001 standards. Your data is encrypted both
+              in transit and at rest, and we never share your information with
+              third parties.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Do I need technical skills to use Samartha?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-content">
+              Not at all! Our intuitive drag-and-drop interface is designed for
+              non-technical users. We also provide pre-built templates for
+              common workflows. However, if you have technical skills, you can
+              create more advanced custom workflows.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What happens if I exceed my plan's task limit?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-content">
+              We'll notify you when you're approaching your limit. You can
+              either upgrade to a higher plan or purchase additional task packs.
+              Your workflows will continue running, but you'll need to upgrade
+              to create new automations.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Can I cancel my subscription anytime?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-content">
+              Yes, you can cancel your subscription at any time with no
+              penalties. Your workflows will continue to run until the end of
+              your billing period. You can also export all your data before
+              canceling.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" id="contact">
+      <div class="cta-shape cta-shape-1">
+        <div class="starburst spinner"></div>
+      </div>
+      <div class="cta-shape cta-shape-2">
+        <div class="flower spinner"></div>
+      </div>
+      <div class="cta-shape cta-shape-3">
+        <div class="circle bouncing"></div>
+      </div>
+      <div class="cta-shape cta-shape-4">
+        <div class="starburst spinner" style="width: 60px"></div>
+      </div>
+
+      <div class="cta-content">
+        <h2>Ready to Automate Your Business?</h2>
+        <p>
+          Join thousands of companies already saving time and money with
+          Samartha. Start your free 14-day trial today. No credit card required.
+        </p>
+        <div class="cta-buttons">
+          <button class="btn btn-white">Start Free Trial</button>
+          <button class="btn btn-outline-white">Schedule a Demo</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-wave">
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+            class="shape-fill"
+          ></path>
+        </svg>
+      </div>
+
+      <div class="footer-top">
+        <div class="footer-container">
+          <div>
+            <div class="footer-brand">
+              <img
+                src="001_Bahan/assets/logo.png"
+                alt="logo"
+                class="logo-img"
+              />
+              Samartha
+            </div>
+            <p class="footer-desc">
+              Empowering businesses worldwide with intelligent automation
+              solutions that drive growth, efficiency, and innovation.
+            </p>
+            <div class="footer-social">
+              <a href="#" class="social-icon">𝕏</a>
+              <a href="#" class="social-icon">in</a>
+              <a href="#" class="social-icon">f</a>
+              <a href="#" class="social-icon">IG</a>
+            </div>
+          </div>
+
+          <div>
+            <div class="footer-title">Product</div>
+            <div class="footer-links">
+              <a href="#features">Features</a>
+              <a href="#pricing">Pricing</a>
+              <a href="#integrations">Integrations</a>
+              <a href="#templates">Templates</a>
+              <a href="#updates">What's New</a>
+            </div>
+          </div>
+
+          <div>
+            <div class="footer-title">Company</div>
+            <div class="footer-links">
+              <a href="#about">About Us</a>
+              <a href="#careers">Careers</a>
+              <a href="#blog">Blog</a>
+              <a href="#press">Press Kit</a>
+              <a href="#partners">Partners</a>
+            </div>
+          </div>
+
+          <div>
+            <div class="footer-title">Resources</div>
+            <div class="footer-links">
+              <a href="#help">Help Center</a>
+              <a href="#docs">Documentation</a>
+              <a href="#api">API Reference</a>
+              <a href="#community">Community</a>
+              <a href="#status">System Status</a>
+            </div>
+          </div>
+
+          <div>
+            <div class="footer-title">Legal</div>
+            <div class="footer-links">
+              <a href="#privacy">Privacy Policy</a>
+              <a href="#terms">Terms of Service</a>
+              <a href="#security">Security</a>
+              <a href="#gdpr">GDPR</a>
+              <a href="#compliance">Compliance</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-content">
+          <p class="footer-copyright">
+            &copy; 2026 Samartha. All rights reserved.
+          </p>
+          <div class="footer-legal">
+            <a href="#privacy">Privacy</a>
+            <a href="#terms">Terms</a>
+            <a href="#cookies">Cookies</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Chatbot Widget -->
+    <div class="chatbot-widget" id="chatbotWidget">
+      <div class="chatbot-header">
+        <div class="chatbot-avatar-group">
+          <div
+            class="chatbot-avatar"
+            style="
+              background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            "
+          >
+            S
+          </div>
+          <div
+            class="chatbot-avatar"
+            style="
+              background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            "
+          >
+            A
+          </div>
+          <div
+            class="chatbot-avatar"
+            style="
+              background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            "
+          >
+            M
+          </div>
+        </div>
+        <div class="chatbot-info">
+          <h4>Samartha Assistant</h4>
+          <p>• Online</p>
+        </div>
+        <button class="chatbot-close" id="chatbotClose">×</button>
+      </div>
+      <div class="chatbot-body" id="chatbotBody">
+        <div class="chatbot-message bot-message">
+          <div class="message-avatar">AI</div>
+          <div class="message-content">
+            <p>
+              Hi there! 👋 I'm your Samartha AI assistant. How can I help you
+              today?
+            </p>
+            <span class="message-time">Just now</span>
+          </div>
+        </div>
+        <div class="chatbot-suggestions">
+          <button class="suggestion-btn">How does automation work?</button>
+          <button class="suggestion-btn">Show pricing plans</button>
+          <button class="suggestion-btn">Book a demo</button>
+        </div>
+      </div>
+      <div class="chatbot-footer">
+        <input
+          type="text"
+          placeholder="Type your message..."
+          class="chatbot-input"
+          id="chatbotInput"
+        />
+        <button class="chatbot-send" id="chatbotSend">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+          </svg>
+        </button>
+      </div>
+      <div class="chatbot-privacy">
+        By chatting, you agree to our <a href="#privacy">Privacy Policy</a>
+      </div>
+    </div>
+
+    <!-- Chatbot Button -->
+    <button class="chatbot-button" id="chatbotButton" aria-label="Open chat">
+      <svg
+        class="chat-icon"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path
+          d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+        />
+      </svg>
+      <svg
+        class="close-icon"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <line x1="18" y1="6" x2="6" y2="18" />
+        <line x1="6" y1="6" x2="18" y2="18" />
+      </svg>
+    </button>
+
+    <script src="001_Website/js/script.js"></script>
+  </body>
+</html>
