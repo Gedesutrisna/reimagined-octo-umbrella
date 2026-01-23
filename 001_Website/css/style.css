@@ -389,7 +389,7 @@ p {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   min-width: 200px;
   transition: all 0.3s ease;
-  background: rgba(255, 253, 243, 0.78);
+  background: white;
   backdrop-filter: blur(4.3px);
   -webkit-backdrop-filter: blur(4.3px);
 }
@@ -462,7 +462,7 @@ p {
 }
 
 .delay-node {
-  top: 240px;
+  top: 260px;
   left: 9px;
   border-left: 4px solid var(--orange-color);
 }
@@ -473,10 +473,10 @@ p {
 }
 
 .action-node {
-  top: 190px;
-  right: 30px;
-  /* border: 2px solid var(--primary-color); */
-  border: 2px solid #4242ff2d;
+  top: 120px;
+  right: 0px;
+  border: 2px solid var(--primary-color);
+  /* border: 2px solid #4242ff2d; */
 }
 
 .action-node .node-icon {
@@ -501,6 +501,38 @@ p {
 .shape-2 {
   bottom: 15%;
   right: 2%;
+}
+
+/* 
+     WORKFLOW ARROWS - n8n Style
+      */
+
+.workflow-arrows {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: visible;
+  z-index: 0;
+}
+
+.workflow-arrows path {
+  fill: none;
+  stroke: var(--primary-color);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 6 6;
+  marker-end: url(#arrowhead-dynamic);
+  animation: arrowFlow 1.2s linear infinite;
+}
+
+@keyframes arrowFlow {
+  from {
+    stroke-dashoffset: 12;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 
 /* 
@@ -839,7 +871,7 @@ p {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(67, 66, 255, 0.2);
+  background-color: var(--third-color);
   transition: 0.3s;
   border-radius: 50px;
 }
@@ -1040,7 +1072,8 @@ input:checked + .toggle-slider:before {
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
-  background: rgba(255, 253, 243, 0.78);
+  /* background: rgba(255, 253, 243, 0.78); */
+  background: var(--white-color);
   backdrop-filter: blur(4.3px);
   -webkit-backdrop-filter: blur(4.3px);
 }
@@ -1654,8 +1687,8 @@ input:checked + .toggle-slider:before {
 }
 
 .chatbot-send {
-  width: 40px;
-  height: 40px;
+  width: 43px;
+  height: 43px;
   border-radius: 8px;
   border: none;
   background: var(--primary-color);

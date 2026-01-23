@@ -142,187 +142,35 @@
             <div class="node-desc">Add to upsell flow</div>
           </div>
 
-          <!-- SVG Arrows Desktop -->
           <svg
-            class="desktop-view workflow-arrows"
+            class="workflow-arrows"
             style="
               position: absolute;
               width: 100%;
               height: 100%;
-              top: 45px;
+              top: 0;
               left: 0;
               pointer-events: none;
+              overflow: visible;
             "
           >
-            <defs>
-              <marker
-                id="arrowhead"
-                markerWidth="10"
-                markerHeight="10"
-                refX="0"
-                refY="3"
-                orient="auto"
-              >
-                <polygon
-                  points="0 0, 10 3, 0 6"
-                  fill="rgba(67, 66, 255, 0.3)"
-                />
-              </marker>
-            </defs>
-            <path
-              d="M 110 95 L 110 165"
-              stroke="rgba(67, 66, 255, 0.3)"
-              stroke-width="2"
-              fill="none"
-              marker-end="url(#arrowhead)"
-              stroke-dasharray="5,5"
-            >
-              <animate
-                attributeName="stroke-dashoffset"
-                from="0"
-                to="-10"
-                dur="1s"
-                repeatCount="indefinite"
-              />
-            </path>
-            <path
-              d="M 215 40 Q 350 40, 390 110"
-              stroke="rgba(67, 66, 255, 0.3)"
-              stroke-width="2"
-              fill="none"
-              marker-end="url(#arrowhead)"
-              stroke-dasharray="5,5"
-            >
-              <animate
-                attributeName="stroke-dashoffset"
-                from="0"
-                to="-10"
-                dur="1s"
-                repeatCount="indefinite"
-              />
-            </path>
-          </svg>
 
-          <!-- SVG Arrows Tablet -->
-          <svg
-            class="tablet-view workflow-arrows"
-            style="
-              position: absolute;
-              width: 100%;
-              height: 100%;
-              top: 45px;
-              left: 0;
-              pointer-events: none;
-            "
-          >
-            <defs>
-              <marker
-                id="arrowhead-tablet"
-                markerWidth="10"
-                markerHeight="10"
-                refX="0"
-                refY="3"
-                orient="auto"
-              >
-                <polygon
-                  points="0 0, 10 3, 0 6"
-                  fill="rgba(67, 66, 255, 0.3)"
-                ></polygon>
-              </marker>
-            </defs>
             <path
-              d="M 110 95 L 110 165"
+              id="arrow-trigger-delay"
               stroke="rgba(67, 66, 255, 0.3)"
               stroke-width="2"
               fill="none"
-              marker-end="url(#arrowhead-tablet)"
+              marker-end="url(#arrowhead-dynamic)"
               stroke-dasharray="5,5"
-            >
-              <animate
-                attributeName="stroke-dashoffset"
-                from="0"
-                to="-10"
-                dur="1s"
-                repeatCount="indefinite"
-              ></animate>
-            </path>
+            />
             <path
-              d="M 215 40 L 520 40"
+              id="arrow-trigger-action"
               stroke="rgba(67, 66, 255, 0.3)"
               stroke-width="2"
               fill="none"
-              marker-end="url(#arrowhead-tablet)"
+              marker-end="url(#arrowhead-dynamic)"
               stroke-dasharray="5,5"
-            >
-              <animate
-                attributeName="stroke-dashoffset"
-                from="0"
-                to="-10"
-                dur="1s"
-                repeatCount="indefinite"
-              ></animate>
-            </path>
-          </svg>
-
-          <!-- SVG Arrows Mobile -->
-          <svg
-            class="mobile-view workflow-arrows"
-            style="
-              position: absolute;
-              width: 100%;
-              height: 100%;
-              top: 20px;
-              left: -60px;
-              pointer-events: none;
-            "
-          >
-            <defs>
-              <marker
-                id="arrowhead-mobile"
-                markerWidth="10"
-                markerHeight="10"
-                refX="0"
-                refY="3"
-                orient="auto"
-              >
-                <polygon
-                  points="0 0, 10 3, 0 6"
-                  fill="rgba(67, 66, 255, 0.3)"
-                />
-              </marker>
-            </defs>
-            <path
-              d="M 120 100 L 120 240"
-              stroke="rgba(67, 66, 255, 0.3)"
-              stroke-width="2"
-              fill="none"
-              marker-end="url(#arrowhead-mobile)"
-              stroke-dasharray="5,5"
-            >
-              <animate
-                attributeName="stroke-dashoffset"
-                from="0"
-                to="-10"
-                dur="1s"
-                repeatCount="indefinite"
-              />
-            </path>
-            <path
-              d="M 280 40 Q 300 40, 320 90"
-              stroke="rgba(67, 66, 255, 0.3)"
-              stroke-width="2"
-              fill="none"
-              marker-end="url(#arrowhead-mobile)"
-              stroke-dasharray="5,5"
-            >
-              <animate
-                attributeName="stroke-dashoffset"
-                from="0"
-                to="-10"
-                dur="1s"
-                repeatCount="indefinite"
-              />
-            </path>
+            />
           </svg>
         </div>
       </div>
@@ -532,7 +380,7 @@
         <div class="pricing-toggle">
           <span class="toggle-label" id="monthlyLabel">Monthly</span>
           <label class="toggle-switch">
-            <input type="checkbox" id="pricingToggle" />
+            <input type="checkbox" id="pricingToggle" checked />
             <span class="toggle-slider"></span>
           </label>
           <span class="toggle-label active" id="annuallyLabel"
