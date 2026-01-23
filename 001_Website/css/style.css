@@ -392,6 +392,7 @@ p {
   background: white;
   backdrop-filter: blur(4.3px);
   -webkit-backdrop-filter: blur(4.3px);
+  z-index: 99;
 }
 
 .workflow-node:hover {

@@ -25,7 +25,7 @@ swiperConfigs.forEach(({ selector, slides1028 }) => {
 class WorkflowArrows {
   constructor() {
     this.container = document.querySelector(".automation-visual");
-    
+
     this.paths = {
       triggerDelay: document.getElementById("arrow-trigger-delay"),
       triggerAction: document.getElementById("arrow-trigger-action"),
@@ -40,7 +40,7 @@ class WorkflowArrows {
 
   init() {
     this.update();
-    
+
     let resizeTimeout;
     window.addEventListener("resize", () => {
       clearTimeout(resizeTimeout);
@@ -50,41 +50,39 @@ class WorkflowArrows {
     setTimeout(() => this.update(), 300);
   }
 
-  // Get element rect relative to container
+  // =========================
+  // Utils
+  // =========================
+
   rect(el) {
     const c = this.container.getBoundingClientRect();
     const r = el.getBoundingClientRect();
-    
+
     return {
-      x: r.left - c.left,
-      y: r.top - c.top,
-      w: r.width,
-      h: r.height,
       top: r.top - c.top,
       bottom: r.bottom - c.top,
       left: r.left - c.left,
       right: r.right - c.left,
+      w: r.width,
+      h: r.height,
       cx: r.left - c.left + r.width / 2,
       cy: r.top - c.top + r.height / 2,
     };
   }
 
-  // Get all possible anchor points
   getAnchors(node) {
     return {
-      top: { x: node.cx, y: node.top, dir: 'top' },
-      bottom: { x: node.cx, y: node.bottom, dir: 'bottom' },
-      left: { x: node.left, y: node.cy, dir: 'left' },
-      right: { x: node.right, y: node.cy, dir: 'right' },
+      top: { x: node.cx, y: node.top, dir: "top" },
+      bottom: { x: node.cx, y: node.bottom, dir: "bottom" },
+      left: { x: node.left, y: node.cy, dir: "left" },
+      right: { x: node.right, y: node.cy, dir: "right" },
     };
   }
 
-  // Calculate distance between two points
-  distance(p1, p2) {
-    return Math.abs(p1.x - p2.x) + Math.abs(p1.y - p2.y);
+  distance(a, b) {
+    return Math.abs(a.x - b.x) + Math.abs(a.y - b.y);
   }
 
-  // Check if path intersects with a node (with margin)
   intersectsNode(x1, y1, x2, y2, node, margin = 10) {
     const minX = Math.min(x1, x2);
     const maxX = Math.max(x1, x2);
@@ -99,189 +97,80 @@ class WorkflowArrows {
     );
   }
 
-  // Find best anchor pair that doesn't collide
+  // =========================
+  // Auto routing (Trigger → Delay)
+  // =========================
+
   findBestAnchors(startNode, endNode, obstacles = []) {
-    const startAnchors = this.getAnchors(startNode);
-    const endAnchors = this.getAnchors(endNode);
-    
-    let bestPair = null;
+    const starts = this.getAnchors(startNode);
+    const ends = this.getAnchors(endNode);
+
+    let best = null;
     let bestScore = Infinity;
 
-    // Try all combinations
-    for (let startKey in startAnchors) {
-      for (let endKey in endAnchors) {
-        const start = startAnchors[startKey];
-        const end = endAnchors[endKey];
+    for (let sKey in starts) {
+      for (let eKey in ends) {
+        const s = starts[sKey];
+        const e = ends[eKey];
 
-        // Skip if anchors face each other directly (would cause overlap)
-        if (
-          (start.dir === 'right' && end.dir === 'left' && start.x > end.x) ||
-          (start.dir === 'left' && end.dir === 'right' && start.x < end.x) ||
-          (start.dir === 'bottom' && end.dir === 'top' && start.y > end.y) ||
-          (start.dir === 'top' && end.dir === 'bottom' && start.y < end.y)
-        ) {
-          continue;
-        }
+        let score = this.distance(s, e);
 
-        // Calculate score (prefer shorter paths)
-        let score = this.distance(start, end);
-
-        // Add penalty for collision with obstacles
-        let hasCollision = false;
         for (let obs of obstacles) {
-          const midX = (start.x + end.x) / 2;
-          const midY = (start.y + end.y) / 2;
-          
-          if (this.intersectsNode(start.x, start.y, midX, midY, obs)) {
-            hasCollision = true;
-            score += 500;
-          }
-          if (this.intersectsNode(midX, midY, end.x, end.y, obs)) {
-            hasCollision = true;
+          if (this.intersectsNode(s.x, s.y, e.x, e.y, obs)) {
             score += 500;
           }
         }
-
-        // Prefer paths that exit and enter naturally
-        if (start.dir === 'bottom' && end.dir === 'top') score -= 100;
-        if (start.dir === 'right' && end.dir === 'left') score -= 100;
 
         if (score < bestScore) {
           bestScore = score;
-          bestPair = { start, end, hasCollision };
+          best = { start: s, end: e };
         }
       }
     }
 
-    return bestPair;
+    return best;
   }
 
-  // Create orthogonal path with smart routing
-  createOrthogonalPath(start, end, obstacles = []) {
-    const r = 12; // Corner radius
+  createOrthogonalPath(start, end, r = 12) {
     const dx = end.x - start.x;
     const dy = end.y - start.y;
 
-    // Simple case: vertical alignment
-    if (Math.abs(dx) < 30) {
+    if (Math.abs(dx) < 30 || Math.abs(dy) < 30) {
       return `M ${start.x} ${start.y} L ${end.x} ${end.y}`;
     }
 
-    // Simple case: horizontal alignment
-    if (Math.abs(dy) < 30) {
-      return `M ${start.x} ${start.y} L ${end.x} ${end.y}`;
-    }
+    const cornerX = end.x;
+    const cornerY = start.y;
 
-    // Complex case: need L-shape or Z-shape routing
-    // Determine routing strategy based on relative positions
-    const midX = (start.x + end.x) / 2;
-    const midY = (start.y + end.y) / 2;
-
-    // Check for obstacles and decide routing
-    let useZShape = false;
-    for (let obs of obstacles) {
-      if (this.intersectsNode(start.x, start.y, midX, midY, obs, 20)) {
-        useZShape = true;
-        break;
-      }
-    }
-
-    if (useZShape) {
-      // Z-shaped path (3 segments)
-      return this.createZPath(start, end, r);
-    } else {
-      // L-shaped path (2 segments)
-      return this.createLPath(start, end, r);
-    }
+    return `
+      M ${start.x} ${start.y}
+      L ${cornerX - (dx > 0 ? r : -r)} ${cornerY}
+      Q ${cornerX} ${cornerY} ${cornerX} ${cornerY + (dy > 0 ? r : -r)}
+      L ${end.x} ${end.y}
+    `.trim().replace(/\s+/g, " ");
   }
 
-  // Create L-shaped path
-  createLPath(start, end, r) {
-    const dx = end.x - start.x;
-    const dy = end.y - start.y;
+  // =========================
+  // FORCED PATH (Trigger → Action)
+  // right → down/up → right
+  // =========================
 
-    // Decide if we go horizontal first or vertical first
-    const horizontalFirst = Math.abs(dx) > Math.abs(dy);
+  createRightDownRightPath(start, end, offset = 80, r = 12) {
+    const midX = Math.max(start.x, end.x) + offset;
 
-    if (horizontalFirst) {
-      // Go horizontal then vertical
-      const cornerX = end.x;
-      const cornerY = start.y;
-      
-      if (dy > 0) {
-        // Down
-        return `
-          M ${start.x} ${start.y}
-          L ${cornerX - (dx > 0 ? r : -r)} ${cornerY}
-          Q ${cornerX} ${cornerY} ${cornerX} ${cornerY + r}
-          L ${end.x} ${end.y}
-        `.trim().replace(/\s+/g, ' ');
-      } else {
-        // Up
-        return `
-          M ${start.x} ${start.y}
-          L ${cornerX - (dx > 0 ? r : -r)} ${cornerY}
-          Q ${cornerX} ${cornerY} ${cornerX} ${cornerY - r}
-          L ${end.x} ${end.y}
-        `.trim().replace(/\s+/g, ' ');
-      }
-    } else {
-      // Go vertical then horizontal
-      const cornerX = start.x;
-      const cornerY = end.y;
-      
-      if (dx > 0) {
-        // Right
-        return `
-          M ${start.x} ${start.y}
-          L ${cornerX} ${cornerY - (dy > 0 ? r : -r)}
-          Q ${cornerX} ${cornerY} ${cornerX + r} ${cornerY}
-          L ${end.x} ${end.y}
-        `.trim().replace(/\s+/g, ' ');
-      } else {
-        // Left
-        return `
-          M ${start.x} ${start.y}
-          L ${cornerX} ${cornerY - (dy > 0 ? r : -r)}
-          Q ${cornerX} ${cornerY} ${cornerX - r} ${cornerY}
-          L ${end.x} ${end.y}
-        `.trim().replace(/\s+/g, ' ');
-      }
-    }
+    return `
+      M ${start.x} ${start.y}
+      L ${midX - r} ${start.y}
+      Q ${midX} ${start.y} ${midX} ${start.y + r}
+      L ${midX} ${end.y - r}
+      Q ${midX} ${end.y} ${midX - r} ${end.y}
+      L ${end.x} ${end.y}
+    `.trim().replace(/\s+/g, " ");
   }
 
-  // Create Z-shaped path (for obstacle avoidance)
-  createZPath(start, end, r) {
-    const dx = end.x - start.x;
-    const dy = end.y - start.y;
-    const midY = (start.y + end.y) / 2;
-
-    // First segment: horizontal from start
-    // Second segment: vertical 
-    // Third segment: horizontal to end
-    
-    if (dx > 0) {
-      // Going right
-      return `
-        M ${start.x} ${start.y}
-        L ${start.x} ${midY - (dy > 0 ? r : -r)}
-        Q ${start.x} ${midY} ${start.x + r} ${midY}
-        L ${end.x - r} ${midY}
-        Q ${end.x} ${midY} ${end.x} ${midY + (dy > 0 ? r : -r)}
-        L ${end.x} ${end.y}
-      `.trim().replace(/\s+/g, ' ');
-    } else {
-      // Going left
-      return `
-        M ${start.x} ${start.y}
-        L ${start.x} ${midY - (dy > 0 ? r : -r)}
-        Q ${start.x} ${midY} ${start.x - r} ${midY}
-        L ${end.x + r} ${midY}
-        Q ${end.x} ${midY} ${end.x} ${midY + (dy > 0 ? r : -r)}
-        L ${end.x} ${end.y}
-      `.trim().replace(/\s+/g, ' ');
-    }
-  }
+  // =========================
+  // Update
+  // =========================
 
   update() {
     const triggerEl = this.container.querySelector(".trigger-node");
@@ -294,21 +183,29 @@ class WorkflowArrows {
     const delay = this.rect(delayEl);
     const action = this.rect(actionEl);
 
-    // Connection 1: Trigger → Delay (avoid action node)
+    // Trigger → Delay (auto)
     const td = this.findBestAnchors(trigger, delay, [action]);
     if (td) {
-      const path1 = this.createOrthogonalPath(td.start, td.end, [action]);
+      const path1 = this.createOrthogonalPath(td.start, td.end);
       this.paths.triggerDelay.setAttribute("d", path1);
     }
 
-    // Connection 2: Trigger → Action (avoid delay node)
-    const ta = this.findBestAnchors(trigger, action, [delay]);
-    if (ta) {
-      const path2 = this.createOrthogonalPath(ta.start, ta.end, [delay]);
-      this.paths.triggerAction.setAttribute("d", path2);
-    }
+    // Trigger → Action (forced S-shape)
+    const start = {
+      x: trigger.right,
+      y: trigger.cy,
+    };
+
+    const end = {
+      x: action.left,
+      y: action.cy,
+    };
+
+    const path2 = this.createRightDownRightPath(start, end, 90);
+    this.paths.triggerAction.setAttribute("d", path2);
   }
 }
+
 
 // Initialize when DOM is ready
 document.addEventListener("DOMContentLoaded", () => {
