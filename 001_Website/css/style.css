@@ -1893,17 +1893,17 @@ input:checked + .toggle-slider:before {
 
   .trigger-node {
     top: 0px;
-    left: 9px;
+    left: 0px;
   }
 
   .action-node {
     top: 140px;
-    right: 30px;
+    right: 0px;
   }
 
   .delay-node {
     top: 290px;
-    left: 30px;
+    left: 0px;
   }
 
   .mobile-view {
