@@ -1,4 +1,24 @@
 // SAMARTHA - ENHANCED JAVASCRIPT
+const swiperConfigs = [
+  { selector: '.testimonials-wrapper', slides1028: 3 },
+];
+
+swiperConfigs.forEach(({ selector, slides1028 }) => {
+  new Swiper(selector, {
+      loop: true,
+      // autoplay: { delay: 3500, disableOnInteraction: false },
+      speed: 1000,
+      pagination: { el: '.swiper-pagination', clickable: true },
+      navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+      effect: 'slide',
+      breakpoints: {
+          220: { slidesPerView: 1.1, spaceBetween: 10 },
+          768: { slidesPerView: 2, spaceBetween: 10 },
+          1028: { slidesPerView: slides1028, spaceBetween: 16 }
+      }
+  });
+});
+
 
 // Navbar scroll effect
 const navbar = document.getElementById("navbar");
