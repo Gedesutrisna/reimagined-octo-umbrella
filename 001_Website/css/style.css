@@ -908,12 +908,19 @@ input:checked + .toggle-slider:before {
   margin-left: 0.5rem;
 }
 
+.pricing-container {
+  max-width: 100%;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
 .pricing-grid {
-  max-width: 1200px;
-  margin: 3rem auto 0;
+  /* max-width: 1200px; */
+  /* margin: 3rem auto 0; */
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(4, 1fr);
+  /* gap: 1.5rem; */
 }
 
 .pricing-card {
@@ -925,6 +932,7 @@ input:checked + .toggle-slider:before {
   position: relative;
   display: flex;
   flex-direction: column;
+  /* height: 100%; */
 }
 
 .pricing-card.featured {
@@ -1058,11 +1066,11 @@ input:checked + .toggle-slider:before {
   overflow: hidden;
 }
 
-/* .testimonials-track {
+.testimonials-track {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-} */
+  /* gap: .5rem; */
+}
 
 .testimonial-card {
   padding: 2rem;
@@ -1827,9 +1835,9 @@ input:checked + .toggle-slider:before {
     grid-column: span 12;
   }
 
-  .testimonials-track {
+  /* .testimonials-track {
     grid-template-columns: 1fr;
-  }
+  } */
 
   .chatbot-widget {
     width: calc(100% - 32px);
@@ -1842,9 +1850,9 @@ input:checked + .toggle-slider:before {
     right: 16px;
   }
 
-  .pricing-grid {
+  /* .pricing-grid {
     grid-template-columns: 1fr;
-  }
+  } */
 
   .footer-container {
     grid-template-columns: 1fr 1fr;
