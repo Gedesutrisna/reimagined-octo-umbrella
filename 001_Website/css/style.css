@@ -461,8 +461,8 @@ p {
 }
 
 .delay-node {
-  top: 220px;
-  left: 30px;
+  top: 240px;
+  left: 9px;
   border-left: 4px solid var(--orange-color);
 }
 
@@ -1442,6 +1442,13 @@ input:checked + .toggle-slider:before {
 
 .chatbot-avatar:first-child {
   margin-left: 0;
+  background: var(--orange-color);
+}
+.chatbot-avatar:nth-child(2) {
+  background: var(--primary-color);
+}
+.chatbot-avatar:nth-child(3) {
+  background: var(--pink-color);
 }
 
 .chatbot-info {
