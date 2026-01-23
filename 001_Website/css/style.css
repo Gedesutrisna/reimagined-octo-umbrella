@@ -69,7 +69,7 @@ p {
   background: rgba(255, 253, 243, 0.95);
   backdrop-filter: blur(10px);
   padding: 1rem 2rem;
-  z-index: 1000;
+  z-index: 998;
   transition: all 0.3s ease;
 }
 
@@ -528,7 +528,7 @@ p {
 }
 
 .stat-number {
-  font-size: 2.75rem;
+  font-size: 2.5rem;
   font-weight: 800;
   font-family: var(--header-font-family);
   color: var(--primary-color);
@@ -1318,7 +1318,8 @@ input:checked + .toggle-slider:before {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: var(--primary-color);
+  /* background: var(--primary-color); */
+  background: var(--third-color);
   border: none;
   cursor: pointer;
   box-shadow: 0 4px 20px rgba(67, 66, 255, 0.4);
