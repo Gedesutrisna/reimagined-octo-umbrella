@@ -203,6 +203,67 @@
             </path>
           </svg>
 
+          <!-- SVG Arrows Tablet -->
+          <svg
+            class="tablet-view workflow-arrows"
+            style="
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              top: 45px;
+              left: 0;
+              pointer-events: none;
+            "
+          >
+            <defs>
+              <marker
+                id="arrowhead-tablet"
+                markerWidth="10"
+                markerHeight="10"
+                refX="0"
+                refY="3"
+                orient="auto"
+              >
+                <polygon
+                  points="0 0, 10 3, 0 6"
+                  fill="rgba(67, 66, 255, 0.3)"
+                ></polygon>
+              </marker>
+            </defs>
+            <path
+              d="M 110 95 L 110 165"
+              stroke="rgba(67, 66, 255, 0.3)"
+              stroke-width="2"
+              fill="none"
+              marker-end="url(#arrowhead-tablet)"
+              stroke-dasharray="5,5"
+            >
+              <animate
+                attributeName="stroke-dashoffset"
+                from="0"
+                to="-10"
+                dur="1s"
+                repeatCount="indefinite"
+              ></animate>
+            </path>
+            <path
+              d="M 215 40 L 520 40"
+              stroke="rgba(67, 66, 255, 0.3)"
+              stroke-width="2"
+              fill="none"
+              marker-end="url(#arrowhead-tablet)"
+              stroke-dasharray="5,5"
+            >
+              <animate
+                attributeName="stroke-dashoffset"
+                from="0"
+                to="-10"
+                dur="1s"
+                repeatCount="indefinite"
+              ></animate>
+            </path>
+          </svg>
+
           <!-- SVG Arrows Mobile -->
           <svg
             class="mobile-view workflow-arrows"

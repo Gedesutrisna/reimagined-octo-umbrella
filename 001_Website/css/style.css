@@ -1692,6 +1692,7 @@ input:checked + .toggle-slider:before {
   display: block;
 }
 
+.tablet-view,
 .mobile-view {
   display: none;
 }
@@ -1699,6 +1700,22 @@ input:checked + .toggle-slider:before {
 /* 
      RESPONSIVE DESIGN
       */
+
+@media (max-width: 1100px) {
+  .action-node {
+    top: 24px;
+    right: 0px;
+  }
+
+  .tablet-view {
+    display: block;
+  }
+
+  .mobile-view,
+  .desktop-view {
+    display: none !important;
+  }
+}
 
 @media (max-width: 968px) {
   .hamburger {
@@ -1857,9 +1874,10 @@ input:checked + .toggle-slider:before {
   }
 
   .mobile-view {
-    display: block;
+    display: block !important;
   }
 
+  .tablet-view,
   .desktop-view {
     display: none !important;
   }
