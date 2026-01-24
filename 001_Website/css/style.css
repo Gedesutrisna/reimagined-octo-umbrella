@@ -345,7 +345,14 @@ p {
   animation: fadeInUp 0.8s ease;
 }
 
+@property --angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
 .badge {
+  position: relative;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -354,9 +361,51 @@ p {
   border-radius: 50px;
   font-size: 0.825rem;
   font-weight: 600;
-  color: var(--primary-color);
-  margin-bottom: 1.25rem;
+  color: #4342ff;
   border: 1px solid rgba(67, 66, 255, 0.15);
+}
+
+.badge::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  padding: 2px;
+
+  background: conic-gradient(
+    from var(--angle),
+    transparent 0deg,
+    transparent 300deg,
+
+    rgba(148, 177, 255, 0.12) 315deg,
+    rgba(148, 177, 255, 0.25) 325deg,
+    rgba(148, 177, 255, 0.45) 335deg,
+
+    rgba(67, 66, 255, 0.95) 345deg,
+
+    rgba(148, 177, 255, 0.45) 350deg,
+    rgba(148, 177, 255, 0.25) 355deg,
+
+    transparent 360deg
+  );
+
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+
+  animation: orbit 6s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes orbit {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
 }
 
 .hero h1 {
@@ -491,7 +540,7 @@ p {
 
 .shape-deco {
   position: absolute;
-  z-index: 0;
+  z-index: 1;
 }
 
 .shape-1 {

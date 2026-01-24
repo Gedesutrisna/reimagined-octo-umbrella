@@ -1,26 +1,44 @@
-const swiperConfigs = [
-  { selector: '.testimonials-wrapper', slides1028: 3 },
-  { selector: '.pricing-container', slides1028: 4 },
-];
+// SWIPER INITIALIZATION (with safety check)
+if (typeof Swiper !== 'undefined') {
+  const swiperConfigs = [
+    { selector: ".testimonials-wrapper", slides1028: 3 },
+    { selector: ".pricing-container", slides1028: 4 },
+  ];
 
-swiperConfigs.forEach(({ selector, slides1028 }) => {
-  new Swiper(selector, {
-      // loop: true,
-      // autoplay: { delay: 3500, disableOnInteraction: false },
-      speed: 1000,
-      pagination: { el: '.swiper-pagination', clickable: true },
-      navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
-      effect: 'slide',
-      breakpoints: {
+  swiperConfigs.forEach(({ selector, slides1028 }) => {
+    const swiperElement = document.querySelector(selector);
+    if (swiperElement) {
+      new Swiper(selector, {
+        speed: 1000,
+        pagination: {
+          el: `${selector} .swiper-pagination`,
+          clickable: true,
+        },
+        navigation: {
+          nextEl: `${selector} .swiper-button-next`,
+          prevEl: `${selector} .swiper-button-prev`,
+        },
+        effect: "slide",
+        breakpoints: {
           220: { slidesPerView: 1.1, spaceBetween: 16 },
           768: { slidesPerView: 2, spaceBetween: 16 },
-          1028: { slidesPerView: slides1028, allowTouchMove: false, spaceBetween: 24 }
-      }
+          1028: {
+            slidesPerView: slides1028,
+            allowTouchMove: false,
+            spaceBetween: 24,
+          },
+        },
+      });
+    }
   });
-});
+}
+
+// Helper function to check if mobile swiper
+function isMobileSwiper() {
+  return window.innerWidth < 1028;
+}
 
 // SMART WORKFLOW ARROWS
-
 class WorkflowArrows {
   constructor() {
     this.container = document.querySelector(".automation-visual");
@@ -30,7 +48,11 @@ class WorkflowArrows {
       triggerAction: document.getElementById("arrow-trigger-action"),
     };
 
-    if (!this.container || !this.paths.triggerDelay || !this.paths.triggerAction) {
+    if (
+      !this.container ||
+      !this.paths.triggerDelay ||
+      !this.paths.triggerAction
+    ) {
       return;
     }
 
@@ -142,7 +164,9 @@ class WorkflowArrows {
       L ${cornerX - (dx > 0 ? r : -r)} ${cornerY}
       Q ${cornerX} ${cornerY} ${cornerX} ${cornerY + (dy > 0 ? r : -r)}
       L ${end.x} ${end.y}
-    `.trim().replace(/\s+/g, " ");
+    `
+      .trim()
+      .replace(/\s+/g, " ");
   }
 
   // FORCED PATH (Trigger → Action)
@@ -158,7 +182,9 @@ class WorkflowArrows {
       L ${midX} ${end.y - r}
       Q ${midX} ${end.y} ${midX - r} ${end.y}
       L ${end.x} ${end.y}
-    `.trim().replace(/\s+/g, " ");
+    `
+      .trim()
+      .replace(/\s+/g, " ");
   }
 
   // Update
@@ -197,7 +223,6 @@ class WorkflowArrows {
   }
 }
 
-
 // Initialize when DOM is ready
 document.addEventListener("DOMContentLoaded", () => {
   new WorkflowArrows();
@@ -205,48 +230,52 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Navbar scroll effect
 const navbar = document.getElementById("navbar");
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 50) {
-    navbar.classList.add("scrolled");
-  } else {
-    navbar.classList.remove("scrolled");
-  }
-});
+if (navbar) {
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+      navbar.classList.add("scrolled");
+    } else {
+      navbar.classList.remove("scrolled");
+    }
+  });
+}
 
 // MOBILE MENU TOGGLE
 
 const hamburger = document.getElementById("hamburger");
 const navMenu = document.getElementById("navMenu");
 
-hamburger.addEventListener("click", () => {
-  hamburger.classList.toggle("active");
-  navMenu.classList.toggle("active");
-  document.body.style.overflow = navMenu.classList.contains("active")
-    ? "hidden"
-    : "";
-});
-
-// Close menu when clicking on a link
-document.querySelectorAll(".nav-menu a, .nav-menu .btn").forEach((link) => {
-  link.addEventListener("click", () => {
-    hamburger.classList.remove("active");
-    navMenu.classList.remove("active");
-    document.body.style.overflow = "";
+if (hamburger && navMenu) {
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+    document.body.style.overflow = navMenu.classList.contains("active")
+      ? "hidden"
+      : "";
   });
-});
 
-// Close menu when clicking outside
-document.addEventListener("click", (e) => {
-  if (
-    navMenu.classList.contains("active") &&
-    !navMenu.contains(e.target) &&
-    !hamburger.contains(e.target)
-  ) {
-    hamburger.classList.remove("active");
-    navMenu.classList.remove("active");
-    document.body.style.overflow = "";
-  }
-});
+  // Close menu when clicking on a link
+  document.querySelectorAll(".nav-menu a, .nav-menu .btn").forEach((link) => {
+    link.addEventListener("click", () => {
+      hamburger.classList.remove("active");
+      navMenu.classList.remove("active");
+      document.body.style.overflow = "";
+    });
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener("click", (e) => {
+    if (
+      navMenu.classList.contains("active") &&
+      !navMenu.contains(e.target) &&
+      !hamburger.contains(e.target)
+    ) {
+      hamburger.classList.remove("active");
+      navMenu.classList.remove("active");
+      document.body.style.overflow = "";
+    }
+  });
+}
 
 // SMOOTH SCROLL
 
@@ -268,19 +297,21 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 
 document.querySelectorAll(".faq-item").forEach((item) => {
   const question = item.querySelector(".faq-question");
-  question.addEventListener("click", () => {
-    const isActive = item.classList.contains("active");
+  if (question) {
+    question.addEventListener("click", () => {
+      const isActive = item.classList.contains("active");
 
-    // Close all items
-    document.querySelectorAll(".faq-item").forEach((i) => {
-      i.classList.remove("active");
+      // Close all items
+      document.querySelectorAll(".faq-item").forEach((i) => {
+        i.classList.remove("active");
+      });
+
+      // Open clicked item if it wasn't active
+      if (!isActive) {
+        item.classList.add("active");
+      }
     });
-
-    // Open clicked item if it wasn't active
-    if (!isActive) {
-      item.classList.add("active");
-    }
-  });
+  }
 });
 
 // PRICING TOGGLE (Monthly/Annually)
@@ -290,28 +321,29 @@ const priceAmounts = document.querySelectorAll(".price-amount");
 const monthlyLabel = document.getElementById("monthlyLabel");
 const annuallyLabel = document.getElementById("annuallyLabel");
 
-function updatePricing() {
-  const isAnnual = pricingToggle.checked;
+if (pricingToggle && monthlyLabel && annuallyLabel) {
+  function updatePricing() {
+    const isAnnual = pricingToggle.checked;
 
-  priceAmounts.forEach((amount) => {
-    const monthly = amount.dataset.monthly;
-    const annual = amount.dataset.annual;
+    priceAmounts.forEach((amount) => {
+      const monthly = amount.dataset.monthly;
+      const annual = amount.dataset.annual;
 
-    if (monthly && annual) {
-      amount.textContent = isAnnual ? `$${annual}` : `$${monthly}`;
-    }
-  });
+      if (monthly && annual) {
+        amount.textContent = isAnnual ? `$${annual}` : `$${monthly}`;
+      }
+    });
 
-  // Toggle active state on labels
-  monthlyLabel.classList.toggle("active", !isAnnual);
-  annuallyLabel.classList.toggle("active", isAnnual);
+    // Toggle active state on labels
+    monthlyLabel.classList.toggle("active", !isAnnual);
+    annuallyLabel.classList.toggle("active", isAnnual);
+  }
+
+  updatePricing();
+
+  // Tetap jalan saat toggle di klik
+  pricingToggle.addEventListener("change", updatePricing);
 }
-
-updatePricing();
-
-// Tetap jalan saat toggle di klik
-pricingToggle.addEventListener("change", updatePricing);
-
 
 // CHATBOT FUNCTIONALITY
 
@@ -322,77 +354,89 @@ const chatbotInput = document.getElementById("chatbotInput");
 const chatbotSend = document.getElementById("chatbotSend");
 const chatbotBody = document.getElementById("chatbotBody");
 
-// Toggle chatbot
-chatbotButton.addEventListener("click", () => {
-  chatbotWidget.classList.toggle("active");
-  chatbotButton.classList.toggle("active");
-  if (chatbotWidget.classList.contains("active")) {
-    chatbotInput.focus();
+if (chatbotButton && chatbotWidget) {
+  // Toggle chatbot
+  chatbotButton.addEventListener("click", () => {
+    chatbotWidget.classList.toggle("active");
+    chatbotButton.classList.toggle("active");
+    if (chatbotWidget.classList.contains("active") && chatbotInput) {
+      chatbotInput.focus();
+    }
+  });
+
+  // Close chatbot
+  if (chatbotClose) {
+    chatbotClose.addEventListener("click", () => {
+      chatbotWidget.classList.remove("active");
+      chatbotButton.classList.remove("active");
+    });
   }
-});
 
-// Close chatbot
-chatbotClose.addEventListener("click", () => {
-  chatbotWidget.classList.remove("active");
-  chatbotButton.classList.remove("active");
-});
-
-// Send message function
-function sendMessage() {
-  const message = chatbotInput.value.trim();
-  if (message) {
-    // Create user message
-    const userMessage = document.createElement("div");
-    userMessage.className = "chatbot-message user-message";
-    userMessage.innerHTML = `
-      <div class="message-content">
-        <p>${message}</p>
-        <span class="message-time">Just now</span>
-      </div>
-      <div class="message-avatar">You</div>
-    `;
-
-    const suggestions = chatbotBody.querySelector(".chatbot-suggestions");
-    chatbotBody.insertBefore(userMessage, suggestions);
-    chatbotInput.value = "";
-
-    // Scroll to bottom
-    chatbotBody.scrollTop = chatbotBody.scrollHeight;
-
-    // Simulate bot response
-    setTimeout(() => {
-      const botMessage = document.createElement("div");
-      botMessage.className = "chatbot-message bot-message";
-      botMessage.innerHTML = `
-        <div class="message-avatar">AI</div>
+  // Send message function
+  function sendMessage() {
+    if (!chatbotInput || !chatbotBody) return;
+    
+    const message = chatbotInput.value.trim();
+    if (message) {
+      // Create user message
+      const userMessage = document.createElement("div");
+      userMessage.className = "chatbot-message user-message";
+      userMessage.innerHTML = `
         <div class="message-content">
-          <p>Thank you for your message! Our team will get back to you shortly. In the meantime, feel free to explore our features or check out our pricing plans.</p>
+          <p>${message}</p>
           <span class="message-time">Just now</span>
         </div>
+        <div class="message-avatar">You</div>
       `;
-      chatbotBody.insertBefore(botMessage, suggestions);
+
+      const suggestions = chatbotBody.querySelector(".chatbot-suggestions");
+      chatbotBody.insertBefore(userMessage, suggestions);
+      chatbotInput.value = "";
+
+      // Scroll to bottom
       chatbotBody.scrollTop = chatbotBody.scrollHeight;
-    }, 1000);
+
+      // Simulate bot response
+      setTimeout(() => {
+        const botMessage = document.createElement("div");
+        botMessage.className = "chatbot-message bot-message";
+        botMessage.innerHTML = `
+          <div class="message-avatar">AI</div>
+          <div class="message-content">
+            <p>Thank you for your message! Our team will get back to you shortly. In the meantime, feel free to explore our features or check out our pricing plans.</p>
+            <span class="message-time">Just now</span>
+          </div>
+        `;
+        chatbotBody.insertBefore(botMessage, suggestions);
+        chatbotBody.scrollTop = chatbotBody.scrollHeight;
+      }, 1000);
+    }
   }
-}
 
-// Send message on button click
-chatbotSend.addEventListener("click", sendMessage);
-
-// Send message on Enter key
-chatbotInput.addEventListener("keypress", (e) => {
-  if (e.key === "Enter") {
-    sendMessage();
+  // Send message on button click
+  if (chatbotSend) {
+    chatbotSend.addEventListener("click", sendMessage);
   }
-});
 
-// Suggestion buttons
-document.querySelectorAll(".suggestion-btn").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    chatbotInput.value = btn.textContent;
-    sendMessage();
+  // Send message on Enter key
+  if (chatbotInput) {
+    chatbotInput.addEventListener("keypress", (e) => {
+      if (e.key === "Enter") {
+        sendMessage();
+      }
+    });
+  }
+
+  // Suggestion buttons
+  document.querySelectorAll(".suggestion-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      if (chatbotInput) {
+        chatbotInput.value = btn.textContent;
+        sendMessage();
+      }
+    });
   });
-});
+}
 
 // ANIMATED COUNTER FOR STATS
 
@@ -435,11 +479,23 @@ const scrollObserver = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // Observe elements for scroll animation
+const skipOnMobile = ["testimonial-card", "pricing-card"];
+
 document
   .querySelectorAll(
-    ".feature-card, .step, .pricing-card, .testimonial-card, .faq-item"
+    ".feature-card, .step, .pricing-card, .faq-item, .testimonial-card"
   )
   .forEach((el) => {
+    // ❗ Skip animasi card tertentu saat mobile
+    if (
+      isMobileSwiper() &&
+      skipOnMobile.some((cls) => el.classList.contains(cls))
+    ) {
+      el.style.opacity = "1";
+      el.style.transform = "none";
+      return;
+    }
+
     el.style.opacity = "0";
     el.style.transform = "translateY(30px)";
     el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
@@ -451,9 +507,9 @@ const statsObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
       const statNumber = entry.target.querySelector(".stat-number");
-      const target = parseInt(statNumber.dataset.target);
+      const target = parseInt(statNumber?.dataset.target);
 
-      if (target && !statNumber.classList.contains("animated")) {
+      if (target && statNumber && !statNumber.classList.contains("animated")) {
         statNumber.classList.add("animated");
         animateCounter(statNumber, target);
       }
@@ -548,6 +604,47 @@ if ("IntersectionObserver" in window) {
 
 document.addEventListener("DOMContentLoaded", () => {
   setTimeout(() => {
-    document.querySelector(".hero-content")?.classList.add("loaded");
+    const heroContent = document.querySelector(".hero-content");
+    if (heroContent) {
+      heroContent.classList.add("loaded");
+    }
   }, 100);
+});
+
+// Mobile Dropdown Accordion
+document.querySelectorAll(".nav-dropdown > .nav-link").forEach((link) => {
+  link.addEventListener("click", (e) => {
+    if (window.innerWidth <= 968) {
+      e.preventDefault();
+      const dropdown = link.closest(".nav-dropdown");
+
+      // Close other dropdowns
+      document.querySelectorAll(".nav-dropdown").forEach((d) => {
+        if (d !== dropdown) d.classList.remove("active");
+      });
+
+      // Toggle current dropdown
+      dropdown.classList.toggle("active");
+    }
+  });
+});
+
+// Platform Tour Tabs
+document.querySelectorAll(".tour-tab").forEach((tab) => {
+  tab.addEventListener("click", () => {
+    const tabName = tab.dataset.tab;
+
+    // Remove active from all tabs & panels
+    document.querySelectorAll(".tour-tab").forEach((t) => t.classList.remove("active"));
+    document.querySelectorAll(".tour-content-panel").forEach((p) =>
+      p.classList.remove("active")
+    );
+
+    // Add active to clicked tab & corresponding panel
+    tab.classList.add("active");
+    const panel = document.querySelector(`[data-panel="${tabName}"]`);
+    if (panel) {
+      panel.classList.add("active");
+    }
+  });
 });

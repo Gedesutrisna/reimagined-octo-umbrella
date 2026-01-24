@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Platform - Samartha AI Automation</title>
+  
+  <link rel="icon" href="001_Bahan/assets/logo.webp" type="image/webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+  <link rel="stylesheet" href="001_Website/css/style.css" />
+  <link rel="stylesheet" href="001_Website/css/additional-styles.css" />
+  
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet" />
+</head>
+<body>
+  
+  <!-- Navbar (Same as Homepage) -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <img src="001_Bahan/assets/logo.webp" alt="logo" class="logo-img" />
+        Samartha
+      </a>
+      
+      <div class="nav-menu" id="navMenu">
+        <div class="nav-dropdown">
+          <a href="#" class="nav-link">
+            Platform
+            <svg class="dropdown-arrow" width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <path d="M2 4L6 8L10 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="#workflows" class="dropdown-item">
+              <div class="dropdown-icon">⚡</div>
+              <div class="dropdown-content">
+                <div class="dropdown-title">Workflows</div>
+                <div class="dropdown-desc">Visual workflow builder</div>
+              </div>
+            </a>
+            <a href="#integrations" class="dropdown-item">
+              <div class="dropdown-icon">🔗</div>
+              <div class="dropdown-content">
+                <div class="dropdown-title">Integrations</div>
+                <div class="dropdown-desc">500+ app connections</div>
+              </div>
+            </a>
+            <a href="#ai" class="dropdown-item">
+              <div class="dropdown-icon">🤖</div>
+              <div class="dropdown-content">
+                <div class="dropdown-title">AI Automation</div>
+                <div class="dropdown-desc">Smart triggers & actions</div>
+              </div>
+            </a>
+            <a href="#analytics" class="dropdown-item">
+              <div class="dropdown-icon">📊</div>
+              <div class="dropdown-content">
+                <div class="dropdown-title">Analytics</div>
+                <div class="dropdown-desc">Reports & insights</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="nav-dropdown">
+          <a href="#" class="nav-link">
+            Solutions
+            <svg class="dropdown-arrow" width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <path d="M2 4L6 8L10 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="#" class="dropdown-item">
+              <div class="dropdown-icon">📱</div>
+              <div class="dropdown-content">
+                <div class="dropdown-title">Marketing</div>
+                <div class="dropdown-desc">Campaign automation</div>
+              </div>
+            </a>
+            <a href="#" class="dropdown-item">
+              <div class="dropdown-icon">💼</div>
+              <div class="dropdown-content">
+                <div class="dropdown-title">Sales</div>
+                <div class="dropdown-desc">CRM & lead management</div>
+              </div>
+              <span class="badge-primary">Popular</span>
+            </a>
+            <a href="#" class="dropdown-item">
+              <div class="dropdown-icon">⚙️</div>
+              <div class="dropdown-content">
+                <div class="dropdown-title">Operations</div>
+                <div class="dropdown-desc">Process automation</div>
+              </div>
+            </a>
+            <a href="#" class="dropdown-item">
+              <div class="dropdown-icon">🛒</div>
+              <div class="dropdown-content">
+                <div class="dropdown-title">E-commerce</div>
+                <div class="dropdown-desc">Order & inventory</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <a href="index.html#testimonials" class="nav-link">Customers</a>
+        <a href="index.html#pricing" class="nav-link">Pricing</a>
+
+        <div class="nav-dropdown">
+          <a href="#" class="nav-link">
+            Resources
+            <svg class="dropdown-arrow" width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <path d="M2 4L6 8L10 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="#" class="dropdown-item">
+              <div class="dropdown-icon">❓</div>
+              <div class="dropdown-content">
+                <div class="dropdown-title">Help Center</div>
+                <div class="dropdown-desc">FAQs & guides</div>
+              </div>
+            </a>
+            <a href="#" class="dropdown-item">
+              <div class="dropdown-icon">📚</div>
+              <div class="dropdown-content">
+                <div class="dropdown-title">Documentation</div>
+                <div class="dropdown-desc">Technical docs</div>
+              </div>
+            </a>
+            <a href="#" class="dropdown-item">
+              <div class="dropdown-icon">📝</div>
+              <div class="dropdown-content">
+                <div class="dropdown-title">Templates</div>
+                <div class="dropdown-desc">Pre-built workflows</div>
+              </div>
+            </a>
+            <a href="#" class="dropdown-item">
+              <div class="dropdown-icon">✍️</div>
+              <div class="dropdown-content">
+                <div class="dropdown-title">Blog</div>
+                <div class="dropdown-desc">Updates & tips</div>
+              </div>
+            </a>
+            <a href="#" class="dropdown-item">
+              <div class="dropdown-icon">👨‍💻</div>
+              <div class="dropdown-content">
+                <div class="dropdown-title">API Reference</div>
+                <div class="dropdown-desc">Developer docs</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="nav-cta-group">
+          <a href="#" class="nav-link-secondary">Sign in</a>
+          <button class="btn btn-primary">Start Free Trial</button>
+        </div>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Platform Hero -->
+    <section class="platform-hero">
+      <div class="platform-hero-container">
+        <div class="platform-hero-content">
+          <div class="badge">🚀 Complete Automation Platform</div>
+          <h1>The Only Platform You Need to Automate Everything</h1>
+          <p class="hero-subtitle">
+            From simple tasks to complex workflows, connect your entire tech stack and automate your business processes with our powerful, no-code platform built for sales teams.
+          </p>
+          <div class="hero-buttons">
+            <button class="btn btn-primary">Schedule a Demo</button>
+            <button class="btn btn-outline">Start Free Trial</button>
+          </div>
+          <div class="platform-trust">
+            <span>Trusted by 5,000+ businesses worldwide</span>
+          </div>
+        </div>
+
+        <div class="platform-hero-visual">
+          <div class="placeholder-img platform-screenshot">
+            <div class="placeholder-content">
+              <div class="placeholder-icon">🎨</div>
+              <div class="placeholder-text">Platform Screenshot</div>
+              <div class="placeholder-subtext">Visual Workflow Builder Preview</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Features Grid -->
+    <section class="platform-features" id="features">
+      <div class="section-header">
+        <div class="section-subtitle">Platform Capabilities</div>
+        <h2>Everything You Need in One Platform</h2>
+        <p>Four powerful pillars that make automation effortless for your sales team.</p>
+      </div>
+
+      <div class="platform-features-grid">
+        <!-- Workflows -->
+        <div class="platform-feature-card" id="workflows">
+          <div class="platform-feature-header">
+            <div class="platform-feature-icon">⚡</div>
+            <div>
+              
+              <h3>Visual Workflows</h3>
+              <p class="platform-feature-subtitle">Drag-and-drop automation builder</p>
+            </div>
+          </div>
+          <div class="platform-feature-visual">
+            <div class="placeholder-img">
+              <div class="placeholder-content">
+                <div class="placeholder-icon">⚡</div>
+                <div class="placeholder-text">Workflow Builder</div>
+              </div>
+            </div>
+          </div>
+          <div class="platform-feature-list">
+            <div class="platform-feature-item">
+              <span class="check-icon">✓</span>
+              <span>Drag & drop workflow builder</span>
+            </div>
+            <div class="platform-feature-item">
+              <span class="check-icon">✓</span>
+              <span>Pre-built templates for sales</span>
+            </div>
+            <div class="platform-feature-item">
+              <span class="check-icon">✓</span>
+              <span>Multi-step automation logic</span>
+            </div>
+            <div class="platform-feature-item">
+              <span class="check-icon">✓</span>
+              <span>Real-time testing & debugging</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Integrations -->
+        <div class="platform-feature-card" id="integrations">
+          <div class="platform-feature-header">
+            <div class="platform-feature-icon">🔗</div>
+            <div>
+              <h3>500+ Integrations</h3>
+              <p class="platform-feature-subtitle">Connect your entire tech stack</p>
+            </div>
+          </div>
+          <div class="platform-feature-visual">
+            <div class="placeholder-img">
+              <div class="placeholder-content">
+                <div class="placeholder-icon">🔗</div>
+                <div class="placeholder-text">Integration Hub</div>
+              </div>
+            </div>
+          </div>
+          <div class="platform-feature-list">
+            <div class="platform-feature-item">
+              <span class="check-icon">✓</span>
+              <span>CRM integrations (Salesforce, HubSpot)</span>
+            </div>
+            <div class="platform-feature-item">
+              <span class="check-icon">✓</span>
+              <span>Communication tools (Slack, Gmail)</span>
+            </div>
+            <div class="platform-feature-item">
+              <span class="check-icon">✓</span>
+              <span>E-commerce platforms</span>
+            </div>
+            <div class="platform-feature-item">
+              <span class="check-icon">✓</span>
+              <span>Custom API connections</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- AI Automation -->
+        <div class="platform-feature-card" id="ai">
+          <div class="platform-feature-header">
+            <div class="platform-feature-icon">🤖</div>
+            <div>
+              <h3>AI-Powered Intelligence</h3>
+              <p class="platform-feature-subtitle">Smart automation that learns</p>
+            </div>
+          </div>
+          <div class="platform-feature-visual">
+            <div class="placeholder-img">
+              <div class="placeholder-content">
+                <div class="placeholder-icon">🤖</div>
+                <div class="placeholder-text">AI Engine</div>
+              </div>
+            </div>
+          </div>
+          <div class="platform-feature-list">
+            <div class="platform-feature-item">
+              <span class="check-icon">✓</span>
+              <span>Intelligent lead scoring</span>
+            </div>
+            <div class="platform-feature-item">
+              <span class="check-icon">✓</span>
+              <span>Predictive analytics</span>
+            </div>
+            <div class="platform-feature-item">
+              <span class="check-icon">✓</span>
+              <span>Smart data enrichment</span>
+            </div>
+            <div class="platform-feature-item">
+              <span class="check-icon">✓</span>
+              <span>Automated optimization suggestions</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Analytics -->
+        <div class="platform-feature-card" id="analytics">
+          <div class="platform-feature-header">
+            <div class="platform-feature-icon">📊</div>
+            <div>
+              <h3>Advanced Analytics</h3>
+              <p class="platform-feature-subtitle">Data-driven insights</p>
+            </div>
+          </div>
+          <div class="platform-feature-visual">
+            <div class="placeholder-img">
+              <div class="placeholder-content">
+                <div class="placeholder-icon">📊</div>
+                <div class="placeholder-text">Analytics Dashboard</div>
+              </div>
+            </div>
+          </div>
+          <div class="platform-feature-list">
+            <div class="platform-feature-item">
+              <span class="check-icon">✓</span>
+              <span>Real-time performance dashboards</span>
+            </div>
+            <div class="platform-feature-item">
+              <span class="check-icon">✓</span>
+              <span>Custom report builder</span>
+            </div>
+            <div class="platform-feature-item">
+              <span class="check-icon">✓</span>
+              <span>ROI tracking & metrics</span>
+            </div>
+            <div class="platform-feature-item">
+              <span class="check-icon">✓</span>
+              <span>Export & share reports</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Platform Tour -->
+    <section class="platform-tour">
+      <div class="section-header">
+        <div class="section-subtitle">Interactive Tour</div>
+        <h2>Explore Platform Features</h2>
+        <p>See how each feature works together to automate your sales workflow.</p>
+      </div>
+
+      <div class="platform-tour-container">
+        <div class="platform-tour-tabs">
+          <button class="tour-tab active" data-tab="builder">
+            <div class="tour-tab-icon">⚡</div>
+            <div class="tour-tab-content">
+              <div class="tour-tab-title">Workflow Builder</div>
+              <div class="tour-tab-desc">Drag & drop interface</div>
+            </div>
+          </button>
+          <button class="tour-tab" data-tab="triggers">
+            <div class="tour-tab-icon">🎯</div>
+            <div class="tour-tab-content">
+              <div class="tour-tab-title">Smart Triggers</div>
+              <div class="tour-tab-desc">Automated actions</div>
+            </div>
+          </button>
+          <button class="tour-tab" data-tab="connections">
+            <div class="tour-tab-icon">🔗</div>
+            <div class="tour-tab-content">
+              <div class="tour-tab-title">Connections</div>
+              <div class="tour-tab-desc">App integrations</div>
+            </div>
+          </button>
+          <button class="tour-tab" data-tab="insights">
+            <div class="tour-tab-icon">📊</div>
+            <div class="tour-tab-content">
+              <div class="tour-tab-title">Insights</div>
+              <div class="tour-tab-desc">Performance tracking</div>
+            </div>
+          </button>
+        </div>
+
+        <div class="platform-tour-content">
+          <div class="tour-content-panel active" data-panel="builder">
+            <div class="placeholder-img tour-screenshot">
+              <div class="placeholder-content">
+                <div class="placeholder-icon">⚡</div>
+                <div class="placeholder-text">Workflow Builder Interface</div>
+                <div class="placeholder-subtext">Visual drag-and-drop editor</div>
+              </div>
+            </div>
+          </div>
+          <div class="tour-content-panel" data-panel="triggers">
+            <div class="placeholder-img tour-screenshot">
+              <div class="placeholder-content">
+                <div class="placeholder-icon">🎯</div>
+                <div class="placeholder-text">Smart Triggers Panel</div>
+                <div class="placeholder-subtext">Conditional logic & automation</div>
+              </div>
+            </div>
+          </div>
+          <div class="tour-content-panel" data-panel="connections">
+            <div class="placeholder-img tour-screenshot">
+              <div class="placeholder-content">
+                <div class="placeholder-icon">🔗</div>
+                <div class="placeholder-text">Integration Connections</div>
+                <div class="placeholder-subtext">500+ app integrations</div>
+              </div>
+            </div>
+          </div>
+          <div class="tour-content-panel" data-panel="insights">
+            <div class="placeholder-img tour-screenshot">
+              <div class="placeholder-content">
+                <div class="placeholder-icon">📊</div>
+                <div class="placeholder-text">Analytics Dashboard</div>
+                <div class="placeholder-subtext">Real-time performance metrics</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Enterprise Features -->
+    <section class="enterprise-features">
+      <div class="section-header">
+        <div class="section-subtitle">Enterprise Ready</div>
+        <h2>Built for Scale & Security</h2>
+        <p>Enterprise-grade features that grow with your business.</p>
+      </div>
+
+      <div class="enterprise-grid">
+        <div class="enterprise-card">
+          <div class="enterprise-icon">🔒</div>
+          <h3>Security & Compliance</h3>
+          <p>SOC 2 Type II, GDPR, HIPAA compliant. Enterprise SSO, audit logs, and role-based access control.</p>
+        </div>
+        <div class="enterprise-card">
+          <div class="enterprise-icon">⚡</div>
+          <h3>99.9% Uptime SLA</h3>
+          <p>Guaranteed uptime with redundant infrastructure. 24/7 monitoring and automated failover systems.</p>
+        </div>
+        <div class="enterprise-card">
+          <div class="enterprise-icon">👥</div>
+          <h3>Team Collaboration</h3>
+          <p>Unlimited team members, shared workflows, version control, and collaborative editing features.</p>
+        </div>
+        <div class="enterprise-card">
+          <div class="enterprise-icon">🎯</div>
+          <h3>Dedicated Support</h3>
+          <p>Priority support with dedicated account manager. Custom onboarding and training for your team.</p>
+        </div>
+        <div class="enterprise-card">
+          <div class="enterprise-icon">🔧</div>
+          <h3>Custom Integrations</h3>
+          <p>Build custom connectors for internal tools. RESTful API access and webhook support.</p>
+        </div>
+        <div class="enterprise-card">
+          <div class="enterprise-icon">📈</div>
+          <h3>Advanced Analytics</h3>
+          <p>Custom reporting, data export, and BI tool integration. Track every metric that matters.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+      <div class="cta-shape cta-shape-1">
+        <div class="starburst spinner"></div>
+      </div>
+      <div class="cta-shape cta-shape-2">
+        <div class="flower spinner"></div>
+      </div>
+      <div class="cta-shape cta-shape-3">
+        <div class="circle bouncing"></div>
+      </div>
+
+      <div class="cta-content">
+        <h2>Ready to Transform Your Sales Process?</h2>
+        <p>
+          Join thousands of sales teams already automating their workflows and closing more deals faster. Start your free 14-day trial today.
+        </p>
+        <div class="cta-buttons">
+          <button class="btn btn-white">Start Free Trial</button>
+          <button class="btn btn-outline-white">Schedule a Demo</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer (Same as Homepage) -->
+  <footer class="footer">
+    <div class="footer-wave">
+      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+      </svg>
+    </div>
+
+    <div class="footer-top">
+      <div class="footer-container">
+        <div>
+          <div class="footer-brand">
+            <img src="001_Bahan/assets/logo.webp" alt="logo" class="logo-img" />
+            Samartha
+          </div>
+          <p class="footer-desc">
+            Empowering businesses worldwide with intelligent automation solutions that drive growth, efficiency, and innovation.
+          </p>
+          <div class="footer-social">
+            <a href="#" class="social-icon">𝕏</a>
+            <a href="#" class="social-icon">in</a>
+            <a href="#" class="social-icon">f</a>
+            <a href="#" class="social-icon">IG</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-title">Product</div>
+          <div class="footer-links">
+            <a href="platform.html">Platform</a>
+            <a href="index.html#pricing">Pricing</a>
+            <a href="#">Integrations</a>
+            <a href="#">Templates</a>
+            <a href="#">What's New</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-title">Solutions</div>
+          <div class="footer-links">
+            <a href="#">Marketing</a>
+            <a href="#">Sales</a>
+            <a href="#">Operations</a>
+            <a href="#">E-commerce</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-title">Resources</div>
+          <div class="footer-links">
+            <a href="#">Help Center</a>
+            <a href="#">Documentation</a>
+            <a href="#">API Reference</a>
+            <a href="#">Community</a>
+            <a href="#">Templates</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-title">Company</div>
+          <div class="footer-links">
+            <a href="#">About Us</a>
+            <a href="#">Careers</a>
+            <a href="#">Blog</a>
+            <a href="#">Press Kit</a>
+            <a href="#">Contact</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-bottom-content">
+        <p class="footer-copyright">&copy; 2026 Samartha. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Security</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Chatbot Widget -->
+  <div class="chatbot-widget" id="chatbotWidget">
+    <div class="chatbot-header">
+      <div class="chatbot-avatar-group">
+        <div class="chatbot-avatar">S</div>
+        <div class="chatbot-avatar">A</div>
+        <div class="chatbot-avatar">M</div>
+      </div>
+      <div class="chatbot-info">
+        <h4>Samartha Assistant</h4>
+        <p>• Online</p>
+      </div>
+      <button class="chatbot-close" id="chatbotClose">×</button>
+    </div>
+    <div class="chatbot-body" id="chatbotBody">
+      <div class="chatbot-message bot-message">
+        <div class="message-avatar">AI</div>
+        <div class="message-content">
+          <p>Hi! 👋 Need help exploring our platform features?</p>
+          <span class="message-time">Just now</span>
+        </div>
+      </div>
+      <div class="chatbot-suggestions">
+        <button class="suggestion-btn">Schedule a demo</button>
+        <button class="suggestion-btn">Compare plans</button>
+        <button class="suggestion-btn">Integration options</button>
+      </div>
+    </div>
+    <div class="chatbot-footer">
+      <input type="text" placeholder="Type your message..." class="chatbot-input" id="chatbotInput" />
+      <button class="chatbot-send" id="chatbotSend" aria-label="Send Message">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+        </svg>
+      </button>
+    </div>
+    <div class="chatbot-privacy">
+      By chatting, you agree to our <a href="#">Privacy Policy</a>
+    </div>
+  </div>
+
+  <button class="chatbot-button" id="chatbotButton" aria-label="Open chat">
+    <svg class="chat-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+    </svg>
+    <svg class="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <line x1="18" y1="6" x2="6" y2="18" />
+      <line x1="6" y1="6" x2="18" y2="18" />
+    </svg>
+  </button>
+
+  <script src="001_Website/js/script.js"></script>
+</body>
+</html>
