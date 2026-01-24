@@ -1,4 +1,3 @@
-// SAMARTHA - ENHANCED JAVASCRIPT
 const swiperConfigs = [
   { selector: '.testimonials-wrapper', slides1028: 3 },
   { selector: '.pricing-container', slides1028: 4 },
@@ -20,7 +19,7 @@ swiperConfigs.forEach(({ selector, slides1028 }) => {
   });
 });
 
-// SMART WORKFLOW ARROWS - Intelligent Orthogonal Routing 🎯
+// SMART WORKFLOW ARROWS
 
 class WorkflowArrows {
   constructor() {
@@ -50,9 +49,7 @@ class WorkflowArrows {
     setTimeout(() => this.update(), 300);
   }
 
-  // =========================
   // Utils
-  // =========================
 
   rect(el) {
     const c = this.container.getBoundingClientRect();
@@ -97,9 +94,7 @@ class WorkflowArrows {
     );
   }
 
-  // =========================
   // Auto routing (Trigger → Delay)
-  // =========================
 
   findBestAnchors(startNode, endNode, obstacles = []) {
     const starts = this.getAnchors(startNode);
@@ -150,10 +145,8 @@ class WorkflowArrows {
     `.trim().replace(/\s+/g, " ");
   }
 
-  // =========================
   // FORCED PATH (Trigger → Action)
   // right → down/up → right
-  // =========================
 
   createRightDownRightPath(start, end, offset = 80, r = 12) {
     const midX = Math.max(start.x, end.x) + offset;
@@ -168,9 +161,7 @@ class WorkflowArrows {
     `.trim().replace(/\s+/g, " ");
   }
 
-  // =========================
   // Update
-  // =========================
 
   update() {
     const triggerEl = this.container.querySelector(".trigger-node");
@@ -316,7 +307,6 @@ function updatePricing() {
   annuallyLabel.classList.toggle("active", isAnnual);
 }
 
-// 🔥 Jalankan saat page pertama kali load
 updatePricing();
 
 // Tetap jalan saat toggle di klik
@@ -556,25 +546,7 @@ if ("IntersectionObserver" in window) {
   });
 }
 
-// CONSOLE MESSAGE
-
-console.log(
-  "%c🚀 Samartha - Business Automation Platform",
-  "font-size: 16px; font-weight: bold; color: #4342ff;"
-);
-console.log(
-  "%cBuilt with ❤️ by Samartha Team",
-  "font-size: 12px; color: #666;"
-);
-
-// READY STATE
-
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("✅ Samartha website loaded successfully!");
-
-  // Add any additional initialization here
-
-  // Smooth entrance animation for hero
   setTimeout(() => {
     document.querySelector(".hero-content")?.classList.add("loaded");
   }, 100);
