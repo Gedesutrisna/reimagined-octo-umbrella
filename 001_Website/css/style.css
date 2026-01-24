@@ -442,7 +442,7 @@ p {
   position: absolute;
   top: -10px;
   right: -10px;
-  background: #10b981;
+  background: #0f9e6f;
   color: white;
   padding: 0.3rem 0.75rem;
   border-radius: 50px;
@@ -900,7 +900,8 @@ input:checked + .toggle-slider:before {
 
 .save-badge {
   display: inline-block;
-  background: var(--orange-color);
+  /* background: var(--orange-color); */
+  background: #e67527;
   color: white;
   padding: 0.2rem 0.6rem;
   border-radius: 50px;
@@ -1035,16 +1036,15 @@ input:checked + .toggle-slider:before {
   display: flex !important;
   gap: 4px !important;
 }
-/* .swiper-pagination-bullet {
-  height: 6px !important;
-  width: 10px !important;
-  border-radius: 2px !important;
-  background: transparent !important; 
-} */
+.swiper-pagination-bullet {
+  min-height: 10px !important;
+  min-width: 10px !important;
+  border-radius: 5px !important;
+}
 .swiper-pagination-bullet-active {
   background: var(--primary-color) !important;
   opacity: 1;
-  width: 50px !important;
+  width: 30px !important;
   border-radius: 5px !important;
 }
 
