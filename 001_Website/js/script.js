@@ -689,10 +689,6 @@ document.querySelectorAll(".tour-tab").forEach((tab) => {
     }
   });
 });
-// ========================================
-// PLATFORM PAGE SCRIPTS
-// Tambahkan di bagian bawah script.js
-// ========================================
 
 // Platform Tabs Functionality
 document.querySelectorAll('.platform-tab').forEach(tab => {
