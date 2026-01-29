@@ -1171,7 +1171,7 @@ input:checked + .toggle-slider:before {
   /* max-width: 100%; */
   margin: 0 auto;
   position: relative;
-  /* overflow: hidden; */
+  overflow-x: hidden;
 }
 
 .pricing-grid {
@@ -1321,7 +1321,7 @@ input:checked + .toggle-slider:before {
   /* max-width: 100%; */
   margin: 0 auto;
   position: relative;
-  /* overflow: hidden; */
+  overflow-x: hidden;
 }
 
 .testimonials-track {
