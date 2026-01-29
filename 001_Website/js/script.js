@@ -1,5 +1,5 @@
 // SWIPER INITIALIZATION (with safety check)
-if (typeof Swiper !== 'undefined') {
+if (typeof Swiper !== "undefined") {
   const swiperConfigs = [
     { selector: ".testimonials-wrapper", slides1028: 3 },
     { selector: ".pricing-container", slides1028: 4 },
@@ -256,10 +256,19 @@ if (hamburger && navMenu) {
 
   // Close menu when clicking on a link
   document.querySelectorAll(".nav-menu a, .nav-menu .btn").forEach((link) => {
-    link.addEventListener("click", () => {
-      hamburger.classList.remove("active");
-      navMenu.classList.remove("active");
-      document.body.style.overflow = "";
+    link.addEventListener("click", (e) => {
+      if (window.innerWidth <= 968) {
+        if (
+          link.closest(".nav-dropdown") &&
+          link.classList.contains("nav-link")
+        ) {
+          return;
+        }
+
+        hamburger.classList.remove("active");
+        navMenu.classList.remove("active");
+        document.body.style.overflow = "";
+      }
     });
   });
 
@@ -281,8 +290,15 @@ if (hamburger && navMenu) {
 
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
+    const href = this.getAttribute("href");
+
+    if (href === "#" || href === "#!") {
+      return;
+    }
+
     e.preventDefault();
-    const target = document.querySelector(this.getAttribute("href"));
+    const target = document.querySelector(href);
+
     if (target) {
       const offsetTop = target.offsetTop - 80;
       window.scrollTo({
@@ -301,12 +317,10 @@ document.querySelectorAll(".faq-item").forEach((item) => {
     question.addEventListener("click", () => {
       const isActive = item.classList.contains("active");
 
-      // Close all items
       document.querySelectorAll(".faq-item").forEach((i) => {
         i.classList.remove("active");
       });
 
-      // Open clicked item if it wasn't active
       if (!isActive) {
         item.classList.add("active");
       }
@@ -375,7 +389,7 @@ if (chatbotButton && chatbotWidget) {
   // Send message function
   function sendMessage() {
     if (!chatbotInput || !chatbotBody) return;
-    
+
     const message = chatbotInput.value.trim();
     if (message) {
       // Create user message
@@ -611,20 +625,45 @@ document.addEventListener("DOMContentLoaded", () => {
   }, 100);
 });
 
-// Mobile Dropdown Accordion
+// Mobile Dropdown Accordion - ONE AT A TIME (like FAQ)
 document.querySelectorAll(".nav-dropdown > .nav-link").forEach((link) => {
   link.addEventListener("click", (e) => {
     if (window.innerWidth <= 968) {
       e.preventDefault();
-      const dropdown = link.closest(".nav-dropdown");
+      e.stopPropagation();
 
-      // Close other dropdowns
+      const dropdown = link.closest(".nav-dropdown");
+      const isActive = dropdown.classList.contains("active");
+
       document.querySelectorAll(".nav-dropdown").forEach((d) => {
-        if (d !== dropdown) d.classList.remove("active");
+        d.classList.remove("active");
       });
 
-      // Toggle current dropdown
-      dropdown.classList.toggle("active");
+      if (!isActive) {
+        dropdown.classList.add("active");
+      }
+    }
+  });
+});
+
+// Close dropdown when clicking dropdown item (mobile)
+document.querySelectorAll(".dropdown-item").forEach((item) => {
+  item.addEventListener("click", (e) => {
+    e.stopPropagation();
+
+    if (window.innerWidth <= 968) {
+      const dropdown = item.closest(".nav-dropdown");
+      if (dropdown) {
+        dropdown.classList.remove("active");
+      }
+
+      const hamburger = document.getElementById("hamburger");
+      const navMenu = document.getElementById("navMenu");
+      if (hamburger && navMenu) {
+        hamburger.classList.remove("active");
+        navMenu.classList.remove("active");
+        document.body.style.overflow = "";
+      }
     }
   });
 });
@@ -635,10 +674,12 @@ document.querySelectorAll(".tour-tab").forEach((tab) => {
     const tabName = tab.dataset.tab;
 
     // Remove active from all tabs & panels
-    document.querySelectorAll(".tour-tab").forEach((t) => t.classList.remove("active"));
-    document.querySelectorAll(".tour-content-panel").forEach((p) =>
-      p.classList.remove("active")
-    );
+    document
+      .querySelectorAll(".tour-tab")
+      .forEach((t) => t.classList.remove("active"));
+    document
+      .querySelectorAll(".tour-content-panel")
+      .forEach((p) => p.classList.remove("active"));
 
     // Add active to clicked tab & corresponding panel
     tab.classList.add("active");
@@ -648,3 +689,249 @@ document.querySelectorAll(".tour-tab").forEach((tab) => {
     }
   });
 });
+// ========================================
+// PLATFORM PAGE SCRIPTS
+// Tambahkan di bagian bawah script.js
+// ========================================
+
+// Platform Tabs Functionality
+document.querySelectorAll('.platform-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    const tabName = tab.dataset.tab;
+    
+    // Remove active from all tabs
+    document.querySelectorAll('.platform-tab').forEach(t => {
+      t.classList.remove('active');
+    });
+    
+    // Remove active from all content panels
+    document.querySelectorAll('.platform-tab-content').forEach(content => {
+      content.classList.remove('active');
+    });
+    
+    // Add active to clicked tab
+    tab.classList.add('active');
+    
+    // Add active to corresponding content
+    const activeContent = document.querySelector(`[data-content="${tabName}"]`);
+    if (activeContent) {
+      activeContent.classList.add('active');
+    }
+  });
+});
+
+// Smooth scroll for anchor links in platform page
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    const href = this.getAttribute('href');
+    
+    // Skip if it's just "#" or "#!"
+    if (href === '#' || href === '#!') {
+      return;
+    }
+    
+    e.preventDefault();
+    
+    const targetId = href.substring(1);
+    const target = document.getElementById(targetId);
+    
+    if (target) {
+      // If target is inside a tab, activate that tab first
+      const tabContent = target.closest('.platform-tab-content');
+      if (tabContent) {
+        const tabName = tabContent.dataset.content;
+        const tabButton = document.querySelector(`[data-tab="${tabName}"]`);
+        if (tabButton) {
+          tabButton.click();
+          
+          // Wait for tab animation, then scroll
+          setTimeout(() => {
+            const offsetTop = target.offsetTop - 100;
+            window.scrollTo({
+              top: offsetTop,
+              behavior: 'smooth'
+            });
+          }, 300);
+          return;
+        }
+      }
+      
+      // Normal scroll if not in tab
+      const offsetTop = target.offsetTop - 100;
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+      });
+    }
+  });
+});
+
+// Animate capability cards on scroll
+if (document.querySelector('.capability-card')) {
+  const capabilityObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }, index * 100);
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  });
+
+  document.querySelectorAll('.capability-card').forEach(card => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(30px)';
+    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    capabilityObserver.observe(card);
+  });
+}
+
+// Animate integration items on hover
+document.querySelectorAll('.integration-demo-item').forEach(item => {
+  item.addEventListener('mouseenter', function() {
+    const icon = this.querySelector('.integration-demo-icon');
+    if (icon) {
+      icon.style.transform = 'scale(1.1) rotate(5deg)';
+    }
+  });
+  
+  item.addEventListener('mouseleave', function() {
+    const icon = this.querySelector('.integration-demo-icon');
+    if (icon) {
+      icon.style.transform = 'scale(1) rotate(0deg)';
+    }
+  });
+});
+
+// Add transition to integration icons
+document.querySelectorAll('.integration-demo-icon').forEach(icon => {
+  icon.style.transition = 'transform 0.3s ease';
+});
+
+// Animate chart bars on view
+if (document.querySelector('.analytics-chart')) {
+  const chartObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const bars = entry.target.querySelectorAll('.chart-bar');
+        bars.forEach((bar, index) => {
+          const targetHeight = bar.style.height;
+          bar.style.height = '0%';
+          
+          setTimeout(() => {
+            bar.style.height = targetHeight;
+          }, index * 150);
+        });
+        
+        chartObserver.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.3
+  });
+
+  document.querySelectorAll('.analytics-chart').forEach(chart => {
+    // Add transition to bars
+    chart.querySelectorAll('.chart-bar').forEach(bar => {
+      bar.style.transition = 'height 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+    });
+    
+    chartObserver.observe(chart);
+  });
+}
+
+// Demo workflow node hover effect
+document.querySelectorAll('.demo-node').forEach(node => {
+  node.addEventListener('mouseenter', function() {
+    const icon = this.querySelector('.demo-node-icon');
+    if (icon) {
+      icon.style.transform = 'scale(1.15)';
+    }
+  });
+  
+  node.addEventListener('mouseleave', function() {
+    const icon = this.querySelector('.demo-node-icon');
+    if (icon) {
+      icon.style.transform = 'scale(1)';
+    }
+  });
+});
+
+// Add transition to demo node icons
+document.querySelectorAll('.demo-node-icon').forEach(icon => {
+  icon.style.transition = 'transform 0.3s ease';
+});
+
+// AI process step animation
+if (document.querySelector('.ai-process-step')) {
+  let currentStep = 0;
+  const steps = document.querySelectorAll('.ai-process-step');
+  
+  function animateAISteps() {
+    // Remove active from all
+    steps.forEach(step => step.classList.remove('active'));
+    
+    // Add active to current
+    if (steps[currentStep]) {
+      steps[currentStep].classList.add('active');
+    }
+    
+    // Move to next step
+    currentStep = (currentStep + 1) % steps.length;
+  }
+  
+  // Start animation
+  setInterval(animateAISteps, 2000);
+}
+
+// Platform hero stats counter animation
+if (document.querySelector('.hero-stat-number')) {
+  const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const statNumber = entry.target;
+        const text = statNumber.textContent;
+        const hasPlus = text.includes('+');
+        const hasPercent = text.includes('%');
+        const hasM = text.includes('M');
+        
+        let targetValue;
+        if (hasM) {
+          targetValue = parseFloat(text);
+        } else {
+          targetValue = parseInt(text);
+        }
+        
+        if (!isNaN(targetValue)) {
+          let current = 0;
+          const increment = targetValue / 50;
+          const timer = setInterval(() => {
+            current += increment;
+            if (current >= targetValue) {
+              current = targetValue;
+              clearInterval(timer);
+            }
+            
+            let displayValue = hasM ? current.toFixed(1) : Math.floor(current);
+            statNumber.textContent = displayValue + 
+              (hasM ? 'M' : '') + 
+              (hasPlus ? '+' : '') + 
+              (hasPercent ? '%' : '');
+          }, 30);
+        }
+        
+        statsObserver.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.5
+  });
+
+  document.querySelectorAll('.hero-stat-number').forEach(stat => {
+    statsObserver.observe(stat);
+  });
+}
