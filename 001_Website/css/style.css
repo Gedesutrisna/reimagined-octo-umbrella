@@ -362,6 +362,10 @@ p {
   color: var(--primary-color);
 }
 
+.btn-sm {
+  padding: 0.75rem;
+}
+
 /* 
     SHAPES & ANIMATIONS
     */
@@ -1809,7 +1813,7 @@ input:checked + .toggle-slider:before {
 
 .chatbot-info p {
   font-size: 0.8rem;
-  color: #10b981;
+  color: #0f9e6f;
   margin: 0;
   opacity: 1;
 }
@@ -2263,70 +2267,4 @@ input:checked + .toggle-slider:before {
   .stats-container {
     grid-template-columns: repeat(2, 1fr);
   }
-}
-
-/* 
-    INTEGRATIONS HERO SECTION
-    */
-
-.integrations-hero {
-  min-height: 60vh;
-  display: flex;
-  align-items: center;
-  padding: 8rem 3rem 4rem;
-  background: var(--bg-light);
-  position: relative;
-}
-
-.integrations-hero-container {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.integrations-hero h1 {
-  margin: 1rem 0 1.5rem;
-}
-
-.integrations-hero-subtitle {
-  font-size: 1.15rem;
-  margin-bottom: 2.5rem;
-  opacity: 0.8;
-}
-
-/* Search Bar */
-.integrations-search {
-  position: relative;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.integrations-search .search-icon {
-  position: absolute;
-  left: 1.25rem;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--primary-color);
-  opacity: 0.6;
-}
-
-.integrations-search input {
-  width: 100%;
-  padding: 1rem 1.25rem 1rem 3.5rem;
-  border: 1.5px solid rgba(67, 66, 255, 0.15);
-  border-radius: 50px;
-  font-size: 1rem;
-  font-family: var(--font-family);
-  transition: all 0.3s ease;
-  background: white;
-}
-
-.integrations-search input:focus {
-  outline: none;
-  border-color: var(--primary-color);
-  box-shadow: 0 4px 16px rgba(67, 66, 255, 0.15);
-}
-
-.integrations-search input::placeholder {
-  opacity: 0.5;
 }

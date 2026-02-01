@@ -22,6 +22,7 @@
 
     <link rel="stylesheet" href="001_Bahan/Swiperjs v5.3.7/swiper-bundle.css" />
     <link rel="stylesheet" href="001_Website/css/style.css" />
+    <link rel="stylesheet" href="001_Website/css/platform.css" />
 
     <!-- Google Fonts -->
     <link
@@ -34,6 +35,536 @@
     />
   </head>
   <body>
+    <style>
+      /* ========================================
+   PLATFORM PAGE STYLES
+   Consistent with homepage design patterns
+   ======================================== */
+
+/* Platform Hero - Full Height Centered */
+.platform-hero {
+  min-height: 100vh;
+  display: grid;
+  align-items: center;
+  padding: 5rem 3rem 3rem;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-light);
+}
+
+.platform-hero-container {
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+}
+
+.platform-hero-content {
+  animation: fadeInUp 0.8s ease;
+}
+
+.platform-hero h1 {
+  margin: 0.75rem 0 1.25rem;
+}
+
+.platform-hero-subtitle {
+  font-size: 1.15rem;
+  margin: 0 auto 3rem;
+  max-width: 650px;
+}
+
+/* Hero Features Grid */
+.hero-features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  max-width: 650px;
+  margin: 0 auto 2.5rem;
+}
+
+.hero-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem;
+  background: white;
+  border: 1px solid rgba(67, 66, 255, 0.08);
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgba(255, 255, 255, 0.746);
+  backdrop-filter: blur(7.6px);
+  -webkit-backdrop-filter: blur(7.6px);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.hero-feature-item:nth-child(1) { animation-delay: 0s; }
+.hero-feature-item:nth-child(2) { animation-delay: 0.1s; }
+.hero-feature-item:nth-child(3) { animation-delay: 0.2s; }
+.hero-feature-item:nth-child(4) { animation-delay: 0.3s; }
+
+.hero-feature-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(67, 66, 255, 0.12);
+  border-color: rgba(67, 66, 255, 0.2);
+}
+
+.hf-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(67, 66, 255, 0.08);
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+  position: relative;
+  border: 1px solid rgba(67, 66, 255, 0.15);
+}
+
+.hf-icon::before {
+  content: "";
+  position: absolute;
+  inset: -1.5px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    var(--primary-color) 0deg,
+    var(--primary-color) 90deg,
+    transparent 90deg,
+    transparent 360deg
+  );
+  -webkit-mask: radial-gradient(
+    farthest-side,
+    transparent calc(100% - 3px),
+    #000 calc(100% - 3px)
+  );
+  mask: radial-gradient(
+    farthest-side,
+    transparent calc(100% - 3px),
+    #000 calc(100% - 3px)
+  );
+  opacity: 0;
+  transform: rotate(-90deg);
+  transition: transform 0.6s ease, opacity 0.25s ease;
+  pointer-events: none;
+}
+
+.hero-feature-item:hover .hf-icon::before {
+  opacity: 1;
+  transform: rotate(270deg);
+}
+
+.hf-icon img {
+  width: 60%;
+}
+
+.hf-content h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--black-color);
+  margin-bottom: 0.25rem;
+  font-family: var(--header-font-family);
+}
+
+.hf-content p {
+  font-size: 0.85rem;
+  margin: 0;
+  opacity: 0.7;
+}
+
+.hero-cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Core Features Section */
+.core-features {
+  padding: 4.5rem 3rem;
+  background: var(--bg-light);
+  position: relative;
+  overflow: hidden;
+}
+
+.core-features-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.5rem;
+}
+
+.core-feature-card {
+  padding: 2rem;
+  border-radius: 16px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(67, 66, 255, 0.08);
+  position: relative;
+  background: rgba(255, 255, 255, 0.38);
+  backdrop-filter: blur(7.6px);
+  -webkit-backdrop-filter: blur(7.6px);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.core-feature-card:nth-child(1) { animation-delay: 0s; }
+.core-feature-card:nth-child(2) { animation-delay: 0.1s; }
+.core-feature-card:nth-child(3) { animation-delay: 0.2s; }
+.core-feature-card:nth-child(4) { animation-delay: 0.3s; }
+
+.core-feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(67, 66, 255, 0.1);
+  border-color: rgba(67, 66, 255, 0.2);
+}
+
+.core-feature-card.large {
+  grid-column: span 12;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.core-feature-card.medium {
+  grid-column: span 6;
+}
+
+.feature-icon-small {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  background: rgba(67, 66, 255, 0.08);
+  border: 1px solid rgba(67, 66, 255, 0.15);
+  position: relative;
+}
+
+.feature-icon-small::before {
+  content: "";
+  position: absolute;
+  inset: -1.5px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    var(--primary-color) 0deg,
+    var(--primary-color) 90deg,
+    transparent 90deg,
+    transparent 360deg
+  );
+  -webkit-mask: radial-gradient(
+    farthest-side,
+    transparent calc(100% - 3px),
+    #000 calc(100% - 3px)
+  );
+  mask: radial-gradient(
+    farthest-side,
+    transparent calc(100% - 3px),
+    #000 calc(100% - 3px)
+  );
+  opacity: 0;
+  transform: rotate(-90deg);
+  transition: transform 0.6s ease, opacity 0.25s ease;
+  pointer-events: none;
+}
+
+.core-feature-card:hover .feature-icon-small::before {
+  opacity: 1;
+  transform: rotate(270deg);
+}
+
+.feature-icon-small img {
+  width: 60%;
+}
+
+.core-feature-card h3 {
+  margin-bottom: 1rem;
+}
+
+.core-feature-card p {
+  margin-bottom: 1.5rem;
+}
+
+.feature-checklist {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.feature-checklist li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.feature-checklist .check {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(67, 66, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-color);
+  font-size: 0.75rem;
+  flex-shrink: 0;
+}
+
+.feature-visual {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.feature-video {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+}
+
+/* Integration Logos */
+.integration-logos {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.int-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 800;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.int-logo:hover {
+  transform: scale(1.15) rotate(5deg);
+}
+
+/* AI Metrics */
+.ai-metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.ai-metric-item {
+  text-align: center;
+  padding: 1.25rem;
+  background: var(--bg-light);
+  border-radius: 12px;
+  border: 1px solid rgba(67, 66, 255, 0.08);
+}
+
+.ai-metric-value {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  font-family: var(--header-font-family);
+  margin-bottom: 0.5rem;
+}
+
+.ai-metric-label {
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+/* Analytics Preview */
+.analytics-preview {
+  padding: 1.5rem;
+  background: var(--bg-light);
+  border-radius: 12px;
+  border: 1px solid rgba(67, 66, 255, 0.08);
+}
+
+.chart-bars {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  gap: 1rem;
+  height: 180px;
+}
+
+.chart-bar {
+  flex: 1;
+  background: var(--primary-color);
+  border-radius: 8px 8px 0 0;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.chart-bar:hover {
+  transform: translateY(-4px);
+  opacity: 0.85;
+}
+
+/* Platform Capabilities Bento */
+.platform-capabilities {
+  padding: 4.5rem 3rem;
+  background: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.capabilities-bento {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.5rem;
+}
+
+.capability-card {
+  padding: 2rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.38);
+  backdrop-filter: blur(7.6px);
+  -webkit-backdrop-filter: blur(7.6px);
+  border: 1px solid rgba(67, 66, 255, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.capability-card:nth-child(1) { animation-delay: 0s; }
+.capability-card:nth-child(2) { animation-delay: 0.1s; }
+.capability-card:nth-child(3) { animation-delay: 0.2s; }
+.capability-card:nth-child(4) { animation-delay: 0.3s; }
+.capability-card:nth-child(5) { animation-delay: 0.4s; }
+.capability-card:nth-child(6) { animation-delay: 0.5s; }
+
+.capability-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(67, 66, 255, 0.1);
+  border-color: rgba(67, 66, 255, 0.2);
+}
+
+.capability-card.large {
+  grid-column: span 6;
+}
+
+.capability-card.medium {
+  grid-column: span 4;
+}
+
+.capability-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.capability-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: rgba(67, 66, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid rgba(67, 66, 255, 0.15);
+}
+
+.capability-icon img {
+  width: 60%;
+}
+
+.capability-card h3 {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.capability-card p {
+  margin-bottom: 1.25rem;
+  font-size: 0.95rem;
+}
+
+.capability-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.cap-tag {
+  padding: 0.35rem 0.85rem;
+  background: rgba(67, 66, 255, 0.08);
+  color: var(--primary-color);
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* Responsive Platform Page */
+@media (max-width: 968px) {
+  .platform-hero {
+    padding: 6rem 1.5rem 3rem;
+    min-height: auto;
+  }
+
+  .hero-features-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
+
+  .core-features,
+  .platform-capabilities {
+    padding: 3rem 1.5rem;
+  }
+
+  .core-feature-card.large {
+    grid-column: span 12;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .core-feature-card.medium {
+    grid-column: span 12;
+  }
+
+  .capability-card.large,
+  .capability-card.medium {
+    grid-column: span 12;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-cta-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-cta-buttons .btn {
+    width: 100%;
+  }
+
+  .ai-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .chart-bars {
+    height: 140px;
+  }
+}
+    </style>
     <!-- Navbar -->
     <nav class="navbar" id="navbar">
       <div class="nav-container">
@@ -63,29 +594,53 @@
               </svg>
             </a>
             <div class="dropdown-menu">
-              <a href="platform.html#workflows" class="dropdown-item">
-                <div class="dropdown-icon">⚡</div>
+              <a href="#workflows" class="dropdown-item">
+                <div class="dropdown-icon">
+                  <img
+                    src="001_Bahan/assets/icon-2.webp"
+                    class="assets-icon"
+                    alt=""
+                  />
+                </div>
                 <div class="dropdown-content">
                   <div class="dropdown-title">Workflows</div>
                   <div class="dropdown-desc">Visual workflow builder</div>
                 </div>
               </a>
-              <a href="platform.html#integrations" class="dropdown-item">
-                <div class="dropdown-icon">🔗</div>
+              <a href="#integrations" class="dropdown-item">
+                <div class="dropdown-icon">
+                  <img
+                    src="001_Bahan/assets/icon-3.webp"
+                    class="assets-icon"
+                    alt=""
+                  />
+                </div>
                 <div class="dropdown-content">
                   <div class="dropdown-title">Integrations</div>
                   <div class="dropdown-desc">500+ app connections</div>
                 </div>
               </a>
-              <a href="platform.html#ai" class="dropdown-item">
-                <div class="dropdown-icon">🤖</div>
+              <a href="#ai" class="dropdown-item">
+                <div class="dropdown-icon">
+                  <img
+                    src="001_Bahan/assets/icon-1.webp"
+                    class="assets-icon"
+                    alt=""
+                  />
+                </div>
                 <div class="dropdown-content">
                   <div class="dropdown-title">AI Automation</div>
                   <div class="dropdown-desc">Smart triggers & actions</div>
                 </div>
               </a>
-              <a href="platform.html#analytics" class="dropdown-item">
-                <div class="dropdown-icon">📊</div>
+              <a href="#analytics" class="dropdown-item">
+                <div class="dropdown-icon">
+                  <img
+                    src="001_Bahan/assets/icon-4.webp"
+                    class="assets-icon"
+                    alt=""
+                  />
+                </div>
                 <div class="dropdown-content">
                   <div class="dropdown-title">Analytics</div>
                   <div class="dropdown-desc">Reports & insights</div>
@@ -115,14 +670,26 @@
             </a>
             <div class="dropdown-menu">
               <a href="#" class="dropdown-item">
-                <div class="dropdown-icon">📱</div>
+                <div class="dropdown-icon">
+                  <img
+                    src="001_Bahan/assets/icon-7.webp"
+                    class="assets-icon"
+                    alt=""
+                  />
+                </div>
                 <div class="dropdown-content">
                   <div class="dropdown-title">Marketing</div>
                   <div class="dropdown-desc">Campaign automation</div>
                 </div>
               </a>
               <a href="#" class="dropdown-item">
-                <div class="dropdown-icon">💼</div>
+                <div class="dropdown-icon">
+                  <img
+                    src="001_Bahan/assets/icon-5-b.webp"
+                    class="assets-icon"
+                    alt=""
+                  />
+                </div>
                 <div class="dropdown-content">
                   <div class="dropdown-title">Sales</div>
                   <div class="dropdown-desc">CRM & lead management</div>
@@ -130,14 +697,26 @@
                 <span class="badge-primary">Popular</span>
               </a>
               <a href="#" class="dropdown-item">
-                <div class="dropdown-icon">⚙️</div>
+                <div class="dropdown-icon">
+                  <img
+                    src="001_Bahan/assets/icon-8.webp"
+                    class="assets-icon"
+                    alt=""
+                  />
+                </div>
                 <div class="dropdown-content">
                   <div class="dropdown-title">Operations</div>
                   <div class="dropdown-desc">Process automation</div>
                 </div>
               </a>
               <a href="#" class="dropdown-item">
-                <div class="dropdown-icon">🛒</div>
+                <div class="dropdown-icon">
+                  <img
+                    src="001_Bahan/assets/icon-9.webp"
+                    class="assets-icon"
+                    alt=""
+                  />
+                </div>
                 <div class="dropdown-content">
                   <div class="dropdown-title">E-commerce</div>
                   <div class="dropdown-desc">Order & inventory</div>
@@ -147,7 +726,6 @@
           </div>
 
           <!-- Direct Links -->
-          <a href="integrations.html" class="nav-link">Integrations</a>
           <a href="index.html#pricing" class="nav-link">Pricing</a>
 
           <!-- CTA Group -->
@@ -167,546 +745,367 @@
 
     <main>
       <!-- Platform Hero -->
-<!-- REPLACE: Platform Hero Section -->
-<section class="platform-hero">
-  <div class="platform-hero-container">
-    <div class="platform-hero-content">
-      <div class="badge">🚀 Complete Automation Platform</div>
-      <h1>Build, Automate, and Scale Your Business</h1>
-      <p class="platform-hero-subtitle">
-        Everything you need to automate workflows, connect apps, and grow
-        your business with AI-powered intelligence.
-      </p>
-      <div class="platform-hero-stats">
-        <div class="hero-stat">
-          <div class="hero-stat-number">500+</div>
-          <div class="hero-stat-label">Integrations</div>
+      <section class="platform-hero">
+        <div class="shape-deco shape-1">
+          <div class="starburst spinner"></div>
         </div>
-        <div class="hero-stat">
-          <div class="hero-stat-number">10M+</div>
-          <div class="hero-stat-label">Tasks Automated</div>
+        <div class="shape-deco shape-2">
+          <div class="flower spinner"></div>
         </div>
-        <div class="hero-stat">
-          <div class="hero-stat-number">99.9%</div>
-          <div class="hero-stat-label">Uptime</div>
+        <div class="shape-deco shape-3">
+          <div class="circle bouncing"></div>
         </div>
-      </div>
-    </div>
-    
-    <!-- NEW: Hero Visual -->
-    <div class="platform-hero-visual">
-      <div class="hero-workflow-card">
-        <div class="hero-workflow-header">
-          <div class="hw-dot active"></div>
-          <div class="hw-dot"></div>
-          <div class="hw-dot"></div>
-        </div>
-        <div class="hero-workflow-body">
-          <div class="hw-item">
-            <div class="hw-icon">🔗</div>
-            <div class="hw-text">
-              <div class="hw-title">Integrations</div>
-              <div class="hw-desc">500+ Apps</div>
-            </div>
-          </div>
-          <div class="hw-item">
-            <div class="hw-icon">⚡</div>
-            <div class="hw-text">
-              <div class="hw-title">Workflows</div>
-              <div class="hw-desc">No-code builder</div>
-            </div>
-          </div>
-          <div class="hw-item">
-            <div class="hw-icon">🤖</div>
-            <div class="hw-text">
-              <div class="hw-title">AI Automation</div>
-              <div class="hw-desc">Smart processing</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- REPLACE: Platform Features Tabs -->
-<section class="platform-features">
-  <div class="platform-features-container">
-    <!-- NEW: Browser-style tabs -->
-    <div class="platform-tabs-wrapper">
-      <div class="platform-tabs">
-        <button class="platform-tab active" data-tab="workflows">
-          <span class="tab-icon">⚡</span>
-          <span class="tab-label">Workflows</span>
-        </button>
-        <button class="platform-tab" data-tab="integrations">
-          <span class="tab-icon">🔗</span>
-          <span class="tab-label">Integrations</span>
-        </button>
-        <button class="platform-tab" data-tab="ai">
-          <span class="tab-icon">🤖</span>
-          <span class="tab-label">AI Automation</span>
-        </button>
-        <button class="platform-tab" data-tab="analytics">
-          <span class="tab-icon">📊</span>
-          <span class="tab-label">Analytics</span>
-        </button>
-      </div>
-      <div class="tabs-line"></div>
-    </div>
+        <div class="platform-hero-container">
+          <div class="platform-hero-content">
+            <div class="badge">🚀 Complete Automation Platform</div>
+            <h1>Build, Automate, and Scale Your Business</h1>
+            <p class="platform-hero-subtitle">
+              Everything you need to automate workflows, connect apps, and grow
+              your business with AI-powered intelligence.
+            </p>
 
-    <!-- Tab contents tetap sama, hanya update visual cards -->
-    <!-- Workflows Tab Content -->
-    <div class="platform-tab-content active" data-content="workflows" id="workflows">
-      <div class="tab-content-grid">
-        <div class="tab-content-text">
-          <h2>Visual Workflow Builder</h2>
-          <p>
-            Create powerful automations with our intuitive drag-and-drop
-            workflow builder. No coding required—just connect the dots and
-            watch your processes come to life.
-          </p>
-          <div class="tab-features-list">
-            <div class="tab-feature-item">
-              <span class="feature-check">✓</span>
-              <div>
-                <strong>Drag & Drop Interface</strong>
-                <p>Build complex workflows in minutes with our visual editor</p>
-              </div>
-            </div>
-            <div class="tab-feature-item">
-              <span class="feature-check">✓</span>
-              <div>
-                <strong>Conditional Logic</strong>
-                <p>Add if-then rules and multi-branch decision trees</p>
-              </div>
-            </div>
-            <div class="tab-feature-item">
-              <span class="feature-check">✓</span>
-              <div>
-                <strong>Real-time Testing</strong>
-                <p>Test workflows instantly before going live</p>
-              </div>
-            </div>
-            <div class="tab-feature-item">
-              <span class="feature-check">✓</span>
-              <div>
-                <strong>Version Control</strong>
-                <p>Rollback changes and track workflow history</p>
-              </div>
-            </div>
-          </div>
-          <button class="btn btn-primary">Try Workflow Builder</button>
-        </div>
-        <div class="tab-content-visual">
-          <!-- UPDATED: Consistent card design -->
-          <div class="workflow-demo-card">
-            <div class="demo-card-header">
-              <div class="demo-card-title">
-                <span class="demo-icon">⚡</span>
-                Lead Nurture Campaign
-              </div>
-              <div class="demo-card-status">
-                <span class="status-dot"></span>
-                Active
-              </div>
-            </div>
-            <div class="demo-workflow-nodes">
-              <div class="demo-node trigger-demo">
-                <div class="demo-node-icon">📧</div>
-                <div class="demo-node-text">
-                  <div class="demo-node-title">New Lead</div>
-                  <div class="demo-node-desc">From contact form</div>
+            <!-- Key Features Grid -->
+            <div class="hero-features-grid">
+              <div class="hero-feature-item" data-delay="0">
+                <div class="hf-icon">
+                  <img src="001_Bahan/assets/icon-2.webp" alt="" />
+                </div>
+                <div class="hf-content">
+                  <h4>Visual Builder</h4>
+                  <p>Drag & drop workflows</p>
                 </div>
               </div>
-              <div class="demo-connector"></div>
-              <div class="demo-node action-demo">
-                <div class="demo-node-icon">🤖</div>
-                <div class="demo-node-text">
-                  <div class="demo-node-title">AI Qualification</div>
-                  <div class="demo-node-desc">Score & categorize</div>
+              <div class="hero-feature-item" data-delay="100">
+                <div class="hf-icon">
+                  <img src="001_Bahan/assets/icon-3.webp" alt="" />
+                </div>
+                <div class="hf-content">
+                  <h4>500+ Integrations</h4>
+                  <p>Connect all your tools</p>
                 </div>
               </div>
-              <div class="demo-connector"></div>
-              <div class="demo-node action-demo">
-                <div class="demo-node-icon">✉️</div>
-                <div class="demo-node-text">
-                  <div class="demo-node-title">Send Email</div>
-                  <div class="demo-node-desc">Welcome sequence</div>
+              <div class="hero-feature-item" data-delay="200">
+                <div class="hf-icon">
+                  <img src="001_Bahan/assets/icon-1.webp" alt="" />
+                </div>
+                <div class="hf-content">
+                  <h4>AI-Powered</h4>
+                  <p>Smart automation</p>
+                </div>
+              </div>
+              <div class="hero-feature-item" data-delay="300">
+                <div class="hf-icon">
+                  <img src="001_Bahan/assets/icon-4.webp" alt="" />
+                </div>
+                <div class="hf-content">
+                  <h4>Real-time Analytics</h4>
+                  <p>Track performance</p>
                 </div>
               </div>
             </div>
-            <div class="demo-card-footer">
-              <div class="demo-stat">
-                <div class="demo-stat-label">Executions</div>
-                <div class="demo-stat-value">1,247</div>
-              </div>
-              <div class="demo-stat">
-                <div class="demo-stat-label">Success Rate</div>
-                <div class="demo-stat-value">98.5%</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <!-- Integrations Tab (layout sama, cuma update card style) -->
-    <div class="platform-tab-content" data-content="integrations" id="integrations">
-      <div class="tab-content-grid reverse">
-        <div class="tab-content-visual">
-          <div class="integrations-grid-demo">
-            <div class="integration-demo-item">
-              <div class="integration-demo-icon" style="background: #FF6B6B;">G</div>
-              <div class="integration-demo-name">Gmail</div>
-            </div>
-            <div class="integration-demo-item">
-              <div class="integration-demo-icon" style="background: #4A90E2;">Sl</div>
-              <div class="integration-demo-name">Slack</div>
-            </div>
-            <div class="integration-demo-item">
-              <div class="integration-demo-icon" style="background: #00B8D4;">SF</div>
-              <div class="integration-demo-name">Salesforce</div>
-            </div>
-            <div class="integration-demo-item">
-              <div class="integration-demo-icon" style="background: #FF8A00;">HS</div>
-              <div class="integration-demo-name">HubSpot</div>
-            </div>
-            <div class="integration-demo-item">
-              <div class="integration-demo-icon" style="background: #96BF48;">Sh</div>
-              <div class="integration-demo-name">Shopify</div>
-            </div>
-            <div class="integration-demo-item">
-              <div class="integration-demo-icon" style="background: #7B68EE;">Tr</div>
-              <div class="integration-demo-name">Trello</div>
-            </div>
-            <div class="integration-demo-item">
-              <div class="integration-demo-icon" style="background: #FF3E85;">No</div>
-              <div class="integration-demo-name">Notion</div>
-            </div>
-            <div class="integration-demo-item">
-              <div class="integration-demo-icon" style="background: #00A4EF;">MS</div>
-              <div class="integration-demo-name">Teams</div>
-            </div>
-            <div class="integration-demo-more">+492 more apps</div>
-          </div>
-        </div>
-        <div class="tab-content-text">
-          <h2>500+ Ready Integrations</h2>
-          <p>
-            Connect all your favorite tools and apps in seconds. From CRM
-            to email, project management to analytics—we've got you
-            covered.
-          </p>
-          <div class="tab-features-list">
-            <div class="tab-feature-item">
-              <span class="feature-check">✓</span>
-              <div>
-                <strong>One-Click Setup</strong>
-                <p>Authenticate and connect apps instantly</p>
-              </div>
-            </div>
-            <div class="tab-feature-item">
-              <span class="feature-check">✓</span>
-              <div>
-                <strong>Real-time Sync</strong>
-                <p>Data updates automatically across platforms</p>
-              </div>
-            </div>
-            <div class="tab-feature-item">
-              <span class="feature-check">✓</span>
-              <div>
-                <strong>Custom APIs</strong>
-                <p>Build your own integrations with our SDK</p>
-              </div>
-            </div>
-            <div class="tab-feature-item">
-              <span class="feature-check">✓</span>
-              <div>
-                <strong>Webhooks Support</strong>
-                <p>Trigger workflows from any external event</p>
-              </div>
+            <div class="hero-cta-buttons">
+              <button class="btn btn-primary">Start Free Trial</button>
+              <button class="btn btn-outline">Watch Demo</button>
             </div>
           </div>
-          <button class="btn btn-primary">Browse Integrations</button>
         </div>
-      </div>
-    </div>
+      </section>
 
-    <!-- AI Tab -->
-    <div class="platform-tab-content" data-content="ai" id="ai">
-      <div class="tab-content-grid">
-        <div class="tab-content-text">
-          <h2>AI-Powered Intelligence</h2>
-          <p>
-            Let artificial intelligence handle complex decisions, data
-            processing, and predictive automation. Our AI engine learns
-            from your workflows to optimize performance.
-          </p>
-          <div class="tab-features-list">
-            <div class="tab-feature-item">
-              <span class="feature-check">✓</span>
-              <div>
-                <strong>Smart Triggers</strong>
-                <p>AI predicts the right time to execute workflows</p>
-              </div>
+      <!-- Stats Section -->
+      <section class="stats">
+        <div class="stats-container">
+          <div class="stat-item" data-delay="0">
+            <div class="stat-number" data-target="500">0</div>
+            <div class="stat-label">Integrations</div>
+          </div>
+          <div class="stat-item" data-delay="100">
+            <div class="stat-number" data-target="10">0</div>
+            <div class="stat-label">M+ Tasks Automated</div>
+          </div>
+          <div class="stat-item" data-delay="200">
+            <div class="stat-number">99.9%</div>
+            <div class="stat-label">Uptime SLA</div>
+          </div>
+          <div class="stat-item" data-delay="300">
+            <div class="stat-number" data-target="5000">0</div>
+            <div class="stat-label">Active Users</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Core Features Section -->
+      <section class="core-features" id="workflows">
+        <div class="feature-shape fs-1">
+          <div class="circle bouncing"></div>
+        </div>
+        <div class="feature-shape fs-2">
+          <div class="starburst spinner"></div>
+        </div>
+
+        <div class="section-header">
+          <div class="section-subtitle">Core Features</div>
+          <h2>Everything You Need to Automate</h2>
+          <p>Powerful tools designed to streamline your entire workflow</p>
+        </div>
+
+        <div class="core-features-grid">
+          <!-- Workflow Builder -->
+          <div class="core-feature-card large" data-delay="0">
+            <div class="feature-visual">
+              <video
+                src="001_Bahan/assets/screen.webm"
+                autoplay
+                loop
+                muted
+                class="feature-video"
+              ></video>
             </div>
-            <div class="tab-feature-item">
-              <span class="feature-check">✓</span>
-              <div>
-                <strong>Natural Language Processing</strong>
-                <p>Extract insights from emails, tickets, and documents</p>
+            <div class="feature-info">
+              <div class="feature-icon-small">
+                <img src="001_Bahan/assets/icon-2.webp" alt="" />
               </div>
-            </div>
-            <div class="tab-feature-item">
-              <span class="feature-check">✓</span>
-              <div>
-                <strong>Predictive Analytics</strong>
-                <p>Forecast outcomes before they happen</p>
-              </div>
-            </div>
-            <div class="tab-feature-item">
-              <span class="feature-check">✓</span>
-              <div>
-                <strong>Auto-optimization</strong>
-                <p>Workflows improve themselves over time</p>
-              </div>
+              <h3>Visual Workflow Builder</h3>
+              <p>
+                Create powerful automations with our intuitive drag-and-drop
+                interface. No coding required—just connect the dots and watch
+                your processes come to life.
+              </p>
+              <ul class="feature-checklist">
+                <li><span class="check">✓</span> Drag & drop interface</li>
+                <li><span class="check">✓</span> Conditional logic</li>
+                <li><span class="check">✓</span> Real-time testing</li>
+                <li><span class="check">✓</span> Version control</li>
+              </ul>
             </div>
           </div>
-          <button class="btn btn-primary">Explore AI Features</button>
-        </div>
-        <div class="tab-content-visual">
-          <div class="ai-demo-card">
-            <div class="ai-demo-header">
-              <span class="ai-badge">🤖 AI Processing</span>
+
+          <!-- Integrations -->
+          <div class="core-feature-card medium" data-delay="100" id="integrations">
+            <div class="feature-icon-small">
+              <img src="001_Bahan/assets/icon-3.webp" alt="" />
             </div>
-            <div class="ai-demo-process">
-              <div class="ai-process-step">
-                <div class="ai-step-icon">📧</div>
-                <div class="ai-step-title">Input</div>
-                <div class="ai-step-desc">Customer email</div>
-              </div>
-              <div class="ai-arrow">→</div>
-              <div class="ai-process-step active">
-                <div class="ai-step-icon">🧠</div>
-                <div class="ai-step-title">AI Analysis</div>
-                <div class="ai-step-desc">Sentiment</div>
-                <div class="ai-step-desc">Intent</div>
-              </div>
-              <div class="ai-arrow">→</div>
-              <div class="ai-process-step">
-                <div class="ai-step-icon">⚡</div>
-                <div class="ai-step-title">Action</div>
-                <div class="ai-step-desc">Route to team</div>
-              </div>
+            <h3>500+ Integrations</h3>
+            <p>
+              Connect with your favorite tools in seconds. From CRM to email,
+              project management to analytics.
+            </p>
+            <div class="integration-logos">
+              <div class="int-logo" style="background: #FF6B6B;">G</div>
+              <div class="int-logo" style="background: #4A90E2;">Sl</div>
+              <div class="int-logo" style="background: #00B8D4;">SF</div>
+              <div class="int-logo" style="background: #FF8A00;">HS</div>
             </div>
-            <div class="ai-demo-footer">
-              <div class="ai-metric">
-                <div class="ai-metric-label">Processing</div>
-                <div class="ai-metric-value">0.3s</div>
-              </div>
-              <div class="ai-metric">
-                <div class="ai-metric-label">Accuracy</div>
+          </div>
+
+          <!-- AI Automation -->
+          <div class="core-feature-card medium" data-delay="200" id="ai">
+            <div class="feature-icon-small">
+              <img src="001_Bahan/assets/icon-1.webp" alt="" />
+            </div>
+            <h3>AI-Powered Intelligence</h3>
+            <p>
+              Let AI handle complex decisions and data processing. Our engine
+              learns and optimizes automatically.
+            </p>
+            <div class="ai-metrics">
+              <div class="ai-metric-item">
                 <div class="ai-metric-value">97.8%</div>
+                <div class="ai-metric-label">Accuracy</div>
+              </div>
+              <div class="ai-metric-item">
+                <div class="ai-metric-value">0.3s</div>
+                <div class="ai-metric-label">Processing</div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
 
-    <!-- Analytics Tab -->
-    <div class="platform-tab-content" data-content="analytics" id="analytics">
-      <div class="tab-content-grid reverse">
-        <div class="tab-content-visual">
-          <div class="analytics-demo-card">
-            <div class="analytics-demo-header">
-              <div class="analytics-title">Workflow Performance</div>
-              <div class="analytics-period">Last 30 days</div>
+          <!-- Analytics -->
+          <div class="core-feature-card large" data-delay="300" id="analytics">
+            <div class="feature-info">
+              <div class="feature-icon-small">
+                <img src="001_Bahan/assets/icon-4.webp" alt="" />
+              </div>
+              <h3>Advanced Analytics</h3>
+              <p>
+                Track every metric that matters with real-time dashboards and
+                comprehensive reports.
+              </p>
+              <ul class="feature-checklist">
+                <li><span class="check">✓</span> Real-time monitoring</li>
+                <li><span class="check">✓</span> Custom reports</li>
+                <li><span class="check">✓</span> Error tracking</li>
+                <li><span class="check">✓</span> ROI calculator</li>
+              </ul>
             </div>
-            <div class="analytics-chart">
-              <div class="chart-bar" style="height: 60%;">
-                <div class="chart-value">2.4K</div>
-              </div>
-              <div class="chart-bar" style="height: 75%;">
-                <div class="chart-value">3.1K</div>
-              </div>
-              <div class="chart-bar" style="height: 90%;">
-                <div class="chart-value">3.8K</div>
-              </div>
-              <div class="chart-bar" style="height: 100%;">
-                <div class="chart-value">4.2K</div>
-              </div>
-            </div>
-            <div class="analytics-labels">
-              <span>Week 1</span>
-              <span>Week 2</span>
-              <span>Week 3</span>
-              <span>Week 4</span>
-            </div>
-            <div class="analytics-footer">
-              <div class="analytics-stat">
-                <div class="analytics-stat-label">Total</div>
-                <div class="analytics-stat-value">13.5K</div>
-              </div>
-              <div class="analytics-stat">
-                <div class="analytics-stat-label">Success</div>
-                <div class="analytics-stat-value">98.7%</div>
+            <div class="feature-visual">
+              <div class="analytics-preview">
+                <div class="chart-bars">
+                  <div class="chart-bar" style="height: 60%;"></div>
+                  <div class="chart-bar" style="height: 75%;"></div>
+                  <div class="chart-bar" style="height: 90%;"></div>
+                  <div class="chart-bar" style="height: 100%;"></div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="tab-content-text">
-          <h2>Advanced Analytics & Insights</h2>
+      </section>
+
+      <!-- Capabilities Bento -->
+      <section class="platform-capabilities">
+        <div class="shape-deco shape-1">
+          <div class="flower spinner"></div>
+        </div>
+        <div class="shape-deco shape-2">
+          <div class="circle bouncing"></div>
+        </div>
+
+        <div class="section-header">
+          <div class="section-subtitle">Platform Capabilities</div>
+          <h2>Everything You Need in One Place</h2>
           <p>
-            Track every metric that matters. Get real-time visibility into
-            workflow performance, bottlenecks, and ROI with comprehensive
-            dashboards.
+            A complete suite of tools to automate, integrate, and optimize your
+            business
           </p>
-          <div class="tab-features-list">
-            <div class="tab-feature-item">
-              <span class="feature-check">✓</span>
-              <div>
-                <strong>Real-time Dashboard</strong>
-                <p>Monitor workflows as they execute live</p>
+        </div>
+
+        <div class="capabilities-bento">
+          <div class="capability-card large" data-delay="0">
+            <div class="capability-header">
+              <div class="capability-icon">
+                <img src="001_Bahan/assets/icon-2.webp" alt="" />
               </div>
+              <h3>No-Code Workflow Builder</h3>
             </div>
-            <div class="tab-feature-item">
-              <span class="feature-check">✓</span>
-              <div>
-                <strong>Custom Reports</strong>
-                <p>Build reports tailored to your business needs</p>
-              </div>
-            </div>
-            <div class="tab-feature-item">
-              <span class="feature-check">✓</span>
-              <div>
-                <strong>Error Tracking</strong>
-                <p>Identify and fix issues before they impact users</p>
-              </div>
-            </div>
-            <div class="tab-feature-item">
-              <span class="feature-check">✓</span>
-              <div>
-                <strong>ROI Calculator</strong>
-                <p>See exactly how much time and money you're saving</p>
-              </div>
+            <p>
+              Design complex automations without writing code. Our visual editor
+              makes it easy for anyone to build powerful workflows.
+            </p>
+            <div class="capability-tags">
+              <span class="cap-tag">Drag & Drop</span>
+              <span class="cap-tag">Templates</span>
+              <span class="cap-tag">Version Control</span>
             </div>
           </div>
-          <button class="btn btn-primary">View Analytics</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- REPLACE: Platform Capabilities Bento (perbaiki layout) -->
-<section class="platform-capabilities">
-  <div class="section-header">
-    <div class="section-subtitle">Platform Capabilities</div>
-    <h2>Everything You Need in One Place</h2>
-    <p>
-      A complete suite of tools to automate, integrate, and optimize your
-      entire business.
-    </p>
-  </div>
+          <div class="capability-card medium" data-delay="100">
+            <div class="capability-header">
+              <div class="capability-icon">
+                <img src="001_Bahan/assets/icon-5.webp" alt="" />
+              </div>
+              <h3>Enterprise Security</h3>
+            </div>
+            <p>
+              Bank-level encryption, SOC 2 compliance, and GDPR ready. Your data
+              is always protected.
+            </p>
+            <div class="capability-tags">
+              <span class="cap-tag">256-bit SSL</span>
+              <span class="cap-tag">SSO</span>
+            </div>
+          </div>
 
-  <div class="capabilities-bento">
-    <div class="capability-card large">
-      <div class="capability-header">
-        <div class="capability-icon">🎨</div>
-        <h3>No-Code Workflow Builder</h3>
-      </div>
-      <p>
-        Design complex automations without writing a single line of code.
-        Our visual editor makes it easy for anyone to build powerful
-        workflows.
-      </p>
-      <div class="capability-tags">
-        <span class="cap-tag">Drag & Drop</span>
-        <span class="cap-tag">Templates</span>
-        <span class="cap-tag">Version Control</span>
-      </div>
-    </div>
+          <div class="capability-card medium" data-delay="200">
+            <div class="capability-header">
+              <div class="capability-icon">
+                <img src="001_Bahan/assets/icon-6.webp" alt="" />
+              </div>
+              <h3>Lightning Fast</h3>
+            </div>
+            <p>
+              Execute thousands of tasks per second. Built for scale with global
+              infrastructure.
+            </p>
+            <div class="capability-tags">
+              <span class="cap-tag">99.9% Uptime</span>
+              <span class="cap-tag">Global CDN</span>
+            </div>
+          </div>
 
-    <div class="capability-card medium">
-      <div class="capability-header">
-        <div class="capability-icon">🔐</div>
-        <h3>Enterprise Security</h3>
-      </div>
-      <p>
-        Bank-level encryption, SOC 2 compliance, and GDPR ready. Your data
-        is always protected with industry-leading security standards.
-      </p>
-      <div class="capability-tags">
-        <span class="cap-tag">256-bit SSL</span>
-        <span class="cap-tag">SSO</span>
-      </div>
-    </div>
+          <div class="capability-card medium" data-delay="300">
+            <div class="capability-header">
+              <div class="capability-icon">
+                <img src="001_Bahan/assets/icon-7.webp" alt="" />
+              </div>
+              <h3>Team Collaboration</h3>
+            </div>
+            <p>
+              Work together seamlessly with real-time collaboration and
+              commenting features.
+            </p>
+            <div class="capability-tags">
+              <span class="cap-tag">Real-time</span>
+              <span class="cap-tag">Comments</span>
+            </div>
+          </div>
 
-    <div class="capability-card medium">
-      <div class="capability-header">
-        <div class="capability-icon">⚡</div>
-        <h3>Lightning Fast Performance</h3>
-      </div>
-      <p>
-        Execute thousands of tasks per second with sub-100ms latency.
-        Built for scale with global infrastructure.
-      </p>
-      <div class="capability-tags">
-        <span class="cap-tag">99.9% Uptime</span>
-        <span class="cap-tag">Global CDN</span>
-      </div>
-    </div>
-
-    <div class="capability-card medium">
-      <div class="capability-header">
-        <div class="capability-icon">👥</div>
-        <h3>Team Collaboration</h3>
-      </div>
-      <p>
-        Work together on workflows with real-time collaboration features.
-        Share, comment, and iterate with your team seamlessly.
-      </p>
-      <div class="capability-tags">
-        <span class="cap-tag">Real-time</span>
-        <span class="cap-tag">Comments</span>
-      </div>
-    </div>
-
-    <div class="capability-card medium">
-      <div class="capability-icon">📱</div>
+          <div class="capability-card medium" data-delay="400">
+            <div class="capability-header">
+              <div class="capability-icon">
+                <img src="001_Bahan/assets/icon-8.webp" alt="" />
+              </div>
               <h3>Mobile Ready</h3>
             </div>
             <p>
-        Monitor and manage workflows from anywhere, on any device. Full
-        mobile app available for iOS and Android.
-      </p>
-      <div class="capability-tags">
-        <span class="cap-tag">iOS</span>
-        <span class="cap-tag">Android</span>
-      </div>
-    </div>
+              Monitor and manage from anywhere. Full mobile app for iOS and
+              Android.
+            </p>
+            <div class="capability-tags">
+              <span class="cap-tag">iOS</span>
+              <span class="cap-tag">Android</span>
+            </div>
+          </div>
 
-    <div class="capability-card large">
-      <div class="capability-header">
-        <div class="capability-icon">🔧</div>
-        <h3>Developer Friendly</h3>
-      </div>
-      <p>
-        Full REST API, webhooks, SDKs in multiple languages, and
-        comprehensive documentation. Build custom integrations and extend
-        the platform to fit your exact needs.
-      </p>
-      <div class="capability-tags">
-        <span class="cap-tag">REST API</span>
-        <span class="cap-tag">Webhooks</span>
-        <span class="cap-tag">Python SDK</span>
-        <span class="cap-tag">Node.js SDK</span>
-      </div>
-    </div>
-  </div>
-</section>
+          <div class="capability-card large" data-delay="500">
+            <div class="capability-header">
+              <div class="capability-icon">
+                <img src="001_Bahan/assets/icon-9.webp" alt="" />
+              </div>
+              <h3>Developer Friendly</h3>
+            </div>
+            <p>
+              Full REST API, webhooks, SDKs in multiple languages. Build custom
+              integrations with comprehensive docs.
+            </p>
+            <div class="capability-tags">
+              <span class="cap-tag">REST API</span>
+              <span class="cap-tag">Webhooks</span>
+              <span class="cap-tag">Python SDK</span>
+              <span class="cap-tag">Node.js SDK</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="cta" id="contact">
+        <div class="cta-shape cta-shape-1">
+          <div class="starburst spinner"></div>
+        </div>
+        <div class="cta-shape cta-shape-2">
+          <div class="flower spinner"></div>
+        </div>
+        <div class="cta-shape cta-shape-3">
+          <div class="circle bouncing"></div>
+        </div>
+        <div class="cta-shape cta-shape-4">
+          <div class="starburst spinner" style="width: 60px"></div>
+        </div>
+
+        <div class="cta-content">
+          <h2>Ready to Transform Your Workflow?</h2>
+          <p>
+            Join thousands of businesses automating with Samartha. Start free,
+            no credit card required.
+          </p>
+          <div class="cta-buttons">
+            <button class="btn btn-white">Start Free Trial</button>
+            <button class="btn btn-outline-white">Schedule Demo</button>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- Footer -->
@@ -737,13 +1136,14 @@
               Samartha
             </div>
             <p class="footer-desc">
-              Empowering businesses with intelligent automation solutions.
+              Empowering businesses worldwide with intelligent automation
+              solutions that drive growth, efficiency, and innovation.
             </p>
             <div class="footer-social">
-              <a href="#!" class="social-icon">𝕏</a>
-              <a href="#!" class="social-icon">in</a>
-              <a href="#!" class="social-icon">f</a>
-              <a href="#!" class="social-icon">IG</a>
+              <a href="#" class="social-icon">𝕏</a>
+              <a href="#" class="social-icon">in</a>
+              <a href="#" class="social-icon">f</a>
+              <a href="#" class="social-icon">IG</a>
             </div>
           </div>
 
@@ -752,34 +1152,38 @@
             <div class="footer-links">
               <a href="platform.html">Platform</a>
               <a href="index.html#pricing">Pricing</a>
-              <a href="#!">Integrations</a>
+              <a href="#">Integrations</a>
+              <a href="#">Templates</a>
             </div>
           </div>
 
           <div>
             <div class="footer-title">Solutions</div>
             <div class="footer-links">
-              <a href="#!">Marketing</a>
-              <a href="#!">Sales</a>
-              <a href="#!">Operations</a>
+              <a href="#">Marketing</a>
+              <a href="#">Sales</a>
+              <a href="#">Operations</a>
+              <a href="#">E-commerce</a>
             </div>
           </div>
 
           <div>
             <div class="footer-title">Resources</div>
             <div class="footer-links">
-              <a href="#!">Help Center</a>
-              <a href="#!">Documentation</a>
-              <a href="#!">Community</a>
+              <a href="#">Help Center</a>
+              <a href="#">Documentation</a>
+              <a href="#">API Reference</a>
+              <a href="#">Community</a>
             </div>
           </div>
 
           <div>
             <div class="footer-title">Company</div>
             <div class="footer-links">
-              <a href="#!">About Us</a>
-              <a href="#!">Careers</a>
-              <a href="#!">Contact</a>
+              <a href="about.html">About Us</a>
+              <a href="index.html#testimonials">Customers</a>
+              <a href="#">Careers</a>
+              <a href="#">Contact</a>
             </div>
           </div>
         </div>
@@ -791,9 +1195,9 @@
             &copy; 2026 Samartha. All rights reserved.
           </p>
           <div class="footer-legal">
-            <a href="#!">Privacy</a>
-            <a href="#!">Terms</a>
-            <a href="#!">Security</a>
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">Security</a>
           </div>
         </div>
       </div>
@@ -817,13 +1221,13 @@
         <div class="chatbot-message bot-message">
           <div class="message-avatar">AI</div>
           <div class="message-content">
-            <p>Hi! 👋 Need help exploring platform features?</p>
+            <p>Hi! 👋 Need help exploring our platform features?</p>
             <span class="message-time">Just now</span>
           </div>
         </div>
         <div class="chatbot-suggestions">
           <button class="suggestion-btn">Schedule demo</button>
-          <button class="suggestion-btn">Compare plans</button>
+          <button class="suggestion-btn">View integrations</button>
         </div>
       </div>
       <div class="chatbot-footer">
@@ -876,6 +1280,7 @@
       </svg>
     </button>
 
-    <script src="001_Website/js/script.js"></script>
+    <script src="001_Bahan/Swiperjs v5.3.7/swiper.min.js" defer></script>
+    <script src="001_Website/js/script.js" defer></script>
   </body>
 </html>

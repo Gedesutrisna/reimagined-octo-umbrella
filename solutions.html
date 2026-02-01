@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Basic Meta -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- SEO Meta -->
+    <title>Solutions – Automation for Every Team | Samartha</title>
+    <meta
+      name="description"
+      content="Automation solutions for Marketing, Sales, Operations, and E-commerce. Transform your team's workflow with Samartha."
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" href="001_Bahan/assets/logo.webp" type="image/webp" />
+
+    <!-- Preconnect Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link rel="stylesheet" href="001_Bahan/Swiperjs v5.3.7/swiper-bundle.css" />
+    <link rel="stylesheet" href="001_Website/css/style.css" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <style>
+        /* ========================================
+   SOLUTIONS PAGE STYLES
+   Tambahkan di bagian bawah style.css
+   ======================================== */
+
+/* Solutions Hero */
+.solutions-hero {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  padding: 8rem 3rem 4rem;
+  background: var(--bg-light);
+  position: relative;
+}
+
+.solutions-hero-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.solutions-hero h1 {
+  margin: 1rem 0 1.5rem;
+}
+
+.solutions-hero-subtitle {
+  font-size: 1.15rem;
+  margin-bottom: 2rem;
+  opacity: 0.8;
+}
+
+/* Solution Cards Grid */
+.solution-cards-section {
+  padding: 5rem 3rem;
+  background: white;
+}
+
+.solution-cards-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.solution-card {
+  padding: 2.5rem 2rem;
+  border: 2px solid rgba(67, 66, 255, 0.15);
+  border-radius: 16px;
+  background: white;
+  transition: all 0.3s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.solution-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 32px rgba(67, 66, 255, 0.15);
+  border-color: var(--primary-color);
+}
+
+.solution-card.featured {
+  border-color: var(--primary-color);
+  background: rgba(67, 66, 255, 0.02);
+}
+
+.solution-badge {
+  position: absolute;
+  top: -12px;
+  right: 20px;
+  background: var(--primary-color);
+  color: white;
+  padding: 0.35rem 0.95rem;
+  border-radius: 50px;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.solution-card-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  background: rgba(67, 66, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.solution-card h3 {
+  font-size: 1.35rem;
+  margin-bottom: 1rem;
+  color: var(--black-color);
+}
+
+.solution-card > p {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.solution-card-list {
+  list-style: none;
+  margin-bottom: 2rem;
+  flex: 1;
+}
+
+.solution-card-list li {
+  padding: 0.65rem 0;
+  padding-left: 1.75rem;
+  position: relative;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.solution-card-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.solution-card .btn {
+  width: 100%;
+}
+
+/* Solution Detail Sections */
+.solution-detail {
+  padding: 6rem 3rem;
+  background: var(--bg-light);
+}
+
+.solution-detail.alternate {
+  background: white;
+}
+
+.solution-detail-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.solution-detail-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 4rem;
+}
+
+.solution-detail-header h2 {
+  margin-bottom: 1.25rem;
+}
+
+.solution-detail-header p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* Solution Features Grid */
+.solution-features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.solution-feature {
+  padding: 2rem;
+  border: 2px solid rgba(67, 66, 255, 0.1);
+  border-radius: 16px;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.solution-detail.alternate .solution-feature {
+  background: var(--bg-light);
+}
+
+.solution-feature:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(67, 66, 255, 0.1);
+  border-color: var(--primary-color);
+}
+
+.solution-feature-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  background: rgba(67, 66, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.solution-feature h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.85rem;
+  color: var(--black-color);
+  font-family: var(--header-font-family);
+  font-weight: 700;
+}
+
+.solution-feature p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Use Case Section */
+.solution-use-case {
+  padding: 3rem;
+  border: 2px solid rgba(67, 66, 255, 0.15);
+  border-radius: 20px;
+  background: white;
+  box-shadow: 0 8px 24px rgba(67, 66, 255, 0.08);
+}
+
+.solution-detail.alternate .solution-use-case {
+  background: var(--bg-light);
+}
+
+.use-case-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid rgba(67, 66, 255, 0.1);
+}
+
+.use-case-header h3 {
+  font-size: 1.5rem;
+  margin: 0;
+  color: var(--black-color);
+}
+
+.use-case-tag {
+  padding: 0.5rem 1.25rem;
+  background: rgba(67, 66, 255, 0.1);
+  color: var(--primary-color);
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.use-case-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+/* Use Case Flow */
+.use-case-flow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  overflow-x: auto;
+  padding: 1rem 0;
+}
+
+.use-case-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  min-width: 160px;
+  flex: 1;
+}
+
+.use-case-step-number {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 800;
+  font-family: var(--header-font-family);
+  flex-shrink: 0;
+}
+
+.use-case-step-content {
+  text-align: center;
+  padding: 1.25rem 1rem;
+  border: 2px solid rgba(67, 66, 255, 0.1);
+  border-radius: 12px;
+  background: white;
+  width: 100%;
+}
+
+.solution-detail.alternate .use-case-step-content {
+  background: white;
+}
+
+.use-case-step-content strong {
+  display: block;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  color: var(--black-color);
+}
+
+.use-case-step-content p {
+  font-size: 0.85rem;
+  opacity: 0.7;
+  margin: 0;
+}
+
+.use-case-arrow {
+  font-size: 1.75rem;
+  color: var(--primary-color);
+  font-weight: 700;
+  flex-shrink: 0;
+  margin: 0 0.5rem;
+}
+
+.use-case-result {
+  padding: 1.5rem;
+  background: rgba(67, 66, 255, 0.05);
+  border-left: 4px solid var(--primary-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.use-case-result strong {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+/* Responsive Solutions */
+@media (max-width: 968px) {
+  .solutions-hero {
+    padding: 6rem 1.5rem 3rem;
+  }
+
+  .solution-cards-section,
+  .solution-detail {
+    padding: 3rem 1.5rem;
+  }
+
+  .solution-cards-container {
+    grid-template-columns: 1fr;
+  }
+
+  .solution-features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .solution-use-case {
+    padding: 2rem 1.5rem;
+  }
+
+  .use-case-flow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .use-case-step {
+    min-width: 100%;
+  }
+
+  .use-case-arrow {
+    transform: rotate(90deg);
+    margin: 0.5rem 0;
+  }
+
+  .use-case-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .solution-detail {
+    padding: 3rem 1.5rem;
+  }
+}
+    </style>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-container">
+        <a href="index.html" class="logo">
+          <img src="001_Bahan/assets/logo.webp" alt="logo" class="logo-img" />
+          Samartha
+        </a>
+
+        <div class="nav-menu" id="navMenu">
+          <!-- Platform Dropdown -->
+          <div class="nav-dropdown">
+            <a href="#" class="nav-link">
+              Platform
+              <svg
+                class="dropdown-arrow"
+                width="12"
+                height="12"
+                viewBox="0 0 12 12"
+                fill="none"
+              >
+                <path
+                  d="M2 4L6 8L10 4"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </a>
+            <div class="dropdown-menu">
+              <a href="platform.html#workflows" class="dropdown-item">
+                <div class="dropdown-icon">⚡</div>
+                <div class="dropdown-content">
+                  <div class="dropdown-title">Workflows</div>
+                  <div class="dropdown-desc">Visual workflow builder</div>
+                </div>
+              </a>
+              <a href="platform.html#integrations" class="dropdown-item">
+                <div class="dropdown-icon">🔗</div>
+                <div class="dropdown-content">
+                  <div class="dropdown-title">Integrations</div>
+                  <div class="dropdown-desc">500+ app connections</div>
+                </div>
+              </a>
+              <a href="platform.html#ai" class="dropdown-item">
+                <div class="dropdown-icon">🤖</div>
+                <div class="dropdown-content">
+                  <div class="dropdown-title">AI Automation</div>
+                  <div class="dropdown-desc">Smart triggers & actions</div>
+                </div>
+              </a>
+              <a href="platform.html#analytics" class="dropdown-item">
+                <div class="dropdown-icon">📊</div>
+                <div class="dropdown-content">
+                  <div class="dropdown-title">Analytics</div>
+                  <div class="dropdown-desc">Reports & insights</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Solutions Dropdown -->
+          <div class="nav-dropdown">
+            <a href="#" class="nav-link">
+              Solutions
+              <svg
+                class="dropdown-arrow"
+                width="12"
+                height="12"
+                viewBox="0 0 12 12"
+                fill="none"
+              >
+                <path
+                  d="M2 4L6 8L10 4"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </a>
+            <div class="dropdown-menu">
+              <a href="solutions.html#marketing" class="dropdown-item">
+                <div class="dropdown-icon">📱</div>
+                <div class="dropdown-content">
+                  <div class="dropdown-title">Marketing</div>
+                  <div class="dropdown-desc">Campaign automation</div>
+                </div>
+              </a>
+              <a href="solutions.html#sales" class="dropdown-item">
+                <div class="dropdown-icon">💼</div>
+                <div class="dropdown-content">
+                  <div class="dropdown-title">Sales</div>
+                  <div class="dropdown-desc">CRM & lead management</div>
+                </div>
+                <span class="badge-primary">Popular</span>
+              </a>
+              <a href="solutions.html#operations" class="dropdown-item">
+                <div class="dropdown-icon">⚙️</div>
+                <div class="dropdown-content">
+                  <div class="dropdown-title">Operations</div>
+                  <div class="dropdown-desc">Process automation</div>
+                </div>
+              </a>
+              <a href="solutions.html#ecommerce" class="dropdown-item">
+                <div class="dropdown-icon">🛒</div>
+                <div class="dropdown-content">
+                  <div class="dropdown-title">E-commerce</div>
+                  <div class="dropdown-desc">Order & inventory</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Direct Links -->
+          <a href="integrations.html" class="nav-link">Integrations</a>
+          <a href="index.html#pricing" class="nav-link">Pricing</a>
+
+          <!-- CTA Group -->
+          <div class="nav-cta-group">
+            <a href="#" class="nav-link-secondary">Sign in</a>
+            <button class="btn btn-primary">Get Started</button>
+          </div>
+        </div>
+
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+
+    <main>
+      <!-- Solutions Hero -->
+      <section class="solutions-hero">
+        <div class="solutions-hero-container">
+          <div class="badge">💼 Solutions for Every Team</div>
+          <h1>Automate What Matters Most</h1>
+          <p class="solutions-hero-subtitle">
+            Purpose-built automation workflows for Marketing, Sales, Operations, and E-commerce teams. Choose your solution and start automating in minutes.
+          </p>
+        </div>
+      </section>
+
+      <!-- Solution Cards Grid -->
+      <section class="solution-cards-section">
+        <div class="solution-cards-container">
+          <div class="solution-card" data-solution="marketing">
+            <div class="solution-card-icon">📱</div>
+            <h3>Marketing Automation</h3>
+            <p>Streamline campaigns, nurture leads, and measure ROI with automated marketing workflows</p>
+            <ul class="solution-card-list">
+              <li>Email campaign automation</li>
+              <li>Lead scoring & nurturing</li>
+              <li>Social media scheduling</li>
+              <li>Analytics & reporting</li>
+            </ul>
+            <a href="#marketing" class="btn btn-outline">Explore Marketing</a>
+          </div>
+
+          <div class="solution-card featured" data-solution="sales">
+            <div class="solution-badge">Most Popular</div>
+            <div class="solution-card-icon">💼</div>
+            <h3>Sales & CRM</h3>
+            <p>Close deals faster with automated lead management, follow-ups, and pipeline tracking</p>
+            <ul class="solution-card-list">
+              <li>Automated lead capture</li>
+              <li>Smart follow-up sequences</li>
+              <li>Deal pipeline management</li>
+              <li>Sales forecasting</li>
+            </ul>
+            <a href="#sales" class="btn btn-primary">Explore Sales</a>
+          </div>
+
+          <div class="solution-card" data-solution="operations">
+            <div class="solution-card-icon">⚙️</div>
+            <h3>Operations</h3>
+            <p>Optimize internal processes, reduce manual work, and improve team efficiency</p>
+            <ul class="solution-card-list">
+              <li>Workflow automation</li>
+              <li>Task assignment & tracking</li>
+              <li>Document processing</li>
+              <li>Approval workflows</li>
+            </ul>
+            <a href="#operations" class="btn btn-outline">Explore Operations</a>
+          </div>
+
+          <div class="solution-card" data-solution="ecommerce">
+            <div class="solution-card-icon">🛒</div>
+            <h3>E-commerce</h3>
+            <p>Automate orders, inventory, customer support, and grow your online store effortlessly</p>
+            <ul class="solution-card-list">
+              <li>Order processing automation</li>
+              <li>Inventory management</li>
+              <li>Customer support workflows</li>
+              <li>Returns & refunds automation</li>
+            </ul>
+            <a href="#ecommerce" class="btn btn-outline">Explore E-commerce</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Marketing Solution -->
+      <section class="solution-detail" id="marketing">
+        <div class="solution-detail-container">
+          <div class="solution-detail-header">
+            <div class="section-subtitle">Marketing Automation</div>
+            <h2>Transform Your Marketing Operations</h2>
+            <p>Automate repetitive marketing tasks and focus on strategy. From lead generation to campaign analytics, handle everything seamlessly.</p>
+          </div>
+
+          <div class="solution-features-grid">
+            <div class="solution-feature">
+              <div class="solution-feature-icon">📧</div>
+              <h4>Email Campaign Automation</h4>
+              <p>Schedule drip campaigns, segment audiences, and personalize emails at scale without manual work.</p>
+            </div>
+
+            <div class="solution-feature">
+              <div class="solution-feature-icon">🎯</div>
+              <h4>Lead Scoring & Nurturing</h4>
+              <p>Automatically score leads based on behavior and trigger personalized nurture sequences.</p>
+            </div>
+
+            <div class="solution-feature">
+              <div class="solution-feature-icon">📱</div>
+              <h4>Social Media Management</h4>
+              <p>Schedule posts across platforms, monitor engagement, and respond to messages automatically.</p>
+            </div>
+
+            <div class="solution-feature">
+              <div class="solution-feature-icon">📊</div>
+              <h4>Campaign Analytics</h4>
+              <p>Track performance metrics, generate reports, and get actionable insights automatically.</p>
+            </div>
+          </div>
+
+          <div class="solution-use-case">
+            <div class="use-case-header">
+              <h3>Real Use Case</h3>
+              <span class="use-case-tag">Marketing Team</span>
+            </div>
+            <div class="use-case-content">
+              <div class="use-case-flow">
+                <div class="use-case-step">
+                  <div class="use-case-step-number">1</div>
+                  <div class="use-case-step-content">
+                    <strong>Lead Submits Form</strong>
+                    <p>Website visitor fills out contact form</p>
+                  </div>
+                </div>
+                <div class="use-case-arrow">→</div>
+                <div class="use-case-step">
+                  <div class="use-case-step-number">2</div>
+                  <div class="use-case-step-content">
+                    <strong>AI Qualification</strong>
+                    <p>AI scores lead based on fit & intent</p>
+                  </div>
+                </div>
+                <div class="use-case-arrow">→</div>
+                <div class="use-case-step">
+                  <div class="use-case-step-number">3</div>
+                  <div class="use-case-step-content">
+                    <strong>Auto Enrollment</strong>
+                    <p>Add to email nurture sequence</p>
+                  </div>
+                </div>
+                <div class="use-case-arrow">→</div>
+                <div class="use-case-step">
+                  <div class="use-case-step-number">4</div>
+                  <div class="use-case-step-content">
+                    <strong>Notify Sales</strong>
+                    <p>Alert sales team for hot leads</p>
+                  </div>
+                </div>
+              </div>
+              <div class="use-case-result">
+                <strong>Result:</strong> 65% increase in qualified leads, 40% faster response time
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sales Solution -->
+      <section class="solution-detail alternate" id="sales">
+        <div class="solution-detail-container">
+          <div class="solution-detail-header">
+            <div class="section-subtitle">Sales & CRM</div>
+            <h2>Close More Deals, Faster</h2>
+            <p>Automate your entire sales process from lead capture to deal closure. Never miss a follow-up and keep your pipeline moving.</p>
+          </div>
+
+          <div class="solution-features-grid">
+            <div class="solution-feature">
+              <div class="solution-feature-icon">🎣</div>
+              <h4>Automated Lead Capture</h4>
+              <p>Capture leads from multiple sources and add them to your CRM instantly.</p>
+            </div>
+
+            <div class="solution-feature">
+              <div class="solution-feature-icon">⚡</div>
+              <h4>Smart Follow-ups</h4>
+              <p>Trigger personalized follow-up emails and reminders based on prospect behavior.</p>
+            </div>
+
+            <div class="solution-feature">
+              <div class="solution-feature-icon">📈</div>
+              <h4>Pipeline Management</h4>
+              <p>Automatically update deal stages, assign tasks, and notify team members.</p>
+            </div>
+
+            <div class="solution-feature">
+              <div class="solution-feature-icon">🔮</div>
+              <h4>Sales Forecasting</h4>
+              <p>Get AI-powered predictions on deal closure probability and revenue forecasts.</p>
+            </div>
+          </div>
+
+          <div class="solution-use-case">
+            <div class="use-case-header">
+              <h3>Real Use Case</h3>
+              <span class="use-case-tag">Sales Team</span>
+            </div>
+            <div class="use-case-content">
+              <div class="use-case-flow">
+                <div class="use-case-step">
+                  <div class="use-case-step-number">1</div>
+                  <div class="use-case-step-content">
+                    <strong>New Lead Arrives</strong>
+                    <p>From website, ads, or referrals</p>
+                  </div>
+                </div>
+                <div class="use-case-arrow">→</div>
+                <div class="use-case-step">
+                  <div class="use-case-step-number">2</div>
+                  <div class="use-case-step-content">
+                    <strong>Auto-assign Rep</strong>
+                    <p>Distribute based on territory/load</p>
+                  </div>
+                </div>
+                <div class="use-case-arrow">→</div>
+                <div class="use-case-step">
+                  <div class="use-case-step-number">3</div>
+                  <div class="use-case-step-content">
+                    <strong>Send Welcome Email</strong>
+                    <p>Personalized intro from rep</p>
+                  </div>
+                </div>
+                <div class="use-case-arrow">→</div>
+                <div class="use-case-step">
+                  <div class="use-case-step-number">4</div>
+                  <div class="use-case-step-content">
+                    <strong>Schedule Follow-ups</strong>
+                    <p>Create tasks & reminders</p>
+                  </div>
+                </div>
+              </div>
+              <div class="use-case-result">
+                <strong>Result:</strong> 3x faster response time, 45% increase in conversions
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Operations Solution -->
+      <section class="solution-detail" id="operations">
+        <div class="solution-detail-container">
+          <div class="solution-detail-header">
+            <div class="section-subtitle">Operations</div>
+            <h2>Streamline Your Business Operations</h2>
+            <p>Eliminate bottlenecks and manual processes. Automate approvals, task assignments, and internal workflows for maximum efficiency.</p>
+          </div>
+
+          <div class="solution-features-grid">
+            <div class="solution-feature">
+              <div class="solution-feature-icon">🔄</div>
+              <h4>Workflow Automation</h4>
+              <p>Automate repetitive processes like onboarding, offboarding, and reporting.</p>
+            </div>
+
+            <div class="solution-feature">
+              <div class="solution-feature-icon">✅</div>
+              <h4>Task Management</h4>
+              <p>Auto-assign tasks, set deadlines, and track progress without manual updates.</p>
+            </div>
+
+            <div class="solution-feature">
+              <div class="solution-feature-icon">📄</div>
+              <h4>Document Processing</h4>
+              <p>Extract data from documents, route for approval, and store automatically.</p>
+            </div>
+
+            <div class="solution-feature">
+              <div class="solution-feature-icon">👤</div>
+              <h4>Approval Workflows</h4>
+              <p>Set up multi-level approvals with automatic routing and notifications.</p>
+            </div>
+          </div>
+
+          <div class="solution-use-case">
+            <div class="use-case-header">
+              <h3>Real Use Case</h3>
+              <span class="use-case-tag">Operations Team</span>
+            </div>
+            <div class="use-case-content">
+              <div class="use-case-flow">
+                <div class="use-case-step">
+                  <div class="use-case-step-number">1</div>
+                  <div class="use-case-step-content">
+                    <strong>Request Submitted</strong>
+                    <p>Employee submits expense report</p>
+                  </div>
+                </div>
+                <div class="use-case-arrow">→</div>
+                <div class="use-case-step">
+                  <div class="use-case-step-number">2</div>
+                  <div class="use-case-step-content">
+                    <strong>Auto Validation</strong>
+                    <p>Check policy compliance</p>
+                  </div>
+                </div>
+                <div class="use-case-arrow">→</div>
+                <div class="use-case-step">
+                  <div class="use-case-step-number">3</div>
+                  <div class="use-case-step-content">
+                    <strong>Route for Approval</strong>
+                    <p>Send to manager automatically</p>
+                  </div>
+                </div>
+                <div class="use-case-arrow">→</div>
+                <div class="use-case-step">
+                  <div class="use-case-step-number">4</div>
+                  <div class="use-case-step-content">
+                    <strong>Process Payment</strong>
+                    <p>Auto-approve & reimburse</p>
+                  </div>
+                </div>
+              </div>
+              <div class="use-case-result">
+                <strong>Result:</strong> 80% reduction in processing time, 95% accuracy
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- E-commerce Solution -->
+      <section class="solution-detail alternate" id="ecommerce">
+        <div class="solution-detail-container">
+          <div class="solution-detail-header">
+            <div class="section-subtitle">E-commerce</div>
+            <h2>Scale Your Online Store</h2>
+            <p>Automate everything from order processing to customer support. Focus on growth while automation handles the operations.</p>
+          </div>
+
+          <div class="solution-features-grid">
+            <div class="solution-feature">
+              <div class="solution-feature-icon">📦</div>
+              <h4>Order Processing</h4>
+              <p>Automatically process orders, generate invoices, and send confirmations.</p>
+            </div>
+
+            <div class="solution-feature">
+              <div class="solution-feature-icon">📊</div>
+              <h4>Inventory Management</h4>
+              <p>Track stock levels, auto-reorder products, and sync across channels.</p>
+            </div>
+
+            <div class="solution-feature">
+              <div class="solution-feature-icon">💬</div>
+              <h4>Customer Support</h4>
+              <p>Auto-respond to common queries, route tickets, and track resolutions.</p>
+            </div>
+
+            <div class="solution-feature">
+              <div class="solution-feature-icon">🔄</div>
+              <h4>Returns & Refunds</h4>
+              <p>Streamline return requests, approvals, and refund processing.</p>
+            </div>
+          </div>
+
+          <div class="solution-use-case">
+            <div class="use-case-header">
+              <h3>Real Use Case</h3>
+              <span class="use-case-tag">E-commerce Store</span>
+            </div>
+            <div class="use-case-content">
+              <div class="use-case-flow">
+                <div class="use-case-step">
+                  <div class="use-case-step-number">1</div>
+                  <div class="use-case-step-content">
+                    <strong>Order Placed</strong>
+                    <p>Customer completes checkout</p>
+                  </div>
+                </div>
+                <div class="use-case-arrow">→</div>
+                <div class="use-case-step">
+                  <div class="use-case-step-number">2</div>
+                  <div class="use-case-step-content">
+                    <strong>Process Payment</strong>
+                    <p>Verify & charge payment</p>
+                  </div>
+                </div>
+                <div class="use-case-arrow">→</div>
+                <div class="use-case-step">
+                  <div class="use-case-step-number">3</div>
+                  <div class="use-case-step-content">
+                    <strong>Update Inventory</strong>
+                    <p>Reduce stock automatically</p>
+                  </div>
+                </div>
+                <div class="use-case-arrow">→</div>
+                <div class="use-case-step">
+                  <div class="use-case-step-number">4</div>
+                  <div class="use-case-step-content">
+                    <strong>Send Confirmation</strong>
+                    <p>Email + SMS to customer</p>
+                  </div>
+                </div>
+              </div>
+              <div class="use-case-result">
+                <strong>Result:</strong> 90% faster order processing, zero manual errors
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="cta">
+        <div class="cta-shape cta-shape-1">
+          <div class="starburst spinner"></div>
+        </div>
+        <div class="cta-shape cta-shape-2">
+          <div class="flower spinner"></div>
+        </div>
+        <div class="cta-shape cta-shape-3">
+          <div class="circle bouncing"></div>
+        </div>
+
+        <div class="cta-content">
+          <h2>Ready to Automate Your Team?</h2>
+          <p>
+            Choose your solution and start automating in minutes. No credit card required.
+          </p>
+          <div class="cta-buttons">
+            <button class="btn btn-white">Start Free Trial</button>
+            <button class="btn btn-outline-white">Talk to Sales</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-wave">
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+            class="shape-fill"
+          ></path>
+        </svg>
+      </div>
+
+      <div class="footer-top">
+        <div class="footer-container">
+          <div>
+            <div class="footer-brand">
+              <img
+                src="001_Bahan/assets/logo.webp"
+                alt="logo"
+                class="logo-img"
+              />
+              Samartha
+            </div>
+            <p class="footer-desc">
+              Empowering businesses with intelligent automation solutions.
+            </p>
+            <div class="footer-social">
+              <a href="#!" class="social-icon">𝕏</a>
+              <a href="#!" class="social-icon">in</a>
+              <a href="#!" class="social-icon">f</a>
+              <a href="#!" class="social-icon">IG</a>
+            </div>
+          </div>
+
+          <div>
+            <div class="footer-title">Platform</div>
+            <div class="footer-links">
+              <a href="platform.html">Features</a>
+              <a href="index.html#pricing">Pricing</a>
+              <a href="integrations.html">Integrations</a>
+            </div>
+          </div>
+
+          <div>
+            <div class="footer-title">Solutions</div>
+            <div class="footer-links">
+              <a href="solutions.html#marketing">Marketing</a>
+              <a href="solutions.html#sales">Sales</a>
+              <a href="solutions.html#operations">Operations</a>
+              <a href="solutions.html#ecommerce">E-commerce</a>
+            </div>
+          </div>
+
+          <div>
+            <div class="footer-title">Resources</div>
+            <div class="footer-links">
+              <a href="#!">Help Center</a>
+              <a href="#!">Documentation</a>
+              <a href="#!">Community</a>
+            </div>
+          </div>
+
+          <div>
+            <div class="footer-title">Company</div>
+            <div class="footer-links">
+              <a href="about.html">About Us</a>
+              <a href="#!">Careers</a>
+              <a href="#!">Contact</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-content">
+          <p class="footer-copyright">
+            &copy; 2026 Samartha. All rights reserved.
+          </p>
+          <div class="footer-legal">
+            <a href="#!">Privacy</a>
+            <a href="#!">Terms</a>
+            <a href="#!">Security</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="001_Website/js/script.js"></script>
+  </body>
+</html>

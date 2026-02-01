@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Basic Meta -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- SEO Meta -->
+    <title>Pricing – Simple, Transparent Plans | Samartha</title>
+    <meta
+      name="description"
+      content="Choose the perfect Samartha plan for your business. Flexible pricing with no hidden fees. Start free, upgrade anytime."
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" href="001_Bahan/assets/logo.webp" type="image/webp" />
+
+    <!-- Preconnect Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link rel="stylesheet" href="001_Bahan/Swiperjs v5.3.7/swiper-bundle.css" />
+    <link rel="stylesheet" href="001_Website/css/style.css" />
+    <link rel="stylesheet" href="001_Website/css/pricing.css" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <style>
+      /* ========================================
+   PRICING PAGE STYLES
+   Following homepage design patterns
+   ======================================== */
+
+/* Pricing Hero - Full Height with Centered Layout */
+.pricing-hero {
+  min-height: 100vh;
+  display: grid;
+  align-items: center;
+  padding: 5rem 3rem 3rem;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-light);
+}
+
+.pricing-hero-container {
+  /* max-width: 900px; */
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+}
+
+.pricing-hero-content {
+  animation: fadeInUp 0.8s ease;
+}
+
+.pricing-hero h1 {
+  margin: 0.75rem 0 1.25rem;
+}
+
+.pricing-hero-subtitle {
+  font-size: 1.15rem;
+  margin: 0 auto 2.5rem;
+  max-width: 650px;
+}
+
+.pricing-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 0 auto 3rem;
+}
+
+/* Benefits Grid - Badge Style */
+.pricing-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.benefit-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  background: white;
+  border: 1px solid rgba(67, 66, 255, 0.08);
+  border-radius: 50px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgba(255, 255, 255, 0.746);
+  backdrop-filter: blur(7.6px);
+  -webkit-backdrop-filter: blur(7.6px);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease forwards;
+  justify-content: center;
+}
+
+.benefit-badge:nth-child(1) { animation-delay: 0s; }
+.benefit-badge:nth-child(2) { animation-delay: 0.1s; }
+.benefit-badge:nth-child(3) { animation-delay: 0.2s; }
+.benefit-badge:nth-child(4) { animation-delay: 0.3s; }
+
+.benefit-badge:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(67, 66, 255, 0.12);
+  border-color: rgba(67, 66, 255, 0.2);
+}
+
+.benefit-icon-small {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(67, 66, 255, 0.08);
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.benefit-badge:hover .benefit-icon-small {
+  background: rgba(67, 66, 255, 0.15);
+  transform: scale(1.1);
+}
+
+.benefit-icon-small img {
+  width: 60%;
+}
+
+.benefit-badge span {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--black-color);
+  white-space: nowrap;
+}
+
+.shape-3 {
+  bottom: 20%;
+  right: 10%;
+}
+
+/* Pricing Section - Matching Homepage Card Style */
+.pricing-section {
+  padding: 4.5rem 3rem;
+  background: var(--bg-light);
+  position: relative;
+  overflow: hidden;
+}
+
+.pricing-section-container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.pricing-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.pricing-plan-card {
+  padding: 2rem;
+  border-radius: 16px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(67, 66, 255, 0.08);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.38);
+  backdrop-filter: blur(7.6px);
+  -webkit-backdrop-filter: blur(7.6px);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.pricing-plan-card:nth-child(1) { animation-delay: 0s; }
+.pricing-plan-card:nth-child(2) { animation-delay: 0.1s; }
+.pricing-plan-card:nth-child(3) { animation-delay: 0.2s; }
+.pricing-plan-card:nth-child(4) { animation-delay: 0.3s; }
+
+.pricing-plan-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(67, 66, 255, 0.1);
+  border-color: rgba(67, 66, 255, 0.2);
+}
+
+.pricing-plan-card.featured {
+  border-color: var(--primary-color);
+  border-width: 1.5px;
+  background: rgba(67, 66, 255, 0.02);
+}
+
+.pricing-plan-card.featured:hover {
+  transform: translateY(-6px);
+}
+
+.plan-badge {
+  position: absolute;
+  top: -12px;
+  right: 20px;
+  background: var(--primary-color);
+  color: white;
+  padding: 0.35rem 0.95rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.plan-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(67, 66, 255, 0.1);
+}
+
+.plan-name {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: var(--black-color);
+  font-family: var(--header-font-family);
+  font-weight: 700;
+}
+
+.plan-price {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+}
+
+.plan-price .price-amount {
+  font-size: 2.75rem;
+  font-weight: 800;
+  font-family: var(--header-font-family);
+  color: var(--primary-color);
+  transition: all 0.3s ease;
+}
+
+.plan-price .price-period {
+  font-size: 1rem;
+  opacity: 0.6;
+  font-weight: 500;
+}
+
+.plan-desc {
+  font-size: 0.9rem;
+  margin: 0;
+  opacity: 0.8;
+}
+
+.plan-features {
+  flex: 1;
+  margin-bottom: 2rem;
+}
+
+.plan-feature {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 0;
+  font-size: 0.9rem;
+}
+
+.plan-feature .feature-check {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(67, 66, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-color);
+  font-size: 0.75rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.plan-btn {
+  width: 100%;
+}
+
+/* Feature Comparison Table */
+.feature-comparison {
+  padding: 4.5rem 3rem;
+  background: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-comparison-container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.comparison-table-wrapper {
+  margin-top: 3rem;
+  overflow-x: auto;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(67, 66, 255, 0.08);
+}
+
+.comparison-table {
+  width: 100%;
+  background: white;
+  border-collapse: collapse;
+  min-width: 800px;
+}
+
+.comparison-table thead {
+  background: var(--primary-color);
+  color: white;
+}
+
+.comparison-table th {
+  padding: 1.5rem 1rem;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.05rem;
+  font-family: var(--header-font-family);
+}
+
+.comparison-table th.feature-col {
+  text-align: left;
+  padding-left: 2rem;
+  min-width: 250px;
+}
+
+.comparison-table th.featured-col {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.comparison-table tbody tr {
+  border-bottom: 1px solid rgba(67, 66, 255, 0.08);
+}
+
+.comparison-table tbody tr:hover {
+  background: rgba(67, 66, 255, 0.02);
+}
+
+.comparison-table td {
+  padding: 1.25rem 1rem;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.comparison-table td.feature-name {
+  text-align: left;
+  padding-left: 2rem;
+  font-weight: 500;
+}
+
+.comparison-table td.featured-col {
+  background: rgba(67, 66, 255, 0.03);
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.category-row {
+  background: rgba(67, 66, 255, 0.05);
+}
+
+.category-row td {
+  padding: 1rem 2rem;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--primary-color);
+  text-align: left;
+  font-family: var(--header-font-family);
+}
+
+/* Pricing FAQ */
+.pricing-faq {
+  padding: 4.5rem 3rem;
+  background: white;
+}
+
+.pricing-faq-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Responsive Pricing */
+@media (max-width: 1200px) {
+  .pricing-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 968px) {
+  .pricing-hero {
+    padding: 6rem 1.5rem 3rem;
+    min-height: auto;
+  }
+
+  .pricing-hero-container {
+    max-width: 100%;
+  }
+
+  .pricing-benefits-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
+
+  .pricing-section,
+  .feature-comparison,
+  .pricing-faq {
+    padding: 3rem 1.5rem;
+  }
+
+  .pricing-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .comparison-table-wrapper {
+    border-radius: 12px;
+  }
+
+  .comparison-table {
+    font-size: 0.85rem;
+  }
+
+  .comparison-table th,
+  .comparison-table td {
+    padding: 1rem 0.75rem;
+  }
+
+  .comparison-table th.feature-col,
+  .comparison-table td.feature-name {
+    padding-left: 1rem;
+    min-width: 200px;
+  }
+}
+
+@media (max-width: 640px) {
+  .pricing-toggle {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .toggle-label {
+    font-size: 1rem;
+  }
+
+  .plan-price .price-amount {
+    font-size: 2.25rem;
+  }
+
+  .comparison-table {
+    min-width: 700px;
+  }
+
+  .benefit-badge {
+    padding: 0.85rem 1.25rem;
+  }
+
+  .benefit-icon-small {
+    width: 32px;
+    height: 32px;
+  }
+
+  .benefit-badge span {
+    font-size: 0.85rem;
+  }
+}
+    </style>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-container">
+        <a href="index.html" class="logo">
+          <img src="001_Bahan/assets/logo.webp" alt="logo" class="logo-img" />
+          Samartha
+        </a>
+
+        <div class="nav-menu" id="navMenu">
+          <!-- Platform Dropdown -->
+          <div class="nav-dropdown">
+            <a href="#" class="nav-link">
+              Platform
+              <svg
+                class="dropdown-arrow"
+                width="12"
+                height="12"
+                viewBox="0 0 12 12"
+                fill="none"
+              >
+                <path
+                  d="M2 4L6 8L10 4"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </a>
+            <div class="dropdown-menu">
+              <a href="platform.html#workflows" class="dropdown-item">
+                <div class="dropdown-icon">
+                  <img
+                    src="001_Bahan/assets/icon-2.webp"
+                    class="assets-icon"
+                    alt=""
+                  />
+                </div>
+                <div class="dropdown-content">
+                  <div class="dropdown-title">Workflows</div>
+                  <div class="dropdown-desc">Visual workflow builder</div>
+                </div>
+              </a>
+              <a href="platform.html#integrations" class="dropdown-item">
+                <div class="dropdown-icon">
+                  <img
+                    src="001_Bahan/assets/icon-3.webp"
+                    class="assets-icon"
+                    alt=""
+                  />
+                </div>
+                <div class="dropdown-content">
+                  <div class="dropdown-title">Integrations</div>
+                  <div class="dropdown-desc">500+ app connections</div>
+                </div>
+              </a>
+              <a href="platform.html#ai" class="dropdown-item">
+                <div class="dropdown-icon">
+                  <img
+                    src="001_Bahan/assets/icon-1.webp"
+                    class="assets-icon"
+                    alt=""
+                  />
+                </div>
+                <div class="dropdown-content">
+                  <div class="dropdown-title">AI Automation</div>
+                  <div class="dropdown-desc">Smart triggers & actions</div>
+                </div>
+              </a>
+              <a href="platform.html#analytics" class="dropdown-item">
+                <div class="dropdown-icon">
+                  <img
+                    src="001_Bahan/assets/icon-4.webp"
+                    class="assets-icon"
+                    alt=""
+                  />
+                </div>
+                <div class="dropdown-content">
+                  <div class="dropdown-title">Analytics</div>
+                  <div class="dropdown-desc">Reports & insights</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Solutions Dropdown -->
+          <div class="nav-dropdown">
+            <a href="#" class="nav-link">
+              Solutions
+              <svg
+                class="dropdown-arrow"
+                width="12"
+                height="12"
+                viewBox="0 0 12 12"
+                fill="none"
+              >
+                <path
+                  d="M2 4L6 8L10 4"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </a>
+            <div class="dropdown-menu">
+              <a href="#" class="dropdown-item">
+                <div class="dropdown-icon">
+                  <img
+                    src="001_Bahan/assets/icon-7.webp"
+                    class="assets-icon"
+                    alt=""
+                  />
+                </div>
+                <div class="dropdown-content">
+                  <div class="dropdown-title">Marketing</div>
+                  <div class="dropdown-desc">Campaign automation</div>
+                </div>
+              </a>
+              <a href="#" class="dropdown-item">
+                <div class="dropdown-icon">
+                  <img
+                    src="001_Bahan/assets/icon-5-b.webp"
+                    class="assets-icon"
+                    alt=""
+                  />
+                </div>
+                <div class="dropdown-content">
+                  <div class="dropdown-title">Sales</div>
+                  <div class="dropdown-desc">CRM & lead management</div>
+                </div>
+                <span class="badge-primary">Popular</span>
+              </a>
+              <a href="#" class="dropdown-item">
+                <div class="dropdown-icon">
+                  <img
+                    src="001_Bahan/assets/icon-8.webp"
+                    class="assets-icon"
+                    alt=""
+                  />
+                </div>
+                <div class="dropdown-content">
+                  <div class="dropdown-title">Operations</div>
+                  <div class="dropdown-desc">Process automation</div>
+                </div>
+              </a>
+              <a href="#" class="dropdown-item">
+                <div class="dropdown-icon">
+                  <img
+                    src="001_Bahan/assets/icon-9.webp"
+                    class="assets-icon"
+                    alt=""
+                  />
+                </div>
+                <div class="dropdown-content">
+                  <div class="dropdown-title">E-commerce</div>
+                  <div class="dropdown-desc">Order & inventory</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Direct Links -->
+          <a href="index.html#pricing" class="nav-link">Pricing</a>
+
+          <!-- CTA Group -->
+          <div class="nav-cta-group">
+            <a href="#" class="nav-link-secondary">Sign in</a>
+            <button class="btn btn-primary">Get Started</button>
+          </div>
+        </div>
+
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+
+    <main>
+      <!-- Pricing Hero - Full Height -->
+      <section class="pricing-hero">
+        <div class="shape-deco shape-1">
+          <div class="starburst spinner"></div>
+        </div>
+        <div class="shape-deco shape-2">
+          <div class="flower spinner"></div>
+        </div>
+        <div class="shape-deco shape-3">
+          <div class="circle bouncing"></div>
+        </div>
+
+        <div class="pricing-hero-container">
+          <div class="pricing-hero-content">
+            <div class="badge">💰 Simple, Transparent Pricing</div>
+            <h1>Choose Your Perfect Plan</h1>
+            <p class="pricing-hero-subtitle">
+              Start free, upgrade as you grow. No hidden fees, cancel anytime. 14-day money-back guarantee on all paid plans.
+            </p>
+
+            <!-- Toggle -->
+            <div class="pricing-toggle">
+              <span class="toggle-label" id="monthlyLabel">Monthly</span>
+              <label class="toggle-switch">
+                <input type="checkbox" id="pricingToggle" checked />
+                <span class="toggle-slider"></span>
+              </label>
+              <span class="toggle-label active" id="annuallyLabel">
+                Annually <span class="save-badge">Save 20%</span>
+              </span>
+            </div>
+
+          </div>
+          <div class="pricing-cards-grid">
+            <!-- Free Plan -->
+            <div class="pricing-plan-card" data-delay="0">
+              <div class="plan-header">
+                <h3 class="plan-name">Free</h3>
+                <div class="plan-price">
+                  <span class="price-amount">$0</span>
+                  <span class="price-period">/month</span>
+                </div>
+                <p class="plan-desc">Perfect for individuals getting started</p>
+              </div>
+
+              <div class="plan-features">
+                <div class="plan-feature">
+                  <span class="feature-check">✓</span>
+                  <span>Up to 100 tasks/month</span>
+                </div>
+                <div class="plan-feature">
+                  <span class="feature-check">✓</span>
+                  <span>3 active workflows</span>
+                </div>
+                <div class="plan-feature">
+                  <span class="feature-check">✓</span>
+                  <span>Basic integrations</span>
+                </div>
+                <div class="plan-feature">
+                  <span class="feature-check">✓</span>
+                  <span>Community support</span>
+                </div>
+                <div class="plan-feature">
+                  <span class="feature-check">✓</span>
+                  <span>Email notifications</span>
+                </div>
+              </div>
+
+              <button class="btn btn-outline plan-btn">Start Free</button>
+            </div>
+
+            <!-- Starter Plan -->
+            <div class="pricing-plan-card" data-delay="100">
+              <div class="plan-header">
+                <h3 class="plan-name">Starter</h3>
+                <div class="plan-price">
+                  <span class="price-amount" data-monthly="29" data-annual="23">$29</span>
+                  <span class="price-period">/month</span>
+                </div>
+                <p class="plan-desc">For small teams getting started</p>
+              </div>
+
+              <div class="plan-features">
+                <div class="plan-feature">
+                  <span class="feature-check">✓</span>
+                  <span>Up to 1,000 tasks/month</span>
+                </div>
+                <div class="plan-feature">
+                  <span class="feature-check">✓</span>
+                  <span>10 active workflows</span>
+                </div>
+                <div class="plan-feature">
+                  <span class="feature-check">✓</span>
+                  <span>All integrations</span>
+                </div>
+                <div class="plan-feature">
+                  <span class="feature-check">✓</span>
+                  <span>Email support</span>
+                </div>
+                <div class="plan-feature">
+                  <span class="feature-check">✓</span>
+                  <span>Basic analytics</span>
+                </div>
+                <div class="plan-feature">
+                  <span class="feature-check">✓</span>
+                  <span>Version control</span>
+                </div>
+              </div>
+
+              <button class="btn btn-outline plan-btn">Get Started</button>
+            </div>
+
+            <!-- Professional Plan -->
+            <div class="pricing-plan-card featured" data-delay="200">
+              <div class="plan-badge">Most Popular</div>
+              <div class="plan-header">
+                <h3 class="plan-name">Professional</h3>
+                <div class="plan-price">
+                  <span class="price-amount" data-monthly="99" data-annual="79">$99</span>
+                  <span class="price-period">/month</span>
+                </div>
+                <p class="plan-desc">For growing businesses that need more</p>
+              </div>
+
+              <div class="plan-features">
+                <div class="plan-feature">
+                  <span class="feature-check">✓</span>
+                  <span>Up to 10,000 tasks/month</span>
+                </div>
+                <div class="plan-feature">
+                  <span class="feature-check">✓</span>
+                  <span>Unlimited workflows</span>
+                </div>
+                <div class="plan-feature">
+                  <span class="feature-check">✓</span>
+                  <span>Premium integrations</span>
+                </div>
+                <div class="plan-feature">
+                  <span class="feature-check">✓</span>
+                  <span>Priority support</span>
+                </div>
+                <div class="plan-feature">
+                  <span class="feature-check">✓</span>
+                  <span>Advanced analytics</span>
+                </div>
+                <div class="plan-feature">
+                  <span class="feature-check">✓</span>
+                  <span>Team collaboration</span>
+                </div>
+                <div class="plan-feature">
+                  <span class="feature-check">✓</span>
+                  <span>Custom branding</span>
+                </div>
+              </div>
+
+              <button class="btn btn-primary plan-btn">Get Started</button>
+            </div>
+
+            <!-- Enterprise Plan -->
+            <div class="pricing-plan-card" data-delay="300">
+              <div class="plan-header">
+                <h3 class="plan-name">Enterprise</h3>
+                <div class="plan-price">
+                  <span class="price-amount">Custom</span>
+                </div>
+                <p class="plan-desc">For large organizations with custom needs</p>
+              </div>
+
+              <div class="plan-features">
+                <div class="plan-feature">
+                  <span class="feature-check">✓</span>
+                  <span>Unlimited tasks</span>
+                </div>
+                <div class="plan-feature">
+                  <span class="feature-check">✓</span>
+                  <span>Unlimited workflows</span>
+                </div>
+                <div class="plan-feature">
+                  <span class="feature-check">✓</span>
+                  <span>Custom integrations</span>
+                </div>
+                <div class="plan-feature">
+                  <span class="feature-check">✓</span>
+                  <span>24/7 dedicated support</span>
+                </div>
+                <div class="plan-feature">
+                  <span class="feature-check">✓</span>
+                  <span>Custom SLA</span>
+                </div>
+                <div class="plan-feature">
+                  <span class="feature-check">✓</span>
+                  <span>SSO & SAML</span>
+                </div>
+                <div class="plan-feature">
+                  <span class="feature-check">✓</span>
+                  <span>Dedicated account manager</span>
+                </div>
+              </div>
+
+              <button class="btn btn-outline plan-btn">Contact Sales</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Feature Comparison Table -->
+      <section class="feature-comparison">
+        <div class="shape-deco shape-1">
+          <div class="flower spinner"></div>
+        </div>
+        <div class="shape-deco shape-2">
+          <div class="circle bouncing"></div>
+        </div>
+
+        <div class="feature-comparison-container">
+          <div class="section-header">
+            <div class="section-subtitle">Compare Plans</div>
+            <h2>Detailed Feature Comparison</h2>
+            <p>See exactly what's included in each plan</p>
+          </div>
+
+          <div class="comparison-table-wrapper">
+            <table class="comparison-table">
+              <thead>
+                <tr>
+                  <th class="feature-col">Features</th>
+                  <th>Free</th>
+                  <th>Starter</th>
+                  <th class="featured-col">Professional</th>
+                  <th>Enterprise</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="category-row">
+                  <td colspan="5" class="category-title">Workflow Automation</td>
+                </tr>
+                <tr>
+                  <td class="feature-name">Active Workflows</td>
+                  <td>3</td>
+                  <td>10</td>
+                  <td class="featured-col">Unlimited</td>
+                  <td>Unlimited</td>
+                </tr>
+                <tr>
+                  <td class="feature-name">Tasks per Month</td>
+                  <td>100</td>
+                  <td>1,000</td>
+                  <td class="featured-col">10,000</td>
+                  <td>Unlimited</td>
+                </tr>
+                <tr>
+                  <td class="feature-name">Workflow Templates</td>
+                  <td>Basic</td>
+                  <td>All</td>
+                  <td class="featured-col">All + Premium</td>
+                  <td>All + Custom</td>
+                </tr>
+                <tr>
+                  <td class="feature-name">Conditional Logic</td>
+                  <td>✓</td>
+                  <td>✓</td>
+                  <td class="featured-col">✓</td>
+                  <td>✓</td>
+                </tr>
+
+                <tr class="category-row">
+                  <td colspan="5" class="category-title">Integrations</td>
+                </tr>
+                <tr>
+                  <td class="feature-name">Available Integrations</td>
+                  <td>50+</td>
+                  <td>500+</td>
+                  <td class="featured-col">500+</td>
+                  <td>500+ Custom</td>
+                </tr>
+                <tr>
+                  <td class="feature-name">Custom API Access</td>
+                  <td>—</td>
+                  <td>—</td>
+                  <td class="featured-col">✓</td>
+                  <td>✓</td>
+                </tr>
+                <tr>
+                  <td class="feature-name">Webhook Support</td>
+                  <td>—</td>
+                  <td>✓</td>
+                  <td class="featured-col">✓</td>
+                  <td>✓</td>
+                </tr>
+
+                <tr class="category-row">
+                  <td colspan="5" class="category-title">AI & Analytics</td>
+                </tr>
+                <tr>
+                  <td class="feature-name">AI-Powered Workflows</td>
+                  <td>—</td>
+                  <td>Basic</td>
+                  <td class="featured-col">Advanced</td>
+                  <td>Advanced + Custom</td>
+                </tr>
+                <tr>
+                  <td class="feature-name">Analytics Dashboard</td>
+                  <td>Basic</td>
+                  <td>Standard</td>
+                  <td class="featured-col">Advanced</td>
+                  <td>Custom</td>
+                </tr>
+                <tr>
+                  <td class="feature-name">Custom Reports</td>
+                  <td>—</td>
+                  <td>—</td>
+                  <td class="featured-col">✓</td>
+                  <td>✓</td>
+                </tr>
+
+                <tr class="category-row">
+                  <td colspan="5" class="category-title">Team & Collaboration</td>
+                </tr>
+                <tr>
+                  <td class="feature-name">Team Members</td>
+                  <td>1</td>
+                  <td>3</td>
+                  <td class="featured-col">10</td>
+                  <td>Unlimited</td>
+                </tr>
+                <tr>
+                  <td class="feature-name">Role-Based Access</td>
+                  <td>—</td>
+                  <td>—</td>
+                  <td class="featured-col">✓</td>
+                  <td>✓</td>
+                </tr>
+                <tr>
+                  <td class="feature-name">Audit Logs</td>
+                  <td>—</td>
+                  <td>—</td>
+                  <td class="featured-col">✓</td>
+                  <td>✓</td>
+                </tr>
+
+                <tr class="category-row">
+                  <td colspan="5" class="category-title">Support & Security</td>
+                </tr>
+                <tr>
+                  <td class="feature-name">Support</td>
+                  <td>Community</td>
+                  <td>Email</td>
+                  <td class="featured-col">Priority</td>
+                  <td>24/7 Dedicated</td>
+                </tr>
+                <tr>
+                  <td class="feature-name">SLA Guarantee</td>
+                  <td>—</td>
+                  <td>—</td>
+                  <td class="featured-col">99.9%</td>
+                  <td>Custom</td>
+                </tr>
+                <tr>
+                  <td class="feature-name">SSO & SAML</td>
+                  <td>—</td>
+                  <td>—</td>
+                  <td class="featured-col">—</td>
+                  <td>✓</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="pricing-faq">
+        <div class="pricing-faq-container">
+          <div class="section-header">
+            <div class="section-subtitle">FAQ</div>
+            <h2>Pricing Questions</h2>
+            <p>Common questions about our plans and pricing</p>
+          </div>
+
+          <div class="faq-container">
+            <div class="faq-item">
+              <div class="faq-question">
+                <span>Can I change plans anytime?</span>
+                <span class="faq-icon">+</span>
+              </div>
+              <div class="faq-answer">
+                <div class="faq-answer-content">
+                  Yes! You can upgrade or downgrade your plan at any time. When you upgrade, you'll be charged the prorated difference. When you downgrade, the change takes effect at the end of your current billing cycle.
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item active">
+              <div class="faq-question">
+                <span>What happens if I exceed my task limit?</span>
+                <span class="faq-icon">+</span>
+              </div>
+              <div class="faq-answer">
+                <div class="faq-answer-content">
+                  We'll notify you when you're approaching your limit. Your workflows will continue to run, but you'll need to upgrade to create new automations. You can also purchase additional task packs if you occasionally need more capacity.
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                <span>Do you offer discounts for annual plans?</span>
+                <span class="faq-icon">+</span>
+              </div>
+              <div class="faq-answer">
+                <div class="faq-answer-content">
+                  Yes! Annual plans come with a 20% discount compared to monthly billing. You'll save even more with longer commitments while enjoying all the same features.
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                <span>Is there a free trial for paid plans?</span>
+                <span class="faq-icon">+</span>
+              </div>
+              <div class="faq-answer">
+                <div class="faq-answer-content">
+                  Yes! All paid plans come with a 14-day free trial. No credit card required to start. If you're not satisfied within the first 14 days, we offer a full money-back guarantee.
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                <span>What payment methods do you accept?</span>
+                <span class="faq-icon">+</span>
+              </div>
+              <div class="faq-answer">
+                <div class="faq-answer-content">
+                  We accept all major credit cards (Visa, Mastercard, American Express), PayPal, and bank transfers for annual plans. Enterprise customers can also arrange for invoicing.
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                <span>Can I cancel anytime?</span>
+                <span class="faq-icon">+</span>
+              </div>
+              <div class="faq-answer">
+                <div class="faq-answer-content">
+                  Absolutely! There are no contracts or cancellation fees. You can cancel your subscription at any time, and you'll retain access until the end of your current billing period. You can also export all your data before canceling.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="cta" id="contact">
+        <div class="cta-shape cta-shape-1">
+          <div class="starburst spinner"></div>
+        </div>
+        <div class="cta-shape cta-shape-2">
+          <div class="flower spinner"></div>
+        </div>
+        <div class="cta-shape cta-shape-3">
+          <div class="circle bouncing"></div>
+        </div>
+        <div class="cta-shape cta-shape-4">
+          <div class="starburst spinner" style="width: 60px"></div>
+        </div>
+
+        <div class="cta-content">
+          <h2>Ready to Get Started?</h2>
+          <p>
+            Join thousands of businesses automating with Samartha. Start free, no credit card required.
+          </p>
+          <div class="cta-buttons">
+            <button class="btn btn-white">Start Free Trial</button>
+            <button class="btn btn-outline-white">Talk to Sales</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-wave">
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+            class="shape-fill"
+          ></path>
+        </svg>
+      </div>
+
+      <div class="footer-top">
+        <div class="footer-container">
+          <div>
+            <div class="footer-brand">
+              <img
+                src="001_Bahan/assets/logo.webp"
+                alt="logo"
+                class="logo-img"
+              />
+              Samartha
+            </div>
+            <p class="footer-desc">
+              Empowering businesses worldwide with intelligent automation solutions that drive growth, efficiency, and innovation.
+            </p>
+            <div class="footer-social">
+              <a href="#" class="social-icon">𝕏</a>
+              <a href="#" class="social-icon">in</a>
+              <a href="#" class="social-icon">f</a>
+              <a href="#" class="social-icon">IG</a>
+            </div>
+          </div>
+
+          <div>
+            <div class="footer-title">Product</div>
+            <div class="footer-links">
+              <a href="platform.html">Platform</a>
+              <a href="index.html#pricing">Pricing</a>
+              <a href="#">Integrations</a>
+              <a href="#">Templates</a>
+              <a href="#">What's New</a>
+            </div>
+          </div>
+
+          <div>
+            <div class="footer-title">Solutions</div>
+            <div class="footer-links">
+              <a href="#">Marketing</a>
+              <a href="#">Sales</a>
+              <a href="#">Operations</a>
+              <a href="#">E-commerce</a>
+            </div>
+          </div>
+
+          <div>
+            <div class="footer-title">Resources</div>
+            <div class="footer-links">
+              <a href="#">Help Center</a>
+              <a href="#">Documentation</a>
+              <a href="#">API Reference</a>
+              <a href="#">Community</a>
+              <a href="#">Blog</a>
+            </div>
+          </div>
+
+          <div>
+            <div class="footer-title">Company</div>
+            <div class="footer-links">
+              <a href="#">About Us</a>
+              <a href="index.html#testimonials">Customers</a>
+              <a href="#">Careers</a>
+              <a href="#">Press Kit</a>
+              <a href="#">Contact</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-content">
+          <p class="footer-copyright">
+            &copy; 2026 Samartha. All rights reserved.
+          </p>
+          <div class="footer-legal">
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">Security</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Chatbot Widget -->
+    <div class="chatbot-widget" id="chatbotWidget">
+      <div class="chatbot-header">
+        <div class="chatbot-avatar-group">
+          <div class="chatbot-avatar">S</div>
+          <div class="chatbot-avatar">A</div>
+          <div class="chatbot-avatar">M</div>
+        </div>
+        <div class="chatbot-info">
+          <h4>Samartha Assistant</h4>
+          <p>• Online</p>
+        </div>
+        <button class="chatbot-close" id="chatbotClose">×</button>
+      </div>
+      <div class="chatbot-body" id="chatbotBody">
+        <div class="chatbot-message bot-message">
+          <div class="message-avatar">AI</div>
+          <div class="message-content">
+            <p>
+              Hi there! 👋 I'm your Samartha AI assistant. How can I help you
+              today?
+            </p>
+            <span class="message-time">Just now</span>
+          </div>
+        </div>
+        <div class="chatbot-suggestions">
+          <button class="suggestion-btn">How does automation work?</button>
+          <button class="suggestion-btn">Show pricing plans</button>
+          <button class="suggestion-btn">Book a demo</button>
+        </div>
+      </div>
+      <div class="chatbot-footer">
+        <input
+          type="text"
+          placeholder="Type your message..."
+          class="chatbot-input"
+          id="chatbotInput"
+        />
+        <button class="chatbot-send" id="chatbotSend" aria-label="Send Message">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+          </svg>
+        </button>
+      </div>
+      <div class="chatbot-privacy">
+        By chatting, you agree to our <a href="#privacy">Privacy Policy</a>
+      </div>
+    </div>
+
+    <!-- Chatbot Button -->
+    <button class="chatbot-button" id="chatbotButton" aria-label="Open chat">
+      <svg
+        class="chat-icon"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path
+          d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+        />
+      </svg>
+      <svg
+        class="close-icon"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <line x1="18" y1="6" x2="6" y2="18" />
+        <line x1="6" y1="6" x2="18" y2="18" />
+      </svg>
+    </button>
+
+    <script src="001_Bahan/Swiperjs v5.3.7/swiper.min.js" defer></script>
+    <script src="001_Website/js/script.js" defer></script>
+  </body>
+</html>

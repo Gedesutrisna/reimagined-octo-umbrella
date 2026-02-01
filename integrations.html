@@ -22,6 +22,7 @@
 
     <link rel="stylesheet" href="001_Bahan/Swiperjs v5.3.7/swiper-bundle.css" />
     <link rel="stylesheet" href="001_Website/css/style.css" />
+    <link rel="stylesheet" href="001_Website/css/integrations.css" />
 
     <!-- Google Fonts -->
     <link
@@ -34,6 +35,470 @@
     />
   </head>
   <body>
+    <style>
+      /* ========================================
+   INTEGRATIONS PAGE STYLES
+   Clean design inspired by Attio
+   ======================================== */
+
+/* Integrations Hero - Full Height Centered */
+.integrations-hero {
+  min-height: 100vh;
+  display: grid;
+  align-items: center;
+  padding: 5rem 3rem 3rem;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-light);
+}
+
+.integrations-hero-container {
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+}
+
+.integrations-hero h1 {
+  margin: 0.75rem 0 1.25rem;
+}
+
+.integrations-hero-subtitle {
+  font-size: 1.15rem;
+  margin: 0 auto 3rem;
+  max-width: 600px;
+}
+
+/* Search Bar */
+.integrations-search {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.integrations-search .search-icon {
+  position: absolute;
+  left: 1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--primary-color);
+  opacity: 0.6;
+}
+
+.integrations-search input {
+  width: 100%;
+  padding: 1rem 1.25rem 1rem 3.5rem;
+  border: 1px solid rgba(67, 66, 255, 0.15);
+  border-radius: 50px;
+  font-size: 1rem;
+  font-family: var(--font-family);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgba(255, 255, 255, 0.746);
+  backdrop-filter: blur(7.6px);
+  -webkit-backdrop-filter: blur(7.6px);
+}
+
+.integrations-search input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 8px 24px rgba(67, 66, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.integrations-search input::placeholder {
+  opacity: 0.5;
+}
+
+/* Featured Integrations */
+.featured-integrations {
+  padding: 4.5rem 3rem;
+  background: var(--bg-light);
+  position: relative;
+  overflow: hidden;
+}
+
+.featured-integrations-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.featured-card {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.75rem;
+  border: 1px solid rgba(67, 66, 255, 0.08);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.38);
+  backdrop-filter: blur(7.6px);
+  -webkit-backdrop-filter: blur(7.6px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.featured-card:nth-child(1) { animation-delay: 0s; }
+.featured-card:nth-child(2) { animation-delay: 0.1s; }
+.featured-card:nth-child(3) { animation-delay: 0.2s; }
+.featured-card:nth-child(4) { animation-delay: 0.3s; }
+.featured-card:nth-child(5) { animation-delay: 0.4s; }
+.featured-card:nth-child(6) { animation-delay: 0.5s; }
+
+.featured-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(67, 66, 255, 0.1);
+  border-color: rgba(67, 66, 255, 0.2);
+}
+
+.featured-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-weight: 800;
+  font-size: 1.35rem;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.featured-card:hover .featured-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.featured-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.featured-content h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.35rem;
+  color: var(--black-color);
+}
+
+.featured-content p {
+  font-size: 0.85rem;
+  margin: 0;
+  opacity: 0.7;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* All Integrations Section */
+.all-integrations {
+  padding: 4.5rem 3rem;
+  background: white;
+}
+
+.all-integrations-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Category Tabs */
+.category-tabs {
+  display: flex;
+  gap: 0.75rem;
+  margin: 3rem 0 2.5rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  scrollbar-width: none;
+}
+
+.category-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.category-tab {
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  border: 1px solid rgba(67, 66, 255, 0.15);
+  background: white;
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--black-color);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+  opacity: 0.7;
+}
+
+.category-tab:hover {
+  opacity: 1;
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+.category-tab.active {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  color: white;
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+/* Integration Grid */
+.integration-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 3rem;
+}
+
+.integration-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 1.5rem 1rem;
+  border: 1px solid rgba(67, 66, 255, 0.08);
+  border-radius: 12px;
+  background: white;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  text-align: center;
+  opacity: 0;
+  transform: scale(0.95);
+  animation: scaleIn 0.4s ease forwards;
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.integration-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(67, 66, 255, 0.12);
+  border-color: rgba(67, 66, 255, 0.2);
+}
+
+.integration-item.hidden {
+  display: none;
+}
+
+.integration-logo {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 800;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.integration-item:hover .integration-logo {
+  transform: scale(1.15) rotate(5deg);
+}
+
+.integration-name {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--black-color);
+}
+
+.integration-category {
+  font-size: 0.75rem;
+  opacity: 0.6;
+  font-weight: 500;
+}
+
+/* No Results */
+.no-results {
+  text-align: center;
+  padding: 4rem 2rem;
+  opacity: 0;
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+.no-results-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.no-results h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--black-color);
+}
+
+.no-results p {
+  font-size: 1rem;
+  opacity: 0.7;
+}
+
+/* Load More */
+.load-more-section {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.load-more-text {
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.7;
+}
+
+.load-more-text span {
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+/* Request Integration */
+.request-integration {
+  padding: 4.5rem 3rem;
+  background: var(--bg-light);
+  position: relative;
+  overflow: hidden;
+}
+
+.request-integration-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 3rem;
+  align-items: center;
+  padding: 3rem;
+  border: 1px solid rgba(67, 66, 255, 0.08);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.38);
+  backdrop-filter: blur(7.6px);
+  -webkit-backdrop-filter: blur(7.6px);
+}
+
+.request-content h2 {
+  margin-bottom: 1.25rem;
+}
+
+.request-content p {
+  font-size: 1.05rem;
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+
+.request-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.request-icon {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: rgba(67, 66, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: bounce 3s ease-in-out infinite;
+  border: 1px solid rgba(67, 66, 255, 0.15);
+}
+
+.request-icon img {
+  width: 50%;
+}
+
+.request-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.request-stat {
+  text-align: center;
+}
+
+.request-stat-number {
+  font-size: 2rem;
+  font-weight: 800;
+  font-family: var(--header-font-family);
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.request-stat-label {
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+/* Responsive Integrations */
+@media (max-width: 968px) {
+  .integrations-hero {
+    padding: 6rem 1.5rem 3rem;
+    min-height: auto;
+  }
+
+  .featured-integrations,
+  .all-integrations,
+  .request-integration {
+    padding: 3rem 1.5rem;
+  }
+
+  .featured-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .integration-grid {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  }
+
+  .category-tabs {
+    justify-content: flex-start;
+  }
+
+  .request-integration-container {
+    grid-template-columns: 1fr;
+    padding: 2rem;
+  }
+
+  .request-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .integration-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .integrations-search input {
+    font-size: 0.9rem;
+    padding: 0.85rem 1rem 0.85rem 3rem;
+  }
+
+  .request-stats {
+    grid-template-columns: 1fr;
+  }
+}
+    </style>
     <!-- Navbar -->
     <nav class="navbar" id="navbar">
       <div class="nav-container">
@@ -215,12 +680,19 @@
     <main>
       <!-- Integrations Hero -->
       <section class="integrations-hero">
+        <div class="shape-deco shape-1">
+          <div class="starburst spinner"></div>
+        </div>
+        <div class="shape-deco shape-2">
+          <div class="flower spinner"></div>
+        </div>
+
         <div class="integrations-hero-container">
           <div class="badge">🔗 500+ Integrations</div>
-          <h1>Connect Your Favorite Apps</h1>
+          <h1>Connect Your Favorite Tools</h1>
           <p class="integrations-hero-subtitle">
-            Seamlessly integrate with all the tools you already use. No coding
-            required, just click and connect.
+            Seamlessly integrate with all the apps you already use. No coding
+            required—just click and connect.
           </p>
 
           <!-- Search Bar -->
@@ -240,15 +712,44 @@
             <input
               type="text"
               id="integrationSearch"
-              placeholder="Search apps (e.g., Gmail, Slack, Shopify...)"
+              placeholder="Search apps (Gmail, Slack, Shopify...)"
               autocomplete="off"
             />
           </div>
         </div>
       </section>
 
+      <!-- Stats -->
+      <section class="stats">
+        <div class="stats-container">
+          <div class="stat-item" data-delay="0">
+            <div class="stat-number" data-target="500">0</div>
+            <div class="stat-label">Integrations</div>
+          </div>
+          <div class="stat-item" data-delay="100">
+            <div class="stat-number" data-target="50">0</div>
+            <div class="stat-label">New Monthly</div>
+          </div>
+          <div class="stat-item" data-delay="200">
+            <div class="stat-number">1-Click</div>
+            <div class="stat-label">Easy Setup</div>
+          </div>
+          <div class="stat-item" data-delay="300">
+            <div class="stat-number">24/7</div>
+            <div class="stat-label">Support</div>
+          </div>
+        </div>
+      </section>
+
       <!-- Featured Integrations -->
       <section class="featured-integrations">
+        <div class="feature-shape fs-1">
+          <div class="circle bouncing"></div>
+        </div>
+        <div class="feature-shape fs-2">
+          <div class="starburst spinner"></div>
+        </div>
+
         <div class="featured-integrations-container">
           <div class="section-header">
             <div class="section-subtitle">Most Popular</div>
@@ -256,136 +757,22 @@
             <p>The most-used integrations by our customers</p>
           </div>
 
-          <div class="featured-grid">
-            <div class="featured-card" data-name="gmail">
-              <div class="featured-icon" style="background: #ea4335">
-                <span style="color: white; font-weight: 800; font-size: 1.5rem"
-                  >G</span
-                >
-              </div>
-              <div class="featured-content">
-                <h3>Gmail</h3>
-                <p>
-                  Send emails, create drafts, and manage your inbox
-                  automatically
-                </p>
-                <div class="featured-tags">
-                  <span class="tag">Email</span>
-                  <span class="tag">Communication</span>
-                </div>
-              </div>
-              <button class="btn btn-outline btn-sm">Connect</button>
-            </div>
-
-            <div class="featured-card" data-name="slack">
-              <div class="featured-icon" style="background: #4a154b">
-                <span style="color: white; font-weight: 800; font-size: 1.5rem"
-                  >S</span
-                >
-              </div>
-              <div class="featured-content">
-                <h3>Slack</h3>
-                <p>
-                  Send messages, create channels, and automate team
-                  notifications
-                </p>
-                <div class="featured-tags">
-                  <span class="tag">Communication</span>
-                  <span class="tag">Team</span>
-                </div>
-              </div>
-              <button class="btn btn-outline btn-sm">Connect</button>
-            </div>
-
-            <div class="featured-card" data-name="salesforce">
-              <div class="featured-icon" style="background: #00a1e0">
-                <span style="color: white; font-weight: 800; font-size: 1.5rem"
-                  >SF</span
-                >
-              </div>
-              <div class="featured-content">
-                <h3>Salesforce</h3>
-                <p>
-                  Sync contacts, update deals, and automate your CRM workflows
-                </p>
-                <div class="featured-tags">
-                  <span class="tag">CRM</span>
-                  <span class="tag">Sales</span>
-                </div>
-              </div>
-              <button class="btn btn-outline btn-sm">Connect</button>
-            </div>
-
-            <div class="featured-card" data-name="shopify">
-              <div class="featured-icon" style="background: #96bf48">
-                <span style="color: white; font-weight: 800; font-size: 1.5rem"
-                  >S</span
-                >
-              </div>
-              <div class="featured-content">
-                <h3>Shopify</h3>
-                <p>
-                  Manage orders, update inventory, and automate e-commerce tasks
-                </p>
-                <div class="featured-tags">
-                  <span class="tag">E-commerce</span>
-                  <span class="tag">Sales</span>
-                </div>
-              </div>
-              <button class="btn btn-outline btn-sm">Connect</button>
-            </div>
-
-            <div class="featured-card" data-name="hubspot">
-              <div class="featured-icon" style="background: #ff7a59">
-                <span style="color: white; font-weight: 800; font-size: 1.5rem"
-                  >H</span
-                >
-              </div>
-              <div class="featured-content">
-                <h3>HubSpot</h3>
-                <p>
-                  Automate marketing campaigns and manage customer relationships
-                </p>
-                <div class="featured-tags">
-                  <span class="tag">Marketing</span>
-                  <span class="tag">CRM</span>
-                </div>
-              </div>
-              <button class="btn btn-outline btn-sm">Connect</button>
-            </div>
-
-            <div class="featured-card" data-name="notion">
-              <div class="featured-icon" style="background: #000000">
-                <span style="color: white; font-weight: 800; font-size: 1.5rem"
-                  >N</span
-                >
-              </div>
-              <div class="featured-content">
-                <h3>Notion</h3>
-                <p>
-                  Create pages, update databases, and organize your workspace
-                </p>
-                <div class="featured-tags">
-                  <span class="tag">Productivity</span>
-                  <span class="tag">Notes</span>
-                </div>
-              </div>
-              <button class="btn btn-outline btn-sm">Connect</button>
-            </div>
+          <div class="featured-grid" id="featuredGrid">
+            <!-- Will be populated by JavaScript -->
           </div>
         </div>
       </section>
 
-      <!-- Categories -->
-      <section class="integrations-categories">
-        <div class="integrations-categories-container">
+      <!-- All Integrations -->
+      <section class="all-integrations">
+        <div class="all-integrations-container">
           <div class="section-header">
-            <div class="section-subtitle">Browse by Category</div>
+            <div class="section-subtitle">Browse All</div>
             <h2>All Integrations</h2>
           </div>
 
           <!-- Category Tabs -->
-          <div class="category-tabs">
+          <div class="category-tabs" id="categoryTabs">
             <button class="category-tab active" data-category="all">
               All Apps
             </button>
@@ -414,435 +801,10 @@
 
           <!-- Integration Grid -->
           <div class="integration-grid" id="integrationGrid">
-            <!-- Communication -->
-            <div
-              class="integration-item"
-              data-category="communication"
-              data-name="gmail"
-            >
-              <div class="integration-logo" style="background: #ea4335">G</div>
-              <div class="integration-name">Gmail</div>
-              <div class="integration-category">Communication</div>
-            </div>
-
-            <div
-              class="integration-item"
-              data-category="communication"
-              data-name="slack"
-            >
-              <div class="integration-logo" style="background: #4a154b">S</div>
-              <div class="integration-name">Slack</div>
-              <div class="integration-category">Communication</div>
-            </div>
-
-            <div
-              class="integration-item"
-              data-category="communication"
-              data-name="microsoft teams"
-            >
-              <div class="integration-logo" style="background: #5059c9">MT</div>
-              <div class="integration-name">Microsoft Teams</div>
-              <div class="integration-category">Communication</div>
-            </div>
-
-            <div
-              class="integration-item"
-              data-category="communication"
-              data-name="discord"
-            >
-              <div class="integration-logo" style="background: #5865f2">D</div>
-              <div class="integration-name">Discord</div>
-              <div class="integration-category">Communication</div>
-            </div>
-
-            <div
-              class="integration-item"
-              data-category="communication"
-              data-name="telegram"
-            >
-              <div class="integration-logo" style="background: #0088cc">T</div>
-              <div class="integration-name">Telegram</div>
-              <div class="integration-category">Communication</div>
-            </div>
-
-            <div
-              class="integration-item"
-              data-category="communication"
-              data-name="whatsapp"
-            >
-              <div class="integration-logo" style="background: #25d366">W</div>
-              <div class="integration-name">WhatsApp</div>
-              <div class="integration-category">Communication</div>
-            </div>
-
-            <!-- CRM & Sales -->
-            <div
-              class="integration-item"
-              data-category="crm"
-              data-name="salesforce"
-            >
-              <div class="integration-logo" style="background: #00a1e0">SF</div>
-              <div class="integration-name">Salesforce</div>
-              <div class="integration-category">CRM</div>
-            </div>
-
-            <div
-              class="integration-item"
-              data-category="crm"
-              data-name="hubspot"
-            >
-              <div class="integration-logo" style="background: #ff7a59">HS</div>
-              <div class="integration-name">HubSpot</div>
-              <div class="integration-category">CRM</div>
-            </div>
-
-            <div
-              class="integration-item"
-              data-category="crm"
-              data-name="pipedrive"
-            >
-              <div class="integration-logo" style="background: #000000">PD</div>
-              <div class="integration-name">Pipedrive</div>
-              <div class="integration-category">CRM</div>
-            </div>
-
-            <div
-              class="integration-item"
-              data-category="crm"
-              data-name="zoho crm"
-            >
-              <div class="integration-logo" style="background: #e42527">Z</div>
-              <div class="integration-name">Zoho CRM</div>
-              <div class="integration-category">CRM</div>
-            </div>
-
-            <div
-              class="integration-item"
-              data-category="crm"
-              data-name="freshsales"
-            >
-              <div class="integration-logo" style="background: #00c1a2">FS</div>
-              <div class="integration-name">Freshsales</div>
-              <div class="integration-category">CRM</div>
-            </div>
-
-            <div
-              class="integration-item"
-              data-category="crm"
-              data-name="monday sales"
-            >
-              <div class="integration-logo" style="background: #ff3d57">M</div>
-              <div class="integration-name">Monday Sales CRM</div>
-              <div class="integration-category">CRM</div>
-            </div>
-
-            <!-- Marketing -->
-            <div
-              class="integration-item"
-              data-category="marketing"
-              data-name="mailchimp"
-            >
-              <div class="integration-logo" style="background: #ffe01b">MC</div>
-              <div class="integration-name">Mailchimp</div>
-              <div class="integration-category">Marketing</div>
-            </div>
-
-            <div
-              class="integration-item"
-              data-category="marketing"
-              data-name="sendinblue"
-            >
-              <div class="integration-logo" style="background: #0b996e">SB</div>
-              <div class="integration-name">Sendinblue</div>
-              <div class="integration-category">Marketing</div>
-            </div>
-
-            <div
-              class="integration-item"
-              data-category="marketing"
-              data-name="facebook ads"
-            >
-              <div class="integration-logo" style="background: #1877f2">FB</div>
-              <div class="integration-name">Facebook Ads</div>
-              <div class="integration-category">Marketing</div>
-            </div>
-
-            <div
-              class="integration-item"
-              data-category="marketing"
-              data-name="google ads"
-            >
-              <div class="integration-logo" style="background: #4285f4">GA</div>
-              <div class="integration-name">Google Ads</div>
-              <div class="integration-category">Marketing</div>
-            </div>
-
-            <div
-              class="integration-item"
-              data-category="marketing"
-              data-name="twitter"
-            >
-              <div class="integration-logo" style="background: #1da1f2">X</div>
-              <div class="integration-name">Twitter/X</div>
-              <div class="integration-category">Marketing</div>
-            </div>
-
-            <div
-              class="integration-item"
-              data-category="marketing"
-              data-name="linkedin"
-            >
-              <div class="integration-logo" style="background: #0a66c2">in</div>
-              <div class="integration-name">LinkedIn</div>
-              <div class="integration-category">Marketing</div>
-            </div>
-
-            <!-- E-commerce -->
-            <div
-              class="integration-item"
-              data-category="ecommerce"
-              data-name="shopify"
-            >
-              <div class="integration-logo" style="background: #96bf48">S</div>
-              <div class="integration-name">Shopify</div>
-              <div class="integration-category">E-commerce</div>
-            </div>
-
-            <div
-              class="integration-item"
-              data-category="ecommerce"
-              data-name="woocommerce"
-            >
-              <div class="integration-logo" style="background: #96588a">WC</div>
-              <div class="integration-name">WooCommerce</div>
-              <div class="integration-category">E-commerce</div>
-            </div>
-
-            <div
-              class="integration-item"
-              data-category="ecommerce"
-              data-name="stripe"
-            >
-              <div class="integration-logo" style="background: #635bff">S</div>
-              <div class="integration-name">Stripe</div>
-              <div class="integration-category">E-commerce</div>
-            </div>
-
-            <div
-              class="integration-item"
-              data-category="ecommerce"
-              data-name="square"
-            >
-              <div class="integration-logo" style="background: #000000">Sq</div>
-              <div class="integration-name">Square</div>
-              <div class="integration-category">E-commerce</div>
-            </div>
-
-            <div
-              class="integration-item"
-              data-category="ecommerce"
-              data-name="amazon"
-            >
-              <div class="integration-logo" style="background: #ff9900">A</div>
-              <div class="integration-name">Amazon</div>
-              <div class="integration-category">E-commerce</div>
-            </div>
-
-            <div
-              class="integration-item"
-              data-category="ecommerce"
-              data-name="ebay"
-            >
-              <div class="integration-logo" style="background: #e53238">E</div>
-              <div class="integration-name">eBay</div>
-              <div class="integration-category">E-commerce</div>
-            </div>
-
-            <!-- Productivity -->
-            <div
-              class="integration-item"
-              data-category="productivity"
-              data-name="notion"
-            >
-              <div class="integration-logo" style="background: #000000">N</div>
-              <div class="integration-name">Notion</div>
-              <div class="integration-category">Productivity</div>
-            </div>
-
-            <div
-              class="integration-item"
-              data-category="productivity"
-              data-name="trello"
-            >
-              <div class="integration-logo" style="background: #0079bf">T</div>
-              <div class="integration-name">Trello</div>
-              <div class="integration-category">Productivity</div>
-            </div>
-
-            <div
-              class="integration-item"
-              data-category="productivity"
-              data-name="asana"
-            >
-              <div class="integration-logo" style="background: #f06a6a">A</div>
-              <div class="integration-name">Asana</div>
-              <div class="integration-category">Productivity</div>
-            </div>
-
-            <div
-              class="integration-item"
-              data-category="productivity"
-              data-name="monday"
-            >
-              <div class="integration-logo" style="background: #ff3d57">M</div>
-              <div class="integration-name">Monday.com</div>
-              <div class="integration-category">Productivity</div>
-            </div>
-
-            <div
-              class="integration-item"
-              data-category="productivity"
-              data-name="clickup"
-            >
-              <div class="integration-logo" style="background: #7b68ee">C</div>
-              <div class="integration-name">ClickUp</div>
-              <div class="integration-category">Productivity</div>
-            </div>
-
-            <div
-              class="integration-item"
-              data-category="productivity"
-              data-name="airtable"
-            >
-              <div class="integration-logo" style="background: #fcb400">At</div>
-              <div class="integration-name">Airtable</div>
-              <div class="integration-category">Productivity</div>
-            </div>
-
-            <!-- Analytics -->
-            <div
-              class="integration-item"
-              data-category="analytics"
-              data-name="google analytics"
-            >
-              <div class="integration-logo" style="background: #e37400">GA</div>
-              <div class="integration-name">Google Analytics</div>
-              <div class="integration-category">Analytics</div>
-            </div>
-
-            <div
-              class="integration-item"
-              data-category="analytics"
-              data-name="mixpanel"
-            >
-              <div class="integration-logo" style="background: #7856ff">MP</div>
-              <div class="integration-name">Mixpanel</div>
-              <div class="integration-category">Analytics</div>
-            </div>
-
-            <div
-              class="integration-item"
-              data-category="analytics"
-              data-name="amplitude"
-            >
-              <div class="integration-logo" style="background: #000fff">Am</div>
-              <div class="integration-name">Amplitude</div>
-              <div class="integration-category">Analytics</div>
-            </div>
-
-            <div
-              class="integration-item"
-              data-category="analytics"
-              data-name="tableau"
-            >
-              <div class="integration-logo" style="background: #e97627">T</div>
-              <div class="integration-name">Tableau</div>
-              <div class="integration-category">Analytics</div>
-            </div>
-
-            <div
-              class="integration-item"
-              data-category="analytics"
-              data-name="looker"
-            >
-              <div class="integration-logo" style="background: #4285f4">L</div>
-              <div class="integration-name">Looker</div>
-              <div class="integration-category">Analytics</div>
-            </div>
-
-            <div
-              class="integration-item"
-              data-category="analytics"
-              data-name="segment"
-            >
-              <div class="integration-logo" style="background: #52bd95">S</div>
-              <div class="integration-name">Segment</div>
-              <div class="integration-category">Analytics</div>
-            </div>
-
-            <!-- Finance -->
-            <div
-              class="integration-item"
-              data-category="finance"
-              data-name="quickbooks"
-            >
-              <div class="integration-logo" style="background: #2ca01c">QB</div>
-              <div class="integration-name">QuickBooks</div>
-              <div class="integration-category">Finance</div>
-            </div>
-
-            <div
-              class="integration-item"
-              data-category="finance"
-              data-name="xero"
-            >
-              <div class="integration-logo" style="background: #13b5ea">X</div>
-              <div class="integration-name">Xero</div>
-              <div class="integration-category">Finance</div>
-            </div>
-
-            <div
-              class="integration-item"
-              data-category="finance"
-              data-name="paypal"
-            >
-              <div class="integration-logo" style="background: #00457c">PP</div>
-              <div class="integration-name">PayPal</div>
-              <div class="integration-category">Finance</div>
-            </div>
-
-            <div
-              class="integration-item"
-              data-category="finance"
-              data-name="wise"
-            >
-              <div class="integration-logo" style="background: #00b9ff">W</div>
-              <div class="integration-name">Wise</div>
-              <div class="integration-category">Finance</div>
-            </div>
-
-            <div
-              class="integration-item"
-              data-category="finance"
-              data-name="freshbooks"
-            >
-              <div class="integration-logo" style="background: #0075dd">FB</div>
-              <div class="integration-name">FreshBooks</div>
-              <div class="integration-category">Finance</div>
-            </div>
-
-            <div
-              class="integration-item"
-              data-category="finance"
-              data-name="wave"
-            >
-              <div class="integration-logo" style="background: #4fb5ec">W</div>
-              <div class="integration-name">Wave</div>
-              <div class="integration-category">Finance</div>
-            </div>
+            <!-- Will be populated by JavaScript -->
           </div>
 
-          <!-- No Results Message -->
+          <!-- No Results -->
           <div class="no-results" id="noResults" style="display: none">
             <div class="no-results-icon">🔍</div>
             <h3>No integrations found</h3>
@@ -852,9 +814,9 @@
           </div>
 
           <!-- Load More -->
-          <div class="load-more-section">
+          <div class="load-more-section" id="loadMoreSection">
             <p class="load-more-text">
-              Showing <span id="shownCount">48</span> of 500+ integrations
+              Showing <span id="shownCount">48</span> of <span id="totalCount">500+</span> integrations
             </p>
             <button class="btn btn-outline" id="loadMoreBtn">
               Load More Integrations
@@ -865,22 +827,35 @@
 
       <!-- Request Integration -->
       <section class="request-integration">
+        <div class="shape-deco shape-1">
+          <div class="flower spinner"></div>
+        </div>
+        <div class="shape-deco shape-2">
+          <div class="circle bouncing"></div>
+        </div>
+
         <div class="request-integration-container">
           <div class="request-content">
-            <h2>Can't find what you're looking for?</h2>
+            <div class="section-subtitle">Can't Find It?</div>
+            <h2>Request a New Integration</h2>
             <p>
-              Request a new integration and we'll add it to our roadmap. We're
-              constantly expanding our integration library based on customer
-              feedback.
+              We're constantly expanding our integration library. Request an app
+              and we'll add it to our roadmap based on customer demand.
             </p>
             <button class="btn btn-primary">Request Integration</button>
           </div>
           <div class="request-visual">
-            <div class="request-icon">💡</div>
-            <div class="request-stat">
-              <div class="request-stat-number">50+</div>
-              <div class="request-stat-label">
-                New integrations added monthly
+            <div class="request-icon">
+              <img src="001_Bahan/assets/icon-3.webp" alt="" />
+            </div>
+            <div class="request-stats">
+              <div class="request-stat">
+                <div class="request-stat-number">50+</div>
+                <div class="request-stat-label">New apps monthly</div>
+              </div>
+              <div class="request-stat">
+                <div class="request-stat-number">48hrs</div>
+                <div class="request-stat-label">Average response</div>
               </div>
             </div>
           </div>
@@ -888,7 +863,7 @@
       </section>
 
       <!-- CTA -->
-      <section class="cta">
+      <section class="cta" id="contact">
         <div class="cta-shape cta-shape-1">
           <div class="starburst spinner"></div>
         </div>
@@ -897,6 +872,9 @@
         </div>
         <div class="cta-shape cta-shape-3">
           <div class="circle bouncing"></div>
+        </div>
+        <div class="cta-shape cta-shape-4">
+          <div class="starburst spinner" style="width: 60px"></div>
         </div>
 
         <div class="cta-content">
@@ -907,7 +885,7 @@
           </p>
           <div class="cta-buttons">
             <button class="btn btn-white">Start Free Trial</button>
-            <button class="btn btn-outline-white">View All Integrations</button>
+            <button class="btn btn-outline-white">View Documentation</button>
           </div>
         </div>
       </section>
@@ -941,13 +919,14 @@
               Samartha
             </div>
             <p class="footer-desc">
-              Empowering businesses with intelligent automation solutions.
+              Empowering businesses worldwide with intelligent automation
+              solutions that drive growth, efficiency, and innovation.
             </p>
             <div class="footer-social">
-              <a href="#!" class="social-icon">𝕏</a>
-              <a href="#!" class="social-icon">in</a>
-              <a href="#!" class="social-icon">f</a>
-              <a href="#!" class="social-icon">IG</a>
+              <a href="#" class="social-icon">𝕏</a>
+              <a href="#" class="social-icon">in</a>
+              <a href="#" class="social-icon">f</a>
+              <a href="#" class="social-icon">IG</a>
             </div>
           </div>
 
@@ -956,34 +935,38 @@
             <div class="footer-links">
               <a href="platform.html">Platform</a>
               <a href="index.html#pricing">Pricing</a>
-              <a href="#!">Integrations</a>
+              <a href="integrations.html">Integrations</a>
+              <a href="#">Templates</a>
             </div>
           </div>
 
           <div>
             <div class="footer-title">Solutions</div>
             <div class="footer-links">
-              <a href="#!">Marketing</a>
-              <a href="#!">Sales</a>
-              <a href="#!">Operations</a>
+              <a href="#">Marketing</a>
+              <a href="#">Sales</a>
+              <a href="#">Operations</a>
+              <a href="#">E-commerce</a>
             </div>
           </div>
 
           <div>
             <div class="footer-title">Resources</div>
             <div class="footer-links">
-              <a href="#!">Help Center</a>
-              <a href="#!">Documentation</a>
-              <a href="#!">Community</a>
+              <a href="#">Help Center</a>
+              <a href="#">Documentation</a>
+              <a href="#">API Reference</a>
+              <a href="#">Community</a>
             </div>
           </div>
 
           <div>
             <div class="footer-title">Company</div>
             <div class="footer-links">
-              <a href="#!">About Us</a>
-              <a href="#!">Careers</a>
-              <a href="#!">Contact</a>
+              <a href="about.html">About Us</a>
+              <a href="index.html#testimonials">Customers</a>
+              <a href="#">Careers</a>
+              <a href="#">Contact</a>
             </div>
           </div>
         </div>
@@ -995,9 +978,9 @@
             &copy; 2026 Samartha. All rights reserved.
           </p>
           <div class="footer-legal">
-            <a href="#!">Privacy</a>
-            <a href="#!">Terms</a>
-            <a href="#!">Security</a>
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">Security</a>
           </div>
         </div>
       </div>
@@ -1021,13 +1004,13 @@
         <div class="chatbot-message bot-message">
           <div class="message-avatar">AI</div>
           <div class="message-content">
-            <p>Hi! 👋 Need help exploring platform features?</p>
+            <p>Hi! 👋 Looking for a specific integration?</p>
             <span class="message-time">Just now</span>
           </div>
         </div>
         <div class="chatbot-suggestions">
-          <button class="suggestion-btn">Schedule demo</button>
-          <button class="suggestion-btn">Compare plans</button>
+          <button class="suggestion-btn">Request integration</button>
+          <button class="suggestion-btn">Setup guide</button>
         </div>
       </div>
       <div class="chatbot-footer">
@@ -1080,6 +1063,9 @@
       </svg>
     </button>
 
-    <script src="001_Website/js/script.js"></script>
+    <script src="001_Bahan/Swiperjs v5.3.7/swiper.min.js" defer></script>
+    <script src="001_Website/js/integrations-data.js" defer></script>
+    <script src="001_Website/js/integrations.js" defer></script>
+    <script src="001_Website/js/script.js" defer></script>
   </body>
 </html>

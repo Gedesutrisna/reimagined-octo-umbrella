@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Basic Meta -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- SEO Meta -->
+    <title>About Us – Our Mission & Story | Samartha</title>
+    <meta
+      name="description"
+      content="Learn about Samartha's mission to empower businesses with intelligent automation. Meet our team and discover our story."
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" href="001_Bahan/assets/logo.webp" type="image/webp" />
+
+    <!-- Preconnect Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link rel="stylesheet" href="001_Bahan/Swiperjs v5.3.7/swiper-bundle.css" />
+    <link rel="stylesheet" href="001_Website/css/style.css" />
+    <link rel="stylesheet" href="001_Website/css/about.css" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <style>
+      /* ========================================
+   ABOUT PAGE STYLES
+   Following homepage design patterns
+   ======================================== */
+
+      /* About Hero - Full Height like Homepage */
+      .about-hero {
+        min-height: 100vh;
+        display: grid;
+        align-items: center;
+        padding: 5rem 3rem 3rem;
+        position: relative;
+        overflow: hidden;
+        background: var(--bg-light);
+      }
+
+      .about-hero-container {
+        max-width: 1300px;
+        margin: 0 auto;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 4rem;
+        align-items: center;
+      }
+
+      .about-hero-content {
+        animation: fadeInUp 0.8s ease;
+      }
+
+      .about-hero h1 {
+        margin: 0.75rem 0 1.25rem;
+      }
+
+      .about-hero-subtitle {
+        font-size: 1.15rem;
+        margin-bottom: 2rem;
+        max-width: 550px;
+      }
+
+      .hero-buttons {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .about-hero-visual {
+        position: relative;
+        width: 100%;
+        height: 420px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .about-hero-video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 16px;
+        box-shadow: 0 16px 48px rgba(67, 66, 255, 0.15);
+        transition: all 0.3s ease;
+      }
+
+      .about-hero-video:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 24px 56px rgba(67, 66, 255, 0.2);
+      }
+
+      /* Mission & Vision - Matching Homepage Card Style */
+      .mission-vision {
+        padding: 4.5rem 3rem;
+        background: var(--bg-light);
+      }
+
+      .mission-vision-container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .mission-vision-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 2rem;
+      }
+
+      .mission-vision-card {
+        padding: 2.5rem 2rem;
+        border-radius: 16px;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        border: 1px solid rgba(67, 66, 255, 0.08);
+        position: relative;
+        background: rgba(255, 255, 255, 0.38);
+        backdrop-filter: blur(7.6px);
+        -webkit-backdrop-filter: blur(7.6px);
+      }
+
+      .mission-vision-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 16px 32px rgba(67, 66, 255, 0.1);
+        border-color: rgba(67, 66, 255, 0.2);
+      }
+
+      .mv-icon {
+        position: relative;
+        width: 72px;
+        height: 72px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.75rem;
+        background: transparent;
+        border: 1px solid rgba(67, 66, 255, 0.15);
+        z-index: 1;
+      }
+
+      .mv-icon::before {
+        content: "";
+        position: absolute;
+        inset: -1.5px;
+        border-radius: 50%;
+        background: conic-gradient(
+          from 0deg,
+          var(--primary-color) 0deg,
+          var(--primary-color) 90deg,
+          transparent 90deg,
+          transparent 360deg
+        );
+        -webkit-mask: radial-gradient(
+          farthest-side,
+          transparent calc(100% - 3px),
+          #000 calc(100% - 3px)
+        );
+        mask: radial-gradient(
+          farthest-side,
+          transparent calc(100% - 3px),
+          #000 calc(100% - 3px)
+        );
+        opacity: 0;
+        transform: rotate(-90deg);
+        transition: transform 0.6s ease, opacity 0.25s ease;
+        pointer-events: none;
+      }
+
+      .mission-vision-card:hover .mv-icon::before {
+        opacity: 1;
+        transform: rotate(270deg);
+      }
+
+      .mv-icon img {
+        width: 70%;
+      }
+
+      .mission-vision-card h3 {
+        font-size: 1.75rem;
+        margin-bottom: 1.25rem;
+        color: var(--black-color);
+      }
+
+      .mission-vision-card p {
+        font-size: 1.05rem;
+        line-height: 1.8;
+      }
+
+      /* Our Story Timeline - Improved Line Style */
+      .our-story {
+        padding: 4.5rem 3rem;
+        background: var(--white);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .our-story-container {
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .story-timeline {
+        margin-top: 4rem;
+        position: relative;
+        padding-left: 50px;
+      }
+
+      .story-timeline::before {
+        content: "";
+        position: absolute;
+        left: 120px;
+        top: 30px;
+        bottom: 30px;
+        width: 2px;
+        background: linear-gradient(
+          to bottom,
+          transparent,
+          rgba(67, 66, 255, 0.15) 10%,
+          rgba(67, 66, 255, 0.15) 90%,
+          transparent
+        );
+      }
+
+      .timeline-item {
+        display: grid;
+        grid-template-columns: 140px 1fr;
+        gap: 4rem;
+        margin-bottom: 4rem;
+        position: relative;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 0.6s ease forwards;
+        align-items: center;
+      }
+
+      .timeline-item:nth-child(1) {
+        animation-delay: 0s;
+      }
+      .timeline-item:nth-child(2) {
+        animation-delay: 0.1s;
+      }
+      .timeline-item:nth-child(3) {
+        animation-delay: 0.2s;
+      }
+      .timeline-item:nth-child(4) {
+        animation-delay: 0.3s;
+      }
+      .timeline-item:nth-child(5) {
+        animation-delay: 0.4s;
+      }
+
+      .timeline-item::before {
+        content: "";
+        position: absolute;
+        left: 163px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 17px;
+        height: 17px;
+        border-radius: 50%;
+        background: white;
+        border: 4px solid var(--primary-color);
+        z-index: 2;
+        transition: all 0.3s ease;
+      }
+
+      .timeline-item:hover::before {
+        transform: translateY(-50%) scale(1.3);
+        box-shadow: 0 0 0 8px rgba(67, 66, 255, 0.1);
+      }
+
+      .timeline-item.highlight::before {
+        width: 25px;
+        height: 25px;
+        left: 159px;
+        background: var(--primary-color);
+        animation: pulse-ring 2s ease-in-out infinite;
+      }
+
+      @keyframes pulse-ring {
+        0%,
+        100% {
+          box-shadow: 0 0 0 0 rgba(67, 66, 255, 0.4);
+        }
+        50% {
+          box-shadow: 0 0 0 15px rgba(67, 66, 255, 0);
+        }
+      }
+
+      .timeline-year {
+        font-size: 2.5rem;
+        font-weight: 800;
+        font-family: var(--header-font-family);
+        color: var(--primary-color);
+        text-align: right;
+        line-height: 1;
+        padding-right: 1rem;
+      }
+
+      .timeline-content {
+        padding: 1.75rem 2rem;
+        background: white;
+        border: 1px solid rgba(67, 66, 255, 0.08);
+        border-radius: 16px;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        background: rgba(255, 255, 255, 0.746);
+        backdrop-filter: blur(7.6px);
+        -webkit-backdrop-filter: blur(7.6px);
+      }
+
+      .timeline-item.highlight .timeline-content {
+        border-color: var(--primary-color);
+        background: rgba(67, 66, 255, 0.02);
+      }
+
+      .timeline-content:hover {
+        transform: translateX(8px);
+        box-shadow: 0 8px 20px rgba(67, 66, 255, 0.1);
+        border-color: rgba(67, 66, 255, 0.2);
+      }
+
+      .timeline-content h4 {
+        font-size: 1.25rem;
+        margin-bottom: 0.85rem;
+        color: var(--black-color);
+        font-family: var(--header-font-family);
+        font-weight: 700;
+      }
+
+      .timeline-content p {
+        line-height: 1.7;
+        margin: 0;
+      }
+
+      /* Our Values - Matching Homepage Card Style */
+      .our-values {
+        padding: 4.5rem 3rem;
+        background: var(--bg-light);
+      }
+
+      .our-values-container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .values-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 1.5rem;
+        margin-top: 4rem;
+      }
+
+      .value-card {
+        padding: 2rem;
+        border-radius: 16px;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        border: 1px solid rgba(67, 66, 255, 0.08);
+        position: relative;
+        background: rgba(255, 255, 255, 0.38);
+        backdrop-filter: blur(7.6px);
+        -webkit-backdrop-filter: blur(7.6px);
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 0.6s ease forwards;
+      }
+
+      .value-card:nth-child(1) {
+        animation-delay: 0s;
+      }
+      .value-card:nth-child(2) {
+        animation-delay: 0.1s;
+      }
+      .value-card:nth-child(3) {
+        animation-delay: 0.2s;
+      }
+      .value-card:nth-child(4) {
+        animation-delay: 0.3s;
+      }
+      .value-card:nth-child(5) {
+        animation-delay: 0.4s;
+      }
+      .value-card:nth-child(6) {
+        animation-delay: 0.5s;
+      }
+
+      .value-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 16px 32px rgba(67, 66, 255, 0.1);
+        border-color: rgba(67, 66, 255, 0.2);
+      }
+
+      .value-number {
+        font-size: 3.5rem;
+        font-weight: 800;
+        font-family: var(--header-font-family);
+        color: rgba(67, 66, 255, 0.15);
+        line-height: 1;
+        margin-bottom: 1rem;
+        transition: all 0.3s ease;
+      }
+
+      .value-card:hover .value-number {
+        color: rgba(67, 66, 255, 0.25);
+        transform: scale(1.05);
+      }
+
+      .value-card h3 {
+        font-size: 1.35rem;
+        margin-bottom: 1rem;
+        color: var(--black-color);
+      }
+
+      .value-card p {
+        line-height: 1.7;
+        margin: 0;
+      }
+
+      /* Our Team - Improved Card Layout */
+      .our-team {
+        padding: 4.5rem 3rem;
+        background: var(--white);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .our-team-container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+      }
+
+      .team-member {
+        text-align: center;
+        transition: all 0.3s ease;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 0.6s ease forwards;
+      }
+
+      .team-member:nth-child(1) {
+        animation-delay: 0s;
+      }
+      .team-member:nth-child(2) {
+        animation-delay: 0.1s;
+      }
+      .team-member:nth-child(3) {
+        animation-delay: 0.2s;
+      }
+      .team-member:nth-child(4) {
+        animation-delay: 0.3s;
+      }
+      .team-member:nth-child(5) {
+        animation-delay: 0.4s;
+      }
+      .team-member:nth-child(6) {
+        animation-delay: 0.5s;
+      }
+
+      .team-member:hover {
+        transform: translateY(-8px);
+      }
+
+      .team-member-photo {
+        width: 160px;
+        height: 160px;
+        margin: 0 auto 1.5rem;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 4px solid white;
+        box-shadow: 0 8px 20px rgba(67, 66, 255, 0.12);
+        transition: all 0.3s ease;
+      }
+
+      .team-member:hover .team-member-photo {
+        box-shadow: 0 12px 28px rgba(67, 66, 255, 0.2);
+        border-color: var(--primary-color);
+        transform: scale(1.05);
+      }
+
+      .team-member-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: all 0.3s ease;
+      }
+
+      .team-member:hover .team-member-photo img {
+        transform: scale(1.1);
+      }
+
+      .team-member-info {
+        padding: 0 1rem;
+      }
+
+      .team-member-info h4 {
+        font-size: 1.15rem;
+        margin-bottom: 0.5rem;
+        color: var(--black-color);
+        font-family: var(--header-font-family);
+        font-weight: 700;
+      }
+
+      .team-role {
+        color: var(--primary-color);
+        font-weight: 600;
+        font-size: 0.9rem;
+        margin-bottom: 0.85rem !important;
+        opacity: 1 !important;
+        display: block;
+      }
+
+      .team-bio {
+        font-size: 0.9rem;
+        line-height: 1.6;
+        opacity: 0.7;
+        margin: 0;
+        min-height: 50px;
+      }
+
+      /* Join Team CTA - Borderless Style to Match Team Cards */
+      .join-team-cta {
+        text-align: center;
+        padding: 4rem 2.5rem;
+        background: transparent;
+        border: none;
+        border-radius: 0;
+        max-width: 700px;
+        margin: 3rem auto 0;
+        transition: all 0.3s ease;
+      }
+
+      .join-team-cta h3 {
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+        color: var(--primary-color);
+      }
+
+      .join-team-cta p {
+        font-size: 1.05rem;
+        margin-bottom: 2rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* Responsive About Page */
+      @media (max-width: 968px) {
+        .about-hero {
+          padding: 6rem 1.5rem 3rem;
+          min-height: auto;
+        }
+
+        .about-hero-container {
+          grid-template-columns: 1fr;
+          gap: 2.5rem;
+        }
+
+        .about-hero-visual {
+          height: 300px;
+        }
+
+        .mission-vision,
+        .our-story,
+        .our-values,
+        .our-team {
+          padding: 3rem 1.5rem;
+        }
+
+        .mission-vision-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .story-timeline {
+          padding-left: 0;
+        }
+
+        .story-timeline::before {
+          left: 20px;
+        }
+
+        .timeline-item {
+          grid-template-columns: 1fr;
+          gap: 1rem;
+          margin-bottom: 3rem;
+        }
+
+        .timeline-item::before {
+          left: 12.5px;
+          top: 0;
+          transform: none;
+        }
+
+        .timeline-item:hover::before {
+          transform: scale(1.3);
+        }
+
+        .timeline-item.highlight::before {
+          left: 8.5px;
+        }
+
+        .timeline-year {
+          text-align: left;
+          font-size: 2rem;
+          padding-right: 0;
+          padding-left: 3rem;
+        }
+
+        .timeline-content {
+          padding: 1.25rem 1.5rem;
+        }
+
+        .values-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .team-grid {
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 2rem;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .team-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .about-hero-visual {
+          height: 250px;
+        }
+
+        .mission-vision-card,
+        .join-team-cta {
+          padding: 2rem 1.5rem;
+        }
+      }
+    </style>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-container">
+        <a href="index.html" class="logo">
+          <img src="001_Bahan/assets/logo.webp" alt="logo" class="logo-img" />
+          Samartha
+        </a>
+
+        <div class="nav-menu" id="navMenu">
+          <!-- Platform Dropdown -->
+          <div class="nav-dropdown">
+            <a href="#" class="nav-link">
+              Platform
+              <svg
+                class="dropdown-arrow"
+                width="12"
+                height="12"
+                viewBox="0 0 12 12"
+                fill="none"
+              >
+                <path
+                  d="M2 4L6 8L10 4"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </a>
+            <div class="dropdown-menu">
+              <a href="platform.html#workflows" class="dropdown-item">
+                <div class="dropdown-icon">
+                  <img
+                    src="001_Bahan/assets/icon-2.webp"
+                    class="assets-icon"
+                    alt=""
+                  />
+                </div>
+                <div class="dropdown-content">
+                  <div class="dropdown-title">Workflows</div>
+                  <div class="dropdown-desc">Visual workflow builder</div>
+                </div>
+              </a>
+              <a href="platform.html#integrations" class="dropdown-item">
+                <div class="dropdown-icon">
+                  <img
+                    src="001_Bahan/assets/icon-3.webp"
+                    class="assets-icon"
+                    alt=""
+                  />
+                </div>
+                <div class="dropdown-content">
+                  <div class="dropdown-title">Integrations</div>
+                  <div class="dropdown-desc">500+ app connections</div>
+                </div>
+              </a>
+              <a href="platform.html#ai" class="dropdown-item">
+                <div class="dropdown-icon">
+                  <img
+                    src="001_Bahan/assets/icon-1.webp"
+                    class="assets-icon"
+                    alt=""
+                  />
+                </div>
+                <div class="dropdown-content">
+                  <div class="dropdown-title">AI Automation</div>
+                  <div class="dropdown-desc">Smart triggers & actions</div>
+                </div>
+              </a>
+              <a href="platform.html#analytics" class="dropdown-item">
+                <div class="dropdown-icon">
+                  <img
+                    src="001_Bahan/assets/icon-4.webp"
+                    class="assets-icon"
+                    alt=""
+                  />
+                </div>
+                <div class="dropdown-content">
+                  <div class="dropdown-title">Analytics</div>
+                  <div class="dropdown-desc">Reports & insights</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Solutions Dropdown -->
+          <div class="nav-dropdown">
+            <a href="#" class="nav-link">
+              Solutions
+              <svg
+                class="dropdown-arrow"
+                width="12"
+                height="12"
+                viewBox="0 0 12 12"
+                fill="none"
+              >
+                <path
+                  d="M2 4L6 8L10 4"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </a>
+            <div class="dropdown-menu">
+              <a href="#" class="dropdown-item">
+                <div class="dropdown-icon">
+                  <img
+                    src="001_Bahan/assets/icon-7.webp"
+                    class="assets-icon"
+                    alt=""
+                  />
+                </div>
+                <div class="dropdown-content">
+                  <div class="dropdown-title">Marketing</div>
+                  <div class="dropdown-desc">Campaign automation</div>
+                </div>
+              </a>
+              <a href="#" class="dropdown-item">
+                <div class="dropdown-icon">
+                  <img
+                    src="001_Bahan/assets/icon-5-b.webp"
+                    class="assets-icon"
+                    alt=""
+                  />
+                </div>
+                <div class="dropdown-content">
+                  <div class="dropdown-title">Sales</div>
+                  <div class="dropdown-desc">CRM & lead management</div>
+                </div>
+                <span class="badge-primary">Popular</span>
+              </a>
+              <a href="#" class="dropdown-item">
+                <div class="dropdown-icon">
+                  <img
+                    src="001_Bahan/assets/icon-8.webp"
+                    class="assets-icon"
+                    alt=""
+                  />
+                </div>
+                <div class="dropdown-content">
+                  <div class="dropdown-title">Operations</div>
+                  <div class="dropdown-desc">Process automation</div>
+                </div>
+              </a>
+              <a href="#" class="dropdown-item">
+                <div class="dropdown-icon">
+                  <img
+                    src="001_Bahan/assets/icon-9.webp"
+                    class="assets-icon"
+                    alt=""
+                  />
+                </div>
+                <div class="dropdown-content">
+                  <div class="dropdown-title">E-commerce</div>
+                  <div class="dropdown-desc">Order & inventory</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Direct Links -->
+          <a href="index.html#pricing" class="nav-link">Pricing</a>
+
+          <!-- CTA Group -->
+          <div class="nav-cta-group">
+            <a href="#" class="nav-link-secondary">Sign in</a>
+            <button class="btn btn-primary">Get Started</button>
+          </div>
+        </div>
+
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+
+    <main>
+      <!-- About Hero - Full Height -->
+      <section class="about-hero">
+        <div class="shape-deco shape-1">
+          <div class="starburst spinner"></div>
+        </div>
+        <div class="shape-deco shape-2">
+          <div class="flower spinner"></div>
+        </div>
+
+        <div class="about-hero-container">
+          <div class="about-hero-content">
+            <div class="badge">🌟 About Samartha</div>
+            <h1>Empowering Businesses Through Intelligent Automation</h1>
+            <p class="about-hero-subtitle">
+              We're on a mission to make powerful automation accessible to every
+              business, regardless of size or technical expertise.
+            </p>
+            <div class="hero-buttons">
+              <button class="btn btn-primary">Join Our Journey</button>
+              <button class="btn btn-outline">Meet the Team</button>
+            </div>
+          </div>
+
+          <div class="about-hero-visual">
+            <video
+              class="about-hero-video"
+              src="001_Bahan/assets/screen.webm"
+              autoplay
+              loop
+              muted
+              playsinline
+            ></video>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stats Section (moved from bottom) -->
+      <section class="stats">
+        <div class="stats-container">
+          <div class="stat-item" data-delay="0">
+            <div class="stat-number" data-target="10000">0</div>
+            <div class="stat-label">Active Customers</div>
+          </div>
+          <div class="stat-item" data-delay="100">
+            <div class="stat-number" data-target="10">0</div>
+            <div class="stat-label">M+ Tasks Automated</div>
+          </div>
+          <div class="stat-item" data-delay="200">
+            <div class="stat-number" data-target="50">0</div>
+            <div class="stat-label">Countries Worldwide</div>
+          </div>
+          <div class="stat-item" data-delay="300">
+            <div class="stat-number">99.9%</div>
+            <div class="stat-label">Platform Uptime</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mission & Vision with Visual -->
+      <section class="mission-vision">
+        <div class="mission-vision-container">
+          <div class="mission-vision-grid">
+            <div class="mission-vision-card" data-delay="0">
+              <div class="mv-icon">
+                <img src="001_Bahan/assets/icon-1.webp" alt="Mission" />
+              </div>
+              <h3>Our Mission</h3>
+              <p>
+                To democratize business automation by providing intuitive,
+                AI-powered tools that help teams work smarter, not harder. We
+                believe every business deserves access to enterprise-grade
+                automation without the enterprise-level complexity.
+              </p>
+            </div>
+
+            <div class="mission-vision-card" data-delay="100">
+              <div class="mv-icon">
+                <img src="001_Bahan/assets/icon-6.webp" alt="Vision" />
+              </div>
+              <h3>Our Vision</h3>
+              <p>
+                A world where businesses spend zero time on repetitive tasks and
+                100% time on innovation and growth. We're building the future
+                where AI handles the mundane, freeing humans to focus on
+                creativity and strategic thinking.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Story Timeline -->
+      <section class="our-story">
+        <div class="feature-shape fs-1">
+          <div class="circle bouncing"></div>
+        </div>
+        <div class="feature-shape fs-2">
+          <div class="starburst spinner"></div>
+        </div>
+
+        <div class="our-story-container">
+          <div class="section-header">
+            <div class="section-subtitle">Our Journey</div>
+            <h2>How Samartha Started</h2>
+            <p>
+              From a small startup to powering automation for thousands of
+              businesses worldwide
+            </p>
+          </div>
+
+          <div class="story-timeline">
+            <div class="timeline-item" data-delay="0">
+              <div class="timeline-year">2020</div>
+              <div class="timeline-content">
+                <h4>The Beginning</h4>
+                <p>
+                  Founded by a team of automation enthusiasts who saw businesses
+                  struggling with repetitive manual tasks. We started with a
+                  simple idea: make automation accessible to everyone.
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-item" data-delay="100">
+              <div class="timeline-year">2021</div>
+              <div class="timeline-content">
+                <h4>First 100 Customers</h4>
+                <p>
+                  Reached our first milestone with 100 happy customers
+                  automating their workflows. Launched our visual workflow
+                  builder and integrated with 50+ apps.
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-item" data-delay="200">
+              <div class="timeline-year">2023</div>
+              <div class="timeline-content">
+                <h4>AI Integration</h4>
+                <p>
+                  Introduced AI-powered automation features, enabling
+                  intelligent decision-making and predictive workflows. Expanded
+                  to 500+ integrations.
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-item" data-delay="300">
+              <div class="timeline-year">2024</div>
+              <div class="timeline-content">
+                <h4>Global Expansion</h4>
+                <p>
+                  Crossed 5,000 businesses using Samartha across 50+ countries.
+                  Launched enterprise features and dedicated support teams.
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-item highlight" data-delay="400">
+              <div class="timeline-year">2026</div>
+              <div class="timeline-content">
+                <h4>Today & Beyond</h4>
+                <p>
+                  Continuing to innovate with cutting-edge AI, helping 10,000+
+                  businesses automate 10M+ tasks monthly. The journey is just
+                  beginning.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Values -->
+      <section class="our-values">
+        <div class="our-values-container">
+          <div class="section-header">
+            <div class="section-subtitle">What Drives Us</div>
+            <h2>Our Core Values</h2>
+            <p>The principles that guide everything we do</p>
+          </div>
+
+          <div class="values-grid">
+            <div class="value-card" data-delay="0">
+              <div class="value-number">01</div>
+              <h3>Customer First</h3>
+              <p>
+                Every decision we make starts with one question: "How does this
+                help our customers?" Their success is our success.
+              </p>
+            </div>
+
+            <div class="value-card" data-delay="100">
+              <div class="value-number">02</div>
+              <h3>Innovation</h3>
+              <p>
+                We're not afraid to challenge the status quo. We constantly push
+                boundaries to deliver cutting-edge automation solutions.
+              </p>
+            </div>
+
+            <div class="value-card" data-delay="200">
+              <div class="value-number">03</div>
+              <h3>Simplicity</h3>
+              <p>
+                Complex problems deserve simple solutions. We make powerful
+                automation accessible through intuitive design.
+              </p>
+            </div>
+
+            <div class="value-card" data-delay="300">
+              <div class="value-number">04</div>
+              <h3>Transparency</h3>
+              <p>
+                Honest communication, clear pricing, and open feedback. We build
+                trust through transparency in everything we do.
+              </p>
+            </div>
+
+            <div class="value-card" data-delay="400">
+              <div class="value-number">05</div>
+              <h3>Collaboration</h3>
+              <p>
+                Great things happen when teams work together. We foster
+                collaboration both internally and with our customers.
+              </p>
+            </div>
+
+            <div class="value-card" data-delay="500">
+              <div class="value-number">06</div>
+              <h3>Impact</h3>
+              <p>
+                We measure success by the positive impact we create—time saved,
+                productivity gained, and businesses transformed.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Team Section -->
+      <section class="our-team">
+        <div class="shape-deco shape-1">
+          <div class="flower spinner"></div>
+        </div>
+        <div class="shape-deco shape-2">
+          <div class="circle bouncing"></div>
+        </div>
+
+        <div class="our-team-container">
+          <div class="section-header">
+            <div class="section-subtitle">Meet The Team</div>
+            <h2>The People Behind Samartha</h2>
+            <p>
+              A diverse team of builders, thinkers, and automation enthusiasts
+            </p>
+          </div>
+
+          <div class="team-grid">
+            <div class="team-member" data-delay="0">
+              <div class="team-member-photo">
+                <img src="001_Bahan/assets/profile-1.webp" alt="Sarah Chen" />
+              </div>
+              <div class="team-member-info">
+                <h4>Sarah Chen</h4>
+                <p class="team-role">CEO & Co-founder</p>
+                <p class="team-bio">
+                  Former automation lead at a Fortune 500 company. Passionate
+                  about democratizing technology.
+                </p>
+              </div>
+            </div>
+
+            <div class="team-member" data-delay="100">
+              <div class="team-member-photo">
+                <img
+                  src="001_Bahan/assets/profile-2.webp"
+                  alt="Michael Rodriguez"
+                />
+              </div>
+              <div class="team-member-info">
+                <h4>Michael Rodriguez</h4>
+                <p class="team-role">CTO & Co-founder</p>
+                <p class="team-bio">
+                  AI researcher with 15+ years building scalable systems. Loves
+                  solving complex problems.
+                </p>
+              </div>
+            </div>
+
+            <div class="team-member" data-delay="200">
+              <div class="team-member-photo">
+                <img
+                  src="001_Bahan/assets/profile-3.webp"
+                  alt="Emily Thompson"
+                />
+              </div>
+              <div class="team-member-info">
+                <h4>Emily Thompson</h4>
+                <p class="team-role">Head of Product</p>
+                <p class="team-bio">
+                  Product designer turned product leader. Obsessed with creating
+                  delightful user experiences.
+                </p>
+              </div>
+            </div>
+
+            <div class="team-member" data-delay="300">
+              <div class="team-member-photo">
+                <img src="001_Bahan/assets/profile-1.webp" alt="David Kim" />
+              </div>
+              <div class="team-member-info">
+                <h4>David Kim</h4>
+                <p class="team-role">VP of Engineering</p>
+                <p class="team-bio">
+                  Infrastructure expert who's scaled platforms to millions of
+                  users. Loves clean code.
+                </p>
+              </div>
+            </div>
+
+            <div class="team-member" data-delay="400">
+              <div class="team-member-photo">
+                <img src="001_Bahan/assets/profile-2.webp" alt="Lisa Patel" />
+              </div>
+              <div class="team-member-info">
+                <h4>Lisa Patel</h4>
+                <p class="team-role">Head of Customer Success</p>
+                <p class="team-bio">
+                  Customer advocate with a mission to ensure every user succeeds
+                  with automation.
+                </p>
+              </div>
+            </div>
+
+            <div class="team-member" data-delay="500">
+              <div class="team-member-photo">
+                <img src="001_Bahan/assets/profile-3.webp" alt="James Wilson" />
+              </div>
+              <div class="team-member-info">
+                <h4>James Wilson</h4>
+                <p class="team-role">Head of Marketing</p>
+                <p class="team-bio">
+                  Growth marketer who turned his passion for automation into
+                  helping others discover it.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="cta" id="contact">
+        <div class="cta-shape cta-shape-1">
+          <div class="starburst spinner"></div>
+        </div>
+        <div class="cta-shape cta-shape-2">
+          <div class="flower spinner"></div>
+        </div>
+        <div class="cta-shape cta-shape-3">
+          <div class="circle bouncing"></div>
+        </div>
+        <div class="cta-shape cta-shape-4">
+          <div class="starburst spinner" style="width: 60px"></div>
+        </div>
+
+        <div class="cta-content">
+          <h2>Ready to Transform Your Business?</h2>
+          <p>
+            Join thousands of companies already automating with Samartha. Start
+            your free trial today.
+          </p>
+          <div class="cta-buttons">
+            <button class="btn btn-white">Start Free Trial</button>
+            <button class="btn btn-outline-white">Contact Us</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-wave">
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+            class="shape-fill"
+          ></path>
+        </svg>
+      </div>
+
+      <div class="footer-top">
+        <div class="footer-container">
+          <div>
+            <div class="footer-brand">
+              <img
+                src="001_Bahan/assets/logo.webp"
+                alt="logo"
+                class="logo-img"
+              />
+              Samartha
+            </div>
+            <p class="footer-desc">
+              Empowering businesses worldwide with intelligent automation
+              solutions that drive growth, efficiency, and innovation.
+            </p>
+            <div class="footer-social">
+              <a href="#" class="social-icon">𝕏</a>
+              <a href="#" class="social-icon">in</a>
+              <a href="#" class="social-icon">f</a>
+              <a href="#" class="social-icon">IG</a>
+            </div>
+          </div>
+
+          <div>
+            <div class="footer-title">Product</div>
+            <div class="footer-links">
+              <a href="platform.html">Platform</a>
+              <a href="index.html#pricing">Pricing</a>
+              <a href="#">Integrations</a>
+              <a href="#">Templates</a>
+              <a href="#">What's New</a>
+            </div>
+          </div>
+
+          <div>
+            <div class="footer-title">Solutions</div>
+            <div class="footer-links">
+              <a href="#">Marketing</a>
+              <a href="#">Sales</a>
+              <a href="#">Operations</a>
+              <a href="#">E-commerce</a>
+            </div>
+          </div>
+
+          <div>
+            <div class="footer-title">Resources</div>
+            <div class="footer-links">
+              <a href="#">Help Center</a>
+              <a href="#">Documentation</a>
+              <a href="#">API Reference</a>
+              <a href="#">Community</a>
+              <a href="#">Blog</a>
+            </div>
+          </div>
+
+          <div>
+            <div class="footer-title">Company</div>
+            <div class="footer-links">
+              <a href="#">About Us</a>
+              <a href="index.html#testimonials">Customers</a>
+              <a href="#">Careers</a>
+              <a href="#">Press Kit</a>
+              <a href="#">Contact</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-content">
+          <p class="footer-copyright">
+            &copy; 2026 Samartha. All rights reserved.
+          </p>
+          <div class="footer-legal">
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">Security</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Chatbot Widget -->
+    <div class="chatbot-widget" id="chatbotWidget">
+      <div class="chatbot-header">
+        <div class="chatbot-avatar-group">
+          <div class="chatbot-avatar">S</div>
+          <div class="chatbot-avatar">A</div>
+          <div class="chatbot-avatar">M</div>
+        </div>
+        <div class="chatbot-info">
+          <h4>Samartha Assistant</h4>
+          <p>• Online</p>
+        </div>
+        <button class="chatbot-close" id="chatbotClose">×</button>
+      </div>
+      <div class="chatbot-body" id="chatbotBody">
+        <div class="chatbot-message bot-message">
+          <div class="message-avatar">AI</div>
+          <div class="message-content">
+            <p>
+              Hi there! 👋 I'm your Samartha AI assistant. How can I help you
+              today?
+            </p>
+            <span class="message-time">Just now</span>
+          </div>
+        </div>
+        <div class="chatbot-suggestions">
+          <button class="suggestion-btn">How does automation work?</button>
+          <button class="suggestion-btn">Show pricing plans</button>
+          <button class="suggestion-btn">Book a demo</button>
+        </div>
+      </div>
+      <div class="chatbot-footer">
+        <input
+          type="text"
+          placeholder="Type your message..."
+          class="chatbot-input"
+          id="chatbotInput"
+        />
+        <button class="chatbot-send" id="chatbotSend" aria-label="Send Message">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+          </svg>
+        </button>
+      </div>
+      <div class="chatbot-privacy">
+        By chatting, you agree to our <a href="#privacy">Privacy Policy</a>
+      </div>
+    </div>
+
+    <!-- Chatbot Button -->
+    <button class="chatbot-button" id="chatbotButton" aria-label="Open chat">
+      <svg
+        class="chat-icon"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path
+          d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+        />
+      </svg>
+      <svg
+        class="close-icon"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <line x1="18" y1="6" x2="6" y2="18" />
+        <line x1="6" y1="6" x2="18" y2="18" />
+      </svg>
+    </button>
+
+    <script src="001_Bahan/Swiperjs v5.3.7/swiper.min.js" defer></script>
+    <script src="001_Website/js/script.js" defer></script>
+  </body>
+</html>
