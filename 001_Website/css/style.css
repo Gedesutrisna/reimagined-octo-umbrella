@@ -2267,4 +2267,8 @@ input:checked + .toggle-slider:before {
   .stats-container {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .stat-number {
+    font-size: 1.5rem;
+  }
 }

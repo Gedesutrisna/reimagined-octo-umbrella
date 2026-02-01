@@ -668,111 +668,249 @@ document.querySelectorAll(".dropdown-item").forEach((item) => {
   });
 });
 
-
 // INTEGRATIONS DATA
 // All integrations organized by category
-
+const appLogos = {
+  Gmail: "001_Bahan/assets/App=Gmail.png",
+  Slack: "001_Bahan/assets/App=Slack.png",
+  "Microsoft Teams": "001_Bahan/assets/App=Mircrosoft Teams.png",
+  Telegram: "001_Bahan/assets/App=Telegram.png",
+  WhatsApp: "001_Bahan/assets/App=Whatsapp.png",
+  Zoom: "001_Bahan/assets/App=Zoom.png",
+  Notion: "001_Bahan/assets/App=Notion.png",
+  "Facebook Ads": "001_Bahan/assets/App=Facebook.png",
+  "Google Ads": "001_Bahan/assets/App=Google.png",
+  Instagram: "001_Bahan/assets/App=Instagram.png",
+  LinkedIn: "001_Bahan/assets/App=Linkedin.png",
+  TikTok: "001_Bahan/assets/App=Tiktok.png",
+  Twitter: "001_Bahan/assets/App=X.png",
+};
 const integrationsData = {
   // Featured integrations (shown at top)
   featured: [
-    { name: 'Gmail', category: 'communication', color: '#EA4335', letter: 'G', desc: 'Send emails and manage inbox automatically' },
-    { name: 'Slack', category: 'communication', color: '#4A154B', letter: 'S', desc: 'Send messages and automate notifications' },
-    { name: 'Salesforce', category: 'crm', color: '#00A1E0', letter: 'SF', desc: 'Sync contacts and update deals' },
-    { name: 'Shopify', category: 'ecommerce', color: '#96BF48', letter: 'S', desc: 'Manage orders and inventory' },
-    { name: 'HubSpot', category: 'crm', color: '#FF7A59', letter: 'HS', desc: 'Automate marketing campaigns' },
-    { name: 'Notion', category: 'productivity', color: '#000000', letter: 'N', desc: 'Create pages and update databases' },
+    {
+      name: "Gmail",
+      category: "communication",
+      color: "#EA4335",
+      letter: "G",
+      desc: "Send emails and manage inbox automatically",
+    },
+    {
+      name: "Slack",
+      category: "communication",
+      color: "#4A154B",
+      letter: "S",
+      desc: "Send messages and automate notifications",
+    },
+    {
+      name: "Salesforce",
+      category: "crm",
+      color: "#00A1E0",
+      letter: "SF",
+      desc: "Sync contacts and update deals",
+    },
+    {
+      name: "Shopify",
+      category: "ecommerce",
+      color: "#96BF48",
+      letter: "S",
+      desc: "Manage orders and inventory",
+    },
+    {
+      name: "HubSpot",
+      category: "crm",
+      color: "#FF7A59",
+      letter: "HS",
+      desc: "Automate marketing campaigns",
+    },
+    {
+      name: "Notion",
+      category: "productivity",
+      color: "#000000",
+      letter: "N",
+      desc: "Create pages and update databases",
+    },
   ],
 
   // All integrations
   all: [
     // Communication
-    { name: 'Gmail', category: 'communication', color: '#EA4335', letter: 'G' },
-    { name: 'Slack', category: 'communication', color: '#4A154B', letter: 'S' },
-    { name: 'Microsoft Teams', category: 'communication', color: '#5059C9', letter: 'MT' },
-    { name: 'Discord', category: 'communication', color: '#5865F2', letter: 'D' },
-    { name: 'Telegram', category: 'communication', color: '#0088CC', letter: 'T' },
-    { name: 'WhatsApp', category: 'communication', color: '#25D366', letter: 'W' },
-    { name: 'Zoom', category: 'communication', color: '#2D8CFF', letter: 'Z' },
-    { name: 'Twilio', category: 'communication', color: '#F22F46', letter: 'Tw' },
-    
-    // CRM & Sales
-    { name: 'Salesforce', category: 'crm', color: '#00A1E0', letter: 'SF' },
-    { name: 'HubSpot', category: 'crm', color: '#FF7A59', letter: 'HS' },
-    { name: 'Pipedrive', category: 'crm', color: '#000000', letter: 'PD' },
-    { name: 'Zoho CRM', category: 'crm', color: '#E42527', letter: 'Z' },
-    { name: 'Freshsales', category: 'crm', color: '#00C1A2', letter: 'FS' },
-    { name: 'Monday Sales', category: 'crm', color: '#FF3D57', letter: 'M' },
-    { name: 'Close', category: 'crm', color: '#4353FF', letter: 'C' },
-    { name: 'Copper', category: 'crm', color: '#FA6E5A', letter: 'Cu' },
-    
-    // Marketing
-    { name: 'Mailchimp', category: 'marketing', color: '#FFE01B', letter: 'MC' },
-    { name: 'Sendinblue', category: 'marketing', color: '#0B996E', letter: 'SB' },
-    { name: 'Facebook Ads', category: 'marketing', color: '#1877F2', letter: 'FB' },
-    { name: 'Google Ads', category: 'marketing', color: '#4285F4', letter: 'GA' },
-    { name: 'Twitter', category: 'marketing', color: '#1DA1F2', letter: 'X' },
-    { name: 'LinkedIn', category: 'marketing', color: '#0A66C2', letter: 'in' },
-    { name: 'Instagram', category: 'marketing', color: '#E4405F', letter: 'IG' },
-    { name: 'TikTok', category: 'marketing', color: '#000000', letter: 'TT' },
-    
-    // E-commerce
-    { name: 'Shopify', category: 'ecommerce', color: '#96BF48', letter: 'S' },
-    { name: 'WooCommerce', category: 'ecommerce', color: '#96588A', letter: 'WC' },
-    { name: 'Stripe', category: 'ecommerce', color: '#635BFF', letter: 'S' },
-    { name: 'Square', category: 'ecommerce', color: '#000000', letter: 'Sq' },
-    { name: 'Amazon', category: 'ecommerce', color: '#FF9900', letter: 'A' },
-    { name: 'eBay', category: 'ecommerce', color: '#E53238', letter: 'E' },
-    { name: 'Magento', category: 'ecommerce', color: '#F46F25', letter: 'M' },
-    { name: 'BigCommerce', category: 'ecommerce', color: '#121118', letter: 'BC' },
-    
-    // Productivity
-    { name: 'Notion', category: 'productivity', color: '#000000', letter: 'N' },
-    { name: 'Trello', category: 'productivity', color: '#0079BF', letter: 'T' },
-    { name: 'Asana', category: 'productivity', color: '#F06A6A', letter: 'A' },
-    { name: 'Monday.com', category: 'productivity', color: '#FF3D57', letter: 'M' },
-    { name: 'ClickUp', category: 'productivity', color: '#7B68EE', letter: 'C' },
-    { name: 'Airtable', category: 'productivity', color: '#FCB400', letter: 'At' },
-    { name: 'Jira', category: 'productivity', color: '#0052CC', letter: 'J' },
-    { name: 'Basecamp', category: 'productivity', color: '#1D2D35', letter: 'B' },
-    
-    // Analytics
-    { name: 'Google Analytics', category: 'analytics', color: '#E37400', letter: 'GA' },
-    { name: 'Mixpanel', category: 'analytics', color: '#7856FF', letter: 'MP' },
-    { name: 'Amplitude', category: 'analytics', color: '#000FFF', letter: 'Am' },
-    { name: 'Tableau', category: 'analytics', color: '#E97627', letter: 'T' },
-    { name: 'Looker', category: 'analytics', color: '#4285F4', letter: 'L' },
-    { name: 'Segment', category: 'analytics', color: '#52BD95', letter: 'S' },
-    { name: 'Hotjar', category: 'analytics', color: '#FD3A69', letter: 'H' },
-    { name: 'Heap', category: 'analytics', color: '#FF5E00', letter: 'He' },
-    
-    // Finance
-    { name: 'QuickBooks', category: 'finance', color: '#2CA01C', letter: 'QB' },
-    { name: 'Xero', category: 'finance', color: '#13B5EA', letter: 'X' },
-    { name: 'PayPal', category: 'finance', color: '#00457C', letter: 'PP' },
-    { name: 'Wise', category: 'finance', color: '#00B9FF', letter: 'W' },
-    { name: 'FreshBooks', category: 'finance', color: '#0075DD', letter: 'FB' },
-    { name: 'Wave', category: 'finance', color: '#4FB5EC', letter: 'W' },
-    { name: 'Gusto', category: 'finance', color: '#F45D48', letter: 'G' },
-    { name: 'Bill.com', category: 'finance', color: '#00AEEF', letter: 'B' },
-  ]
-};
+    { name: "Gmail", category: "communication", color: "#EA4335", letter: "G" },
+    { name: "Slack", category: "communication", color: "#4A154B", letter: "S" },
+    {
+      name: "Microsoft Teams",
+      category: "communication",
+      color: "#5059C9",
+      letter: "MT",
+    },
+    {
+      name: "Discord",
+      category: "communication",
+      color: "#5865F2",
+      letter: "D",
+    },
+    {
+      name: "Telegram",
+      category: "communication",
+      color: "#0088CC",
+      letter: "T",
+    },
+    {
+      name: "WhatsApp",
+      category: "communication",
+      color: "#25D366",
+      letter: "W",
+    },
+    { name: "Zoom", category: "communication", color: "#2D8CFF", letter: "Z" },
+    {
+      name: "Twilio",
+      category: "communication",
+      color: "#F22F46",
+      letter: "Tw",
+    },
 
+    // CRM & Sales
+    { name: "Salesforce", category: "crm", color: "#00A1E0", letter: "SF" },
+    { name: "HubSpot", category: "crm", color: "#FF7A59", letter: "HS" },
+    { name: "Pipedrive", category: "crm", color: "#000000", letter: "PD" },
+    { name: "Zoho CRM", category: "crm", color: "#E42527", letter: "Z" },
+    { name: "Freshsales", category: "crm", color: "#00C1A2", letter: "FS" },
+    { name: "Monday Sales", category: "crm", color: "#FF3D57", letter: "M" },
+    { name: "Close", category: "crm", color: "#4353FF", letter: "C" },
+    { name: "Copper", category: "crm", color: "#FA6E5A", letter: "Cu" },
+
+    // Marketing
+    {
+      name: "Mailchimp",
+      category: "marketing",
+      color: "#FFE01B",
+      letter: "MC",
+    },
+    {
+      name: "Sendinblue",
+      category: "marketing",
+      color: "#0B996E",
+      letter: "SB",
+    },
+    {
+      name: "Facebook Ads",
+      category: "marketing",
+      color: "#1877F2",
+      letter: "FB",
+    },
+    {
+      name: "Google Ads",
+      category: "marketing",
+      color: "#4285F4",
+      letter: "GA",
+    },
+    { name: "Twitter", category: "marketing", color: "#1DA1F2", letter: "X" },
+    { name: "LinkedIn", category: "marketing", color: "#0A66C2", letter: "in" },
+    {
+      name: "Instagram",
+      category: "marketing",
+      color: "#E4405F",
+      letter: "IG",
+    },
+    { name: "TikTok", category: "marketing", color: "#000000", letter: "TT" },
+
+    // E-commerce
+    { name: "Shopify", category: "ecommerce", color: "#96BF48", letter: "S" },
+    {
+      name: "WooCommerce",
+      category: "ecommerce",
+      color: "#96588A",
+      letter: "WC",
+    },
+    { name: "Stripe", category: "ecommerce", color: "#635BFF", letter: "S" },
+    { name: "Square", category: "ecommerce", color: "#000000", letter: "Sq" },
+    { name: "Amazon", category: "ecommerce", color: "#FF9900", letter: "A" },
+    { name: "eBay", category: "ecommerce", color: "#E53238", letter: "E" },
+    { name: "Magento", category: "ecommerce", color: "#F46F25", letter: "M" },
+    {
+      name: "BigCommerce",
+      category: "ecommerce",
+      color: "#121118",
+      letter: "BC",
+    },
+
+    // Productivity
+    { name: "Notion", category: "productivity", color: "#000000", letter: "N" },
+    { name: "Trello", category: "productivity", color: "#0079BF", letter: "T" },
+    { name: "Asana", category: "productivity", color: "#F06A6A", letter: "A" },
+    {
+      name: "Monday.com",
+      category: "productivity",
+      color: "#FF3D57",
+      letter: "M",
+    },
+    {
+      name: "ClickUp",
+      category: "productivity",
+      color: "#7B68EE",
+      letter: "C",
+    },
+    {
+      name: "Airtable",
+      category: "productivity",
+      color: "#FCB400",
+      letter: "At",
+    },
+    { name: "Jira", category: "productivity", color: "#0052CC", letter: "J" },
+    {
+      name: "Basecamp",
+      category: "productivity",
+      color: "#1D2D35",
+      letter: "B",
+    },
+
+    // Analytics
+    {
+      name: "Google Analytics",
+      category: "analytics",
+      color: "#E37400",
+      letter: "GA",
+    },
+    { name: "Mixpanel", category: "analytics", color: "#7856FF", letter: "MP" },
+    {
+      name: "Amplitude",
+      category: "analytics",
+      color: "#000FFF",
+      letter: "Am",
+    },
+    { name: "Tableau", category: "analytics", color: "#E97627", letter: "T" },
+    { name: "Looker", category: "analytics", color: "#4285F4", letter: "L" },
+    { name: "Segment", category: "analytics", color: "#52BD95", letter: "S" },
+    { name: "Hotjar", category: "analytics", color: "#FD3A69", letter: "H" },
+    { name: "Heap", category: "analytics", color: "#FF5E00", letter: "He" },
+
+    // Finance
+    { name: "QuickBooks", category: "finance", color: "#2CA01C", letter: "QB" },
+    { name: "Xero", category: "finance", color: "#13B5EA", letter: "X" },
+    { name: "PayPal", category: "finance", color: "#00457C", letter: "PP" },
+    { name: "Wise", category: "finance", color: "#00B9FF", letter: "W" },
+    { name: "FreshBooks", category: "finance", color: "#0075DD", letter: "FB" },
+    { name: "Wave", category: "finance", color: "#4FB5EC", letter: "W" },
+    { name: "Gusto", category: "finance", color: "#F45D48", letter: "G" },
+    { name: "Bill.com", category: "finance", color: "#00AEEF", letter: "B" },
+  ],
+};
 
 // INTEGRATIONS PAGE FUNCTIONALITY
 
-document.addEventListener('DOMContentLoaded', () => {
-  const featuredGrid = document.getElementById('featuredGrid');
-  const integrationGrid = document.getElementById('integrationGrid');
-  const categoryTabs = document.querySelectorAll('.category-tab');
-  const searchInput = document.getElementById('integrationSearch');
-  const noResults = document.getElementById('noResults');
-  const loadMoreBtn = document.getElementById('loadMoreBtn');
-  const loadMoreSection = document.getElementById('loadMoreSection');
-  const shownCount = document.getElementById('shownCount');
-  const totalCount = document.getElementById('totalCount');
+document.addEventListener("DOMContentLoaded", () => {
+  const featuredGrid = document.getElementById("featuredGrid");
+  const integrationGrid = document.getElementById("integrationGrid");
+  const categoryTabs = document.querySelectorAll(".category-tab");
+  const searchInput = document.getElementById("integrationSearch");
+  const noResults = document.getElementById("noResults");
+  const loadMoreBtn = document.getElementById("loadMoreBtn");
+  const loadMoreSection = document.getElementById("loadMoreSection");
+  const shownCount = document.getElementById("shownCount");
+  const totalCount = document.getElementById("totalCount");
 
-  let currentCategory = 'all';
-  let currentSearchTerm = '';
+  let currentCategory = "all";
+  let currentSearchTerm = "";
   let displayedCount = 48;
   const increment = 24;
 
@@ -780,15 +918,19 @@ document.addEventListener('DOMContentLoaded', () => {
   function populateFeatured() {
     if (!featuredGrid || !integrationsData.featured) return;
 
-    featuredGrid.innerHTML = '';
+    featuredGrid.innerHTML = "";
     integrationsData.featured.forEach((app, index) => {
-      const card = document.createElement('div');
-      card.className = 'featured-card';
+      const card = document.createElement("div");
+      card.className = "featured-card";
       card.dataset.delay = index * 100;
       card.innerHTML = `
-        <div class="featured-icon" style="background: ${app.color}">
-          ${app.letter}
-        </div>
+<div class="featured-icon">
+  ${
+    appLogos[app.name]
+      ? `<img src="${appLogos[app.name]}" alt="${app.name} logo">`
+      : `<span style="background:${app.color}">${app.letter}</span>`
+  }
+</div>
         <div class="featured-content">
           <h3>${app.name}</h3>
           <p>${app.desc}</p>
@@ -802,25 +944,29 @@ document.addEventListener('DOMContentLoaded', () => {
   function populateIntegrations(apps, limit = displayedCount) {
     if (!integrationGrid || !apps) return;
 
-    integrationGrid.innerHTML = '';
-    
+    integrationGrid.innerHTML = "";
+
     const appsToShow = apps.slice(0, limit);
-    
+
     appsToShow.forEach((app, index) => {
-      const item = document.createElement('div');
-      item.className = 'integration-item';
+      const item = document.createElement("div");
+      item.className = "integration-item";
       item.dataset.category = app.category;
       item.dataset.name = app.name.toLowerCase();
       item.style.animationDelay = `${(index % 12) * 0.03}s`;
-      
+
       item.innerHTML = `
-        <div class="integration-logo" style="background: ${app.color}">
-          ${app.letter}
-        </div>
+<div class="integration-logo">
+  ${
+    appLogos[app.name]
+      ? `<img src="${appLogos[app.name]}" alt="${app.name} logo">`
+      : `<span style="background:${app.color}">${app.letter}</span>`
+  }
+</div>
         <div class="integration-name">${app.name}</div>
         <div class="integration-category">${formatCategory(app.category)}</div>
       `;
-      
+
       integrationGrid.appendChild(item);
     });
 
@@ -831,13 +977,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // Format category name
   function formatCategory(category) {
     const names = {
-      'communication': 'Communication',
-      'crm': 'CRM & Sales',
-      'marketing': 'Marketing',
-      'ecommerce': 'E-commerce',
-      'productivity': 'Productivity',
-      'analytics': 'Analytics',
-      'finance': 'Finance'
+      communication: "Communication",
+      crm: "CRM & Sales",
+      marketing: "Marketing",
+      ecommerce: "E-commerce",
+      productivity: "Productivity",
+      analytics: "Analytics",
+      finance: "Finance",
     };
     return names[category] || category;
   }
@@ -847,27 +993,28 @@ document.addEventListener('DOMContentLoaded', () => {
     let filtered = [...integrationsData.all];
 
     // Filter by category
-    if (currentCategory !== 'all') {
-      filtered = filtered.filter(app => app.category === currentCategory);
+    if (currentCategory !== "all") {
+      filtered = filtered.filter((app) => app.category === currentCategory);
     }
 
     // Filter by search term
     if (currentSearchTerm) {
-      filtered = filtered.filter(app => 
-        app.name.toLowerCase().includes(currentSearchTerm.toLowerCase()) ||
-        app.category.toLowerCase().includes(currentSearchTerm.toLowerCase())
+      filtered = filtered.filter(
+        (app) =>
+          app.name.toLowerCase().includes(currentSearchTerm.toLowerCase()) ||
+          app.category.toLowerCase().includes(currentSearchTerm.toLowerCase())
       );
     }
 
     // Show/hide no results
     if (filtered.length === 0) {
-      integrationGrid.style.display = 'none';
-      loadMoreSection.style.display = 'none';
-      noResults.style.display = 'block';
+      integrationGrid.style.display = "none";
+      loadMoreSection.style.display = "none";
+      noResults.style.display = "block";
     } else {
-      integrationGrid.style.display = 'grid';
-      loadMoreSection.style.display = 'block';
-      noResults.style.display = 'none';
+      integrationGrid.style.display = "grid";
+      loadMoreSection.style.display = "block";
+      noResults.style.display = "none";
       populateIntegrations(filtered, displayedCount);
     }
   }
@@ -883,18 +1030,18 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!loadMoreBtn || !loadMoreSection) return;
 
     if (shown >= total) {
-      loadMoreBtn.style.display = 'none';
+      loadMoreBtn.style.display = "none";
     } else {
-      loadMoreBtn.style.display = 'inline-flex';
+      loadMoreBtn.style.display = "inline-flex";
     }
   }
 
   // Category tabs
-  categoryTabs.forEach(tab => {
-    tab.addEventListener('click', () => {
+  categoryTabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
       // Update active state
-      categoryTabs.forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
+      categoryTabs.forEach((t) => t.classList.remove("active"));
+      tab.classList.add("active");
 
       // Update current category
       currentCategory = tab.dataset.category;
@@ -904,23 +1051,23 @@ document.addEventListener('DOMContentLoaded', () => {
       filterIntegrations();
 
       // Scroll to grid
-      integrationGrid.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      integrationGrid.scrollIntoView({ behavior: "smooth", block: "nearest" });
     });
   });
 
   // Search functionality
   if (searchInput) {
-    searchInput.addEventListener('input', (e) => {
+    searchInput.addEventListener("input", (e) => {
       currentSearchTerm = e.target.value.trim();
       displayedCount = 48; // Reset display count
       filterIntegrations();
     });
 
     // Clear search on Escape
-    searchInput.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        searchInput.value = '';
-        currentSearchTerm = '';
+    searchInput.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        searchInput.value = "";
+        currentSearchTerm = "";
         filterIntegrations();
       }
     });
@@ -928,17 +1075,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Load more functionality
   if (loadMoreBtn) {
-    loadMoreBtn.addEventListener('click', () => {
+    loadMoreBtn.addEventListener("click", () => {
       displayedCount += increment;
       filterIntegrations();
-      
+
       // Smooth scroll to show new items
       setTimeout(() => {
-        const lastItems = integrationGrid.querySelectorAll('.integration-item');
+        const lastItems = integrationGrid.querySelectorAll(".integration-item");
         if (lastItems.length > 0) {
-          lastItems[lastItems.length - increment]?.scrollIntoView({ 
-            behavior: 'smooth', 
-            block: 'nearest' 
+          lastItems[lastItems.length - increment]?.scrollIntoView({
+            behavior: "smooth",
+            block: "nearest",
           });
         }
       }, 100);
@@ -951,21 +1098,24 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Add animation to integration items on scroll
-const integrationObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.style.opacity = '1';
-      entry.target.style.transform = 'scale(1)';
-    }
-  });
-}, {
-  threshold: 0.1,
-  rootMargin: '0px 0px -50px 0px'
-});
+const integrationObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = "1";
+        entry.target.style.transform = "scale(1)";
+      }
+    });
+  },
+  {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px",
+  }
+);
 
 // Observe integration items (will be called after items are added)
 function observeIntegrationItems() {
-  document.querySelectorAll('.integration-item').forEach(item => {
+  document.querySelectorAll(".integration-item").forEach((item) => {
     integrationObserver.observe(item);
   });
 }
