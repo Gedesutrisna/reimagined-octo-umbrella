@@ -7,43 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- SEO Meta -->
-    <title>Samartha – AI Business Automation Platform for Faster Growth</title>
+    <title>Sign In – Samartha</title>
     <meta
       name="description"
-      content="Samartha adalah platform AI-powered business automation untuk mengotomatisasi workflow, meningkatkan produktivitas hingga 10x, dan menghubungkan ratusan tools bisnis tanpa coding."
+      content="Sign in to your Samartha account and start automating your workflows."
     />
-    <meta
-      name="keywords"
-      content="Business Automation, AI Automation Platform, Workflow Automation, No-Code Automation, Productivity Tools, Samartha"
-    />
-    <meta name="author" content="Samartha" />
-    <meta name="robots" content="index, follow" />
-
-    <!-- Open Graph (Facebook, LinkedIn, WhatsApp) -->
-    <meta property="og:type" content="website" />
-    <meta
-      property="og:title"
-      content="Samartha – AI-Powered Business Automation Platform"
-    />
-    <meta
-      property="og:description"
-      content="Otomatisasi proses bisnis, hilangkan pekerjaan repetitif, dan skalakan bisnis Anda dengan solusi AI dari Samartha."
-    />
-    <meta property="og:url" content="https://samartha.ai/" />
-    <meta property="og:image" content="001_Bahan/assets/logo.webp" />
-    <meta property="og:site_name" content="Samartha" />
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="Samartha – AI Business Automation Platform"
-    />
-    <meta
-      name="twitter:description"
-      content="Bangun workflow otomatis cerdas dan tingkatkan efisiensi bisnis dengan Samartha."
-    />
-    <meta name="twitter:image" content="001_Bahan/assets/logo.webp" />
 
     <!-- Favicon -->
     <link rel="icon" href="001_Bahan/assets/logo.webp" type="image/webp" />
@@ -51,6 +19,9 @@
     <!-- Preconnect Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link rel="stylesheet" href="001_Website/css/style.css" />
+    <link rel="stylesheet" href="001_Website/css/auth.css" />
 
     <!-- Google Fonts -->
     <link
@@ -61,123 +32,177 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
       rel="stylesheet"
     />
-    <style></style>
   </head>
   <body>
-    <section class="hero" id="home">
-      <div class="shape-deco shape-1">
-        <div class="starburst spinner"></div>
-      </div>
-      <div class="shape-deco shape-2">
-        <div class="flower spinner"></div>
-      </div>
+    <!-- Auth Container -->
+    <div class="auth-container">
+      <!-- Left Side - Branding & Info -->
+      <div class="auth-left">
+        <div class="auth-branding">
+          <a href="index.html" class="auth-logo">
+            <img src="001_Bahan/assets/logo.webp" alt="logo" />
+            <span>Samartha</span>
+          </a>
+          <h1>Welcome back!</h1>
+          <p>Sign in to continue automating your workflows and boost productivity.</p>
+        </div>
 
-      <div class="hero-container">
-        <div class="hero-content">
-          <div class="badge">✨ AI-Powered Automation Platform</div>
-          <h1>Transform Your Business with Intelligent Automation</h1>
-          <p class="hero-subtitle">
-            Streamline workflows, eliminate repetitive tasks, and boost
-            productivity by up to 10x with our cutting-edge AI automation
-            solutions.
-          </p>
-          <div class="hero-buttons">
-            <button class="btn btn-primary">Start Free Trial</button>
-            <button class="btn btn-outline">Watch Demo</button>
+        <!-- Decorative Elements -->
+        <div class="auth-decoration">
+          <div class="floating-shape shape-1">
+            <div class="starburst spinner"></div>
+          </div>
+          <div class="floating-shape shape-2">
+            <div class="flower spinner"></div>
+          </div>
+          <div class="floating-shape shape-3">
+            <div class="circle bouncing"></div>
           </div>
         </div>
 
-        <div class="automation-visual">
-          <div class="workflow-node trigger-node">
-            <div class="node-status">✓ Completed</div>
-            <div class="node-header">
-              <div class="node-icon">⚡</div>
-              <span class="node-label">Trigger</span>
+        <!-- Features List -->
+        <div class="auth-features">
+          <div class="auth-feature">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M9 11L12 14L22 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M21 12V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <div>
+              <h4>1000+ Integrations</h4>
+              <p>Connect your favorite apps</p>
             </div>
-            <div class="node-title">Deal Updated</div>
-            <div class="node-desc">When stage changes</div>
+          </div>
+          <div class="auth-feature">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <div>
+              <h4>AI-Powered Automation</h4>
+              <p>Smart workflows that adapt</p>
+            </div>
+          </div>
+          <div class="auth-feature">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <div>
+              <h4>Save 20+ Hours/Week</h4>
+              <p>Focus on what matters</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Side - Form -->
+      <div class="auth-right">
+        <div class="auth-form-container">
+          <!-- Back to Home -->
+          <a href="index.html" class="back-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Back to home
+          </a>
+
+          <div class="auth-form-header">
+            <h2>Sign in to Samartha</h2>
+            <p>Don't have an account? <a href="register.html" class="link">Sign up</a></p>
           </div>
 
-          <div class="workflow-node delay-node">
-            <div class="node-status">✓ Completed</div>
-            <div class="node-header">
-              <div class="node-icon">⏱️</div>
-              <span class="node-label">Delay</span>
-            </div>
-            <div class="node-title">Wait 5 Seconds</div>
-            <div class="node-desc">Smart delay</div>
+          <!-- Social Login Buttons -->
+          <div class="social-login">
+            <button class="social-btn google-btn">
+              <svg width="20" height="20" viewBox="0 0 24 24">
+                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+              </svg>
+              Continue with Google
+            </button>
+            <button class="social-btn microsoft-btn">
+              <svg width="20" height="20" viewBox="0 0 24 24">
+                <path fill="#f25022" d="M11.4 11.4H2V2h9.4v9.4z"/>
+                <path fill="#00a4ef" d="M22 11.4h-9.4V2H22v9.4z"/>
+                <path fill="#7fba00" d="M11.4 22H2v-9.4h9.4V22z"/>
+                <path fill="#ffb900" d="M22 22h-9.4v-9.4H22V22z"/>
+              </svg>
+              Continue with Microsoft
+            </button>
           </div>
 
-          <div class="workflow-node action-node">
-            <div class="node-status running-status">⟳ Running</div>
-            <div class="node-header">
-              <div class="node-icon">▶</div>
-              <span class="node-label">Action</span>
-            </div>
-            <div class="node-title">Enroll Sequence</div>
-            <div class="node-desc">Add to upsell flow</div>
+          <div class="divider">
+            <span>Or continue with email</span>
           </div>
 
-          <svg
-            style="
-              position: absolute;
-              width: 100%;
-              height: 100%;
-              top: 45;
-              left: 0;
-              pointer-events: none;
-            "
-          >
-            <defs>
-              <marker
-                id="arrowhead"
-                markerWidth="10"
-                markerHeight="10"
-                refX="9"
-                refY="3"
-                orient="auto"
-              >
-                <polygon
-                  points="0 0, 10 3, 0 6"
-                  fill="rgba(67, 66, 255, 0.3)"
+          <!-- Login Form -->
+          <form class="auth-form" id="loginForm">
+            <div class="form-group">
+              <label for="email">Email address</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="you@example.com"
+                required
+              />
+              <span class="error-message" id="emailError"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="password">Password</label>
+              <div class="password-input-wrapper">
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  placeholder="Enter your password"
+                  required
                 />
-              </marker>
-            </defs>
-            <path
-              d="M 120 95 L 120 160"
-              stroke="rgba(67, 66, 255, 0.3)"
-              stroke-width="2"
-              fill="none"
-              marker-end="url(#arrowhead)"
-              stroke-dasharray="5,5"
-            >
-              <animate
-                attributeName="stroke-dashoffset"
-                from="0"
-                to="-10"
-                dur="1s"
-                repeatCount="indefinite"
-              />
-            </path>
-            <path
-              d="M 210 75 Q 300 75, 360 130"
-              stroke="rgba(67, 66, 255, 0.3)"
-              stroke-width="2"
-              fill="none"
-              marker-end="url(#arrowhead)"
-              stroke-dasharray="5,5"
-            >
-              <animate
-                attributeName="stroke-dashoffset"
-                from="0"
-                to="-10"
-                dur="1s"
-                repeatCount="indefinite"
-              />
-            </path>
-          </svg>
+                <button type="button" class="toggle-password" id="togglePassword">
+                  <svg class="eye-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
+                    <path d="M1 12S5 4 12 4s11 8 11 8-4 8-11 8S1 12 1 12z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  <svg class="eye-off-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" style="display: none;">
+                    <path d="M17.94 17.94A10.07 10.07 0 0112 20c-7 0-11-8-11-8a18.45 18.45 0 015.06-5.94M9.9 4.24A9.12 9.12 0 0112 4c7 0 11 8 11 8a18.5 18.5 0 01-2.16 3.19m-6.72-1.07a3 3 0 11-4.24-4.24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <line x1="1" y1="1" x2="23" y2="23" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+              </div>
+              <span class="error-message" id="passwordError"></span>
+            </div>
+
+            <div class="form-options">
+              <label class="checkbox-wrapper">
+                <input type="checkbox" id="remember" name="remember" />
+                <span class="checkmark"></span>
+                Remember me
+              </label>
+              <a href="forgot-password.html" class="link">Forgot password?</a>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-full">
+              Sign in
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </form>
+
+          <!-- Footer Links -->
+          <div class="auth-footer">
+            <p>
+              By signing in, you agree to our 
+              <a href="#" class="link">Terms of Service</a> and 
+              <a href="#" class="link">Privacy Policy</a>
+            </p>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
+
+    <script src="001_Website/js/auth.js"></script>
   </body>
 </html>

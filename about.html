@@ -22,7 +22,6 @@
 
     <link rel="stylesheet" href="001_Bahan/Swiperjs v5.3.7/swiper-bundle.css" />
     <link rel="stylesheet" href="001_Website/css/style.css" />
-    <link rel="stylesheet" href="001_Website/css/about.css" />
 
     <!-- Google Fonts -->
     <link
@@ -36,84 +35,71 @@
   </head>
   <body>
     <style>
+      /* About Quote Section */
+      .about-quote {
+        padding: 4rem 2rem;
+        background: var(--white-color);
+        text-align: center;
+      }
+
+      .quote-container {
+        max-width: 800px;
+        margin: 0 auto;
+        position: relative;
+      }
+
+      .quote-mark {
+        font-size: 8rem;
+        font-family: var(--header-font-family);
+        color: rgba(67, 66, 255, 0.1);
+        line-height: 1;
+        position: absolute;
+        top: -60px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .about-quote blockquote {
+        font-size: 1.5rem;
+        font-weight: 500;
+        line-height: 1.6;
+        color: var(--black-color);
+        margin: 2rem 0 1.5rem;
+        font-style: italic;
+      }
+
+      .about-quote cite {
+        font-size: 1rem;
+        color: var(--primary-color);
+        font-weight: 600;
+        font-style: normal;
+      }
+
       /* ========================================
-   ABOUT PAGE STYLES
-   Following homepage design patterns
+   ABOUT PAGE - IMPROVED SECTIONS
    ======================================== */
 
-      /* About Hero - Full Height like Homepage */
-      .about-hero {
-        min-height: 100vh;
-        display: grid;
-        align-items: center;
-        padding: 5rem 3rem 3rem;
-        position: relative;
-        overflow: hidden;
-        background: var(--bg-light);
+      /* 1. STATS - Simplified Version (atau HAPUS jika tidak perlu) */
+      .about-hero ~ .stats {
+        padding: 2rem 2rem;
+        background: transparent; /* Blend dengan hero */
       }
 
-      .about-hero-container {
-        max-width: 1300px;
-        margin: 0 auto;
-        width: 100%;
-        display: grid;
-        grid-template-columns: 1.1fr 0.9fr;
-        gap: 4rem;
-        align-items: center;
+      .about-hero ~ .stats .stats-container {
+        max-width: 900px;
+        gap: 2rem;
       }
 
-      .about-hero-content {
-        animation: fadeInUp 0.8s ease;
+      .about-hero ~ .stats .stat-number {
+        font-size: 2rem; /* Lebih kecil */
       }
 
-      .about-hero h1 {
-        margin: 0.75rem 0 1.25rem;
-      }
+      /* Atau HAPUS stats di about.html jika tidak diperlukan */
 
-      .about-hero-subtitle {
-        font-size: 1.15rem;
-        margin-bottom: 2rem;
-        max-width: 550px;
-      }
-
-      .hero-buttons {
-        display: flex;
-        gap: 1rem;
-        flex-wrap: wrap;
-      }
-
-      .about-hero-visual {
-        position: relative;
-        width: 100%;
-        height: 420px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .about-hero-video {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 16px;
-        box-shadow: 0 16px 48px rgba(67, 66, 255, 0.15);
-        transition: all 0.3s ease;
-      }
-
-      .about-hero-video:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 24px 56px rgba(67, 66, 255, 0.2);
-      }
-
-      /* Mission & Vision - Matching Homepage Card Style */
+      /* 2. MISSION & VISION - Clean Card Style */
       .mission-vision {
         padding: 4.5rem 3rem;
         background: var(--bg-light);
-      }
-
-      .mission-vision-container {
-        max-width: 1200px;
-        margin: 0 auto;
       }
 
       .mission-vision-grid {
@@ -131,6 +117,11 @@
         background: rgba(255, 255, 255, 0.38);
         backdrop-filter: blur(7.6px);
         -webkit-backdrop-filter: blur(7.6px);
+      }
+
+      /* HAPUS border-top yang terlalu mencolok */
+      .mission-vision-card::before {
+        display: none; /* Hapus garis atas */
       }
 
       .mission-vision-card:hover {
@@ -191,9 +182,9 @@
       }
 
       .mission-vision-card h3 {
-        font-size: 1.75rem;
-        margin-bottom: 1.25rem;
-        color: var(--black-color);
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: var(--primary-color);
       }
 
       .mission-vision-card p {
@@ -201,254 +192,12 @@
         line-height: 1.8;
       }
 
-      /* Our Story Timeline - Improved Line Style */
-      .our-story {
-        padding: 4.5rem 3rem;
-        background: var(--white);
-        position: relative;
-        overflow: hidden;
-      }
-
-      .our-story-container {
-        max-width: 1000px;
-        margin: 0 auto;
-      }
-
-      .story-timeline {
-        margin-top: 4rem;
-        position: relative;
-        padding-left: 50px;
-      }
-
-      .story-timeline::before {
-        content: "";
-        position: absolute;
-        left: 120px;
-        top: 30px;
-        bottom: 30px;
-        width: 2px;
-        background: linear-gradient(
-          to bottom,
-          transparent,
-          rgba(67, 66, 255, 0.15) 10%,
-          rgba(67, 66, 255, 0.15) 90%,
-          transparent
-        );
-      }
-
-      .timeline-item {
-        display: grid;
-        grid-template-columns: 140px 1fr;
-        gap: 4rem;
-        margin-bottom: 4rem;
-        position: relative;
-        opacity: 0;
-        transform: translateY(20px);
-        animation: fadeInUp 0.6s ease forwards;
-        align-items: center;
-      }
-
-      .timeline-item:nth-child(1) {
-        animation-delay: 0s;
-      }
-      .timeline-item:nth-child(2) {
-        animation-delay: 0.1s;
-      }
-      .timeline-item:nth-child(3) {
-        animation-delay: 0.2s;
-      }
-      .timeline-item:nth-child(4) {
-        animation-delay: 0.3s;
-      }
-      .timeline-item:nth-child(5) {
-        animation-delay: 0.4s;
-      }
-
-      .timeline-item::before {
-        content: "";
-        position: absolute;
-        left: 163px;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 17px;
-        height: 17px;
-        border-radius: 50%;
-        background: white;
-        border: 4px solid var(--primary-color);
-        z-index: 2;
-        transition: all 0.3s ease;
-      }
-
-      .timeline-item:hover::before {
-        transform: translateY(-50%) scale(1.3);
-        box-shadow: 0 0 0 8px rgba(67, 66, 255, 0.1);
-      }
-
-      .timeline-item.highlight::before {
-        width: 25px;
-        height: 25px;
-        left: 159px;
-        background: var(--primary-color);
-        animation: pulse-ring 2s ease-in-out infinite;
-      }
-
-      @keyframes pulse-ring {
-        0%,
-        100% {
-          box-shadow: 0 0 0 0 rgba(67, 66, 255, 0.4);
-        }
-        50% {
-          box-shadow: 0 0 0 15px rgba(67, 66, 255, 0);
-        }
-      }
-
-      .timeline-year {
-        font-size: 2.5rem;
-        font-weight: 800;
-        font-family: var(--header-font-family);
-        color: var(--primary-color);
-        text-align: right;
-        line-height: 1;
-        padding-right: 1rem;
-      }
-
-      .timeline-content {
-        padding: 1.75rem 2rem;
-        background: white;
-        border: 1px solid rgba(67, 66, 255, 0.08);
-        border-radius: 16px;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        background: rgba(255, 255, 255, 0.746);
-        backdrop-filter: blur(7.6px);
-        -webkit-backdrop-filter: blur(7.6px);
-      }
-
-      .timeline-item.highlight .timeline-content {
-        border-color: var(--primary-color);
-        background: rgba(67, 66, 255, 0.02);
-      }
-
-      .timeline-content:hover {
-        transform: translateX(8px);
-        box-shadow: 0 8px 20px rgba(67, 66, 255, 0.1);
-        border-color: rgba(67, 66, 255, 0.2);
-      }
-
-      .timeline-content h4 {
-        font-size: 1.25rem;
-        margin-bottom: 0.85rem;
-        color: var(--black-color);
-        font-family: var(--header-font-family);
-        font-weight: 700;
-      }
-
-      .timeline-content p {
-        line-height: 1.7;
-        margin: 0;
-      }
-
-      /* Our Values - Matching Homepage Card Style */
-      .our-values {
-        padding: 4.5rem 3rem;
-        background: var(--bg-light);
-      }
-
-      .our-values-container {
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-
-      .values-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 1.5rem;
-        margin-top: 4rem;
-      }
-
-      .value-card {
-        padding: 2rem;
-        border-radius: 16px;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        border: 1px solid rgba(67, 66, 255, 0.08);
-        position: relative;
-        background: rgba(255, 255, 255, 0.38);
-        backdrop-filter: blur(7.6px);
-        -webkit-backdrop-filter: blur(7.6px);
-        opacity: 0;
-        transform: translateY(20px);
-        animation: fadeInUp 0.6s ease forwards;
-      }
-
-      .value-card:nth-child(1) {
-        animation-delay: 0s;
-      }
-      .value-card:nth-child(2) {
-        animation-delay: 0.1s;
-      }
-      .value-card:nth-child(3) {
-        animation-delay: 0.2s;
-      }
-      .value-card:nth-child(4) {
-        animation-delay: 0.3s;
-      }
-      .value-card:nth-child(5) {
-        animation-delay: 0.4s;
-      }
-      .value-card:nth-child(6) {
-        animation-delay: 0.5s;
-      }
-
-      .value-card:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 16px 32px rgba(67, 66, 255, 0.1);
-        border-color: rgba(67, 66, 255, 0.2);
-      }
-
-      .value-number {
-        font-size: 3.5rem;
-        font-weight: 800;
-        font-family: var(--header-font-family);
-        color: rgba(67, 66, 255, 0.15);
-        line-height: 1;
-        margin-bottom: 1rem;
-        transition: all 0.3s ease;
-      }
-
-      .value-card:hover .value-number {
-        color: rgba(67, 66, 255, 0.25);
-        transform: scale(1.05);
-      }
-
-      .value-card h3 {
-        font-size: 1.35rem;
-        margin-bottom: 1rem;
-        color: var(--black-color);
-      }
-
-      .value-card p {
-        line-height: 1.7;
-        margin: 0;
-      }
-
-      /* Our Team - Improved Card Layout */
-      .our-team {
-        padding: 4.5rem 3rem;
-        background: var(--white);
-        position: relative;
-        overflow: hidden;
-      }
-
-      .our-team-container {
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-
+      /* 3. TEAM - Minimalist Card Style */
       .team-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2.5rem;
         margin-top: 4rem;
-        margin-bottom: 4rem;
       }
 
       .team-member {
@@ -457,6 +206,9 @@
         opacity: 0;
         transform: translateY(20px);
         animation: fadeInUp 0.6s ease forwards;
+        /* HAPUS border dan padding berlebihan */
+        border: none;
+        padding: 0;
       }
 
       .team-member:nth-child(1) {
@@ -488,13 +240,13 @@
         margin: 0 auto 1.5rem;
         border-radius: 50%;
         overflow: hidden;
-        border: 4px solid white;
-        box-shadow: 0 8px 20px rgba(67, 66, 255, 0.12);
+        border: 4px solid rgba(67, 66, 255, 0.15);
+        box-shadow: 0 8px 20px rgba(67, 66, 255, 0.08);
         transition: all 0.3s ease;
       }
 
       .team-member:hover .team-member-photo {
-        box-shadow: 0 12px 28px rgba(67, 66, 255, 0.2);
+        box-shadow: 0 12px 28px rgba(67, 66, 255, 0.15);
         border-color: var(--primary-color);
         transform: scale(1.05);
       }
@@ -536,102 +288,15 @@
         line-height: 1.6;
         opacity: 0.7;
         margin: 0;
-        min-height: 50px;
       }
 
-      /* Join Team CTA - Borderless Style to Match Team Cards */
-      .join-team-cta {
-        text-align: center;
-        padding: 4rem 2.5rem;
-        background: transparent;
-        border: none;
-        border-radius: 0;
-        max-width: 700px;
-        margin: 3rem auto 0;
-        transition: all 0.3s ease;
-      }
-
-      .join-team-cta h3 {
-        font-size: 1.75rem;
-        margin-bottom: 1rem;
-        color: var(--primary-color);
-      }
-
-      .join-team-cta p {
-        font-size: 1.05rem;
-        margin-bottom: 2rem;
-        max-width: 600px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      /* Responsive About Page */
+      /* Responsive */
       @media (max-width: 968px) {
-        .about-hero {
-          padding: 6rem 1.5rem 3rem;
-          min-height: auto;
-        }
-
-        .about-hero-container {
-          grid-template-columns: 1fr;
-          gap: 2.5rem;
-        }
-
-        .about-hero-visual {
-          height: 300px;
-        }
-
-        .mission-vision,
-        .our-story,
-        .our-values,
-        .our-team {
-          padding: 3rem 1.5rem;
+        .about-hero ~ .stats {
+          padding: 1.5rem 1.5rem;
         }
 
         .mission-vision-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .story-timeline {
-          padding-left: 0;
-        }
-
-        .story-timeline::before {
-          left: 20px;
-        }
-
-        .timeline-item {
-          grid-template-columns: 1fr;
-          gap: 1rem;
-          margin-bottom: 3rem;
-        }
-
-        .timeline-item::before {
-          left: 12.5px;
-          top: 0;
-          transform: none;
-        }
-
-        .timeline-item:hover::before {
-          transform: scale(1.3);
-        }
-
-        .timeline-item.highlight::before {
-          left: 8.5px;
-        }
-
-        .timeline-year {
-          text-align: left;
-          font-size: 2rem;
-          padding-right: 0;
-          padding-left: 3rem;
-        }
-
-        .timeline-content {
-          padding: 1.25rem 1.5rem;
-        }
-
-        .values-grid {
           grid-template-columns: 1fr;
         }
 
@@ -650,8 +315,7 @@
           height: 250px;
         }
 
-        .mission-vision-card,
-        .join-team-cta {
+        .mission-vision-card {
           padding: 2rem 1.5rem;
         }
       }
@@ -665,81 +329,6 @@
         </a>
 
         <div class="nav-menu" id="navMenu">
-          <!-- Platform Dropdown -->
-          <div class="nav-dropdown">
-            <a href="#" class="nav-link">
-              Platform
-              <svg
-                class="dropdown-arrow"
-                width="12"
-                height="12"
-                viewBox="0 0 12 12"
-                fill="none"
-              >
-                <path
-                  d="M2 4L6 8L10 4"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                />
-              </svg>
-            </a>
-            <div class="dropdown-menu">
-              <a href="platform.html#workflows" class="dropdown-item">
-                <div class="dropdown-icon">
-                  <img
-                    src="001_Bahan/assets/icon-2.webp"
-                    class="assets-icon"
-                    alt=""
-                  />
-                </div>
-                <div class="dropdown-content">
-                  <div class="dropdown-title">Workflows</div>
-                  <div class="dropdown-desc">Visual workflow builder</div>
-                </div>
-              </a>
-              <a href="platform.html#integrations" class="dropdown-item">
-                <div class="dropdown-icon">
-                  <img
-                    src="001_Bahan/assets/icon-3.webp"
-                    class="assets-icon"
-                    alt=""
-                  />
-                </div>
-                <div class="dropdown-content">
-                  <div class="dropdown-title">Integrations</div>
-                  <div class="dropdown-desc">500+ app connections</div>
-                </div>
-              </a>
-              <a href="platform.html#ai" class="dropdown-item">
-                <div class="dropdown-icon">
-                  <img
-                    src="001_Bahan/assets/icon-1.webp"
-                    class="assets-icon"
-                    alt=""
-                  />
-                </div>
-                <div class="dropdown-content">
-                  <div class="dropdown-title">AI Automation</div>
-                  <div class="dropdown-desc">Smart triggers & actions</div>
-                </div>
-              </a>
-              <a href="platform.html#analytics" class="dropdown-item">
-                <div class="dropdown-icon">
-                  <img
-                    src="001_Bahan/assets/icon-4.webp"
-                    class="assets-icon"
-                    alt=""
-                  />
-                </div>
-                <div class="dropdown-content">
-                  <div class="dropdown-title">Analytics</div>
-                  <div class="dropdown-desc">Reports & insights</div>
-                </div>
-              </a>
-            </div>
-          </div>
-
           <!-- Solutions Dropdown -->
           <div class="nav-dropdown">
             <a href="#" class="nav-link">
@@ -760,7 +349,7 @@
               </svg>
             </a>
             <div class="dropdown-menu">
-              <a href="#" class="dropdown-item">
+              <a href="solutions.html#marketing" class="dropdown-item">
                 <div class="dropdown-icon">
                   <img
                     src="001_Bahan/assets/icon-7.webp"
@@ -773,7 +362,7 @@
                   <div class="dropdown-desc">Campaign automation</div>
                 </div>
               </a>
-              <a href="#" class="dropdown-item">
+              <a href="solutions.html#sales" class="dropdown-item">
                 <div class="dropdown-icon">
                   <img
                     src="001_Bahan/assets/icon-5-b.webp"
@@ -787,7 +376,7 @@
                 </div>
                 <span class="badge-primary">Popular</span>
               </a>
-              <a href="#" class="dropdown-item">
+              <a href="solutions.html#operations" class="dropdown-item">
                 <div class="dropdown-icon">
                   <img
                     src="001_Bahan/assets/icon-8.webp"
@@ -800,7 +389,7 @@
                   <div class="dropdown-desc">Process automation</div>
                 </div>
               </a>
-              <a href="#" class="dropdown-item">
+              <a href="solutions.html#ecommerce" class="dropdown-item">
                 <div class="dropdown-icon">
                   <img
                     src="001_Bahan/assets/icon-9.webp"
@@ -817,12 +406,16 @@
           </div>
 
           <!-- Direct Links -->
-          <a href="index.html#pricing" class="nav-link">Pricing</a>
+          <a href="integrations.html" class="nav-link">Integrations</a>
+          <a href="pricing.html" class="nav-link">Pricing</a>
+          <a href="about.html" class="nav-link">About</a>
 
           <!-- CTA Group -->
           <div class="nav-cta-group">
-            <a href="#" class="nav-link-secondary">Sign in</a>
-            <button class="btn btn-primary">Get Started</button>
+            <a href="login.html" class="nav-link-secondary">Sign in</a>
+            <a href="register.html">
+              <button class="btn btn-primary">Get Started</button>
+            </a>
           </div>
         </div>
 
@@ -870,29 +463,18 @@
           </div>
         </div>
       </section>
-
-      <!-- Stats Section (moved from bottom) -->
-      <section class="stats">
-        <div class="stats-container">
-          <div class="stat-item" data-delay="0">
-            <div class="stat-number" data-target="10000">0</div>
-            <div class="stat-label">Active Customers</div>
-          </div>
-          <div class="stat-item" data-delay="100">
-            <div class="stat-number" data-target="10">0</div>
-            <div class="stat-label">M+ Tasks Automated</div>
-          </div>
-          <div class="stat-item" data-delay="200">
-            <div class="stat-number" data-target="50">0</div>
-            <div class="stat-label">Countries Worldwide</div>
-          </div>
-          <div class="stat-item" data-delay="300">
-            <div class="stat-number">99.9%</div>
-            <div class="stat-label">Platform Uptime</div>
-          </div>
+      <!-- Ganti Stats dengan Quote Section -->
+      <section class="about-quote">
+        <div class="quote-container">
+          <div class="quote-mark">"</div>
+          <blockquote>
+            We believe that every business deserves access to powerful
+            automation without the complexity. Our mission is to make AI work
+            for everyone.
+          </blockquote>
+          <cite>— Sarah Chen, CEO & Co-founder</cite>
         </div>
       </section>
-
       <!-- Mission & Vision with Visual -->
       <section class="mission-vision">
         <div class="mission-vision-container">
@@ -1234,6 +816,7 @@
 
       <div class="footer-top">
         <div class="footer-container">
+          <!-- Brand Column -->
           <div>
             <div class="footer-brand">
               <img
@@ -1255,46 +838,45 @@
             </div>
           </div>
 
+          <!-- Product Column -->
           <div>
             <div class="footer-title">Product</div>
             <div class="footer-links">
-              <a href="platform.html">Platform</a>
-              <a href="index.html#pricing">Pricing</a>
-              <a href="#">Integrations</a>
-              <a href="#">Templates</a>
-              <a href="#">What's New</a>
+              <a href="index.html#features">Features</a>
+              <a href="pricing.html">Pricing</a>
+              <a href="integrations.html">Integrations</a>
+              <a href="index.html#how-it-works">How It Works</a>
             </div>
           </div>
 
+          <!-- Solutions Column -->
           <div>
             <div class="footer-title">Solutions</div>
             <div class="footer-links">
-              <a href="#">Marketing</a>
-              <a href="#">Sales</a>
-              <a href="#">Operations</a>
-              <a href="#">E-commerce</a>
+              <a href="solutions.html#marketing">Marketing</a>
+              <a href="solutions.html#sales">Sales</a>
+              <a href="solutions.html#operations">Operations</a>
+              <a href="solutions.html#ecommerce">E-commerce</a>
             </div>
           </div>
 
+          <!-- Resources Column -->
           <div>
             <div class="footer-title">Resources</div>
             <div class="footer-links">
-              <a href="#">Help Center</a>
-              <a href="#">Documentation</a>
-              <a href="#">API Reference</a>
-              <a href="#">Community</a>
-              <a href="#">Blog</a>
+              <a href="index.html#faq">Help Center</a>
+              <a href="blog.html">Blog</a>
+              <a href="index.html#testimonials">Customer Stories</a>
             </div>
           </div>
 
+          <!-- Company Column -->
           <div>
             <div class="footer-title">Company</div>
             <div class="footer-links">
-              <a href="#">About Us</a>
+              <a href="about.html">About Us</a>
               <a href="index.html#testimonials">Customers</a>
-              <a href="#">Careers</a>
-              <a href="#">Press Kit</a>
-              <a href="#">Contact</a>
+              <a href="index.html#contact">Contact</a>
             </div>
           </div>
         </div>

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Basic Meta -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- SEO Meta -->
+    <title>Sign Up – Samartha</title>
+    <meta
+      name="description"
+      content="Create your Samartha account and start automating your workflows today."
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" href="001_Bahan/assets/logo.webp" type="image/webp" />
+
+    <!-- Preconnect Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link rel="stylesheet" href="001_Website/css/style.css" />
+    <link rel="stylesheet" href="001_Website/css/auth.css" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Auth Container -->
+    <div class="auth-container">
+      <!-- Left Side - Branding & Info -->
+      <div class="auth-left">
+        <div class="auth-branding">
+          <a href="index.html" class="auth-logo">
+            <img src="001_Bahan/assets/logo.webp" alt="logo" />
+            <span>Samartha</span>
+          </a>
+          <h1>Start automating today</h1>
+          <p>Join thousands of teams who trust Samartha to automate their workflows.</p>
+        </div>
+
+        <!-- Decorative Elements -->
+        <div class="auth-decoration">
+          <div class="floating-shape shape-1">
+            <div class="starburst spinner"></div>
+          </div>
+          <div class="floating-shape shape-2">
+            <div class="flower spinner"></div>
+          </div>
+          <div class="floating-shape shape-3">
+            <div class="circle bouncing"></div>
+          </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="auth-stats">
+          <div class="stat-item">
+            <h3>50K+</h3>
+            <p>Active Users</p>
+          </div>
+          <div class="stat-item">
+            <h3>1M+</h3>
+            <p>Workflows Created</p>
+          </div>
+          <div class="stat-item">
+            <h3>99.9%</h3>
+            <p>Uptime</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Side - Form -->
+      <div class="auth-right">
+        <div class="auth-form-container">
+          <!-- Back to Home -->
+          <a href="index.html" class="back-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Back to home
+          </a>
+
+          <!-- Progress Steps -->
+          <div class="progress-steps">
+            <div class="step active" data-step="1">
+              <div class="step-circle">1</div>
+              <span>Account</span>
+            </div>
+            <div class="step-line"></div>
+            <div class="step" data-step="2">
+              <div class="step-circle">2</div>
+              <span>Details</span>
+            </div>
+            <div class="step-line"></div>
+            <div class="step" data-step="3">
+              <div class="step-circle">3</div>
+              <span>Complete</span>
+            </div>
+          </div>
+
+          <div class="auth-form-header">
+            <h2 id="formTitle">Create your account</h2>
+            <p id="formSubtitle">Already have an account? <a href="login.html" class="link">Sign in</a></p>
+          </div>
+
+          <!-- Social Login Buttons -->
+          <div class="social-login" id="socialLogin">
+            <button class="social-btn google-btn">
+              <svg width="20" height="20" viewBox="0 0 24 24">
+                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+              </svg>
+              Continue with Google
+            </button>
+            <button class="social-btn microsoft-btn">
+              <svg width="20" height="20" viewBox="0 0 24 24">
+                <path fill="#f25022" d="M11.4 11.4H2V2h9.4v9.4z"/>
+                <path fill="#00a4ef" d="M22 11.4h-9.4V2H22v9.4z"/>
+                <path fill="#7fba00" d="M11.4 22H2v-9.4h9.4V22z"/>
+                <path fill="#ffb900" d="M22 22h-9.4v-9.4H22V22z"/>
+              </svg>
+              Continue with Microsoft
+            </button>
+          </div>
+
+          <div class="divider" id="divider">
+            <span>Or continue with email</span>
+          </div>
+
+          <!-- Register Form -->
+          <form class="auth-form multi-step-form" id="registerForm">
+            <!-- Step 1: Account Info -->
+            <div class="form-step active" data-step="1">
+              <div class="form-group">
+                <label for="email">Work email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="you@company.com"
+                  required
+                />
+                <span class="error-message" id="emailError"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="password">Password</label>
+                <div class="password-input-wrapper">
+                  <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Create a strong password"
+                    required
+                  />
+                  <button type="button" class="toggle-password" id="togglePassword">
+                    <svg class="eye-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
+                      <path d="M1 12S5 4 12 4s11 8 11 8-4 8-11 8S1 12 1 12z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <svg class="eye-off-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" style="display: none;">
+                      <path d="M17.94 17.94A10.07 10.07 0 0112 20c-7 0-11-8-11-8a18.45 18.45 0 015.06-5.94M9.9 4.24A9.12 9.12 0 0112 4c7 0 11 8 11 8a18.5 18.5 0 01-2.16 3.19m-6.72-1.07a3 3 0 11-4.24-4.24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      <line x1="1" y1="1" x2="23" y2="23" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </button>
+                </div>
+                <!-- Password Strength Indicator -->
+                <div class="password-strength">
+                  <div class="strength-bars">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                  </div>
+                  <span class="strength-text">Password strength</span>
+                </div>
+                <span class="error-message" id="passwordError"></span>
+              </div>
+
+              <button type="button" class="btn btn-primary btn-full" id="nextStep1">
+                Continue
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                  <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Step 2: Personal Info -->
+            <div class="form-step" data-step="2">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="firstName">First name</label>
+                  <input
+                    type="text"
+                    id="firstName"
+                    name="firstName"
+                    placeholder="John"
+                    required
+                  />
+                  <span class="error-message" id="firstNameError"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="lastName">Last name</label>
+                  <input
+                    type="text"
+                    id="lastName"
+                    name="lastName"
+                    placeholder="Doe"
+                    required
+                  />
+                  <span class="error-message" id="lastNameError"></span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="company">Company name</label>
+                <input
+                  type="text"
+                  id="company"
+                  name="company"
+                  placeholder="Your company"
+                  required
+                />
+                <span class="error-message" id="companyError"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="role">Your role</label>
+                <select id="role" name="role" required>
+                  <option value="">Select your role</option>
+                  <option value="developer">Developer</option>
+                  <option value="designer">Designer</option>
+                  <option value="product-manager">Product Manager</option>
+                  <option value="marketing">Marketing</option>
+                  <option value="sales">Sales</option>
+                  <option value="operations">Operations</option>
+                  <option value="founder">Founder/CEO</option>
+                  <option value="other">Other</option>
+                </select>
+                <span class="error-message" id="roleError"></span>
+              </div>
+
+              <div class="form-actions">
+                <button type="button" class="btn btn-secondary" id="prevStep2">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                    <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  Back
+                </button>
+                <button type="button" class="btn btn-primary" id="nextStep2">
+                  Continue
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Step 3: Preferences -->
+            <div class="form-step" data-step="3">
+              <div class="form-group">
+                <label>What brings you to Samartha?</label>
+                <div class="checkbox-group">
+                  <label class="checkbox-wrapper">
+                    <input type="checkbox" name="purpose" value="automation" />
+                    <span class="checkmark"></span>
+                    Automate repetitive tasks
+                  </label>
+                  <label class="checkbox-wrapper">
+                    <input type="checkbox" name="purpose" value="integration" />
+                    <span class="checkmark"></span>
+                    Integrate my tools
+                  </label>
+                  <label class="checkbox-wrapper">
+                    <input type="checkbox" name="purpose" value="productivity" />
+                    <span class="checkmark"></span>
+                    Boost team productivity
+                  </label>
+                  <label class="checkbox-wrapper">
+                    <input type="checkbox" name="purpose" value="explore" />
+                    <span class="checkmark"></span>
+                    Just exploring
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="checkbox-wrapper terms-checkbox">
+                  <input type="checkbox" id="terms" name="terms" required />
+                  <span class="checkmark"></span>
+                  I agree to the <a href="#" class="link">Terms of Service</a> and <a href="#" class="link">Privacy Policy</a>
+                </label>
+                <span class="error-message" id="termsError"></span>
+              </div>
+
+              <div class="form-group">
+                <label class="checkbox-wrapper">
+                  <input type="checkbox" id="newsletter" name="newsletter" />
+                  <span class="checkmark"></span>
+                  Send me product updates and tips
+                </label>
+              </div>
+
+              <div class="form-actions">
+                <button type="button" class="btn btn-secondary" id="prevStep3">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                    <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  Back
+                </button>
+                <button type="submit" class="btn btn-primary">
+                  Create Account
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </form>
+
+          <!-- Footer Links -->
+          <div class="auth-footer">
+            <p>
+              Protected by industry-leading security standards
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="001_Website/js/auth.js"></script>
+  </body>
+</html>

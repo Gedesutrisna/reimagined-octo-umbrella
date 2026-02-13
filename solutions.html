@@ -1,29 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Basic Meta -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
-    <!-- SEO Meta -->
-    <title>Solutions – Automation for Every Team | Samartha</title>
+    <title>Solutions – Samartha AI Business Automation Platform</title>
     <meta
       name="description"
-      content="Automation solutions for Marketing, Sales, Operations, and E-commerce. Transform your team's workflow with Samartha."
+      content="Discover automation solutions for Marketing, Sales, Operations, and E-commerce."
     />
-
-    <!-- Favicon -->
     <link rel="icon" href="001_Bahan/assets/logo.webp" type="image/webp" />
-
-    <!-- Preconnect Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-    <link rel="stylesheet" href="001_Bahan/Swiperjs v5.3.7/swiper-bundle.css" />
     <link rel="stylesheet" href="001_Website/css/style.css" />
-
-    <!-- Google Fonts -->
+    <link rel="stylesheet" href="001_Website/css/solutions.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap"
       rel="stylesheet"
@@ -34,392 +24,6 @@
     />
   </head>
   <body>
-    <style>
-        /* ========================================
-   SOLUTIONS PAGE STYLES
-   Tambahkan di bagian bawah style.css
-   ======================================== */
-
-/* Solutions Hero */
-.solutions-hero {
-  min-height: 60vh;
-  display: flex;
-  align-items: center;
-  padding: 8rem 3rem 4rem;
-  background: var(--bg-light);
-  position: relative;
-}
-
-.solutions-hero-container {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.solutions-hero h1 {
-  margin: 1rem 0 1.5rem;
-}
-
-.solutions-hero-subtitle {
-  font-size: 1.15rem;
-  margin-bottom: 2rem;
-  opacity: 0.8;
-}
-
-/* Solution Cards Grid */
-.solution-cards-section {
-  padding: 5rem 3rem;
-  background: white;
-}
-
-.solution-cards-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-}
-
-.solution-card {
-  padding: 2.5rem 2rem;
-  border: 2px solid rgba(67, 66, 255, 0.15);
-  border-radius: 16px;
-  background: white;
-  transition: all 0.3s ease;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-}
-
-.solution-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 16px 32px rgba(67, 66, 255, 0.15);
-  border-color: var(--primary-color);
-}
-
-.solution-card.featured {
-  border-color: var(--primary-color);
-  background: rgba(67, 66, 255, 0.02);
-}
-
-.solution-badge {
-  position: absolute;
-  top: -12px;
-  right: 20px;
-  background: var(--primary-color);
-  color: white;
-  padding: 0.35rem 0.95rem;
-  border-radius: 50px;
-  font-size: 0.7rem;
-  font-weight: 700;
-}
-
-.solution-card-icon {
-  width: 64px;
-  height: 64px;
-  border-radius: 12px;
-  background: rgba(67, 66, 255, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-}
-
-.solution-card h3 {
-  font-size: 1.35rem;
-  margin-bottom: 1rem;
-  color: var(--black-color);
-}
-
-.solution-card > p {
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
-}
-
-.solution-card-list {
-  list-style: none;
-  margin-bottom: 2rem;
-  flex: 1;
-}
-
-.solution-card-list li {
-  padding: 0.65rem 0;
-  padding-left: 1.75rem;
-  position: relative;
-  font-size: 0.9rem;
-  opacity: 0.8;
-}
-
-.solution-card-list li::before {
-  content: '✓';
-  position: absolute;
-  left: 0;
-  color: var(--primary-color);
-  font-weight: 700;
-  font-size: 1rem;
-}
-
-.solution-card .btn {
-  width: 100%;
-}
-
-/* Solution Detail Sections */
-.solution-detail {
-  padding: 6rem 3rem;
-  background: var(--bg-light);
-}
-
-.solution-detail.alternate {
-  background: white;
-}
-
-.solution-detail-container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.solution-detail-header {
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto 4rem;
-}
-
-.solution-detail-header h2 {
-  margin-bottom: 1.25rem;
-}
-
-.solution-detail-header p {
-  font-size: 1.05rem;
-  line-height: 1.7;
-}
-
-/* Solution Features Grid */
-.solution-features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2rem;
-  margin-bottom: 4rem;
-}
-
-.solution-feature {
-  padding: 2rem;
-  border: 2px solid rgba(67, 66, 255, 0.1);
-  border-radius: 16px;
-  background: white;
-  transition: all 0.3s ease;
-}
-
-.solution-detail.alternate .solution-feature {
-  background: var(--bg-light);
-}
-
-.solution-feature:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(67, 66, 255, 0.1);
-  border-color: var(--primary-color);
-}
-
-.solution-feature-icon {
-  width: 56px;
-  height: 56px;
-  border-radius: 12px;
-  background: rgba(67, 66, 255, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.75rem;
-  margin-bottom: 1.25rem;
-}
-
-.solution-feature h4 {
-  font-size: 1.1rem;
-  margin-bottom: 0.85rem;
-  color: var(--black-color);
-  font-family: var(--header-font-family);
-  font-weight: 700;
-}
-
-.solution-feature p {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  margin: 0;
-}
-
-/* Use Case Section */
-.solution-use-case {
-  padding: 3rem;
-  border: 2px solid rgba(67, 66, 255, 0.15);
-  border-radius: 20px;
-  background: white;
-  box-shadow: 0 8px 24px rgba(67, 66, 255, 0.08);
-}
-
-.solution-detail.alternate .solution-use-case {
-  background: var(--bg-light);
-}
-
-.use-case-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 2.5rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 2px solid rgba(67, 66, 255, 0.1);
-}
-
-.use-case-header h3 {
-  font-size: 1.5rem;
-  margin: 0;
-  color: var(--black-color);
-}
-
-.use-case-tag {
-  padding: 0.5rem 1.25rem;
-  background: rgba(67, 66, 255, 0.1);
-  color: var(--primary-color);
-  border-radius: 50px;
-  font-size: 0.85rem;
-  font-weight: 700;
-}
-
-.use-case-content {
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
-}
-
-/* Use Case Flow */
-.use-case-flow {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  overflow-x: auto;
-  padding: 1rem 0;
-}
-
-.use-case-step {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  min-width: 160px;
-  flex: 1;
-}
-
-.use-case-step-number {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: var(--primary-color);
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.25rem;
-  font-weight: 800;
-  font-family: var(--header-font-family);
-  flex-shrink: 0;
-}
-
-.use-case-step-content {
-  text-align: center;
-  padding: 1.25rem 1rem;
-  border: 2px solid rgba(67, 66, 255, 0.1);
-  border-radius: 12px;
-  background: white;
-  width: 100%;
-}
-
-.solution-detail.alternate .use-case-step-content {
-  background: white;
-}
-
-.use-case-step-content strong {
-  display: block;
-  font-size: 0.95rem;
-  margin-bottom: 0.5rem;
-  color: var(--black-color);
-}
-
-.use-case-step-content p {
-  font-size: 0.85rem;
-  opacity: 0.7;
-  margin: 0;
-}
-
-.use-case-arrow {
-  font-size: 1.75rem;
-  color: var(--primary-color);
-  font-weight: 700;
-  flex-shrink: 0;
-  margin: 0 0.5rem;
-}
-
-.use-case-result {
-  padding: 1.5rem;
-  background: rgba(67, 66, 255, 0.05);
-  border-left: 4px solid var(--primary-color);
-  border-radius: 8px;
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-.use-case-result strong {
-  color: var(--primary-color);
-  font-weight: 700;
-}
-
-/* Responsive Solutions */
-@media (max-width: 968px) {
-  .solutions-hero {
-    padding: 6rem 1.5rem 3rem;
-  }
-
-  .solution-cards-section,
-  .solution-detail {
-    padding: 3rem 1.5rem;
-  }
-
-  .solution-cards-container {
-    grid-template-columns: 1fr;
-  }
-
-  .solution-features-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .solution-use-case {
-    padding: 2rem 1.5rem;
-  }
-
-  .use-case-flow {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .use-case-step {
-    min-width: 100%;
-  }
-
-  .use-case-arrow {
-    transform: rotate(90deg);
-    margin: 0.5rem 0;
-  }
-
-  .use-case-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-  }
-}
-
-@media (max-width: 640px) {
-  .solution-detail {
-    padding: 3rem 1.5rem;
-  }
-}
-    </style>
     <!-- Navbar -->
     <nav class="navbar" id="navbar">
       <div class="nav-container">
@@ -450,28 +54,52 @@
             </a>
             <div class="dropdown-menu">
               <a href="platform.html#workflows" class="dropdown-item">
-                <div class="dropdown-icon">⚡</div>
+                <div class="dropdown-icon">
+                  <img
+                    src="001_Bahan/assets/icon-2.webp"
+                    class="assets-icon"
+                    alt=""
+                  />
+                </div>
                 <div class="dropdown-content">
                   <div class="dropdown-title">Workflows</div>
                   <div class="dropdown-desc">Visual workflow builder</div>
                 </div>
               </a>
               <a href="platform.html#integrations" class="dropdown-item">
-                <div class="dropdown-icon">🔗</div>
+                <div class="dropdown-icon">
+                  <img
+                    src="001_Bahan/assets/icon-3.webp"
+                    class="assets-icon"
+                    alt=""
+                  />
+                </div>
                 <div class="dropdown-content">
                   <div class="dropdown-title">Integrations</div>
                   <div class="dropdown-desc">500+ app connections</div>
                 </div>
               </a>
               <a href="platform.html#ai" class="dropdown-item">
-                <div class="dropdown-icon">🤖</div>
+                <div class="dropdown-icon">
+                  <img
+                    src="001_Bahan/assets/icon-1.webp"
+                    class="assets-icon"
+                    alt=""
+                  />
+                </div>
                 <div class="dropdown-content">
                   <div class="dropdown-title">AI Automation</div>
                   <div class="dropdown-desc">Smart triggers & actions</div>
                 </div>
               </a>
               <a href="platform.html#analytics" class="dropdown-item">
-                <div class="dropdown-icon">📊</div>
+                <div class="dropdown-icon">
+                  <img
+                    src="001_Bahan/assets/icon-4.webp"
+                    class="assets-icon"
+                    alt=""
+                  />
+                </div>
                 <div class="dropdown-content">
                   <div class="dropdown-title">Analytics</div>
                   <div class="dropdown-desc">Reports & insights</div>
@@ -501,14 +129,26 @@
             </a>
             <div class="dropdown-menu">
               <a href="solutions.html#marketing" class="dropdown-item">
-                <div class="dropdown-icon">📱</div>
+                <div class="dropdown-icon">
+                  <img
+                    src="001_Bahan/assets/icon-7.webp"
+                    class="assets-icon"
+                    alt=""
+                  />
+                </div>
                 <div class="dropdown-content">
                   <div class="dropdown-title">Marketing</div>
                   <div class="dropdown-desc">Campaign automation</div>
                 </div>
               </a>
               <a href="solutions.html#sales" class="dropdown-item">
-                <div class="dropdown-icon">💼</div>
+                <div class="dropdown-icon">
+                  <img
+                    src="001_Bahan/assets/icon-5-b.webp"
+                    class="assets-icon"
+                    alt=""
+                  />
+                </div>
                 <div class="dropdown-content">
                   <div class="dropdown-title">Sales</div>
                   <div class="dropdown-desc">CRM & lead management</div>
@@ -516,14 +156,26 @@
                 <span class="badge-primary">Popular</span>
               </a>
               <a href="solutions.html#operations" class="dropdown-item">
-                <div class="dropdown-icon">⚙️</div>
+                <div class="dropdown-icon">
+                  <img
+                    src="001_Bahan/assets/icon-8.webp"
+                    class="assets-icon"
+                    alt=""
+                  />
+                </div>
                 <div class="dropdown-content">
                   <div class="dropdown-title">Operations</div>
                   <div class="dropdown-desc">Process automation</div>
                 </div>
               </a>
               <a href="solutions.html#ecommerce" class="dropdown-item">
-                <div class="dropdown-icon">🛒</div>
+                <div class="dropdown-icon">
+                  <img
+                    src="001_Bahan/assets/icon-9.webp"
+                    class="assets-icon"
+                    alt=""
+                  />
+                </div>
                 <div class="dropdown-content">
                   <div class="dropdown-title">E-commerce</div>
                   <div class="dropdown-desc">Order & inventory</div>
@@ -534,7 +186,8 @@
 
           <!-- Direct Links -->
           <a href="integrations.html" class="nav-link">Integrations</a>
-          <a href="index.html#pricing" class="nav-link">Pricing</a>
+          <a href="pricing.html" class="nav-link">Pricing</a>
+          <a href="about.html" class="nav-link">About</a>
 
           <!-- CTA Group -->
           <div class="nav-cta-group">
@@ -550,399 +203,637 @@
         </button>
       </div>
     </nav>
-
     <main>
-      <!-- Solutions Hero -->
+      <!-- Hero dengan Centered Button Selector -->
       <section class="solutions-hero">
-        <div class="solutions-hero-container">
-          <div class="badge">💼 Solutions for Every Team</div>
-          <h1>Automate What Matters Most</h1>
-          <p class="solutions-hero-subtitle">
-            Purpose-built automation workflows for Marketing, Sales, Operations, and E-commerce teams. Choose your solution and start automating in minutes.
+        <div class="shape-deco shape-1">
+          <div class="starburst spinner"></div>
+        </div>
+        <div class="shape-deco shape-2">
+          <div class="flower spinner"></div>
+        </div>
+        <div class="solutions-hero-content">
+          <div class="badge">🎯 Built for Every Team</div>
+          <h1>The Right Solution for Every Department</h1>
+          <p>
+            From marketing to operations, specialized automation workflows
+            designed for your needs
           </p>
-        </div>
-      </section>
 
-      <!-- Solution Cards Grid -->
-      <section class="solution-cards-section">
-        <div class="solution-cards-container">
-          <div class="solution-card" data-solution="marketing">
-            <div class="solution-card-icon">📱</div>
-            <h3>Marketing Automation</h3>
-            <p>Streamline campaigns, nurture leads, and measure ROI with automated marketing workflows</p>
-            <ul class="solution-card-list">
-              <li>Email campaign automation</li>
-              <li>Lead scoring & nurturing</li>
-              <li>Social media scheduling</li>
-              <li>Analytics & reporting</li>
-            </ul>
-            <a href="#marketing" class="btn btn-outline">Explore Marketing</a>
-          </div>
-
-          <div class="solution-card featured" data-solution="sales">
-            <div class="solution-badge">Most Popular</div>
-            <div class="solution-card-icon">💼</div>
-            <h3>Sales & CRM</h3>
-            <p>Close deals faster with automated lead management, follow-ups, and pipeline tracking</p>
-            <ul class="solution-card-list">
-              <li>Automated lead capture</li>
-              <li>Smart follow-up sequences</li>
-              <li>Deal pipeline management</li>
-              <li>Sales forecasting</li>
-            </ul>
-            <a href="#sales" class="btn btn-primary">Explore Sales</a>
-          </div>
-
-          <div class="solution-card" data-solution="operations">
-            <div class="solution-card-icon">⚙️</div>
-            <h3>Operations</h3>
-            <p>Optimize internal processes, reduce manual work, and improve team efficiency</p>
-            <ul class="solution-card-list">
-              <li>Workflow automation</li>
-              <li>Task assignment & tracking</li>
-              <li>Document processing</li>
-              <li>Approval workflows</li>
-            </ul>
-            <a href="#operations" class="btn btn-outline">Explore Operations</a>
-          </div>
-
-          <div class="solution-card" data-solution="ecommerce">
-            <div class="solution-card-icon">🛒</div>
-            <h3>E-commerce</h3>
-            <p>Automate orders, inventory, customer support, and grow your online store effortlessly</p>
-            <ul class="solution-card-list">
-              <li>Order processing automation</li>
-              <li>Inventory management</li>
-              <li>Customer support workflows</li>
-              <li>Returns & refunds automation</li>
-            </ul>
-            <a href="#ecommerce" class="btn btn-outline">Explore E-commerce</a>
+          <div class="solutions-selector">
+            <button class="solution-btn active" data-solution="marketing">
+              <div class="">
+                <img
+                  src="001_Bahan/assets/icon-7.webp"
+                  class="assets-icon"
+                  alt=""
+                />
+              </div>
+              <span class="solution-name">Marketing</span>
+            </button>
+            <button class="solution-btn" data-solution="sales">
+              <div class="">
+                <img
+                  src="001_Bahan/assets/icon-5.webp"
+                  class="assets-icon"
+                  alt=""
+                />
+              </div>
+              <span class="solution-name">Sales</span>
+            </button>
+            <button class="solution-btn" data-solution="operations">
+              <div class="">
+                <img
+                  src="001_Bahan/assets/icon-8.webp"
+                  class="assets-icon"
+                  alt=""
+                />
+              </div>
+              <span class="solution-name">Operations</span>
+            </button>
+            <button class="solution-btn" data-solution="ecommerce">
+              <div class="">
+                <img
+                  src="001_Bahan/assets/icon-9.webp"
+                  class="assets-icon"
+                  alt=""
+                />
+              </div>
+              <span class="solution-name">E-commerce</span>
+            </button>
           </div>
         </div>
       </section>
 
-      <!-- Marketing Solution -->
-      <section class="solution-detail" id="marketing">
-        <div class="solution-detail-container">
-          <div class="solution-detail-header">
-            <div class="section-subtitle">Marketing Automation</div>
-            <h2>Transform Your Marketing Operations</h2>
-            <p>Automate repetitive marketing tasks and focus on strategy. From lead generation to campaign analytics, handle everything seamlessly.</p>
-          </div>
-
-          <div class="solution-features-grid">
-            <div class="solution-feature">
-              <div class="solution-feature-icon">📧</div>
-              <h4>Email Campaign Automation</h4>
-              <p>Schedule drip campaigns, segment audiences, and personalize emails at scale without manual work.</p>
-            </div>
-
-            <div class="solution-feature">
-              <div class="solution-feature-icon">🎯</div>
-              <h4>Lead Scoring & Nurturing</h4>
-              <p>Automatically score leads based on behavior and trigger personalized nurture sequences.</p>
-            </div>
-
-            <div class="solution-feature">
-              <div class="solution-feature-icon">📱</div>
-              <h4>Social Media Management</h4>
-              <p>Schedule posts across platforms, monitor engagement, and respond to messages automatically.</p>
-            </div>
-
-            <div class="solution-feature">
-              <div class="solution-feature-icon">📊</div>
-              <h4>Campaign Analytics</h4>
-              <p>Track performance metrics, generate reports, and get actionable insights automatically.</p>
-            </div>
-          </div>
-
-          <div class="solution-use-case">
-            <div class="use-case-header">
-              <h3>Real Use Case</h3>
-              <span class="use-case-tag">Marketing Team</span>
-            </div>
-            <div class="use-case-content">
-              <div class="use-case-flow">
-                <div class="use-case-step">
-                  <div class="use-case-step-number">1</div>
-                  <div class="use-case-step-content">
-                    <strong>Lead Submits Form</strong>
-                    <p>Website visitor fills out contact form</p>
+      <!-- Tab Content dengan Split Layout -->
+      <section class="solution-details">
+        <div class="solution-content-wrapper">
+          <!-- Marketing Tab -->
+          <div class="solution-tab active" id="marketing">
+            <div class="solution-split">
+              <div class="solution-left">
+                <div class="solution-header">
+                  <div class="solution-main-box-icon">
+                    <img
+                      src="001_Bahan/assets/icon-7.webp"
+                      alt="Marketing"
+                      class="solution-main-icon"
+                    />
+                  </div>
+                  <div>
+                    <h2>Marketing Automation</h2>
+                    <p>Drive campaigns, nurture leads, and maximize ROI</p>
                   </div>
                 </div>
-                <div class="use-case-arrow">→</div>
-                <div class="use-case-step">
-                  <div class="use-case-step-number">2</div>
-                  <div class="use-case-step-content">
-                    <strong>AI Qualification</strong>
-                    <p>AI scores lead based on fit & intent</p>
+
+                <div class="solution-benefits">
+                  <h3>What You Can Automate</h3>
+                  <div class="benefit-grid">
+                    <div class="benefit-item">
+                      <div class="benefit-icon">✉️</div>
+                      <div class="benefit-text">
+                        <strong>Email Campaigns</strong>
+                        <p>Automated drip sequences</p>
+                      </div>
+                    </div>
+                    <div class="benefit-item">
+                      <div class="benefit-icon">📱</div>
+                      <div class="benefit-text">
+                        <strong>Social Media</strong>
+                        <p>Schedule across platforms</p>
+                      </div>
+                    </div>
+                    <div class="benefit-item">
+                      <div class="benefit-icon">🎯</div>
+                      <div class="benefit-text">
+                        <strong>Lead Scoring</strong>
+                        <p>AI-powered qualification</p>
+                      </div>
+                    </div>
+                    <div class="benefit-item">
+                      <div class="benefit-icon">📈</div>
+                      <div class="benefit-text">
+                        <strong>Analytics Reports</strong>
+                        <p>Weekly performance insights</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div class="use-case-arrow">→</div>
-                <div class="use-case-step">
-                  <div class="use-case-step-number">3</div>
-                  <div class="use-case-step-content">
-                    <strong>Auto Enrollment</strong>
-                    <p>Add to email nurture sequence</p>
-                  </div>
+
+                <div class="solution-cta-box">
+                  <button class="btn btn-primary">View Templates</button>
                 </div>
-                <div class="use-case-arrow">→</div>
-                <div class="use-case-step">
-                  <div class="use-case-step-number">4</div>
-                  <div class="use-case-step-content">
-                    <strong>Notify Sales</strong>
-                    <p>Alert sales team for hot leads</p>
+              </div>
+
+              <div class="solution-right">
+                <div class="use-case-card">
+                  <div class="use-case-badge">Popular Use Case</div>
+                  <h3>Lead Nurturing Workflow</h3>
+                  <div class="workflow-steps">
+                    <div class="workflow-step">
+                      <div class="step-dot">1</div>
+                      <div class="step-info">
+                        <strong>New Lead Signs Up</strong>
+                        <p>Form submission triggers automation</p>
+                      </div>
+                    </div>
+                    <div class="workflow-step">
+                      <div class="step-dot">2</div>
+                      <div class="step-info">
+                        <strong>Welcome Email Sent</strong>
+                        <p>Personalized intro with resources</p>
+                      </div>
+                    </div>
+                    <div class="workflow-step">
+                      <div class="step-dot">3</div>
+                      <div class="step-info">
+                        <strong>Behavior Tracking</strong>
+                        <p>Monitor email opens and clicks</p>
+                      </div>
+                    </div>
+                    <div class="workflow-step">
+                      <div class="step-dot">4</div>
+                      <div class="step-info">
+                        <strong>Lead Scored & Routed</strong>
+                        <p>Hot leads sent to sales</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="workflow-stats">
+                    <div class="stat-mini">
+                      <strong>3x</strong><span>Higher Conversion</span>
+                    </div>
+                    <div class="stat-mini">
+                      <strong>85%</strong><span>Time Saved</span>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="use-case-result">
-                <strong>Result:</strong> 65% increase in qualified leads, 40% faster response time
+            </div>
+          </div>
+
+          <!-- Sales Tab -->
+          <div class="solution-tab" id="sales">
+            <div class="solution-split">
+              <div class="solution-left">
+                <div class="solution-header">
+                  <div class="solution-main-box-icon">
+                    <img
+                      src="001_Bahan/assets/icon-5-b.webp"
+                      alt="Sales"
+                      class="solution-main-icon"
+                    />
+                  </div>
+                  <div>
+                    <h2>Sales Automation</h2>
+                    <p>Close deals faster with automated workflows</p>
+                  </div>
+                </div>
+
+                <div class="solution-benefits">
+                  <h3>What You Can Automate</h3>
+                  <div class="benefit-grid">
+                    <div class="benefit-item">
+                      <div class="benefit-icon">🤝</div>
+                      <div class="benefit-text">
+                        <strong>Lead Management</strong>
+                        <p>Auto-assign and distribute</p>
+                      </div>
+                    </div>
+                    <div class="benefit-item">
+                      <div class="benefit-icon">📞</div>
+                      <div class="benefit-text">
+                        <strong>Follow-ups</strong>
+                        <p>Never miss a call or email</p>
+                      </div>
+                    </div>
+                    <div class="benefit-item">
+                      <div class="benefit-icon">📊</div>
+                      <div class="benefit-text">
+                        <strong>Pipeline Updates</strong>
+                        <p>Real-time CRM sync</p>
+                      </div>
+                    </div>
+                    <div class="benefit-item">
+                      <div class="benefit-icon">📄</div>
+                      <div class="benefit-text">
+                        <strong>Proposals</strong>
+                        <p>Auto-create quotes</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="solution-cta-box">
+                  <button class="btn btn-primary">Explore Templates</button>
+                </div>
+              </div>
+
+              <div class="solution-right">
+                <div class="use-case-card">
+                  <div class="use-case-badge">Popular Use Case</div>
+                  <h3>Deal Won Celebration</h3>
+                  <div class="workflow-steps">
+                    <div class="workflow-step">
+                      <div class="step-dot">1</div>
+                      <div class="step-info">
+                        <strong>Deal Marked Won</strong>
+                        <p>CRM status updated</p>
+                      </div>
+                    </div>
+                    <div class="workflow-step">
+                      <div class="step-dot">2</div>
+                      <div class="step-info">
+                        <strong>Team Notified</strong>
+                        <p>Slack celebration message</p>
+                      </div>
+                    </div>
+                    <div class="workflow-step">
+                      <div class="step-dot">3</div>
+                      <div class="step-info">
+                        <strong>Onboarding Triggered</strong>
+                        <p>Welcome email sent</p>
+                      </div>
+                    </div>
+                    <div class="workflow-step">
+                      <div class="step-dot">4</div>
+                      <div class="step-info">
+                        <strong>Reports Updated</strong>
+                        <p>Dashboard auto-refreshed</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="workflow-stats">
+                    <div class="stat-mini">
+                      <strong>50%</strong><span>Faster Onboarding</span>
+                    </div>
+                    <div class="stat-mini">
+                      <strong>100%</strong><span>Consistency</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Operations Tab -->
+          <div class="solution-tab" id="operations">
+            <div class="solution-split">
+              <div class="solution-left">
+                <div class="solution-header">
+                  <div class="solution-main-box-icon">
+                    <img
+                      src="001_Bahan/assets/icon-8.webp"
+                      alt="Operations"
+                      class="solution-main-icon"
+                    />
+                  </div>
+                  <div>
+                    <h2>Operations Automation</h2>
+                    <p>Streamline internal processes</p>
+                  </div>
+                </div>
+
+                <div class="solution-benefits">
+                  <h3>What You Can Automate</h3>
+                  <div class="benefit-grid">
+                    <div class="benefit-item">
+                      <div class="benefit-icon">📋</div>
+                      <div class="benefit-text">
+                        <strong>Task Assignment</strong>
+                        <p>Auto-distribute work</p>
+                      </div>
+                    </div>
+                    <div class="benefit-item">
+                      <div class="benefit-icon">✅</div>
+                      <div class="benefit-text">
+                        <strong>Approvals</strong>
+                        <p>Multi-step workflows</p>
+                      </div>
+                    </div>
+                    <div class="benefit-item">
+                      <div class="benefit-icon">📁</div>
+                      <div class="benefit-text">
+                        <strong>Documents</strong>
+                        <p>Auto-organize files</p>
+                      </div>
+                    </div>
+                    <div class="benefit-item">
+                      <div class="benefit-icon">🔔</div>
+                      <div class="benefit-text">
+                        <strong>Notifications</strong>
+                        <p>Real-time alerts</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="solution-cta-box">
+                  <button class="btn btn-primary">See Templates</button>
+                </div>
+              </div>
+
+              <div class="solution-right">
+                <div class="use-case-card">
+                  <div class="use-case-badge">Popular Use Case</div>
+                  <h3>Employee Onboarding</h3>
+                  <div class="workflow-steps">
+                    <div class="workflow-step">
+                      <div class="step-dot">1</div>
+                      <div class="step-info">
+                        <strong>New Hire Added</strong>
+                        <p>HR system triggers flow</p>
+                      </div>
+                    </div>
+                    <div class="workflow-step">
+                      <div class="step-dot">2</div>
+                      <div class="step-info">
+                        <strong>Accounts Created</strong>
+                        <p>Email, Slack access setup</p>
+                      </div>
+                    </div>
+                    <div class="workflow-step">
+                      <div class="step-dot">3</div>
+                      <div class="step-info">
+                        <strong>Tasks Assigned</strong>
+                        <p>Checklist distributed</p>
+                      </div>
+                    </div>
+                    <div class="workflow-step">
+                      <div class="step-dot">4</div>
+                      <div class="step-info">
+                        <strong>Manager Notified</strong>
+                        <p>Progress tracking</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="workflow-stats">
+                    <div class="stat-mini">
+                      <strong>5 hrs</strong><span>Saved per Hire</span>
+                    </div>
+                    <div class="stat-mini">
+                      <strong>Zero</strong><span>Manual Errors</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- E-commerce Tab -->
+          <div class="solution-tab" id="ecommerce">
+            <div class="solution-split">
+              <div class="solution-left">
+                <div class="solution-header">
+                  <div class="solution-main-box-icon">
+                    <img
+                      src="001_Bahan/assets/icon-9.webp"
+                      alt="E-commerce"
+                      class="solution-main-icon"
+                    />
+                  </div>
+                  <div>
+                    <h2>E-commerce Automation</h2>
+                    <p>Scale your online store effortlessly</p>
+                  </div>
+                </div>
+
+                <div class="solution-benefits">
+                  <h3>What You Can Automate</h3>
+                  <div class="benefit-grid">
+                    <div class="benefit-item">
+                      <div class="benefit-icon">📦</div>
+                      <div class="benefit-text">
+                        <strong>Order Fulfillment</strong>
+                        <p>Payment to shipping</p>
+                      </div>
+                    </div>
+                    <div class="benefit-item">
+                      <div class="benefit-icon">📊</div>
+                      <div class="benefit-text">
+                        <strong>Inventory Sync</strong>
+                        <p>Real-time stock updates</p>
+                      </div>
+                    </div>
+                    <div class="benefit-item">
+                      <div class="benefit-icon">💬</div>
+                      <div class="benefit-text">
+                        <strong>Support</strong>
+                        <p>Auto-respond to queries</p>
+                      </div>
+                    </div>
+                    <div class="benefit-item">
+                      <div class="benefit-icon">⭐</div>
+                      <div class="benefit-text">
+                        <strong>Reviews</strong>
+                        <p>Post-purchase feedback</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="solution-cta-box">
+                  <button class="btn btn-primary">Browse Templates</button>
+                </div>
+              </div>
+
+              <div class="solution-right">
+                <div class="use-case-card">
+                  <div class="use-case-badge">Popular Use Case</div>
+                  <h3>Order to Fulfillment</h3>
+                  <div class="workflow-steps">
+                    <div class="workflow-step">
+                      <div class="step-dot">1</div>
+                      <div class="step-info">
+                        <strong>Order Received</strong>
+                        <p>Customer completes checkout</p>
+                      </div>
+                    </div>
+                    <div class="workflow-step">
+                      <div class="step-dot">2</div>
+                      <div class="step-info">
+                        <strong>Inventory Updated</strong>
+                        <p>Stock count adjusted</p>
+                      </div>
+                    </div>
+                    <div class="workflow-step">
+                      <div class="step-dot">3</div>
+                      <div class="step-info">
+                        <strong>Label Generated</strong>
+                        <p>Shipping label created</p>
+                      </div>
+                    </div>
+                    <div class="workflow-step">
+                      <div class="step-dot">4</div>
+                      <div class="step-info">
+                        <strong>Customer Notified</strong>
+                        <p>Tracking info sent</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="workflow-stats">
+                    <div class="stat-mini">
+                      <strong>90%</strong><span>Faster Processing</span>
+                    </div>
+                    <div class="stat-mini">
+                      <strong>24/7</strong><span>Operations</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Sales Solution -->
-      <section class="solution-detail alternate" id="sales">
-        <div class="solution-detail-container">
-          <div class="solution-detail-header">
-            <div class="section-subtitle">Sales & CRM</div>
-            <h2>Close More Deals, Faster</h2>
-            <p>Automate your entire sales process from lead capture to deal closure. Never miss a follow-up and keep your pipeline moving.</p>
+      <!-- Comparison Table -->
+      <section class="comparison-section">
+        <div class="comparison-container">
+          <div class="section-header">
+            <div class="section-subtitle">Compare Solutions</div>
+            <h2>Find Your Perfect Match</h2>
+            <p>See which solution fits your team's needs</p>
           </div>
 
-          <div class="solution-features-grid">
-            <div class="solution-feature">
-              <div class="solution-feature-icon">🎣</div>
-              <h4>Automated Lead Capture</h4>
-              <p>Capture leads from multiple sources and add them to your CRM instantly.</p>
-            </div>
-
-            <div class="solution-feature">
-              <div class="solution-feature-icon">⚡</div>
-              <h4>Smart Follow-ups</h4>
-              <p>Trigger personalized follow-up emails and reminders based on prospect behavior.</p>
-            </div>
-
-            <div class="solution-feature">
-              <div class="solution-feature-icon">📈</div>
-              <h4>Pipeline Management</h4>
-              <p>Automatically update deal stages, assign tasks, and notify team members.</p>
-            </div>
-
-            <div class="solution-feature">
-              <div class="solution-feature-icon">🔮</div>
-              <h4>Sales Forecasting</h4>
-              <p>Get AI-powered predictions on deal closure probability and revenue forecasts.</p>
-            </div>
-          </div>
-
-          <div class="solution-use-case">
-            <div class="use-case-header">
-              <h3>Real Use Case</h3>
-              <span class="use-case-tag">Sales Team</span>
-            </div>
-            <div class="use-case-content">
-              <div class="use-case-flow">
-                <div class="use-case-step">
-                  <div class="use-case-step-number">1</div>
-                  <div class="use-case-step-content">
-                    <strong>New Lead Arrives</strong>
-                    <p>From website, ads, or referrals</p>
-                  </div>
-                </div>
-                <div class="use-case-arrow">→</div>
-                <div class="use-case-step">
-                  <div class="use-case-step-number">2</div>
-                  <div class="use-case-step-content">
-                    <strong>Auto-assign Rep</strong>
-                    <p>Distribute based on territory/load</p>
-                  </div>
-                </div>
-                <div class="use-case-arrow">→</div>
-                <div class="use-case-step">
-                  <div class="use-case-step-number">3</div>
-                  <div class="use-case-step-content">
-                    <strong>Send Welcome Email</strong>
-                    <p>Personalized intro from rep</p>
-                  </div>
-                </div>
-                <div class="use-case-arrow">→</div>
-                <div class="use-case-step">
-                  <div class="use-case-step-number">4</div>
-                  <div class="use-case-step-content">
-                    <strong>Schedule Follow-ups</strong>
-                    <p>Create tasks & reminders</p>
-                  </div>
-                </div>
-              </div>
-              <div class="use-case-result">
-                <strong>Result:</strong> 3x faster response time, 45% increase in conversions
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Operations Solution -->
-      <section class="solution-detail" id="operations">
-        <div class="solution-detail-container">
-          <div class="solution-detail-header">
-            <div class="section-subtitle">Operations</div>
-            <h2>Streamline Your Business Operations</h2>
-            <p>Eliminate bottlenecks and manual processes. Automate approvals, task assignments, and internal workflows for maximum efficiency.</p>
-          </div>
-
-          <div class="solution-features-grid">
-            <div class="solution-feature">
-              <div class="solution-feature-icon">🔄</div>
-              <h4>Workflow Automation</h4>
-              <p>Automate repetitive processes like onboarding, offboarding, and reporting.</p>
-            </div>
-
-            <div class="solution-feature">
-              <div class="solution-feature-icon">✅</div>
-              <h4>Task Management</h4>
-              <p>Auto-assign tasks, set deadlines, and track progress without manual updates.</p>
-            </div>
-
-            <div class="solution-feature">
-              <div class="solution-feature-icon">📄</div>
-              <h4>Document Processing</h4>
-              <p>Extract data from documents, route for approval, and store automatically.</p>
-            </div>
-
-            <div class="solution-feature">
-              <div class="solution-feature-icon">👤</div>
-              <h4>Approval Workflows</h4>
-              <p>Set up multi-level approvals with automatic routing and notifications.</p>
-            </div>
-          </div>
-
-          <div class="solution-use-case">
-            <div class="use-case-header">
-              <h3>Real Use Case</h3>
-              <span class="use-case-tag">Operations Team</span>
-            </div>
-            <div class="use-case-content">
-              <div class="use-case-flow">
-                <div class="use-case-step">
-                  <div class="use-case-step-number">1</div>
-                  <div class="use-case-step-content">
-                    <strong>Request Submitted</strong>
-                    <p>Employee submits expense report</p>
-                  </div>
-                </div>
-                <div class="use-case-arrow">→</div>
-                <div class="use-case-step">
-                  <div class="use-case-step-number">2</div>
-                  <div class="use-case-step-content">
-                    <strong>Auto Validation</strong>
-                    <p>Check policy compliance</p>
-                  </div>
-                </div>
-                <div class="use-case-arrow">→</div>
-                <div class="use-case-step">
-                  <div class="use-case-step-number">3</div>
-                  <div class="use-case-step-content">
-                    <strong>Route for Approval</strong>
-                    <p>Send to manager automatically</p>
-                  </div>
-                </div>
-                <div class="use-case-arrow">→</div>
-                <div class="use-case-step">
-                  <div class="use-case-step-number">4</div>
-                  <div class="use-case-step-content">
-                    <strong>Process Payment</strong>
-                    <p>Auto-approve & reimburse</p>
-                  </div>
-                </div>
-              </div>
-              <div class="use-case-result">
-                <strong>Result:</strong> 80% reduction in processing time, 95% accuracy
-              </div>
-            </div>
+          <div class="comparison-table-wrapper">
+            <table class="comparison-table">
+              <thead>
+                <tr>
+                  <th class="feature-col">Features</th>
+                  <th class="solution-col">
+                    <span>Marketing</span>
+                  </th>
+                  <th class="solution-col">
+                    <span>Sales</span>
+                  </th>
+                  <th class="solution-col">
+                    <span>Operations</span>
+                  </th>
+                  <th class="solution-col">
+                    <span>E-commerce</span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="feature-name">Email Automation</td>
+                  <td class="check-cell">✓</td>
+                  <td class="check-cell">✓</td>
+                  <td class="check-cell">✓</td>
+                  <td class="check-cell">✓</td>
+                </tr>
+                <tr>
+                  <td class="feature-name">CRM Integration</td>
+                  <td class="check-cell">✓</td>
+                  <td class="check-cell featured">✓</td>
+                  <td class="check-cell">—</td>
+                  <td class="check-cell">—</td>
+                </tr>
+                <tr>
+                  <td class="feature-name">Lead Scoring</td>
+                  <td class="check-cell featured">✓</td>
+                  <td class="check-cell featured">✓</td>
+                  <td class="check-cell">—</td>
+                  <td class="check-cell">—</td>
+                </tr>
+                <tr>
+                  <td class="feature-name">Social Media</td>
+                  <td class="check-cell featured">✓</td>
+                  <td class="check-cell">—</td>
+                  <td class="check-cell">—</td>
+                  <td class="check-cell">✓</td>
+                </tr>
+                <tr>
+                  <td class="feature-name">Inventory</td>
+                  <td class="check-cell">—</td>
+                  <td class="check-cell">—</td>
+                  <td class="check-cell">✓</td>
+                  <td class="check-cell featured">✓</td>
+                </tr>
+                <tr>
+                  <td class="feature-name">Order Processing</td>
+                  <td class="check-cell">—</td>
+                  <td class="check-cell">—</td>
+                  <td class="check-cell">—</td>
+                  <td class="check-cell featured">✓</td>
+                </tr>
+                <tr>
+                  <td class="feature-name">Task Management</td>
+                  <td class="check-cell">✓</td>
+                  <td class="check-cell">✓</td>
+                  <td class="check-cell featured">✓</td>
+                  <td class="check-cell">✓</td>
+                </tr>
+                <tr>
+                  <td class="feature-name">Analytics</td>
+                  <td class="check-cell">✓</td>
+                  <td class="check-cell">✓</td>
+                  <td class="check-cell">✓</td>
+                  <td class="check-cell">✓</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </section>
 
-      <!-- E-commerce Solution -->
-      <section class="solution-detail alternate" id="ecommerce">
-        <div class="solution-detail-container">
-          <div class="solution-detail-header">
-            <div class="section-subtitle">E-commerce</div>
-            <h2>Scale Your Online Store</h2>
-            <p>Automate everything from order processing to customer support. Focus on growth while automation handles the operations.</p>
+      <!-- Success Stories -->
+      <section class="success-stories">
+        <div class="stories-container">
+          <div class="section-header">
+            <div class="section-subtitle">Success Stories</div>
+            <h2>Real Results from Real Businesses</h2>
+            <p>See how companies are winning with automation</p>
           </div>
 
-          <div class="solution-features-grid">
-            <div class="solution-feature">
-              <div class="solution-feature-icon">📦</div>
-              <h4>Order Processing</h4>
-              <p>Automatically process orders, generate invoices, and send confirmations.</p>
-            </div>
-
-            <div class="solution-feature">
-              <div class="solution-feature-icon">📊</div>
-              <h4>Inventory Management</h4>
-              <p>Track stock levels, auto-reorder products, and sync across channels.</p>
-            </div>
-
-            <div class="solution-feature">
-              <div class="solution-feature-icon">💬</div>
-              <h4>Customer Support</h4>
-              <p>Auto-respond to common queries, route tickets, and track resolutions.</p>
-            </div>
-
-            <div class="solution-feature">
-              <div class="solution-feature-icon">🔄</div>
-              <h4>Returns & Refunds</h4>
-              <p>Streamline return requests, approvals, and refund processing.</p>
-            </div>
-          </div>
-
-          <div class="solution-use-case">
-            <div class="use-case-header">
-              <h3>Real Use Case</h3>
-              <span class="use-case-tag">E-commerce Store</span>
-            </div>
-            <div class="use-case-content">
-              <div class="use-case-flow">
-                <div class="use-case-step">
-                  <div class="use-case-step-number">1</div>
-                  <div class="use-case-step-content">
-                    <strong>Order Placed</strong>
-                    <p>Customer completes checkout</p>
-                  </div>
+          <div class="stories-grid">
+            <div class="story-card">
+              <div class="story-badge">Marketing</div>
+              <div class="story-logo">TechStart</div>
+              <h3>"We tripled our lead conversion rate"</h3>
+              <p>
+                By automating email sequences and lead scoring, we saw immediate
+                results.
+              </p>
+              <div class="story-metrics">
+                <div class="metric">
+                  <strong>3x</strong><span>Conversion</span>
                 </div>
-                <div class="use-case-arrow">→</div>
-                <div class="use-case-step">
-                  <div class="use-case-step-number">2</div>
-                  <div class="use-case-step-content">
-                    <strong>Process Payment</strong>
-                    <p>Verify & charge payment</p>
-                  </div>
-                </div>
-                <div class="use-case-arrow">→</div>
-                <div class="use-case-step">
-                  <div class="use-case-step-number">3</div>
-                  <div class="use-case-step-content">
-                    <strong>Update Inventory</strong>
-                    <p>Reduce stock automatically</p>
-                  </div>
-                </div>
-                <div class="use-case-arrow">→</div>
-                <div class="use-case-step">
-                  <div class="use-case-step-number">4</div>
-                  <div class="use-case-step-content">
-                    <strong>Send Confirmation</strong>
-                    <p>Email + SMS to customer</p>
-                  </div>
+                <div class="metric">
+                  <strong>15 hrs</strong><span>Saved Weekly</span>
                 </div>
               </div>
-              <div class="use-case-result">
-                <strong>Result:</strong> 90% faster order processing, zero manual errors
+            </div>
+
+            <div class="story-card">
+              <div class="story-badge">Sales</div>
+              <div class="story-logo">SalesHub</div>
+              <h3>"Closed 40% more deals per quarter"</h3>
+              <p>
+                Automated follow-ups freed our team to focus on relationships.
+              </p>
+              <div class="story-metrics">
+                <div class="metric">
+                  <strong>+40%</strong><span>More Deals</span>
+                </div>
+                <div class="metric">
+                  <strong>$2M</strong><span>Revenue</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="story-card">
+              <div class="story-badge">E-commerce</div>
+              <div class="story-logo">ShopFast</div>
+              <h3>"Processing 10x more orders"</h3>
+              <p>Scaled dramatically without hiring additional staff.</p>
+              <div class="story-metrics">
+                <div class="metric">
+                  <strong>10x</strong><span>Volume</span>
+                </div>
+                <div class="metric">
+                  <strong>98%</strong><span>Accuracy</span>
+                </div>
               </div>
             </div>
           </div>
@@ -960,21 +851,20 @@
         <div class="cta-shape cta-shape-3">
           <div class="circle bouncing"></div>
         </div>
-
         <div class="cta-content">
-          <h2>Ready to Automate Your Team?</h2>
-          <p>
-            Choose your solution and start automating in minutes. No credit card required.
-          </p>
+          <h2>Ready to Get Started?</h2>
+          <p>Choose your solution and start automating in minutes</p>
           <div class="cta-buttons">
-            <button class="btn btn-white">Start Free Trial</button>
-            <button class="btn btn-outline-white">Talk to Sales</button>
+            <button class="btn btn-var(--white-color)">Start Free Trial</button>
+            <button class="btn btn-outline-var(--white-color)">
+              Talk to Sales
+            </button>
           </div>
         </div>
       </section>
     </main>
 
-    <!-- Footer -->
+    <!-- Footer (sama seperti sebelumnya) -->
     <footer class="footer">
       <div class="footer-wave">
         <svg
@@ -989,7 +879,6 @@
           ></path>
         </svg>
       </div>
-
       <div class="footer-top">
         <div class="footer-container">
           <div>
@@ -998,29 +887,27 @@
                 src="001_Bahan/assets/logo.webp"
                 alt="logo"
                 class="logo-img"
-              />
-              Samartha
+              />Samartha
             </div>
             <p class="footer-desc">
-              Empowering businesses with intelligent automation solutions.
+              Empowering businesses worldwide with intelligent automation
             </p>
             <div class="footer-social">
-              <a href="#!" class="social-icon">𝕏</a>
-              <a href="#!" class="social-icon">in</a>
-              <a href="#!" class="social-icon">f</a>
-              <a href="#!" class="social-icon">IG</a>
+              <a href="#" class="social-icon">𝕏</a>
+              <a href="#" class="social-icon">in</a>
+              <a href="#" class="social-icon">f</a>
+              <a href="#" class="social-icon">IG</a>
             </div>
           </div>
-
           <div>
-            <div class="footer-title">Platform</div>
+            <div class="footer-title">Product</div>
             <div class="footer-links">
-              <a href="platform.html">Features</a>
-              <a href="index.html#pricing">Pricing</a>
+              <a href="platform.html">Platform</a>
+              <a href="pricing.html">Pricing</a>
               <a href="integrations.html">Integrations</a>
+              <a href="#">Templates</a>
             </div>
           </div>
-
           <div>
             <div class="footer-title">Solutions</div>
             <div class="footer-links">
@@ -1030,41 +917,751 @@
               <a href="solutions.html#ecommerce">E-commerce</a>
             </div>
           </div>
-
           <div>
             <div class="footer-title">Resources</div>
             <div class="footer-links">
-              <a href="#!">Help Center</a>
-              <a href="#!">Documentation</a>
-              <a href="#!">Community</a>
+              <a href="#">Help Center</a>
+              <a href="#">Documentation</a>
+              <a href="#">Community</a>
+              <a href="#">Blog</a>
             </div>
           </div>
-
           <div>
             <div class="footer-title">Company</div>
             <div class="footer-links">
               <a href="about.html">About Us</a>
-              <a href="#!">Careers</a>
-              <a href="#!">Contact</a>
+              <a href="#">Careers</a>
+              <a href="#">Contact</a>
             </div>
           </div>
         </div>
       </div>
-
       <div class="footer-bottom">
         <div class="footer-bottom-content">
           <p class="footer-copyright">
             &copy; 2026 Samartha. All rights reserved.
           </p>
           <div class="footer-legal">
-            <a href="#!">Privacy</a>
-            <a href="#!">Terms</a>
-            <a href="#!">Security</a>
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">Security</a>
           </div>
         </div>
       </div>
     </footer>
 
-    <script src="001_Website/js/script.js"></script>
+    <!-- Chatbot -->
+    <div class="chatbot-widget" id="chatbotWidget">
+      <div class="chatbot-header">
+        <div class="chatbot-avatar-group">
+          <div class="chatbot-avatar">S</div>
+          <div class="chatbot-avatar">A</div>
+          <div class="chatbot-avatar">M</div>
+        </div>
+        <div class="chatbot-info">
+          <h4>Samartha Assistant</h4>
+          <p>• Online</p>
+        </div>
+        <button class="chatbot-close" id="chatbotClose">×</button>
+      </div>
+      <div class="chatbot-body" id="chatbotBody">
+        <div class="chatbot-message bot-message">
+          <div class="message-avatar">AI</div>
+          <div class="message-content">
+            <p>Hi! 👋 Which solution fits your team best?</p>
+            <span class="message-time">Just now</span>
+          </div>
+        </div>
+        <div class="chatbot-suggestions">
+          <button class="suggestion-btn">I'm in marketing</button>
+          <button class="suggestion-btn">I'm in sales</button>
+          <button class="suggestion-btn">Show templates</button>
+        </div>
+      </div>
+      <div class="chatbot-footer">
+        <input
+          type="text"
+          placeholder="Type..."
+          class="chatbot-input"
+          id="chatbotInput"
+        />
+        <button class="chatbot-send" id="chatbotSend">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+          </svg>
+        </button>
+      </div>
+      <div class="chatbot-privacy">
+        By chatting, you agree to our <a href="#privacy">Privacy Policy</a>
+      </div>
+    </div>
+
+    <button class="chatbot-button" id="chatbotButton">
+      <svg
+        class="chat-icon"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path
+          d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+        />
+      </svg>
+      <svg
+        class="close-icon"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <line x1="18" y1="6" x2="6" y2="18" />
+        <line x1="6" y1="6" x2="18" y2="18" />
+      </svg>
+    </button>
+
+    <script src="001_Website/js/script.js" defer></script>
+    <script src="001_Website/js/solutions.js" defer></script>
   </body>
+  <style>
+    /* ====================================
+   SOLUTIONS PAGE STYLES
+   ==================================== */
+
+    /* Hero Section - Centered with Button Selector */
+    .solutions-hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg-light);
+      padding: 8rem 2rem 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .solutions-hero-content {
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .solutions-hero h1 {
+      margin: 1rem 0 1.5rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .solutions-hero p {
+      font-size: 1.15rem;
+      opacity: 0.7;
+      max-width: 600px;
+      margin: 0 auto 3rem;
+    }
+
+    /* Solution Selector Buttons */
+    .solutions-selector {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 2.5rem;
+    }
+
+    .solution-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.5rem 1.75rem;
+      background: var(--white-color);
+      border: 1px solid rgba(67, 66, 255, 0.15);
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      font-family: var(--font-family);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .solution-btn .solution-icon {
+      font-size: 1.5rem;
+      transition: transform 0.3s;
+    }
+    .solution-btn img.assets-icon {
+      height: 30px;
+      width: 30px;
+    }
+
+    .solution-btn:hover {
+      transform: translateY(-3px);
+      border-color: var(--primary-color);
+      box-shadow: 0 8px 20px rgba(67, 66, 255, 0.15);
+    }
+
+    .solution-btn:hover .solution-icon {
+      transform: scale(1.2);
+    }
+
+    .solution-btn.active {
+      background: var(--primary-color);
+      color: var(--white-color);
+      border-color: var(--primary-color);
+      box-shadow: 0 8px 20px rgba(67, 66, 255, 0.3);
+    }
+
+    /* Solution Details - Tab System */
+    .solution-details {
+      padding: 5rem 2rem;
+      background: var(--white-color);
+    }
+
+    .solution-content-wrapper {
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    .solution-tab {
+      display: none;
+      animation: fadeInUp 0.6s ease;
+    }
+
+    .solution-tab.active {
+      display: block;
+    }
+
+    /* Split Layout */
+    .solution-split {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    /* Left Side */
+    .solution-left {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    .solution-header {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .solution-main-box-icon {
+      padding: 1rem;
+      border-radius: 50%;
+      border: 1px solid rgba(67, 66, 255, 0.15);
+    }
+    .solution-main-icon {
+      width: 80px;
+      height: 80px;
+      flex-shrink: 0;
+    }
+
+    .solution-header h2 {
+      margin-bottom: 0.5rem;
+    }
+
+    .solution-header p {
+      font-size: 1.05rem;
+    }
+
+    /* Benefits Grid */
+    .solution-benefits h3 {
+      margin-bottom: 1.5rem;
+      font-size: 1.15rem;
+    }
+
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+    }
+
+    .benefit-item {
+      display: flex;
+      gap: 1rem;
+      padding: 1.25rem;
+      border: 1px solid rgba(67, 66, 255, 0.15);
+      border-radius: 12px;
+      transition: all 0.3s;
+    }
+
+    .benefit-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+    }
+
+    .benefit-icon {
+      font-size: 2rem;
+      flex-shrink: 0;
+    }
+
+    .benefit-text strong {
+      display: block;
+      font-size: 0.95rem;
+      margin-bottom: 0.25rem;
+      color: var(--black-color);
+    }
+
+    .benefit-text p {
+      font-size: 0.85rem;
+      opacity: 0.6;
+      margin: 0;
+    }
+
+    /* CTA Box */
+    .solution-cta-box {
+      text-align: center;
+    }
+
+    /* Right Side - Use Case Card */
+    .use-case-card {
+      background: var(--white-color);
+      border: 1px solid rgba(67, 66, 255, 0.15);
+      border-radius: 16px;
+      padding: 2rem;
+      position: sticky;
+      top: 100px;
+      overflow: hidden;
+    }
+
+    .use-case-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--primary-color);
+    }
+    .use-case-badge {
+      display: inline-block;
+      background: rgba(67, 66, 255, 0.1);
+      color: var(--primary-color);
+      padding: 0.4rem 0.9rem;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .use-case-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Workflow Steps - Vertical Timeline */
+    .workflow-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .workflow-step {
+      display: grid;
+      grid-template-columns: 40px 1fr;
+      gap: 1rem;
+      position: relative;
+    }
+
+    .workflow-step:not(:last-child)::before {
+      content: "";
+      position: absolute;
+      left: 20px;
+      top: 40px;
+      width: 2px;
+      height: calc(100% + 0.25rem);
+      background: var(--primary-color);
+      opacity: 0.3;
+    }
+
+    .step-dot {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--primary-color);
+      color: var(--white-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+
+    .step-info strong {
+      display: block;
+      font-size: 0.95rem;
+      margin-bottom: 0.25rem;
+      color: var(--black-color);
+    }
+
+    .step-info p {
+      font-size: 0.85rem;
+      opacity: 0.6;
+      margin: 0;
+    }
+
+    /* Workflow Stats */
+    .workflow-stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .stat-mini {
+      text-align: center;
+    }
+
+    .stat-mini strong {
+      display: block;
+      font-size: 1.75rem;
+      font-family: var(--header-font-family);
+      color: var(--primary-color);
+      margin-bottom: 0.25rem;
+    }
+
+    .stat-mini span {
+      display: block;
+      font-size: 0.85rem;
+      opacity: 0.7;
+    }
+
+    /* Comparison Table Section */
+    .comparison-section {
+      padding: 5rem 2rem;
+      background: var(--bg-light);
+    }
+
+    .comparison-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .comparison-table-wrapper {
+      margin-top: 3rem;
+      overflow-x: auto;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(67, 66, 255, 0.08);
+    }
+
+    .comparison-table {
+      width: 100%;
+      background: var(--white-color);
+      border-collapse: collapse;
+      min-width: 800px;
+    }
+
+    .comparison-table thead {
+      background: var(--primary-color);
+      color: var(--white-color);
+    }
+
+    .comparison-table th {
+      padding: 1.5rem 1rem;
+      text-align: center;
+      font-weight: 700;
+      font-size: 1.05rem;
+      font-family: var(--header-font-family);
+    }
+
+    .comparison-table .feature-col {
+      text-align: left;
+      padding-left: 2rem;
+      min-width: 250px;
+    }
+
+    .comparison-table .solution-col {
+      min-width: 140px;
+    }
+
+    .col-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .col-header span:first-child {
+      font-size: 1.5rem;
+    }
+
+    .comparison-table tbody tr {
+      border-bottom: 1px solid rgba(67, 66, 255, 0.08);
+    }
+
+    .comparison-table tbody tr:last-child {
+      border-bottom: none;
+    }
+
+    .comparison-table tbody tr:hover {
+      background: rgba(67, 66, 255, 0.02);
+    }
+
+    .comparison-table td {
+      padding: 1.25rem 1rem;
+      text-align: center;
+      font-size: 0.95rem;
+    }
+
+    .comparison-table td.feature-name {
+      text-align: left;
+      padding-left: 2rem;
+      font-weight: 500;
+    }
+
+    .check-cell.featured {
+      background: rgba(67, 66, 255, 0.03);
+      font-weight: 600;
+      color: var(--primary-color);
+    }
+
+    /* Success Stories Section */
+    .success-stories {
+      padding: 5rem 2rem;
+      background: var(--white-color);
+    }
+
+    .stories-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .stories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .story-card {
+      background: var(--white-color);
+      border: 1px solid rgba(67, 66, 255, 0.15);
+      border-radius: 16px;
+      padding: 2rem;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .story-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--primary-color);
+    }
+
+    .story-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(67, 66, 255, 0.15);
+    }
+
+    .story-badge {
+      display: inline-block;
+      background: rgba(67, 66, 255, 0.1);
+      color: var(--primary-color);
+      padding: 0.35rem 0.85rem;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .story-logo {
+      font-family: var(--header-font-family);
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+
+    .story-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 1rem;
+      line-height: 1.4;
+    }
+
+    .story-card p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .story-metrics {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .metric {
+      text-align: center;
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 1.75rem;
+      font-family: var(--header-font-family);
+      color: var(--primary-color);
+      margin-bottom: 0.25rem;
+    }
+
+    .metric span {
+      display: block;
+      font-size: 0.85rem;
+      opacity: 0.7;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 968px) {
+      .solution-split {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .use-case-card {
+        position: static;
+      }
+
+      .benefit-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .solutions-selector {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .solution-btn {
+        justify-content: center;
+      }
+
+      .comparison-table-wrapper {
+        overflow-x: auto;
+      }
+
+      .comparison-table {
+        min-width: 600px;
+      }
+
+      .stories-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .solutions-hero {
+        padding: 6rem 1.5rem 3rem;
+        min-height: 60vh;
+      }
+
+      .solution-details {
+        padding: 3rem 1.5rem;
+      }
+
+      .solution-header {
+        flex-direction: column;
+      }
+
+      .workflow-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .comparison-section,
+      .success-stories {
+        padding: 3rem 1.5rem;
+      }
+    }
+  </style>
+  <script>
+    // SOLUTIONS PAGE TAB SWITCHING
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const solutionBtns = document.querySelectorAll(".solution-btn");
+      const solutionTabs = document.querySelectorAll(".solution-tab");
+
+      // Function to switch tabs
+      function switchTab(targetId) {
+        // Remove active from all buttons
+        solutionBtns.forEach((btn) => btn.classList.remove("active"));
+
+        // Remove active from all tabs
+        solutionTabs.forEach((tab) => tab.classList.remove("active"));
+
+        // Add active to clicked button
+        const activeBtn = document.querySelector(
+          `[data-solution="${targetId}"]`
+        );
+        if (activeBtn) {
+          activeBtn.classList.add("active");
+        }
+
+        // Add active to target tab
+        const activeTab = document.getElementById(targetId);
+        if (activeTab) {
+          activeTab.classList.add("active");
+        }
+
+        // Smooth scroll to content
+        const solutionDetails = document.querySelector(".solution-details");
+        if (solutionDetails) {
+          setTimeout(() => {
+            solutionDetails.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }, 100);
+        }
+      }
+
+      // Add click listeners to buttons
+      solutionBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const targetSolution = btn.getAttribute("data-solution");
+          switchTab(targetSolution);
+        });
+      });
+
+      // Handle hash in URL on load
+      const hash = window.location.hash.replace("#", "");
+      if (
+        hash &&
+        ["marketing", "sales", "operations", "ecommerce"].includes(hash)
+      ) {
+        switchTab(hash);
+      }
+
+      // Update URL hash when switching tabs (without page jump)
+      solutionBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const targetSolution = btn.getAttribute("data-solution");
+          history.pushState(null, null, `#${targetSolution}`);
+        });
+      });
+    });
+  </script>
 </html>

@@ -670,267 +670,128 @@ document.querySelectorAll(".dropdown-item").forEach((item) => {
 
 // INTEGRATIONS DATA
 // All integrations organized by category
-const appLogos = {
-  Gmail: "001_Bahan/assets/App=Gmail.png",
-  Slack: "001_Bahan/assets/App=Slack.png",
-  "Microsoft Teams": "001_Bahan/assets/App=Mircrosoft Teams.png",
-  Telegram: "001_Bahan/assets/App=Telegram.png",
-  WhatsApp: "001_Bahan/assets/App=Whatsapp.png",
-  Zoom: "001_Bahan/assets/App=Zoom.png",
-  Notion: "001_Bahan/assets/App=Notion.png",
-  "Facebook Ads": "001_Bahan/assets/App=Facebook.png",
-  "Google Ads": "001_Bahan/assets/App=Google.png",
-  Instagram: "001_Bahan/assets/App=Instagram.png",
-  LinkedIn: "001_Bahan/assets/App=Linkedin.png",
-  TikTok: "001_Bahan/assets/App=Tiktok.png",
-  Twitter: "001_Bahan/assets/App=X.png",
-};
+
 const integrationsData = {
   // Featured integrations (shown at top)
   featured: [
-    {
-      name: "Gmail",
-      category: "communication",
-      color: "#EA4335",
-      letter: "G",
-      desc: "Send emails and manage inbox automatically",
-    },
-    {
-      name: "Slack",
-      category: "communication",
-      color: "#4A154B",
-      letter: "S",
-      desc: "Send messages and automate notifications",
-    },
-    {
-      name: "Salesforce",
-      category: "crm",
-      color: "#00A1E0",
-      letter: "SF",
-      desc: "Sync contacts and update deals",
-    },
-    {
-      name: "Shopify",
-      category: "ecommerce",
-      color: "#96BF48",
-      letter: "S",
-      desc: "Manage orders and inventory",
-    },
-    {
-      name: "HubSpot",
-      category: "crm",
-      color: "#FF7A59",
-      letter: "HS",
-      desc: "Automate marketing campaigns",
-    },
-    {
-      name: "Notion",
-      category: "productivity",
-      color: "#000000",
-      letter: "N",
-      desc: "Create pages and update databases",
-    },
+    { name: 'Gmail', category: 'communication', color: '#EA4335', letter: 'G', desc: 'Send emails and manage inbox automatically' },
+    { name: 'Slack', category: 'communication', color: '#4A154B', letter: 'S', desc: 'Send messages and automate notifications' },
+    { name: 'Salesforce', category: 'crm', color: '#00A1E0', letter: 'SF', desc: 'Sync contacts and update deals' },
+    { name: 'Shopify', category: 'ecommerce', color: '#96BF48', letter: 'S', desc: 'Manage orders and inventory' },
+    { name: 'HubSpot', category: 'crm', color: '#FF7A59', letter: 'HS', desc: 'Automate marketing campaigns' },
+    { name: 'Notion', category: 'productivity', color: '#000000', letter: 'N', desc: 'Create pages and update databases' },
   ],
 
   // All integrations
   all: [
     // Communication
-    { name: "Gmail", category: "communication", color: "#EA4335", letter: "G" },
-    { name: "Slack", category: "communication", color: "#4A154B", letter: "S" },
-    {
-      name: "Microsoft Teams",
-      category: "communication",
-      color: "#5059C9",
-      letter: "MT",
-    },
-    {
-      name: "Discord",
-      category: "communication",
-      color: "#5865F2",
-      letter: "D",
-    },
-    {
-      name: "Telegram",
-      category: "communication",
-      color: "#0088CC",
-      letter: "T",
-    },
-    {
-      name: "WhatsApp",
-      category: "communication",
-      color: "#25D366",
-      letter: "W",
-    },
-    { name: "Zoom", category: "communication", color: "#2D8CFF", letter: "Z" },
-    {
-      name: "Twilio",
-      category: "communication",
-      color: "#F22F46",
-      letter: "Tw",
-    },
-
+    { name: 'Gmail', category: 'communication', color: '#EA4335', letter: 'G' },
+    { name: 'Slack', category: 'communication', color: '#4A154B', letter: 'S' },
+    { name: 'Microsoft Teams', category: 'communication', color: '#5059C9', letter: 'MT' },
+    { name: 'Discord', category: 'communication', color: '#5865F2', letter: 'D' },
+    { name: 'Telegram', category: 'communication', color: '#0088CC', letter: 'T' },
+    { name: 'WhatsApp', category: 'communication', color: '#25D366', letter: 'W' },
+    { name: 'Zoom', category: 'communication', color: '#2D8CFF', letter: 'Z' },
+    { name: 'Twilio', category: 'communication', color: '#F22F46', letter: 'Tw' },
+    
     // CRM & Sales
-    { name: "Salesforce", category: "crm", color: "#00A1E0", letter: "SF" },
-    { name: "HubSpot", category: "crm", color: "#FF7A59", letter: "HS" },
-    { name: "Pipedrive", category: "crm", color: "#000000", letter: "PD" },
-    { name: "Zoho CRM", category: "crm", color: "#E42527", letter: "Z" },
-    { name: "Freshsales", category: "crm", color: "#00C1A2", letter: "FS" },
-    { name: "Monday Sales", category: "crm", color: "#FF3D57", letter: "M" },
-    { name: "Close", category: "crm", color: "#4353FF", letter: "C" },
-    { name: "Copper", category: "crm", color: "#FA6E5A", letter: "Cu" },
-
+    { name: 'Salesforce', category: 'crm', color: '#00A1E0', letter: 'SF' },
+    { name: 'HubSpot', category: 'crm', color: '#FF7A59', letter: 'HS' },
+    { name: 'Pipedrive', category: 'crm', color: '#000000', letter: 'PD' },
+    { name: 'Zoho CRM', category: 'crm', color: '#E42527', letter: 'Z' },
+    { name: 'Freshsales', category: 'crm', color: '#00C1A2', letter: 'FS' },
+    { name: 'Monday Sales', category: 'crm', color: '#FF3D57', letter: 'M' },
+    { name: 'Close', category: 'crm', color: '#4353FF', letter: 'C' },
+    { name: 'Copper', category: 'crm', color: '#FA6E5A', letter: 'Cu' },
+    
     // Marketing
-    {
-      name: "Mailchimp",
-      category: "marketing",
-      color: "#FFE01B",
-      letter: "MC",
-    },
-    {
-      name: "Sendinblue",
-      category: "marketing",
-      color: "#0B996E",
-      letter: "SB",
-    },
-    {
-      name: "Facebook Ads",
-      category: "marketing",
-      color: "#1877F2",
-      letter: "FB",
-    },
-    {
-      name: "Google Ads",
-      category: "marketing",
-      color: "#4285F4",
-      letter: "GA",
-    },
-    { name: "Twitter", category: "marketing", color: "#1DA1F2", letter: "X" },
-    { name: "LinkedIn", category: "marketing", color: "#0A66C2", letter: "in" },
-    {
-      name: "Instagram",
-      category: "marketing",
-      color: "#E4405F",
-      letter: "IG",
-    },
-    { name: "TikTok", category: "marketing", color: "#000000", letter: "TT" },
-
+    { name: 'Mailchimp', category: 'marketing', color: '#FFE01B', letter: 'MC' },
+    { name: 'Sendinblue', category: 'marketing', color: '#0B996E', letter: 'SB' },
+    { name: 'Facebook Ads', category: 'marketing', color: '#1877F2', letter: 'FB' },
+    { name: 'Google Ads', category: 'marketing', color: '#4285F4', letter: 'GA' },
+    { name: 'Twitter', category: 'marketing', color: '#1DA1F2', letter: 'X' },
+    { name: 'LinkedIn', category: 'marketing', color: '#0A66C2', letter: 'in' },
+    { name: 'Instagram', category: 'marketing', color: '#E4405F', letter: 'IG' },
+    { name: 'TikTok', category: 'marketing', color: '#000000', letter: 'TT' },
+    
     // E-commerce
-    { name: "Shopify", category: "ecommerce", color: "#96BF48", letter: "S" },
-    {
-      name: "WooCommerce",
-      category: "ecommerce",
-      color: "#96588A",
-      letter: "WC",
-    },
-    { name: "Stripe", category: "ecommerce", color: "#635BFF", letter: "S" },
-    { name: "Square", category: "ecommerce", color: "#000000", letter: "Sq" },
-    { name: "Amazon", category: "ecommerce", color: "#FF9900", letter: "A" },
-    { name: "eBay", category: "ecommerce", color: "#E53238", letter: "E" },
-    { name: "Magento", category: "ecommerce", color: "#F46F25", letter: "M" },
-    {
-      name: "BigCommerce",
-      category: "ecommerce",
-      color: "#121118",
-      letter: "BC",
-    },
-
+    { name: 'Shopify', category: 'ecommerce', color: '#96BF48', letter: 'S' },
+    { name: 'WooCommerce', category: 'ecommerce', color: '#96588A', letter: 'WC' },
+    { name: 'Stripe', category: 'ecommerce', color: '#635BFF', letter: 'S' },
+    { name: 'Square', category: 'ecommerce', color: '#000000', letter: 'Sq' },
+    { name: 'Amazon', category: 'ecommerce', color: '#FF9900', letter: 'A' },
+    { name: 'eBay', category: 'ecommerce', color: '#E53238', letter: 'E' },
+    { name: 'Magento', category: 'ecommerce', color: '#F46F25', letter: 'M' },
+    { name: 'BigCommerce', category: 'ecommerce', color: '#121118', letter: 'BC' },
+    
     // Productivity
-    { name: "Notion", category: "productivity", color: "#000000", letter: "N" },
-    { name: "Trello", category: "productivity", color: "#0079BF", letter: "T" },
-    { name: "Asana", category: "productivity", color: "#F06A6A", letter: "A" },
-    {
-      name: "Monday.com",
-      category: "productivity",
-      color: "#FF3D57",
-      letter: "M",
-    },
-    {
-      name: "ClickUp",
-      category: "productivity",
-      color: "#7B68EE",
-      letter: "C",
-    },
-    {
-      name: "Airtable",
-      category: "productivity",
-      color: "#FCB400",
-      letter: "At",
-    },
-    { name: "Jira", category: "productivity", color: "#0052CC", letter: "J" },
-    {
-      name: "Basecamp",
-      category: "productivity",
-      color: "#1D2D35",
-      letter: "B",
-    },
-
+    { name: 'Notion', category: 'productivity', color: '#000000', letter: 'N' },
+    { name: 'Trello', category: 'productivity', color: '#0079BF', letter: 'T' },
+    { name: 'Asana', category: 'productivity', color: '#F06A6A', letter: 'A' },
+    { name: 'Monday.com', category: 'productivity', color: '#FF3D57', letter: 'M' },
+    { name: 'ClickUp', category: 'productivity', color: '#7B68EE', letter: 'C' },
+    { name: 'Airtable', category: 'productivity', color: '#FCB400', letter: 'At' },
+    { name: 'Jira', category: 'productivity', color: '#0052CC', letter: 'J' },
+    { name: 'Basecamp', category: 'productivity', color: '#1D2D35', letter: 'B' },
+    
     // Analytics
-    {
-      name: "Google Analytics",
-      category: "analytics",
-      color: "#E37400",
-      letter: "GA",
-    },
-    { name: "Mixpanel", category: "analytics", color: "#7856FF", letter: "MP" },
-    {
-      name: "Amplitude",
-      category: "analytics",
-      color: "#000FFF",
-      letter: "Am",
-    },
-    { name: "Tableau", category: "analytics", color: "#E97627", letter: "T" },
-    { name: "Looker", category: "analytics", color: "#4285F4", letter: "L" },
-    { name: "Segment", category: "analytics", color: "#52BD95", letter: "S" },
-    { name: "Hotjar", category: "analytics", color: "#FD3A69", letter: "H" },
-    { name: "Heap", category: "analytics", color: "#FF5E00", letter: "He" },
-
+    { name: 'Google Analytics', category: 'analytics', color: '#E37400', letter: 'GA' },
+    { name: 'Mixpanel', category: 'analytics', color: '#7856FF', letter: 'MP' },
+    { name: 'Amplitude', category: 'analytics', color: '#000FFF', letter: 'Am' },
+    { name: 'Tableau', category: 'analytics', color: '#E97627', letter: 'T' },
+    { name: 'Looker', category: 'analytics', color: '#4285F4', letter: 'L' },
+    { name: 'Segment', category: 'analytics', color: '#52BD95', letter: 'S' },
+    { name: 'Hotjar', category: 'analytics', color: '#FD3A69', letter: 'H' },
+    { name: 'Heap', category: 'analytics', color: '#FF5E00', letter: 'He' },
+    
     // Finance
-    { name: "QuickBooks", category: "finance", color: "#2CA01C", letter: "QB" },
-    { name: "Xero", category: "finance", color: "#13B5EA", letter: "X" },
-    { name: "PayPal", category: "finance", color: "#00457C", letter: "PP" },
-    { name: "Wise", category: "finance", color: "#00B9FF", letter: "W" },
-    { name: "FreshBooks", category: "finance", color: "#0075DD", letter: "FB" },
-    { name: "Wave", category: "finance", color: "#4FB5EC", letter: "W" },
-    { name: "Gusto", category: "finance", color: "#F45D48", letter: "G" },
-    { name: "Bill.com", category: "finance", color: "#00AEEF", letter: "B" },
-  ],
+    { name: 'QuickBooks', category: 'finance', color: '#2CA01C', letter: 'QB' },
+    { name: 'Xero', category: 'finance', color: '#13B5EA', letter: 'X' },
+    { name: 'PayPal', category: 'finance', color: '#00457C', letter: 'PP' },
+    { name: 'Wise', category: 'finance', color: '#00B9FF', letter: 'W' },
+    { name: 'FreshBooks', category: 'finance', color: '#0075DD', letter: 'FB' },
+    { name: 'Wave', category: 'finance', color: '#4FB5EC', letter: 'W' },
+    { name: 'Gusto', category: 'finance', color: '#F45D48', letter: 'G' },
+    { name: 'Bill.com', category: 'finance', color: '#00AEEF', letter: 'B' },
+  ]
 };
-
 // INTEGRATIONS PAGE FUNCTIONALITY
 
-document.addEventListener("DOMContentLoaded", () => {
-  const featuredGrid = document.getElementById("featuredGrid");
-  const integrationGrid = document.getElementById("integrationGrid");
-  const categoryTabs = document.querySelectorAll(".category-tab");
-  const searchInput = document.getElementById("integrationSearch");
-  const noResults = document.getElementById("noResults");
-  const loadMoreBtn = document.getElementById("loadMoreBtn");
-  const loadMoreSection = document.getElementById("loadMoreSection");
-  const shownCount = document.getElementById("shownCount");
-  const totalCount = document.getElementById("totalCount");
+document.addEventListener('DOMContentLoaded', () => {
+  const featuredGrid = document.getElementById('featuredGrid');
+  const integrationGrid = document.getElementById('integrationGrid');
+  const categoryTabs = document.querySelectorAll('.browser-tab');
+  const searchInput = document.getElementById('integrationSearch');
+  const noResults = document.getElementById('noResults');
+  const loadMoreBtn = document.getElementById('loadMoreBtn');
+  const loadMoreSection = document.getElementById('loadMoreSection');
+  const shownCount = document.getElementById('shownCount');
+  const totalCount = document.getElementById('totalCount');
 
-  let currentCategory = "all";
-  let currentSearchTerm = "";
+  let currentCategory = 'all';
+  let currentSearchTerm = '';
   let displayedCount = 48;
   const increment = 24;
+
+  // Initialize workflow arrows for integration section
+  initIntegrationWorkflowArrows();
+  
+  // Initialize app flow interactions
+  initAppFlowInteractions();
 
   // Populate Featured Integrations
   function populateFeatured() {
     if (!featuredGrid || !integrationsData.featured) return;
 
-    featuredGrid.innerHTML = "";
+    featuredGrid.innerHTML = '';
     integrationsData.featured.forEach((app, index) => {
-      const card = document.createElement("div");
-      card.className = "featured-card";
+      const card = document.createElement('div');
+      card.className = 'featured-card';
       card.dataset.delay = index * 100;
       card.innerHTML = `
-<div class="featured-icon">
-  ${
-    appLogos[app.name]
-      ? `<img src="${appLogos[app.name]}" alt="${app.name} logo">`
-      : `<span style="background:${app.color}">${app.letter}</span>`
-  }
-</div>
+        <div class="featured-icon" style="background: ${app.color}">
+          ${app.letter}
+        </div>
         <div class="featured-content">
           <h3>${app.name}</h3>
           <p>${app.desc}</p>
@@ -944,29 +805,25 @@ document.addEventListener("DOMContentLoaded", () => {
   function populateIntegrations(apps, limit = displayedCount) {
     if (!integrationGrid || !apps) return;
 
-    integrationGrid.innerHTML = "";
-
+    integrationGrid.innerHTML = '';
+    
     const appsToShow = apps.slice(0, limit);
-
+    
     appsToShow.forEach((app, index) => {
-      const item = document.createElement("div");
-      item.className = "integration-item";
+      const item = document.createElement('div');
+      item.className = 'integration-item';
       item.dataset.category = app.category;
       item.dataset.name = app.name.toLowerCase();
       item.style.animationDelay = `${(index % 12) * 0.03}s`;
-
+      
       item.innerHTML = `
-<div class="integration-logo">
-  ${
-    appLogos[app.name]
-      ? `<img src="${appLogos[app.name]}" alt="${app.name} logo">`
-      : `<span style="background:${app.color}">${app.letter}</span>`
-  }
-</div>
+        <div class="integration-logo" style="background: ${app.color}">
+          ${app.letter}
+        </div>
         <div class="integration-name">${app.name}</div>
         <div class="integration-category">${formatCategory(app.category)}</div>
       `;
-
+      
       integrationGrid.appendChild(item);
     });
 
@@ -977,13 +834,13 @@ document.addEventListener("DOMContentLoaded", () => {
   // Format category name
   function formatCategory(category) {
     const names = {
-      communication: "Communication",
-      crm: "CRM & Sales",
-      marketing: "Marketing",
-      ecommerce: "E-commerce",
-      productivity: "Productivity",
-      analytics: "Analytics",
-      finance: "Finance",
+      'communication': 'Communication',
+      'crm': 'CRM & Sales',
+      'marketing': 'Marketing',
+      'ecommerce': 'E-commerce',
+      'productivity': 'Productivity',
+      'analytics': 'Analytics',
+      'finance': 'Finance'
     };
     return names[category] || category;
   }
@@ -993,28 +850,27 @@ document.addEventListener("DOMContentLoaded", () => {
     let filtered = [...integrationsData.all];
 
     // Filter by category
-    if (currentCategory !== "all") {
-      filtered = filtered.filter((app) => app.category === currentCategory);
+    if (currentCategory !== 'all') {
+      filtered = filtered.filter(app => app.category === currentCategory);
     }
 
     // Filter by search term
     if (currentSearchTerm) {
-      filtered = filtered.filter(
-        (app) =>
-          app.name.toLowerCase().includes(currentSearchTerm.toLowerCase()) ||
-          app.category.toLowerCase().includes(currentSearchTerm.toLowerCase())
+      filtered = filtered.filter(app => 
+        app.name.toLowerCase().includes(currentSearchTerm.toLowerCase()) ||
+        app.category.toLowerCase().includes(currentSearchTerm.toLowerCase())
       );
     }
 
     // Show/hide no results
     if (filtered.length === 0) {
-      integrationGrid.style.display = "none";
-      loadMoreSection.style.display = "none";
-      noResults.style.display = "block";
+      integrationGrid.style.display = 'none';
+      loadMoreSection.style.display = 'none';
+      noResults.style.display = 'block';
     } else {
-      integrationGrid.style.display = "grid";
-      loadMoreSection.style.display = "block";
-      noResults.style.display = "none";
+      integrationGrid.style.display = 'grid';
+      loadMoreSection.style.display = 'block';
+      noResults.style.display = 'none';
       populateIntegrations(filtered, displayedCount);
     }
   }
@@ -1030,18 +886,18 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!loadMoreBtn || !loadMoreSection) return;
 
     if (shown >= total) {
-      loadMoreBtn.style.display = "none";
+      loadMoreBtn.style.display = 'none';
     } else {
-      loadMoreBtn.style.display = "inline-flex";
+      loadMoreBtn.style.display = 'inline-flex';
     }
   }
 
   // Category tabs
-  categoryTabs.forEach((tab) => {
-    tab.addEventListener("click", () => {
+  categoryTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
       // Update active state
-      categoryTabs.forEach((t) => t.classList.remove("active"));
-      tab.classList.add("active");
+      categoryTabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
 
       // Update current category
       currentCategory = tab.dataset.category;
@@ -1051,23 +907,23 @@ document.addEventListener("DOMContentLoaded", () => {
       filterIntegrations();
 
       // Scroll to grid
-      integrationGrid.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      integrationGrid.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     });
   });
 
   // Search functionality
   if (searchInput) {
-    searchInput.addEventListener("input", (e) => {
+    searchInput.addEventListener('input', (e) => {
       currentSearchTerm = e.target.value.trim();
       displayedCount = 48; // Reset display count
       filterIntegrations();
     });
 
     // Clear search on Escape
-    searchInput.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") {
-        searchInput.value = "";
-        currentSearchTerm = "";
+    searchInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        searchInput.value = '';
+        currentSearchTerm = '';
         filterIntegrations();
       }
     });
@@ -1075,17 +931,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Load more functionality
   if (loadMoreBtn) {
-    loadMoreBtn.addEventListener("click", () => {
+    loadMoreBtn.addEventListener('click', () => {
       displayedCount += increment;
       filterIntegrations();
-
+      
       // Smooth scroll to show new items
       setTimeout(() => {
-        const lastItems = integrationGrid.querySelectorAll(".integration-item");
+        const lastItems = integrationGrid.querySelectorAll('.integration-item');
         if (lastItems.length > 0) {
-          lastItems[lastItems.length - increment]?.scrollIntoView({
-            behavior: "smooth",
-            block: "nearest",
+          lastItems[lastItems.length - increment]?.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'nearest' 
           });
         }
       }, 100);
@@ -1097,25 +953,208 @@ document.addEventListener("DOMContentLoaded", () => {
   populateIntegrations(integrationsData.all);
 });
 
-// Add animation to integration items on scroll
-const integrationObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = "1";
-        entry.target.style.transform = "scale(1)";
-      }
-    });
-  },
-  {
-    threshold: 0.1,
-    rootMargin: "0px 0px -50px 0px",
+// Integration Workflow Arrows
+function initIntegrationWorkflowArrows() {
+  const container = document.querySelector('.integration-workflow');
+  if (!container) return;
+
+  const step1 = container.querySelector('.step-1');
+  const step2 = container.querySelector('.step-2');
+  const step3 = container.querySelector('.step-3');
+  
+  const arrow1 = document.getElementById('integration-arrow-1');
+  const arrow2 = document.getElementById('integration-arrow-2');
+
+  if (!step1 || !step2 || !step3 || !arrow1 || !arrow2) return;
+
+  function updateArrows() {
+    const containerRect = container.getBoundingClientRect();
+    
+    const rect1 = step1.getBoundingClientRect();
+    const rect2 = step2.getBoundingClientRect();
+    const rect3 = step3.getBoundingClientRect();
+
+    // Arrow 1: Step 1 → Step 2
+    const start1 = {
+      x: rect1.right - containerRect.left,
+      y: rect1.top + rect1.height / 2 - containerRect.top
+    };
+    const end1 = {
+      x: rect2.left - containerRect.left,
+      y: rect2.top + rect2.height / 2 - containerRect.top
+    };
+
+    arrow1.setAttribute('d', `M ${start1.x} ${start1.y} L ${end1.x} ${end1.y}`);
+
+    // Arrow 2: Step 2 → Step 3
+    const start2 = {
+      x: rect2.right - containerRect.left,
+      y: rect2.top + rect2.height / 2 - containerRect.top
+    };
+    const end2 = {
+      x: rect3.left - containerRect.left,
+      y: rect3.top + rect3.height / 2 - containerRect.top
+    };
+
+    arrow2.setAttribute('d', `M ${start2.x} ${start2.y} L ${end2.x} ${end2.y}`);
   }
-);
+
+  updateArrows();
+  window.addEventListener('resize', updateArrows);
+  setTimeout(updateArrows, 300);
+
+  // Make apps-flow-grid interactive
+  initAppsFlowInteractivity();
+}
+
+// Interactive Apps Flow
+function initAppsFlowInteractivity() {
+  const appItems = document.querySelectorAll('.app-flow-item');
+  const step3 = document.querySelector('.step-3');
+  
+  if (!appItems.length || !step3) return;
+
+  const step3Icon = step3.querySelector('.node-icon img');
+  const step3Title = step3.querySelector('.node-title');
+  const step3Desc = step3.querySelector('.node-desc');
+
+  appItems.forEach(item => {
+    item.addEventListener('click', () => {
+      // Remove active from all
+      appItems.forEach(i => i.classList.remove('active'));
+      
+      // Add active to clicked
+      item.classList.add('active');
+
+      // Get app data
+      const appImg = item.querySelector('img').src;
+      const appName = item.dataset.label;
+      const appCategory = item.dataset.category;
+
+      // Update Step 3 with animation
+      step3.style.transform = 'scale(0.95)';
+      setTimeout(() => {
+        step3Icon.src = appImg;
+        step3Title.textContent = appName;
+        step3Desc.textContent = `Build ${appCategory} workflows`;
+        step3.style.transform = 'scale(1)';
+        
+        // Add pulse effect
+        step3.classList.add('pulse-once');
+        setTimeout(() => step3.classList.remove('pulse-once'), 600);
+      }, 150);
+    });
+  });
+}
+
+// Add pulse animation CSS dynamically
+const style = document.createElement('style');
+style.textContent = `
+  .pulse-once {
+    animation: pulseNode 0.6s ease;
+  }
+  @keyframes pulseNode {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+  }
+`;
+document.head.appendChild(style);
+
+// App Flow Interactions - Interactive app selection
+function initAppFlowInteractions() {
+  const appFlowItems = document.querySelectorAll('.app-flow-item');
+  const step2 = document.querySelector('.step-2');
+  const step2Icon = step2?.querySelector('.node-icon img');
+  const step2Title = step2?.querySelector('.node-title');
+  const step2Desc = step2?.querySelector('.node-desc');
+  const step2Label = step2?.querySelector('.node-label');
+  
+  appFlowItems.forEach(item => {
+    item.addEventListener('click', () => {
+      // Remove active from all
+      appFlowItems.forEach(i => i.classList.remove('active-app'));
+      
+      // Add active to clicked
+      item.classList.add('active-app');
+      
+      // Get app data
+      const appName = item.dataset.label;
+      const appImg = item.querySelector('img').src;
+      const appCategory = item.dataset.category;
+      const appColor = item.dataset.color;
+      
+      // Animate out middle node
+      if (step2) {
+        // step2.style.transform = 'translate(-50%, -50%) scale(0.9)';
+        // step2.style.opacity = '0.5';
+        
+        setTimeout(() => {
+          // Update middle node
+          if (step2Icon) step2Icon.src = appImg;
+          if (step2Title) step2Title.textContent = appName;
+          if (step2Desc) step2Desc.textContent = `${appCategory} automation`;
+          if (step2Label) step2Label.textContent = 'Connect';
+          
+          // Add temporary border color based on app
+          step2.style.borderColor = appColor;
+          
+          // Animate in
+          // step2.style.transform = 'translate(-50%, -50%) scale(1)';
+          // step2.style.opacity = '1';
+          
+          // Redraw arrows after node content changes
+          setTimeout(() => {
+            initIntegrationWorkflowArrows();
+          }, 100);
+          
+          // Add pulse effect
+          step2.classList.add('pulse-once');
+          setTimeout(() => {
+            step2.classList.remove('pulse-once');
+            // Reset border color
+            setTimeout(() => {
+              step2.style.borderColor = '';
+            }, 1000);
+          }, 600);
+        }, 200);
+      }
+      
+      // Show connection indicator on clicked item
+      const indicator = document.createElement('div');
+      indicator.className = 'connection-pulse';
+      indicator.innerHTML = `
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M13.3333 4L6 11.3333L2.66666 8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Connected
+      `;
+      item.appendChild(indicator);
+      
+      // Remove after animation
+      setTimeout(() => {
+        indicator.remove();
+        item.classList.remove('active-app');
+      }, 2500);
+    });
+  });
+}
+
+// Add animation to integration items on scroll
+// const integrationObserver = new IntersectionObserver((entries) => {
+//   entries.forEach(entry => {
+//     if (entry.isIntersecting) {
+//       entry.target.style.opacity = '1';
+//       entry.target.style.transform = 'scale(1)';
+//     }
+//   });
+// }, {
+//   threshold: 0.1,
+//   rootMargin: '0px 0px -50px 0px'
+// });
 
 // Observe integration items (will be called after items are added)
 function observeIntegrationItems() {
-  document.querySelectorAll(".integration-item").forEach((item) => {
+  document.querySelectorAll('.integration-item').forEach(item => {
     integrationObserver.observe(item);
   });
 }

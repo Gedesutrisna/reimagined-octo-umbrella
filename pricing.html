@@ -41,443 +41,461 @@
    Following homepage design patterns
    ======================================== */
 
-/* Pricing Hero - Full Height with Centered Layout */
-.pricing-hero {
-  min-height: 100vh;
-  display: grid;
-  align-items: center;
-  padding: 5rem 3rem 3rem;
-  position: relative;
-  overflow: hidden;
-  background: var(--bg-light);
-}
-
-.pricing-hero-container {
-  /* max-width: 900px; */
-  margin: 0 auto;
-  width: 100%;
-  text-align: center;
-}
-
-.pricing-hero-content {
-  animation: fadeInUp 0.8s ease;
-}
-
-.pricing-hero h1 {
-  margin: 0.75rem 0 1.25rem;
-}
-
-.pricing-hero-subtitle {
-  font-size: 1.15rem;
-  margin: 0 auto 2.5rem;
-  max-width: 650px;
-}
-
-.pricing-toggle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  margin: 0 auto 3rem;
-}
-
-/* Benefits Grid - Badge Style */
-.pricing-benefits-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.25rem;
-  max-width: 650px;
-  margin: 0 auto;
-}
-
-.benefit-badge {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 1rem 1.5rem;
-  background: white;
-  border: 1px solid rgba(67, 66, 255, 0.08);
-  border-radius: 50px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  background: rgba(255, 255, 255, 0.746);
-  backdrop-filter: blur(7.6px);
-  -webkit-backdrop-filter: blur(7.6px);
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.6s ease forwards;
-  justify-content: center;
-}
-
-.benefit-badge:nth-child(1) { animation-delay: 0s; }
-.benefit-badge:nth-child(2) { animation-delay: 0.1s; }
-.benefit-badge:nth-child(3) { animation-delay: 0.2s; }
-.benefit-badge:nth-child(4) { animation-delay: 0.3s; }
-
-.benefit-badge:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(67, 66, 255, 0.12);
-  border-color: rgba(67, 66, 255, 0.2);
-}
-
-.benefit-icon-small {
-  position: relative;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(67, 66, 255, 0.08);
-  flex-shrink: 0;
-  transition: all 0.3s ease;
-}
-
-.benefit-badge:hover .benefit-icon-small {
-  background: rgba(67, 66, 255, 0.15);
-  transform: scale(1.1);
-}
-
-.benefit-icon-small img {
-  width: 60%;
-}
-
-.benefit-badge span {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--black-color);
-  white-space: nowrap;
-}
-
-.shape-3 {
-  bottom: 20%;
-  right: 10%;
-}
-
-/* Pricing Section - Matching Homepage Card Style */
-.pricing-section {
-  padding: 4.5rem 3rem;
-  background: var(--bg-light);
-  position: relative;
-  overflow: hidden;
-}
-
-.pricing-section-container {
-  max-width: 1300px;
-  margin: 0 auto;
-}
-
-.pricing-cards-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
-}
-
-.pricing-plan-card {
-  padding: 2rem;
-  border-radius: 16px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid rgba(67, 66, 255, 0.08);
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  background: rgba(255, 255, 255, 0.38);
-  backdrop-filter: blur(7.6px);
-  -webkit-backdrop-filter: blur(7.6px);
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.6s ease forwards;
-}
-
-.pricing-plan-card:nth-child(1) { animation-delay: 0s; }
-.pricing-plan-card:nth-child(2) { animation-delay: 0.1s; }
-.pricing-plan-card:nth-child(3) { animation-delay: 0.2s; }
-.pricing-plan-card:nth-child(4) { animation-delay: 0.3s; }
-
-.pricing-plan-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 32px rgba(67, 66, 255, 0.1);
-  border-color: rgba(67, 66, 255, 0.2);
-}
-
-.pricing-plan-card.featured {
-  border-color: var(--primary-color);
-  border-width: 1.5px;
-  background: rgba(67, 66, 255, 0.02);
-}
-
-.pricing-plan-card.featured:hover {
-  transform: translateY(-6px);
-}
-
-.plan-badge {
-  position: absolute;
-  top: -12px;
-  right: 20px;
-  background: var(--primary-color);
-  color: white;
-  padding: 0.35rem 0.95rem;
-  border-radius: 50px;
-  font-size: 0.75rem;
-  font-weight: 700;
-}
-
-.plan-header {
-  text-align: center;
-  margin-bottom: 2rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid rgba(67, 66, 255, 0.1);
-}
-
-.plan-name {
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
-  color: var(--black-color);
-  font-family: var(--header-font-family);
-  font-weight: 700;
-}
-
-.plan-price {
-  display: flex;
-  align-items: baseline;
-  justify-content: center;
-  gap: 0.35rem;
-  margin-bottom: 1rem;
-}
-
-.plan-price .price-amount {
-  font-size: 2.75rem;
-  font-weight: 800;
-  font-family: var(--header-font-family);
-  color: var(--primary-color);
-  transition: all 0.3s ease;
-}
-
-.plan-price .price-period {
-  font-size: 1rem;
-  opacity: 0.6;
-  font-weight: 500;
-}
-
-.plan-desc {
-  font-size: 0.9rem;
-  margin: 0;
-  opacity: 0.8;
-}
-
-.plan-features {
-  flex: 1;
-  margin-bottom: 2rem;
-}
-
-.plan-feature {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0.85rem 0;
-  font-size: 0.9rem;
-}
-
-.plan-feature .feature-check {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: rgba(67, 66, 255, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--primary-color);
-  font-size: 0.75rem;
-  font-weight: 700;
-  flex-shrink: 0;
-}
-
-.plan-btn {
-  width: 100%;
-}
-
-/* Feature Comparison Table */
-.feature-comparison {
-  padding: 4.5rem 3rem;
-  background: white;
-  position: relative;
-  overflow: hidden;
-}
-
-.feature-comparison-container {
-  max-width: 1300px;
-  margin: 0 auto;
-}
-
-.comparison-table-wrapper {
-  margin-top: 3rem;
-  overflow-x: auto;
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(67, 66, 255, 0.08);
-}
-
-.comparison-table {
-  width: 100%;
-  background: white;
-  border-collapse: collapse;
-  min-width: 800px;
-}
-
-.comparison-table thead {
-  background: var(--primary-color);
-  color: white;
-}
-
-.comparison-table th {
-  padding: 1.5rem 1rem;
-  text-align: center;
-  font-weight: 700;
-  font-size: 1.05rem;
-  font-family: var(--header-font-family);
-}
-
-.comparison-table th.feature-col {
-  text-align: left;
-  padding-left: 2rem;
-  min-width: 250px;
-}
-
-.comparison-table th.featured-col {
-  background: rgba(255, 255, 255, 0.2);
-}
-
-.comparison-table tbody tr {
-  border-bottom: 1px solid rgba(67, 66, 255, 0.08);
-}
-
-.comparison-table tbody tr:hover {
-  background: rgba(67, 66, 255, 0.02);
-}
-
-.comparison-table td {
-  padding: 1.25rem 1rem;
-  text-align: center;
-  font-size: 0.95rem;
-}
-
-.comparison-table td.feature-name {
-  text-align: left;
-  padding-left: 2rem;
-  font-weight: 500;
-}
-
-.comparison-table td.featured-col {
-  background: rgba(67, 66, 255, 0.03);
-  font-weight: 600;
-  color: var(--primary-color);
-}
-
-.category-row {
-  background: rgba(67, 66, 255, 0.05);
-}
-
-.category-row td {
-  padding: 1rem 2rem;
-  font-weight: 700;
-  font-size: 1.05rem;
-  color: var(--primary-color);
-  text-align: left;
-  font-family: var(--header-font-family);
-}
-
-/* Pricing FAQ */
-.pricing-faq {
-  padding: 4.5rem 3rem;
-  background: white;
-}
-
-.pricing-faq-container {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-/* Responsive Pricing */
-@media (max-width: 1200px) {
-  .pricing-cards-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 968px) {
-  .pricing-hero {
-    padding: 6rem 1.5rem 3rem;
-    min-height: auto;
-  }
-
-  .pricing-hero-container {
-    max-width: 100%;
-  }
-
-  .pricing-benefits-grid {
-    grid-template-columns: 1fr;
-    max-width: 400px;
-  }
-
-  .pricing-section,
-  .feature-comparison,
-  .pricing-faq {
-    padding: 3rem 1.5rem;
-  }
-
-  .pricing-cards-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .comparison-table-wrapper {
-    border-radius: 12px;
-  }
-
-  .comparison-table {
-    font-size: 0.85rem;
-  }
-
-  .comparison-table th,
-  .comparison-table td {
-    padding: 1rem 0.75rem;
-  }
-
-  .comparison-table th.feature-col,
-  .comparison-table td.feature-name {
-    padding-left: 1rem;
-    min-width: 200px;
-  }
-}
-
-@media (max-width: 640px) {
-  .pricing-toggle {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .toggle-label {
-    font-size: 1rem;
-  }
-
-  .plan-price .price-amount {
-    font-size: 2.25rem;
-  }
-
-  .comparison-table {
-    min-width: 700px;
-  }
-
-  .benefit-badge {
-    padding: 0.85rem 1.25rem;
-  }
-
-  .benefit-icon-small {
-    width: 32px;
-    height: 32px;
-  }
-
-  .benefit-badge span {
-    font-size: 0.85rem;
-  }
-}
+      /* Pricing Hero - Full Height with Centered Layout */
+      .pricing-hero {
+        min-height: 100vh;
+        display: grid;
+        align-items: center;
+        padding: 5rem 3rem 3rem;
+        position: relative;
+        overflow: hidden;
+        background: var(--bg-light);
+      }
+
+      .pricing-hero-container {
+        /* max-width: 900px; */
+        margin: 0 auto;
+        width: 100%;
+        text-align: center;
+        padding: 40px 0px 0px 0px;
+      }
+
+      .pricing-hero-content {
+        animation: fadeInUp 0.8s ease;
+      }
+
+      .pricing-hero h1 {
+        margin: 0.75rem 0 1.25rem;
+      }
+
+      .pricing-hero-subtitle {
+        font-size: 1.15rem;
+        margin: 0 auto 2.5rem;
+        max-width: 650px;
+      }
+
+      .pricing-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        margin: 0 auto 3rem;
+      }
+
+      /* Benefits Grid - Badge Style */
+      .pricing-benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+        max-width: 650px;
+        margin: 0 auto;
+      }
+
+      .benefit-badge {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 1rem 1.5rem;
+        background: white;
+        border: 1px solid rgba(67, 66, 255, 0.08);
+        border-radius: 50px;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        background: rgba(255, 255, 255, 0.746);
+        backdrop-filter: blur(7.6px);
+        -webkit-backdrop-filter: blur(7.6px);
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 0.6s ease forwards;
+        justify-content: center;
+      }
+
+      .benefit-badge:nth-child(1) {
+        animation-delay: 0s;
+      }
+      .benefit-badge:nth-child(2) {
+        animation-delay: 0.1s;
+      }
+      .benefit-badge:nth-child(3) {
+        animation-delay: 0.2s;
+      }
+      .benefit-badge:nth-child(4) {
+        animation-delay: 0.3s;
+      }
+
+      .benefit-badge:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 24px rgba(67, 66, 255, 0.12);
+        border-color: rgba(67, 66, 255, 0.2);
+      }
+
+      .benefit-icon-small {
+        position: relative;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(67, 66, 255, 0.08);
+        flex-shrink: 0;
+        transition: all 0.3s ease;
+      }
+
+      .benefit-badge:hover .benefit-icon-small {
+        background: rgba(67, 66, 255, 0.15);
+        transform: scale(1.1);
+      }
+
+      .benefit-icon-small img {
+        width: 60%;
+      }
+
+      .benefit-badge span {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--black-color);
+        white-space: nowrap;
+      }
+
+      .shape-3 {
+        bottom: 20%;
+        right: 10%;
+      }
+
+      /* Pricing Section - Matching Homepage Card Style */
+      .pricing-section {
+        padding: 4.5rem 3rem;
+        background: var(--bg-light);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .pricing-section-container {
+        max-width: 1300px;
+        margin: 0 auto;
+      }
+
+      .pricing-cards-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+      }
+
+      .pricing-plan-card {
+        padding: 2rem;
+        border-radius: 16px;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        border: 1px solid rgba(67, 66, 255, 0.08);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        background: rgba(255, 255, 255, 0.38);
+        backdrop-filter: blur(7.6px);
+        -webkit-backdrop-filter: blur(7.6px);
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 0.6s ease forwards;
+      }
+
+      .pricing-plan-card:nth-child(1) {
+        animation-delay: 0s;
+      }
+      .pricing-plan-card:nth-child(2) {
+        animation-delay: 0.1s;
+      }
+      .pricing-plan-card:nth-child(3) {
+        animation-delay: 0.2s;
+      }
+      .pricing-plan-card:nth-child(4) {
+        animation-delay: 0.3s;
+      }
+
+      .pricing-plan-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 16px 32px rgba(67, 66, 255, 0.1);
+        border-color: rgba(67, 66, 255, 0.2);
+      }
+
+      .pricing-plan-card.featured {
+        border-color: var(--primary-color);
+        border-width: 1.5px;
+        background: rgba(67, 66, 255, 0.02);
+      }
+
+      .pricing-plan-card.featured:hover {
+        transform: translateY(-6px);
+      }
+
+      .plan-badge {
+        position: absolute;
+        top: -12px;
+        right: 20px;
+        background: var(--primary-color);
+        color: white;
+        padding: 0.35rem 0.95rem;
+        border-radius: 50px;
+        font-size: 0.75rem;
+        font-weight: 700;
+      }
+
+      .plan-header {
+        text-align: center;
+        margin-bottom: 2rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 1px solid rgba(67, 66, 255, 0.1);
+      }
+
+      .plan-name {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+        color: var(--black-color);
+        font-family: var(--header-font-family);
+        font-weight: 700;
+      }
+
+      .plan-price {
+        display: flex;
+        align-items: baseline;
+        justify-content: center;
+        gap: 0.35rem;
+        margin-bottom: 1rem;
+      }
+
+      .plan-price .price-amount {
+        font-size: 2.75rem;
+        font-weight: 800;
+        font-family: var(--header-font-family);
+        color: var(--primary-color);
+        transition: all 0.3s ease;
+      }
+
+      .plan-price .price-period {
+        font-size: 1rem;
+        opacity: 0.6;
+        font-weight: 500;
+      }
+
+      .plan-desc {
+        font-size: 0.9rem;
+        margin: 0;
+        opacity: 0.8;
+      }
+
+      .plan-features {
+        flex: 1;
+        margin-bottom: 2rem;
+      }
+
+      .plan-feature {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.85rem 0;
+        font-size: 0.9rem;
+        text-align: start;
+      }
+
+      .plan-feature .feature-check {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: rgba(67, 66, 255, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--primary-color);
+        font-size: 0.75rem;
+        font-weight: 700;
+        flex-shrink: 0;
+      }
+
+      .plan-btn {
+        width: 100%;
+      }
+
+      /* Feature Comparison Table */
+      .feature-comparison {
+        padding: 4.5rem 3rem;
+        background: white;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .feature-comparison-container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .comparison-table-wrapper {
+        margin-top: 3rem;
+        overflow-x: auto;
+        border-radius: 16px;
+        box-shadow: 0 8px 24px rgba(67, 66, 255, 0.08);
+      }
+
+      .comparison-table {
+        width: 100%;
+        background: white;
+        border-collapse: collapse;
+        min-width: 800px;
+      }
+
+      .comparison-table thead {
+        background: var(--primary-color);
+        color: white;
+      }
+
+      .comparison-table th {
+        padding: 1.5rem 1rem;
+        text-align: center;
+        font-weight: 700;
+        font-size: 1.05rem;
+        font-family: var(--header-font-family);
+      }
+
+      .comparison-table th.feature-col {
+        text-align: left;
+        padding-left: 2rem;
+        min-width: 250px;
+      }
+
+      .comparison-table th.featured-col {
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      .comparison-table tbody tr {
+        border-bottom: 1px solid rgba(67, 66, 255, 0.08);
+      }
+
+      .comparison-table tbody tr:hover {
+        background: rgba(67, 66, 255, 0.02);
+      }
+
+      .comparison-table td {
+        padding: 1.25rem 1rem;
+        text-align: center;
+        font-size: 0.95rem;
+      }
+
+      .comparison-table td.feature-name {
+        text-align: left;
+        padding-left: 2rem;
+        font-weight: 500;
+      }
+
+      .comparison-table td.featured-col {
+        background: rgba(67, 66, 255, 0.03);
+        font-weight: 600;
+        color: var(--primary-color);
+      }
+
+      .category-row {
+        background: rgba(67, 66, 255, 0.05);
+      }
+
+      .category-row td {
+        padding: 1rem 2rem;
+        font-weight: 700;
+        font-size: 1.05rem;
+        color: var(--primary-color);
+        text-align: left;
+        font-family: var(--header-font-family);
+      }
+
+      /* Pricing FAQ */
+      .pricing-faq {
+        padding: 4.5rem 3rem;
+        background: white;
+      }
+
+      .pricing-faq-container {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      /* Responsive Pricing */
+      @media (max-width: 1200px) {
+        .pricing-cards-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 968px) {
+        .pricing-hero {
+          padding: 6rem 1.5rem 3rem;
+          min-height: auto;
+        }
+
+        .pricing-hero-container {
+          max-width: 100%;
+        }
+
+        .pricing-benefits-grid {
+          grid-template-columns: 1fr;
+          max-width: 400px;
+        }
+
+        .pricing-section,
+        .feature-comparison,
+        .pricing-faq {
+          padding: 3rem 1.5rem;
+        }
+
+        .pricing-cards-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .comparison-table-wrapper {
+          border-radius: 12px;
+        }
+
+        .comparison-table {
+          font-size: 0.85rem;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+          padding: 1rem 0.75rem;
+        }
+
+        .comparison-table th.feature-col,
+        .comparison-table td.feature-name {
+          padding-left: 1rem;
+          min-width: 200px;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .pricing-toggle {
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .toggle-label {
+          font-size: 1rem;
+        }
+
+        .plan-price .price-amount {
+          font-size: 2.25rem;
+        }
+
+        .comparison-table {
+          min-width: 700px;
+        }
+
+        .benefit-badge {
+          padding: 0.85rem 1.25rem;
+        }
+
+        .benefit-icon-small {
+          width: 32px;
+          height: 32px;
+        }
+
+        .benefit-badge span {
+          font-size: 0.85rem;
+        }
+      }
     </style>
     <!-- Navbar -->
     <nav class="navbar" id="navbar">
@@ -675,7 +693,8 @@
             <div class="badge">💰 Simple, Transparent Pricing</div>
             <h1>Choose Your Perfect Plan</h1>
             <p class="pricing-hero-subtitle">
-              Start free, upgrade as you grow. No hidden fees, cancel anytime. 14-day money-back guarantee on all paid plans.
+              Start free, upgrade as you grow. No hidden fees, cancel anytime.
+              14-day money-back guarantee on all paid plans.
             </p>
 
             <!-- Toggle -->
@@ -689,7 +708,6 @@
                 Annually <span class="save-badge">Save 20%</span>
               </span>
             </div>
-
           </div>
           <div class="pricing-cards-grid">
             <!-- Free Plan -->
@@ -734,7 +752,9 @@
               <div class="plan-header">
                 <h3 class="plan-name">Starter</h3>
                 <div class="plan-price">
-                  <span class="price-amount" data-monthly="29" data-annual="23">$29</span>
+                  <span class="price-amount" data-monthly="29" data-annual="23"
+                    >$29</span
+                  >
                   <span class="price-period">/month</span>
                 </div>
                 <p class="plan-desc">For small teams getting started</p>
@@ -776,7 +796,9 @@
               <div class="plan-header">
                 <h3 class="plan-name">Professional</h3>
                 <div class="plan-price">
-                  <span class="price-amount" data-monthly="99" data-annual="79">$99</span>
+                  <span class="price-amount" data-monthly="99" data-annual="79"
+                    >$99</span
+                  >
                   <span class="price-period">/month</span>
                 </div>
                 <p class="plan-desc">For growing businesses that need more</p>
@@ -823,7 +845,9 @@
                 <div class="plan-price">
                   <span class="price-amount">Custom</span>
                 </div>
-                <p class="plan-desc">For large organizations with custom needs</p>
+                <p class="plan-desc">
+                  For large organizations with custom needs
+                </p>
               </div>
 
               <div class="plan-features">
@@ -863,7 +887,6 @@
         </div>
       </section>
 
-
       <!-- Feature Comparison Table -->
       <section class="feature-comparison">
         <div class="shape-deco shape-1">
@@ -893,7 +916,9 @@
               </thead>
               <tbody>
                 <tr class="category-row">
-                  <td colspan="5" class="category-title">Workflow Automation</td>
+                  <td colspan="5" class="category-title">
+                    Workflow Automation
+                  </td>
                 </tr>
                 <tr>
                   <td class="feature-name">Active Workflows</td>
@@ -975,7 +1000,9 @@
                 </tr>
 
                 <tr class="category-row">
-                  <td colspan="5" class="category-title">Team & Collaboration</td>
+                  <td colspan="5" class="category-title">
+                    Team & Collaboration
+                  </td>
                 </tr>
                 <tr>
                   <td class="feature-name">Team Members</td>
@@ -1046,7 +1073,10 @@
               </div>
               <div class="faq-answer">
                 <div class="faq-answer-content">
-                  Yes! You can upgrade or downgrade your plan at any time. When you upgrade, you'll be charged the prorated difference. When you downgrade, the change takes effect at the end of your current billing cycle.
+                  Yes! You can upgrade or downgrade your plan at any time. When
+                  you upgrade, you'll be charged the prorated difference. When
+                  you downgrade, the change takes effect at the end of your
+                  current billing cycle.
                 </div>
               </div>
             </div>
@@ -1058,7 +1088,10 @@
               </div>
               <div class="faq-answer">
                 <div class="faq-answer-content">
-                  We'll notify you when you're approaching your limit. Your workflows will continue to run, but you'll need to upgrade to create new automations. You can also purchase additional task packs if you occasionally need more capacity.
+                  We'll notify you when you're approaching your limit. Your
+                  workflows will continue to run, but you'll need to upgrade to
+                  create new automations. You can also purchase additional task
+                  packs if you occasionally need more capacity.
                 </div>
               </div>
             </div>
@@ -1070,7 +1103,9 @@
               </div>
               <div class="faq-answer">
                 <div class="faq-answer-content">
-                  Yes! Annual plans come with a 20% discount compared to monthly billing. You'll save even more with longer commitments while enjoying all the same features.
+                  Yes! Annual plans come with a 20% discount compared to monthly
+                  billing. You'll save even more with longer commitments while
+                  enjoying all the same features.
                 </div>
               </div>
             </div>
@@ -1082,7 +1117,9 @@
               </div>
               <div class="faq-answer">
                 <div class="faq-answer-content">
-                  Yes! All paid plans come with a 14-day free trial. No credit card required to start. If you're not satisfied within the first 14 days, we offer a full money-back guarantee.
+                  Yes! All paid plans come with a 14-day free trial. No credit
+                  card required to start. If you're not satisfied within the
+                  first 14 days, we offer a full money-back guarantee.
                 </div>
               </div>
             </div>
@@ -1094,7 +1131,9 @@
               </div>
               <div class="faq-answer">
                 <div class="faq-answer-content">
-                  We accept all major credit cards (Visa, Mastercard, American Express), PayPal, and bank transfers for annual plans. Enterprise customers can also arrange for invoicing.
+                  We accept all major credit cards (Visa, Mastercard, American
+                  Express), PayPal, and bank transfers for annual plans.
+                  Enterprise customers can also arrange for invoicing.
                 </div>
               </div>
             </div>
@@ -1106,7 +1145,10 @@
               </div>
               <div class="faq-answer">
                 <div class="faq-answer-content">
-                  Absolutely! There are no contracts or cancellation fees. You can cancel your subscription at any time, and you'll retain access until the end of your current billing period. You can also export all your data before canceling.
+                  Absolutely! There are no contracts or cancellation fees. You
+                  can cancel your subscription at any time, and you'll retain
+                  access until the end of your current billing period. You can
+                  also export all your data before canceling.
                 </div>
               </div>
             </div>
@@ -1132,7 +1174,8 @@
         <div class="cta-content">
           <h2>Ready to Get Started?</h2>
           <p>
-            Join thousands of businesses automating with Samartha. Start free, no credit card required.
+            Join thousands of businesses automating with Samartha. Start free,
+            no credit card required.
           </p>
           <div class="cta-buttons">
             <button class="btn btn-white">Start Free Trial</button>
@@ -1170,7 +1213,8 @@
               Samartha
             </div>
             <p class="footer-desc">
-              Empowering businesses worldwide with intelligent automation solutions that drive growth, efficiency, and innovation.
+              Empowering businesses worldwide with intelligent automation
+              solutions that drive growth, efficiency, and innovation.
             </p>
             <div class="footer-social">
               <a href="#" class="social-icon">𝕏</a>
