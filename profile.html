@@ -1,0 +1,1346 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile – Samartha AI Automation</title>
+    <link rel="icon" href="09_Bahan/assets/logo.webp" type="image/webp" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="09_Website/css/style.css" />
+    <style>
+      :root {
+        --sidebar-w: 260px;
+        --topbar-h: 68px;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: var(--font-family);
+        background: var(--bg-light);
+        color: var(--black-color);
+        min-height: 100vh;
+        display: flex;
+      } /* SIDEBAR */
+      .sidebar {
+        width: var(--sidebar-w);
+        height: 100vh;
+        position: fixed;
+        left: 0;
+        top: 0;
+        background: var(--secondary-color);
+        display: flex;
+        flex-direction: column;
+        padding: 1.5rem 1.25rem;
+        z-index: 100;
+        transition: transform 0.3s ease;
+      }
+      .sidebar-logo {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        font-family: var(--header-font-family);
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: white;
+        margin-bottom: 2.5rem;
+        padding: 0 0.25rem;
+        text-decoration: none;
+      }
+      .sidebar-logo img {
+        width: 28px;
+        height: 28px;
+      }
+      .sidebar-section {
+        font-size: 0.65rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: rgba(255, 255, 255, 0.35);
+        padding: 0 0.5rem;
+        margin-bottom: 0.6rem;
+        margin-top: 1.25rem;
+      }
+      .sidebar-nav {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+      .sidebar-link {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.75rem 0.85rem;
+        border-radius: 10px;
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.9rem;
+        font-weight: 500;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        cursor: pointer;
+        border: none;
+        background: none;
+        width: 100%;
+        font-family: var(--font-family);
+      }
+      .sidebar-link:hover {
+        background: rgba(255, 255, 255, 0.07);
+        color: white;
+      }
+      .sidebar-link.active {
+        background: var(--primary-color);
+        color: white;
+      }
+      .sidebar-bottom {
+        margin-top: auto;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        padding-top: 1.25rem;
+      }
+      .token-badge-sidebar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.85rem 1rem;
+        background: rgba(67, 66, 255, 0.18);
+        border: 1px solid rgba(67, 66, 255, 0.3);
+        border-radius: 12px;
+        margin-bottom: 1rem;
+      }
+      .tb-label {
+        font-size: 0.78rem;
+        color: rgba(255, 255, 255, 0.7);
+        font-weight: 500;
+      }
+      .tb-count {
+        font-size: 1.1rem;
+        font-weight: 800;
+        font-family: var(--header-font-family);
+        color: var(--third-color);
+      }
+      .sidebar-user {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.75rem 0.5rem;
+      }
+      .sidebar-avatar {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: var(--primary-color);
+        color: white;
+        font-weight: 700;
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      .sidebar-user-info {
+        flex: 1;
+        overflow: hidden;
+      }
+      .sidebar-user-info strong {
+        display: block;
+        font-size: 0.875rem;
+        color: white;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .sidebar-user-info span {
+        font-size: 0.75rem;
+        color: rgba(255, 255, 255, 0.45);
+      } /* LAYOUT */
+      .main-content {
+        margin-left: var(--sidebar-w);
+        flex: 1;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      .topbar {
+        height: var(--topbar-h);
+        background: rgba(255, 255, 255, 0.75);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(67, 66, 255, 0.08);
+        display: flex;
+        align-items: center;
+        padding: 0 2rem;
+        position: sticky;
+        top: 0;
+        z-index: 99;
+      }
+      .topbar h2 {
+        font-family: var(--header-font-family);
+        font-size: 1.1rem;
+        color: var(--black-color);
+        font-weight: 700;
+      }
+      .topbar p {
+        font-size: 0.8rem;
+        opacity: 0.55;
+        margin: 0;
+      }
+      .page-content {
+        flex: 1;
+        padding: 2rem;
+        width: 100%;
+      } /* HAMBURGER */
+      .hamburger-dash {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.5rem;
+        flex-direction: column;
+        gap: 5px;
+        margin-right: 0.75rem;
+      }
+      .hamburger-dash span {
+        display: block;
+        width: 22px;
+        height: 2px;
+        background: var(--black-color);
+        border-radius: 2px;
+      }
+      .sidebar-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 99;
+      } /* PROFILE HERO */
+      .profile-hero {
+        background: linear-gradient(
+          135deg,
+          var(--primary-color) 0%,
+          #7c6eff 100%
+        );
+        border-radius: 20px;
+        padding: 2.5rem;
+        color: white;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        margin-bottom: 1.75rem;
+        position: relative;
+        overflow: hidden;
+        animation: fadeInUp 0.4s ease;
+      }
+      .profile-hero::after {
+        content: "";
+        position: absolute;
+        top: -40%;
+        right: -5%;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.05);
+        pointer-events: none;
+      }
+      .hero-avatar {
+        width: 88px;
+        height: 88px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.18);
+        border: 3px solid rgba(255, 255, 255, 0.35);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.2rem;
+        font-weight: 800;
+        font-family: var(--header-font-family);
+        color: white;
+        flex-shrink: 0;
+        position: relative;
+        z-index: 1;
+      }
+      .hero-avatar .edit-dot {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+      }
+      .hero-info {
+        flex: 1;
+        position: relative;
+        z-index: 1;
+      }
+      .hero-info h1 {
+        font-family: var(--header-font-family);
+        font-size: 1.65rem;
+        color: white;
+        margin-bottom: 0.3rem;
+      }
+      .hero-info .hero-email {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9rem;
+        margin-bottom: 0.85rem;
+      }
+      .hero-badges {
+        display: flex;
+        gap: 0.6rem;
+        flex-wrap: wrap;
+      }
+      .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.32rem 0.85rem;
+        background: rgba(255, 255, 255, 0.14);
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        border-radius: 50px;
+        font-size: 0.77rem;
+        font-weight: 600;
+        color: white;
+      }
+      .badge-pulse {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: #5dffb2;
+      } /* STAT ROW */
+      .stat-row {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.25rem;
+        margin-bottom: 1.75rem;
+      }
+      .stat-card {
+        background: rgba(255, 255, 255, 0.38);
+        backdrop-filter: blur(7.6px);
+        -webkit-backdrop-filter: blur(7.6px);
+        border: 1px solid rgba(67, 66, 255, 0.08);
+        border-radius: 16px;
+        padding: 1.4rem;
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+      .stat-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 24px rgba(67, 66, 255, 0.1);
+        border-color: rgba(67, 66, 255, 0.2);
+      }
+      .stat-val {
+        font-size: 1.65rem;
+        font-weight: 800;
+        font-family: var(--header-font-family);
+        color: var(--primary-color);
+        margin-bottom: 0.25rem;
+      }
+      .stat-lbl {
+        font-size: 0.78rem;
+        opacity: 0.6;
+      } /* CARD */
+      .card {
+        background: rgba(255, 255, 255, 0.38);
+        backdrop-filter: blur(7.6px);
+        -webkit-backdrop-filter: blur(7.6px);
+        border: 1px solid rgba(67, 66, 255, 0.08);
+        border-radius: 20px;
+        padding: 2rem;
+        margin-bottom: 1.5rem;
+        animation: fadeInUp 0.4s ease;
+      }
+      .card-hdr {
+        margin-bottom: 1.75rem;
+        padding-bottom: 1.25rem;
+        border-bottom: 1px solid rgba(67, 66, 255, 0.08);
+      }
+      .card-hdr h3 {
+        font-family: var(--header-font-family);
+        font-size: 1rem;
+        color: var(--black-color);
+        font-weight: 700;
+        margin-bottom: 0.2rem;
+      }
+      .card-hdr p {
+        font-size: 0.8rem;
+        opacity: 0.5;
+        margin: 0;
+      } /* FORM */
+      .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.25rem;
+      }
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.45rem;
+      }
+      .form-group.full {
+        grid-column: 1 / -1;
+      }
+      .form-group label {
+        font-size: 0.82rem;
+        font-weight: 600;
+        color: var(--black-color);
+        opacity: 0.75;
+      }
+      .form-input {
+        padding: 0.85rem 1.1rem;
+        border: 1.5px solid rgba(67, 66, 255, 0.15);
+        border-radius: 12px;
+        font-family: var(--font-family);
+        font-size: 0.9rem;
+        background: white;
+        color: var(--black-color);
+        transition: all 0.25s ease;
+        outline: none;
+      }
+      .form-input:focus {
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 3px rgba(67, 66, 255, 0.08);
+      }
+      .form-input[readonly] {
+        background: rgba(67, 66, 255, 0.03);
+        border-color: rgba(67, 66, 255, 0.08);
+        color: rgba(0, 0, 0, 0.45);
+        cursor: not-allowed;
+      }
+      .form-hint {
+        font-size: 0.75rem;
+        opacity: 0.45;
+      }
+      .form-actions {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 0.75rem;
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(67, 66, 255, 0.08);
+      }
+      .btn-cancel {
+        padding: 0.72rem 1.5rem;
+        border: 1.5px solid rgba(67, 66, 255, 0.15);
+        background: white;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 0.88rem;
+        cursor: pointer;
+        font-family: var(--font-family);
+        color: var(--black-color);
+        transition: all 0.25s ease;
+      }
+      .btn-cancel:hover {
+        border-color: rgba(67, 66, 255, 0.3);
+      }
+      .btn-save {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.72rem 1.75rem;
+        background: var(--primary-color);
+        color: white;
+        border: none;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 0.88rem;
+        cursor: pointer;
+        font-family: var(--font-family);
+        transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .btn-save:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(67, 66, 255, 0.3);
+      } /* TOGGLE ROW */
+      .toggle-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.85rem 0;
+        border-bottom: 1px solid rgba(67, 66, 255, 0.06);
+      }
+      .toggle-row:last-of-type {
+        border-bottom: none;
+      }
+      .toggle-row-label strong {
+        display: block;
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--black-color);
+        margin-bottom: 0.2rem;
+      }
+      .toggle-row-label span {
+        font-size: 0.8rem;
+        opacity: 0.5;
+      }
+      .toggle-wrap {
+        position: relative;
+        display: inline-block;
+        width: 44px;
+        height: 24px;
+        flex-shrink: 0;
+      }
+      .toggle-wrap input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+      .toggle-ui {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(67, 66, 255, 0.15);
+        transition: 0.3s;
+        border-radius: 50px;
+      }
+      .toggle-ui::before {
+        position: absolute;
+        content: "";
+        height: 18px;
+        width: 18px;
+        left: 3px;
+        bottom: 3px;
+        background: white;
+        transition: 0.3s;
+        border-radius: 50%;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+      }
+      input:checked + .toggle-ui {
+        background: var(--primary-color);
+      }
+      input:checked + .toggle-ui::before {
+        transform: translateX(20px);
+      } /* DANGER ZONE */
+      .card.danger {
+        border-color: rgba(255, 62, 62, 0.15);
+      }
+      .card.danger .card-hdr {
+        border-color: rgba(255, 62, 62, 0.1);
+      }
+      .card.danger .card-hdr h3 {
+        color: #ff3e3e;
+      }
+      .danger-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding: 0.85rem 0;
+      }
+      .danger-row + .danger-row {
+        border-top: 1px solid rgba(255, 62, 62, 0.08);
+      }
+      .danger-row strong {
+        display: block;
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin-bottom: 0.2rem;
+      }
+      .danger-row span {
+        font-size: 0.8rem;
+        opacity: 0.6;
+      }
+      .btn-danger {
+        padding: 0.65rem 1.35rem;
+        background: rgba(255, 62, 62, 0.06);
+        border: 1.5px solid rgba(255, 62, 62, 0.2);
+        border-radius: 50px;
+        color: #ff3e3e;
+        font-weight: 700;
+        font-size: 0.82rem;
+        cursor: pointer;
+        font-family: var(--font-family);
+        transition: all 0.25s ease;
+      }
+      .btn-danger:hover {
+        background: rgba(255, 62, 62, 0.1);
+        border-color: rgba(255, 62, 62, 0.35);
+      } /* TOAST */
+      .toast-d {
+        position: fixed;
+        top: 1.5rem;
+        right: 1.5rem;
+        padding: 0.9rem 1.4rem;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        transform: translateX(calc(100% + 3rem));
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 999;
+        min-width: 250px;
+      }
+      .toast-d.show {
+        transform: translateX(0);
+      }
+      .toast-d.success {
+        border-left: 4px solid #0f9e6f;
+      }
+      .toast-d.error {
+        border-left: 4px solid #ff3e3e;
+      }
+      .toast-ic {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        font-weight: 700;
+        flex-shrink: 0;
+      }
+      .toast-d.success .toast-ic {
+        background: rgba(15, 158, 111, 0.1);
+        color: #0f9e6f;
+      }
+      .toast-d.error .toast-ic {
+        background: rgba(255, 62, 62, 0.1);
+        color: #ff3e3e;
+      }
+      .toast-txt {
+        font-size: 0.88rem;
+        font-weight: 600;
+        color: var(--black-color);
+      }
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(16px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @media (max-width: 768px) {
+        .sidebar {
+          transform: translateX(-100%);
+        }
+        .sidebar.open {
+          transform: translateX(0);
+        }
+        .sidebar-overlay.visible {
+          display: block;
+        }
+        .main-content {
+          margin-left: 0;
+        }
+        .hamburger-dash {
+          display: flex;
+        }
+        .form-grid {
+          grid-template-columns: 1fr;
+        }
+        .form-group.full {
+          grid-column: 1;
+        }
+        .stat-row {
+          grid-template-columns: 1fr;
+        }
+        .profile-hero {
+          flex-direction: column;
+          text-align: center;
+        }
+        .hero-badges {
+          justify-content: center;
+        }
+        .page-content {
+          padding: 1.25rem;
+        }
+        .topbar {
+          padding: 0 1.25rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <a href="index.html" class="sidebar-logo">
+        <img src="09_Bahan/assets/logo.webp" alt="logo" />
+        Samartha
+      </a>
+
+      <div class="sidebar-section">Main</div>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="sidebar-link">
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <rect x="3" y="3" width="7" height="7" rx="1" />
+            <rect x="14" y="3" width="7" height="7" rx="1" />
+            <rect x="3" y="14" width="7" height="7" rx="1" />
+            <rect x="14" y="14" width="7" height="7" rx="1" />
+          </svg>
+          Dashboard
+        </a>
+        <a href="platform.html" class="sidebar-link">
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+          </svg>
+          Workflows
+        </a>
+        <a href="integrations.html" class="sidebar-link">
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <circle cx="12" cy="12" r="3" />
+            <path
+              d="M19.07 4.93A10 10 0 0 0 4.93 19.07M19.07 19.07A10 10 0 0 0 4.93 4.93"
+            />
+          </svg>
+          Integrations
+        </a>
+      </nav>
+
+      <div class="sidebar-section">Account</div>
+      <nav class="sidebar-nav">
+        <a href="profile.html" class="sidebar-link">
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+            <circle cx="12" cy="7" r="4" />
+          </svg>
+          Profile
+        </a>
+        <a href="plan-history.html" class="sidebar-link">
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+            />
+            <polyline points="14 2 14 8 20 8" />
+            <line x1="16" y1="13" x2="8" y2="13" />
+            <line x1="16" y1="17" x2="8" y2="17" />
+          </svg>
+          Plan History
+        </a>
+        <a href="pricing.html" class="sidebar-link">
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21.02 7 14.14 2 9.27l6.91-1.01z"
+            />
+          </svg>
+          Upgrade Plan
+        </a>
+      </nav>
+
+      <!-- Sidebar bottom: tanpa token badge, langsung user info -->
+      <div class="sidebar-bottom">
+        <div class="sidebar-user">
+          <div class="sidebar-avatar" id="sidebarAvatar">?</div>
+          <div class="sidebar-user-info">
+            <strong id="sidebarName">Loading...</strong>
+            <span id="sidebarPlan">Free Plan</span>
+          </div>
+        </div>
+        <button
+          class="sidebar-link"
+          id="logoutBtn"
+          style="margin-top: 0.5rem; color: rgba(255, 255, 255, 0.4)"
+        >
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+            <polyline points="16 17 21 12 16 7" />
+            <line x1="21" y1="12" x2="9" y2="12" />
+          </svg>
+          Sign Out
+        </button>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <div class="main-content">
+      <header class="topbar">
+        <button class="hamburger-dash" id="hamburgerDash">
+          <span></span><span></span><span></span>
+        </button>
+        <div>
+          <h2>My Profile</h2>
+          <p>Manage your account information</p>
+        </div>
+      </header>
+
+      <div class="page-content">
+        <!-- Profile Hero -->
+        <div class="profile-hero">
+          <div class="hero-avatar" id="heroAvatar">
+            <span id="heroInitial">?</span>
+            <div class="edit-dot">
+              <svg
+                width="11"
+                height="11"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#4342ff"
+                stroke-width="2.5"
+              >
+                <path
+                  d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+                />
+                <path
+                  d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
+                />
+              </svg>
+            </div>
+          </div>
+          <div class="hero-info">
+            <h1 id="heroName">Loading...</h1>
+            <p class="hero-email" id="heroEmail">loading@email.com</p>
+            <div class="hero-badges">
+              <div class="hero-badge">
+                <div class="badge-pulse"></div>
+                <span id="heroPlan">Free Plan</span>
+              </div>
+              <div class="hero-badge">
+                <svg
+                  width="11"
+                  height="11"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 16 14" />
+                </svg>
+                <span id="heroJoined">Member since today</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="stat-row">
+          <div class="stat-card">
+            <div class="stat-val" id="statUsed">0</div>
+            <div class="stat-lbl">Workflows Generated</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-val" id="statLeft">3</div>
+            <div class="stat-lbl">Tokens Remaining</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-val" id="statPlanVal">Free</div>
+            <div class="stat-lbl">Current Plan</div>
+          </div>
+        </div>
+
+        <!-- Edit Profile Card -->
+        <div class="card">
+          <div class="card-hdr">
+            <h3>Personal Information</h3>
+            <p>Update your display name and additional details</p>
+          </div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="inpName">Display Name</label>
+              <input
+                type="text"
+                id="inpName"
+                class="form-input"
+                placeholder="Your name"
+              />
+            </div>
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" id="inpEmail" class="form-input" readonly />
+              <span class="form-hint">Email cannot be changed here.</span>
+            </div>
+            <div class="form-group full">
+              <label for="inpBio"
+                >Short Bio
+                <span style="opacity: 0.4; font-weight: 400"
+                  >(optional)</span
+                ></label
+              >
+              <input
+                type="text"
+                id="inpBio"
+                class="form-input"
+                placeholder="e.g. Product Manager at Acme Corp"
+                maxlength="100"
+              />
+            </div>
+            <div class="form-group">
+              <label for="inpCompany">Company</label>
+              <input
+                type="text"
+                id="inpCompany"
+                class="form-input"
+                placeholder="Company name"
+              />
+            </div>
+            <div class="form-group">
+              <label for="inpRole">Job Role</label>
+              <input
+                type="text"
+                id="inpRole"
+                class="form-input"
+                placeholder="e.g. CEO, Developer"
+              />
+            </div>
+          </div>
+          <div class="form-actions">
+            <button class="btn-cancel" onclick="resetForm()">Discard</button>
+            <button
+              class="btn-save"
+              id="saveProfileBtn"
+              onclick="saveProfile()"
+            >
+              Save Changes
+            </button>
+          </div>
+        </div>
+
+        <!-- Settings Card -->
+        <div class="card">
+          <div class="card-hdr">
+            <h3>Notification Settings</h3>
+            <p>Control your email and alert preferences</p>
+          </div>
+          <div class="toggle-row">
+            <div class="toggle-row-label">
+              <strong>Email Notifications</strong
+              ><span>Workflow updates and summaries</span>
+            </div>
+            <label class="toggle-wrap"
+              ><input type="checkbox" id="togEmail" checked /><span
+                class="toggle-ui"
+              ></span
+            ></label>
+          </div>
+          <div class="toggle-row">
+            <div class="toggle-row-label">
+              <strong>Token Alerts</strong
+              ><span>Get notified when tokens are running low</span>
+            </div>
+            <label class="toggle-wrap"
+              ><input type="checkbox" id="togToken" checked /><span
+                class="toggle-ui"
+              ></span
+            ></label>
+          </div>
+          <div class="toggle-row">
+            <div class="toggle-row-label">
+              <strong>Marketing Emails</strong
+              ><span>Product tips and feature announcements</span>
+            </div>
+            <label class="toggle-wrap"
+              ><input type="checkbox" id="togMarketing" /><span
+                class="toggle-ui"
+              ></span
+            ></label>
+          </div>
+          <div class="form-actions">
+            <button class="btn-save" onclick="saveSettings()">
+              Save Settings
+            </button>
+          </div>
+        </div>
+
+        <!-- Danger Zone -->
+        <div class="card danger">
+          <div class="card-hdr">
+            <h3>Danger Zone</h3>
+            <p>These actions cannot be undone</p>
+          </div>
+          <div class="danger-row">
+            <div>
+              <strong>Reset AI Tokens</strong
+              ><span>Restore your 3 free tokens (demo only)</span>
+            </div>
+            <button class="btn-danger" onclick="resetTokens()">
+              Reset Tokens
+            </button>
+          </div>
+          <div class="danger-row">
+            <div>
+              <strong>Clear Workflow History</strong
+              ><span>Removes all generated workflow history</span>
+            </div>
+            <button class="btn-danger" onclick="clearHistory()">
+              Clear History
+            </button>
+          </div>
+          <div class="danger-row">
+            <div>
+              <strong>Sign Out Everywhere</strong
+              ><span>Removes all session data</span>
+            </div>
+            <button class="btn-danger" id="logoutDanger">Sign Out</button>
+          </div>
+        </div>
+      </div>
+      <!-- /page-content -->
+    </div>
+    <!-- /main-content -->
+
+    <!-- Toast -->
+    <div class="toast-d" id="toastEl">
+      <div class="toast-ic" id="toastIc">✓</div>
+      <span class="toast-txt" id="toastMsg">Saved!</span>
+    </div>
+
+    <script>
+      /* 
+         SAFE DOM HELPERS
+       */
+
+      function setText(id, value) {
+        const el = document.getElementById(id);
+        if (el) el.textContent = value;
+      }
+
+      function setValue(id, value) {
+        const el = document.getElementById(id);
+        if (el) el.value = value;
+      }
+
+      function setChecked(id, value) {
+        const el = document.getElementById(id);
+        if (el) el.checked = value;
+      }
+
+      /* 
+         AUTH SYSTEM
+       */
+
+      function getUser() {
+        try {
+          return JSON.parse(
+            localStorage.getItem("userData") ||
+              sessionStorage.getItem("userData") ||
+              "null"
+          );
+        } catch {
+          return null;
+        }
+      }
+
+      const user = getUser();
+
+      if (!user) {
+        window.location.href = "login.html";
+      }
+
+      /* 
+         TOKEN HELPERS
+       */
+
+      const tokensLeft = () => {
+        const v = localStorage.getItem("samartha_ai_tokens");
+        return v !== null ? parseInt(v) : 3;
+      };
+
+      const tokensUsed = () =>
+        parseInt(localStorage.getItem("samartha_ai_used") || "0");
+
+      /* 
+         POPULATE UI
+       */
+
+      function populate() {
+        const name =
+          user.name ||
+          user.fullname ||
+          (user.email ? user.email.split("@")[0] : "User");
+
+        const email = user.email || "";
+        const plan = user.plan || "Free";
+        const initial = name.charAt(0).toUpperCase();
+
+        const ts = user.timestamp
+          ? new Date(user.timestamp).toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "short",
+            })
+          : "Today";
+
+        /* Sidebar */
+        setText("sidebarAvatar", initial);
+        setText("sidebarName", name);
+        setText("sidebarPlan", plan + " Plan");
+
+        /* Hero */
+        setText("heroInitial", initial);
+        setText("heroName", name);
+        setText("heroEmail", email);
+        setText("heroPlan", plan + " Plan");
+        setText("heroJoined", "Member since " + ts);
+
+        /* Stats */
+        setText("statUsed", tokensUsed());
+        setText("statLeft", tokensLeft());
+        setText("statPlanVal", plan);
+
+        /* Inputs */
+        setValue("inpName", name);
+        setValue("inpEmail", email);
+
+        /* Extended Profile */
+        const ext = JSON.parse(
+          localStorage.getItem("samartha_profile_ext") || "{}"
+        );
+
+        setValue("inpBio", ext.bio || "");
+        setValue("inpCompany", ext.company || "");
+        setValue("inpRole", ext.role || "");
+
+        /* Settings */
+        const s = JSON.parse(localStorage.getItem("samartha_settings") || "{}");
+
+        setChecked("togEmail", s.email !== false);
+        setChecked("togToken", s.token !== false);
+        setChecked("togMarketing", s.marketing === true);
+      }
+
+      populate();
+
+      /* 
+         SAVE PROFILE
+       */
+
+      function saveProfile() {
+        const btn = document.getElementById("saveProfileBtn");
+        const nameInput = document.getElementById("inpName");
+
+        if (!nameInput) return;
+
+        const name = nameInput.value.trim();
+
+        if (!name) {
+          toast("error", "Display name cannot be empty.");
+          return;
+        }
+
+        if (btn) {
+          btn.disabled = true;
+          btn.innerHTML = "Saving...";
+        }
+
+        setTimeout(() => {
+          const updated = { ...user, name };
+
+          localStorage.setItem("userData", JSON.stringify(updated));
+
+          localStorage.setItem(
+            "samartha_profile_ext",
+            JSON.stringify({
+              bio: document.getElementById("inpBio")?.value.trim() || "",
+              company:
+                document.getElementById("inpCompany")?.value.trim() || "",
+              role: document.getElementById("inpRole")?.value.trim() || "",
+            })
+          );
+
+          const initial = name.charAt(0).toUpperCase();
+
+          setText("heroName", name);
+          setText("heroInitial", initial);
+          setText("sidebarName", name);
+          setText("sidebarAvatar", initial);
+
+          if (btn) {
+            btn.disabled = false;
+            btn.innerHTML = "Save Changes";
+          }
+
+          toast("success", "Profile updated successfully!");
+        }, 600);
+      }
+
+      function resetForm() {
+        populate();
+        toast("success", "Changes discarded.");
+      }
+
+      /* 
+         SAVE SETTINGS
+       */
+
+      function saveSettings() {
+        localStorage.setItem(
+          "samartha_settings",
+          JSON.stringify({
+            email: document.getElementById("togEmail")?.checked,
+            token: document.getElementById("togToken")?.checked,
+            marketing: document.getElementById("togMarketing")?.checked,
+          })
+        );
+
+        toast("success", "Settings saved!");
+      }
+
+      /* 
+         DANGER ACTIONS
+       */
+
+      function resetTokens() {
+        if (!confirm("Reset tokens to 3?")) return;
+
+        localStorage.setItem("samartha_ai_tokens", "3");
+        localStorage.setItem("samartha_ai_used", "0");
+
+        setText("statLeft", "3");
+        setText("statUsed", "0");
+
+        toast("success", "Tokens reset!");
+      }
+
+      function clearHistory() {
+        if (!confirm("Clear workflow history?")) return;
+
+        localStorage.removeItem("samartha_ai_history");
+
+        toast("success", "History cleared!");
+      }
+
+      /* 
+         LOGOUT
+       */
+
+      function doLogout() {
+        ["userData", "samartha_token"].forEach((k) => {
+          localStorage.removeItem(k);
+          sessionStorage.removeItem(k);
+        });
+
+        window.location.href = "login.html";
+      }
+
+      const logoutBtn = document.getElementById("logoutBtn");
+      const logoutDanger = document.getElementById("logoutDanger");
+
+      if (logoutBtn) logoutBtn.addEventListener("click", doLogout);
+      if (logoutDanger) logoutDanger.addEventListener("click", doLogout);
+
+      /* 
+         TOAST SYSTEM
+       */
+
+      function toast(type, msg) {
+        const el = document.getElementById("toastEl");
+        if (!el) return;
+
+        el.classList.remove("show", "success", "error");
+
+        setText("toastIc", type === "success" ? "✓" : "✕");
+        setText("toastMsg", msg);
+
+        el.classList.add(type);
+
+        setTimeout(() => el.classList.add("show"), 50);
+        setTimeout(() => el.classList.remove("show"), 3200);
+      }
+
+      /* 
+         MOBILE SIDEBAR
+       */
+
+      const sidebar = document.getElementById("sidebar");
+      const overlay = document.getElementById("sidebarOverlay");
+      const hb = document.getElementById("hamburgerDash");
+
+      if (hb && sidebar && overlay) {
+        hb.addEventListener("click", () => {
+          sidebar.classList.toggle("open");
+          overlay.classList.toggle("visible");
+        });
+
+        overlay.addEventListener("click", () => {
+          sidebar.classList.remove("open");
+          overlay.classList.remove("visible");
+        });
+      }
+
+      /* 
+         ACTIVE NAV
+       */
+
+      function setActiveNav() {
+        const currentPage = window.location.pathname.split("/").pop();
+
+        document.querySelectorAll(".sidebar-link").forEach((link) => {
+          const linkPage = link.getAttribute("href");
+
+          if (linkPage === currentPage) {
+            link.classList.add("active");
+          } else {
+            link.classList.remove("active");
+          }
+        });
+      }
+
+      setActiveNav();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard – Samartha AI Automation</title>
+    <link rel="icon" href="09_Bahan/assets/logo.webp" type="image/webp" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="09_Website/css/style.css" />
+
+    <style>
+      :root {
+        --sidebar-w: 260px;
+        --topbar-h: 68px;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: var(--font-family);
+        background: var(--bg-light);
+        color: var(--black-color);
+        min-height: 100vh;
+        display: flex;
+      }
+
+      /* ── SIDEBAR ── */
+      .sidebar {
+        width: var(--sidebar-w);
+        height: 100vh;
+        position: fixed;
+        left: 0;
+        top: 0;
+        background: var(--secondary-color);
+        display: flex;
+        flex-direction: column;
+        padding: 1.5rem 1.25rem;
+        z-index: 100;
+        transition: transform 0.3s ease;
+      }
+      .sidebar-logo {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        font-family: var(--header-font-family);
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: white;
+        margin-bottom: 2.5rem;
+        padding: 0 0.25rem;
+        text-decoration: none;
+      }
+      .sidebar-logo img {
+        width: 28px;
+        height: 28px;
+      }
+      .sidebar-section {
+        font-size: 0.65rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: rgba(255, 255, 255, 0.35);
+        padding: 0 0.5rem;
+        margin-bottom: 0.6rem;
+        margin-top: 1.25rem;
+      }
+      .sidebar-nav {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+      .sidebar-link {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.75rem 0.85rem;
+        border-radius: 10px;
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.9rem;
+        font-weight: 500;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        cursor: pointer;
+        border: none;
+        background: none;
+        width: 100%;
+        font-family: var(--font-family);
+      }
+      .sidebar-link:hover {
+        background: rgba(255, 255, 255, 0.07);
+        color: white;
+      }
+      .sidebar-link.active {
+        background: var(--primary-color);
+        color: white;
+      }
+      .sidebar-link svg {
+        opacity: 0.8;
+        flex-shrink: 0;
+      }
+      .sidebar-link.active svg {
+        opacity: 1;
+      }
+
+      .sidebar-bottom {
+        margin-top: auto;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        padding-top: 1.25rem;
+      }
+
+      .sidebar-user {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.75rem 0.5rem;
+      }
+      .sidebar-avatar {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: var(--primary-color);
+        color: white;
+        font-weight: 700;
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      .sidebar-user-info {
+        flex: 1;
+        overflow: hidden;
+      }
+      .sidebar-user-info strong {
+        display: block;
+        font-size: 0.875rem;
+        color: white;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .sidebar-user-info span {
+        font-size: 0.75rem;
+        color: rgba(255, 255, 255, 0.45);
+      }
+
+      /* ── MAIN CONTENT ── */
+      .main-content {
+        margin-left: var(--sidebar-w);
+        flex: 1;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* ── TOPBAR ── */
+      .topbar {
+        height: var(--topbar-h);
+        background: rgba(255, 255, 255, 0.75);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(67, 66, 255, 0.08);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 2rem;
+        position: sticky;
+        top: 0;
+        z-index: 99;
+      }
+      .topbar-left h2 {
+        font-family: var(--header-font-family);
+        font-size: 1.1rem;
+        color: var(--black-color);
+        font-weight: 700;
+      }
+      .topbar-left p {
+        font-size: 0.8rem;
+        opacity: 0.55;
+        margin: 0;
+      }
+      .topbar-right {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+      .plan-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.4rem 0.85rem;
+        background: rgba(67, 66, 255, 0.08);
+        border: 1px solid rgba(67, 66, 255, 0.15);
+        border-radius: 50px;
+        font-size: 0.78rem;
+        font-weight: 700;
+        color: var(--primary-color);
+      }
+      .plan-dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--primary-color);
+        animation: pulse-dot 2s ease-in-out infinite;
+      }
+      @keyframes pulse-dot {
+        0%,
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.5;
+          transform: scale(0.8);
+        }
+      }
+
+      /* ── PAGE CONTENT ── */
+      .page-content {
+        flex: 1;
+        padding: 2rem;
+        max-width: 1100px;
+        width: 100%;
+      }
+
+      /* ── STAT CARDS ── */
+      .stat-row {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.25rem;
+        margin-bottom: 2rem;
+      }
+      .stat-card {
+        background: rgba(255, 255, 255, 0.38);
+        backdrop-filter: blur(7.6px);
+        -webkit-backdrop-filter: blur(7.6px);
+        border: 1px solid rgba(67, 66, 255, 0.08);
+        border-radius: 16px;
+        padding: 1.5rem;
+        transition: all 0.3s ease;
+      }
+      .stat-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 24px rgba(67, 66, 255, 0.1);
+        border-color: rgba(67, 66, 255, 0.2);
+      }
+      .stat-card-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: rgba(67, 66, 255, 0.06);
+        border: 1px solid rgba(67, 66, 255, 0.15);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1rem;
+        overflow: hidden;
+        padding: 10px;
+      }
+      .stat-card-icon img {
+        width: 100%;
+      }
+      .stat-card-val {
+        font-size: 1.85rem;
+        font-weight: 800;
+        font-family: var(--header-font-family);
+        color: var(--primary-color);
+        margin-bottom: 0.25rem;
+      }
+      .stat-card-lbl {
+        font-size: 0.82rem;
+        opacity: 0.6;
+      }
+
+      /* ── AI GENERATOR CARD ── */
+      .ai-card {
+        background: rgba(255, 255, 255, 0.38);
+        backdrop-filter: blur(7.6px);
+        -webkit-backdrop-filter: blur(7.6px);
+        border: 1px solid rgba(67, 66, 255, 0.08);
+        border-radius: 20px;
+        overflow: hidden;
+        margin-bottom: 1.5rem;
+      }
+      .ai-card-header {
+        padding: 1.5rem 2rem;
+        border-bottom: 1px solid rgba(67, 66, 255, 0.08);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: white;
+      }
+      .ai-card-title {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+      .ai-card-title-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: var(--primary-color);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--header-font-family);
+        font-weight: 800;
+        font-size: 0.85rem;
+      }
+      .ai-card-title h3 {
+        font-size: 1.05rem;
+        color: var(--black-color);
+        margin-bottom: 0.2rem;
+      }
+      .ai-card-title p {
+        font-size: 0.8rem;
+        opacity: 0.55;
+        margin: 0;
+      }
+
+      .token-counter {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.6rem 1.1rem;
+        background: rgba(67, 66, 255, 0.06);
+        border: 1px solid rgba(67, 66, 255, 0.15);
+        border-radius: 50px;
+        font-size: 0.82rem;
+        font-weight: 700;
+        color: var(--primary-color);
+      }
+      .token-counter.warning {
+        background: rgba(255, 136, 62, 0.08);
+        border-color: rgba(255, 136, 62, 0.3);
+        color: var(--orange-color);
+      }
+      .token-counter.empty {
+        background: rgba(255, 62, 62, 0.08);
+        border-color: rgba(255, 62, 62, 0.3);
+        color: #ff3e3e;
+      }
+      .token-dots {
+        display: flex;
+        gap: 4px;
+      }
+      .token-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--primary-color);
+        transition: all 0.3s ease;
+      }
+      .token-dot.used {
+        background: rgba(67, 66, 255, 0.2);
+      }
+
+      /* ── INPUT AREA ── */
+      .ai-input-area {
+        padding: 1.75rem 2rem;
+        border-bottom: 1px solid rgba(67, 66, 255, 0.06);
+      }
+      .ai-input-area label {
+        display: block;
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--black-color);
+        margin-bottom: 0.75rem;
+        opacity: 0.8;
+      }
+      .ai-textarea {
+        width: 100%;
+        min-height: 110px;
+        padding: 1rem 1.25rem;
+        border: 1.5px solid rgba(67, 66, 255, 0.15);
+        border-radius: 12px;
+        font-family: var(--font-family);
+        font-size: 0.9rem;
+        resize: vertical;
+        background: white;
+        color: var(--black-color);
+        transition: all 0.25s ease;
+        outline: none;
+        line-height: 1.6;
+      }
+      .ai-textarea:focus {
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 3px rgba(67, 66, 255, 0.08);
+      }
+      .ai-textarea::placeholder {
+        color: rgba(0, 0, 0, 0.3);
+        font-size: 0.875rem;
+      }
+
+      .ai-input-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 1rem;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+      }
+      .example-chips {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+      }
+      .chip {
+        padding: 0.35rem 0.8rem;
+        border-radius: 50px;
+        border: 1px solid rgba(67, 66, 255, 0.15);
+        background: white;
+        font-size: 0.75rem;
+        font-weight: 500;
+        color: var(--primary-color);
+        cursor: pointer;
+        transition: all 0.2s ease;
+        font-family: var(--font-family);
+      }
+      .chip:hover {
+        background: rgba(67, 66, 255, 0.06);
+        border-color: rgba(67, 66, 255, 0.3);
+      }
+
+      .btn-generate {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        padding: 0.8rem 1.75rem;
+        background: var(--primary-color);
+        color: white;
+        border: none;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 0.9rem;
+        cursor: pointer;
+        font-family: var(--font-family);
+        transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+        position: relative;
+        overflow: hidden;
+      }
+      .btn-generate:hover:not(:disabled) {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 24px rgba(67, 66, 255, 0.3);
+      }
+      .btn-generate:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        transform: none;
+      }
+      .btn-generate .spinner-icon {
+        display: none;
+        width: 16px;
+        height: 16px;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        border-top-color: white;
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+      }
+      .btn-generate.loading .spinner-icon {
+        display: block;
+      }
+      .btn-generate.loading .btn-label {
+        display: none;
+      }
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* ── OUTPUT AREA ── */
+      .ai-output-area {
+        padding: 0 2rem 1.75rem;
+        display: none;
+      }
+      .ai-output-area.visible {
+        display: block;
+      }
+      .output-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 0 0.85rem;
+        border-top: 1px solid rgba(67, 66, 255, 0.06);
+      }
+      .output-header span {
+        font-size: 0.78rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: var(--primary-color);
+        opacity: 0.7;
+      }
+      .copy-btn {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.4rem 0.85rem;
+        border: 1px solid rgba(67, 66, 255, 0.15);
+        background: white;
+        border-radius: 50px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: var(--primary-color);
+        cursor: pointer;
+        font-family: var(--font-family);
+        transition: all 0.2s ease;
+      }
+      .copy-btn:hover {
+        background: rgba(67, 66, 255, 0.06);
+      }
+      .output-box {
+        background: white;
+        border: 1px solid rgba(67, 66, 255, 0.08);
+        border-radius: 14px;
+        padding: 1.5rem;
+        font-size: 0.9rem;
+        line-height: 1.75;
+        color: var(--black-color);
+        word-wrap: break-word;
+        animation: fadeInUp 0.4s ease;
+        min-height: 80px;
+      }
+      .step-block {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.85rem;
+        padding: 0.75rem 0;
+        border-bottom: 1px solid rgba(67, 66, 255, 0.06);
+      }
+      .step-block:last-child {
+        border-bottom: none;
+      }
+      .step-num {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: var(--primary-color);
+        color: white;
+        font-weight: 800;
+        font-size: 0.75rem;
+        font-family: var(--header-font-family);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+      .step-body strong {
+        display: block;
+        font-size: 0.9rem;
+        color: var(--black-color);
+        margin-bottom: 0.2rem;
+        font-weight: 700;
+      }
+      .step-body p {
+        font-size: 0.845rem;
+        opacity: 0.65;
+        margin: 0;
+      }
+      .output-section-label {
+        font-size: 0.7rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: var(--primary-color);
+        opacity: 0.7;
+        margin-bottom: 0.5rem;
+        margin-top: 1rem;
+      }
+      .tools-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 0.5rem;
+      }
+      .tool-chip {
+        padding: 0.35rem 0.8rem;
+        border-radius: 50px;
+        background: rgba(67, 66, 255, 0.07);
+        border: 1px solid rgba(67, 66, 255, 0.15);
+        font-size: 0.78rem;
+        font-weight: 600;
+        color: var(--primary-color);
+      }
+      .result-meta {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.78rem;
+        color: #0f9e6f;
+        font-weight: 600;
+        margin-top: 1rem;
+        padding-top: 0.75rem;
+        border-top: 1px solid rgba(67, 66, 255, 0.06);
+      }
+
+      /* ── UPGRADE BANNER ── */
+      .upgrade-banner {
+        display: none;
+        background: linear-gradient(
+          135deg,
+          var(--primary-color) 0%,
+          #7c6eff 100%
+        );
+        border-radius: 16px;
+        padding: 1.75rem 2rem;
+        color: white;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.5rem;
+        margin-bottom: 1.5rem;
+        flex-wrap: wrap;
+        animation: fadeInUp 0.4s ease;
+      }
+      .upgrade-banner.visible {
+        display: flex;
+      }
+      .upgrade-banner h3 {
+        font-size: 1.05rem;
+        font-family: var(--header-font-family);
+        margin-bottom: 0.4rem;
+        color: white;
+      }
+      .upgrade-banner p {
+        font-size: 0.85rem;
+        opacity: 0.85;
+        margin: 0;
+        color: white;
+      }
+      .btn-upgrade {
+        padding: 0.75rem 1.75rem;
+        background: white;
+        color: var(--primary-color);
+        border: none;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 0.88rem;
+        cursor: pointer;
+        font-family: var(--font-family);
+        transition: all 0.3s ease;
+        white-space: nowrap;
+        text-decoration: none;
+        display: inline-block;
+      }
+      .btn-upgrade:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      /* ── LOADING ── */
+      .loading-placeholder {
+        display: none;
+        flex-direction: column;
+        gap: 0.65rem;
+        padding: 1.5rem;
+        background: white;
+        border: 1px solid rgba(67, 66, 255, 0.08);
+        border-radius: 14px;
+      }
+      .loading-placeholder.visible {
+        display: flex;
+      }
+      .skeleton {
+        height: 14px;
+        background: linear-gradient(
+          90deg,
+          rgba(67, 66, 255, 0.06) 25%,
+          rgba(67, 66, 255, 0.12) 50%,
+          rgba(67, 66, 255, 0.06) 75%
+        );
+        background-size: 200% 100%;
+        border-radius: 8px;
+        animation: shimmer 1.5s infinite;
+      }
+      @keyframes shimmer {
+        0% {
+          background-position: 200% 0;
+        }
+        100% {
+          background-position: -200% 0;
+        }
+      }
+
+      /* ── ERROR ── */
+      .error-box {
+        display: none;
+        background: rgba(255, 62, 62, 0.06);
+        border: 1px solid rgba(255, 62, 62, 0.2);
+        border-radius: 12px;
+        padding: 1rem 1.25rem;
+        color: #ff3e3e;
+        font-size: 0.875rem;
+        gap: 0.6rem;
+        align-items: center;
+      }
+      .error-box.visible {
+        display: flex;
+      }
+
+      /* ── HISTORY ── */
+      .history-section {
+        margin-top: 0.5rem;
+      }
+      .history-title {
+        font-size: 0.7rem;
+        font-weight: 700;
+        color: var(--black-color);
+        opacity: 0.6;
+        margin-bottom: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      .history-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      .history-item {
+        background: rgba(255, 255, 255, 0.38);
+        backdrop-filter: blur(7.6px);
+        border: 1px solid rgba(67, 66, 255, 0.08);
+        border-radius: 12px;
+        padding: 1rem 1.25rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        cursor: pointer;
+        transition: all 0.25s ease;
+      }
+      .history-item:hover {
+        border-color: rgba(67, 66, 255, 0.2);
+        transform: translateX(4px);
+      }
+      .history-icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: rgba(67, 66, 255, 0.06);
+        border: 1px solid rgba(67, 66, 255, 0.12);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        font-size: 0.75rem;
+        font-weight: 800;
+        color: var(--primary-color);
+        font-family: var(--header-font-family);
+      }
+      .history-text strong {
+        display: block;
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: var(--black-color);
+        margin-bottom: 0.15rem;
+      }
+      .history-text span {
+        font-size: 0.775rem;
+        opacity: 0.5;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(16px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* ── MOBILE ── */
+      .sidebar-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 99;
+      }
+      .hamburger-dash {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.5rem;
+        flex-direction: column;
+        gap: 5px;
+      }
+      .hamburger-dash span {
+        display: block;
+        width: 22px;
+        height: 2px;
+        background: var(--black-color);
+        border-radius: 2px;
+      }
+
+      @media (max-width: 768px) {
+        .sidebar {
+          transform: translateX(-100%);
+        }
+        .sidebar.open {
+          transform: translateX(0);
+        }
+        .sidebar-overlay.visible {
+          display: block;
+        }
+        .main-content {
+          margin-left: 0;
+        }
+        .hamburger-dash {
+          display: flex;
+        }
+        .stat-row {
+          grid-template-columns: 1fr;
+        }
+        .topbar {
+          padding: 0 1.25rem;
+        }
+        .page-content {
+          padding: 1.25rem;
+        }
+        .ai-card-header {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.75rem;
+        }
+        .ai-input-footer {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .btn-generate {
+          width: 100%;
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <a href="index.html" class="sidebar-logo">
+        <img src="09_Bahan/assets/logo.webp" alt="logo" />
+        Samartha
+      </a>
+
+      <div class="sidebar-section">Main</div>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="sidebar-link">
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <rect x="3" y="3" width="7" height="7" rx="1" />
+            <rect x="14" y="3" width="7" height="7" rx="1" />
+            <rect x="3" y="14" width="7" height="7" rx="1" />
+            <rect x="14" y="14" width="7" height="7" rx="1" />
+          </svg>
+          Dashboard
+        </a>
+        <a href="platform.html" class="sidebar-link">
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+          </svg>
+          Workflows
+        </a>
+        <a href="integrations.html" class="sidebar-link">
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <circle cx="12" cy="12" r="3" />
+            <path
+              d="M19.07 4.93A10 10 0 0 0 4.93 19.07M19.07 19.07A10 10 0 0 0 4.93 4.93"
+            />
+          </svg>
+          Integrations
+        </a>
+      </nav>
+
+      <div class="sidebar-section">Account</div>
+      <nav class="sidebar-nav">
+        <a href="profile.html" class="sidebar-link">
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+            <circle cx="12" cy="7" r="4" />
+          </svg>
+          Profile
+        </a>
+        <a href="plan-history.html" class="sidebar-link">
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+            />
+            <polyline points="14 2 14 8 20 8" />
+            <line x1="16" y1="13" x2="8" y2="13" />
+            <line x1="16" y1="17" x2="8" y2="17" />
+          </svg>
+          Plan History
+        </a>
+        <a href="pricing.html" class="sidebar-link">
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21.02 7 14.14 2 9.27l6.91-1.01z"
+            />
+          </svg>
+          Upgrade Plan
+        </a>
+      </nav>
+
+      <!-- Sidebar bottom: tanpa token badge, langsung user info -->
+      <div class="sidebar-bottom">
+        <div class="sidebar-user">
+          <div class="sidebar-avatar" id="sidebarAvatar">?</div>
+          <div class="sidebar-user-info">
+            <strong id="sidebarName">Loading...</strong>
+            <span id="sidebarPlan">Free Plan</span>
+          </div>
+        </div>
+        <button
+          class="sidebar-link"
+          id="logoutBtn"
+          style="margin-top: 0.5rem; color: rgba(255, 255, 255, 0.4)"
+        >
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+            <polyline points="16 17 21 12 16 7" />
+            <line x1="21" y1="12" x2="9" y2="12" />
+          </svg>
+          Sign Out
+        </button>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+      <!-- TOPBAR -->
+      <header class="topbar">
+        <div style="display: flex; align-items: center; gap: 1rem">
+          <button
+            class="hamburger-dash"
+            id="hamburgerDash"
+            aria-label="Toggle menu"
+          >
+            <span></span><span></span><span></span>
+          </button>
+          <div class="topbar-left">
+            <h2 id="topbarGreeting">Good morning!</h2>
+            <p>Let AI build your automation workflows</p>
+          </div>
+        </div>
+        <div class="topbar-right">
+          <div class="plan-badge">
+            <div class="plan-dot"></div>
+            <span id="topbarPlan">Free Plan</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- PAGE CONTENT -->
+      <div class="page-content">
+        <!-- Stat Cards -->
+        <div class="stat-row">
+          <div class="stat-card">
+            <div class="stat-card-icon">
+              <img src="09_Bahan/assets/icon-1.webp" alt="" />
+            </div>
+            <div class="stat-card-val" id="statTokenUsed">0</div>
+            <div class="stat-card-lbl">Workflows Generated</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-icon">
+              <img src="09_Bahan/assets/icon-4.webp" alt="" />
+            </div>
+            <div class="stat-card-val" id="statTokenLeft">3</div>
+            <div class="stat-card-lbl">AI Tokens Remaining</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-icon">
+              <img src="09_Bahan/assets/icon-2.webp" alt="" />
+            </div>
+            <div class="stat-card-val" id="statPlan">Free</div>
+            <div class="stat-card-lbl">Current Plan</div>
+          </div>
+        </div>
+
+        <!-- Upgrade Banner (shown when tokens = 0) -->
+        <div class="upgrade-banner" id="upgradeBanner">
+          <div>
+            <h3>You've used all your free AI tokens</h3>
+            <p>
+              Upgrade to Professional to get 100 tokens/month and unlimited
+              workflow generation.
+            </p>
+          </div>
+          <a href="pricing.html" class="btn-upgrade">Upgrade Now &rarr;</a>
+        </div>
+
+        <!-- AI Generator Card -->
+        <div class="ai-card">
+          <div class="ai-card-header">
+            <div class="ai-card-title">
+              <div class="ai-card-title-icon">AI</div>
+              <div>
+                <h3>AI Workflow Generator</h3>
+                <p>
+                  Describe your business process — AI will generate the
+                  automation workflow
+                </p>
+              </div>
+            </div>
+            <div class="token-counter" id="tokenCounter">
+              <div class="token-dots" id="tokenDots">
+                <div class="token-dot" id="dot0"></div>
+                <div class="token-dot" id="dot1"></div>
+                <div class="token-dot" id="dot2"></div>
+              </div>
+              <span id="tokenCounterText">3 tokens left</span>
+            </div>
+          </div>
+
+          <!-- Input -->
+          <div class="ai-input-area">
+            <label for="workflowInput"
+              >Describe your workflow automation need</label
+            >
+            <textarea
+              id="workflowInput"
+              class="ai-textarea"
+              placeholder="Example: When a new customer signs up on our website, automatically send a welcome email, add them to our CRM, and notify the sales team on Slack..."
+              rows="4"
+            ></textarea>
+
+            <div class="ai-input-footer">
+              <div class="example-chips">
+                <div class="chip" onclick="fillExample(this)">
+                  New customer onboarding
+                </div>
+                <div class="chip" onclick="fillExample(this)">
+                  Invoice payment reminder
+                </div>
+                <div class="chip" onclick="fillExample(this)">
+                  Social media auto-post
+                </div>
+                <div class="chip" onclick="fillExample(this)">
+                  Lead follow-up sequence
+                </div>
+              </div>
+              <button
+                class="btn-generate"
+                id="generateBtn"
+                onclick="generateWorkflow()"
+              >
+                <div class="spinner-icon"></div>
+                <span class="btn-label">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    style="
+                      display: inline;
+                      vertical-align: middle;
+                      margin-right: 4px;
+                    "
+                  >
+                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                  </svg>
+                  Generate Workflow
+                </span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Loading Skeleton -->
+          <div
+            class="loading-placeholder"
+            id="loadingPlaceholder"
+            style="margin: 0 2rem 1.5rem"
+          >
+            <div class="skeleton" style="width: 60%; height: 12px"></div>
+            <div class="skeleton" style="width: 90%"></div>
+            <div class="skeleton" style="width: 80%"></div>
+            <div class="skeleton" style="width: 70%"></div>
+            <div class="skeleton" style="width: 85%"></div>
+          </div>
+
+          <!-- Error -->
+          <div class="error-box" id="errorBox" style="margin: 0 2rem 1.5rem">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <line x1="15" y1="9" x2="9" y2="15" />
+              <line x1="9" y1="9" x2="15" y2="15" />
+            </svg>
+            <span id="errorText">Something went wrong. Please try again.</span>
+          </div>
+
+          <!-- Output -->
+          <div class="ai-output-area" id="aiOutputArea">
+            <div class="output-header">
+              <span>Generated Workflow</span>
+              <button class="copy-btn" onclick="copyOutput()">
+                <svg
+                  width="13"
+                  height="13"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <rect x="9" y="9" width="13" height="13" rx="2" />
+                  <path
+                    d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                  />
+                </svg>
+                Copy
+              </button>
+            </div>
+            <div class="output-box" id="outputBox"></div>
+          </div>
+        </div>
+
+        <!-- History -->
+        <div class="history-section" id="historySection" style="display: none">
+          <div class="history-title">Recent Generations</div>
+          <div class="history-list" id="historyList"></div>
+        </div>
+      </div>
+      <!-- /page-content -->
+    </div>
+    <!-- /main-content -->
+
+    <script>
+
+      // LOGOUT
+      document.getElementById("logoutBtn").addEventListener("click", () => {
+        localStorage.removeItem("userData");
+        sessionStorage.removeItem("userData");
+        window.location.href = "login.html";
+      });
+
+      // MOBILE SIDEBAR
+      const sidebar = document.getElementById("sidebar");
+      const overlay = document.getElementById("sidebarOverlay");
+      const hamburger = document.getElementById("hamburgerDash");
+      hamburger.addEventListener("click", () => {
+        sidebar.classList.toggle("open");
+        overlay.classList.toggle("visible");
+      });
+      overlay.addEventListener("click", () => {
+        sidebar.classList.remove("open");
+        overlay.classList.remove("visible");
+      });
+
+      function setActiveNav() {
+        const currentPage = window.location.pathname.split("/").pop();
+
+        document.querySelectorAll(".sidebar-link").forEach((link) => {
+          const linkPage = link.getAttribute("href");
+
+          if (linkPage === currentPage) {
+            link.classList.add("active");
+          } else {
+            link.classList.remove("active");
+          }
+        });
+      }
+
+      setActiveNav();
+    </script>
+  </body>
+</html>
